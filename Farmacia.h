@@ -1,6 +1,9 @@
 #ifndef FARMACIA_H
 #define FARMACIA_H
 
+#include "Produto.h"
+#include "Venda.h"
+#include
 class Farmacia {
 
 private:

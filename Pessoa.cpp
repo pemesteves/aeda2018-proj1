@@ -1,16 +1,16 @@
 #include "Pessoa.h"
 
-string Pessoa::virtual_getNome() {
+string Pessoa::getNome() {
 	// TODO - implement Pessoa::virtual getNome
 	throw "Not yet implemented";
 }
 
-string Pessoa::virtual_getMorada() {
+string Pessoa::getMorada() {
 	// TODO - implement Pessoa::virtual getMorada
 	throw "Not yet implemented";
 }
 
-double Pessoa::virtual_getNoContribuinte() {
+double Pessoa::getNoContribuinte() {
 	// TODO - implement Pessoa::virtual getNoContribuinte
 	throw "Not yet implemented";
 }

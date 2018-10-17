@@ -1,6 +1,14 @@
 #ifndef CADEIAFARMACIAS_H
 #define CADEIAFARMACIAS_H
 
+#include "Farmacia.h"
+#include "Cliente.h"
+#include "Funcionario.h"
+
+#include <vector>;
+
+using namespace std;
+
 class CadeiaFarmacias {
 
 private:
@@ -9,9 +17,10 @@ private:
 	vector<Funcionario*> Funcionarios;
 
 public:
-	void Cadeia_Farmacias();
-
 	CadeiaFarmacias();
+	void addFarmacia(Farmacia *farmacia);
+	void addCliente(Cliente *cliente);
+	void addFuncionario(Funcionario *funcionario);
 };
 
 #endif

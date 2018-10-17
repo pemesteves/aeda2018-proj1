@@ -9,11 +9,11 @@ private:
 	double NoContribuinte;
 
 public:
-	string virtual_getNome();
+	virtual string getNome();
 
-	string virtual_getMorada();
+	virtual string getMorada();
 
-	double virtual_getNoContribuinte();
+	virtual double getNoContribuinte();
 
 	Pessoa(string nome, string morada, double cont);
 };
