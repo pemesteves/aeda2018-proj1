@@ -4,7 +4,7 @@
 class Medicamento : Produto {
 
 public:
-	bool VendaSemReceita;
+	bool vendaSemReceita;
 
 	bool getVendaSemReceita();
 

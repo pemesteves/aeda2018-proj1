@@ -1,31 +1,42 @@
 #ifndef CLIENTE_H
 #define CLIENTE_H
 
-#include "Pessoa.h"
-#include "Venda.h"
-
-#include <string>
-#include <vector>
-
-using namespace std;
-
 class Cliente : Pessoa {
 
 public:
-	Cliente(string nome, string morada, double contribuinte);
+	vector<Venda*> historialCompras;
 
-	vector<Venda*> HistorialCompras;
+	string virtual_getNome();
 
-	string getNome();
+	string virtual_getMorada();
 
-	string getMorada();
-
-	double getNoContribuinte();
+	double virtual_getNoContribuinte();
 
 	vector<Venda*> getHistorialCompras();
 
-	void addCompra(Venda* compra);
+	void addCompras(Venda* compra);
 
+	Cliente(string nome, string morada, double contribuinte);
+
+	string virtual_getNome();
+
+	string virtual_getMorada();
+
+	double virtual_getNoContribuinte();
+
+	unsigned int numCompras();
+
+	string virtual_getNome();
+
+	string virtual_getMorada();
+
+	double virtual_getNoContribuinte();
+
+	string virtual_getNome();
+
+	string virtual_getMorada();
+
+	double virtual_getNoContribuinte();
 };
 
 #endif

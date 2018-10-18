@@ -4,10 +4,10 @@
 class Funcionario : Pessoa {
 
 private:
-	double Salario;
-	Farmacia* FarmaciaTrabalho;
-	string Cargo;
-	bool CartaConducao;
+	double salario;
+	Farmacia* farmaciaTrabalho;
+	string cargo;
+	bool cartaConducao;
 
 public:
 	string virtual_getNome();
@@ -16,25 +16,43 @@ public:
 
 	double virtual_getNoContribuinte();
 
-	void setNoContribuinte(double NoContribuinte);
+	void setNoContribuinte(double noContribuinte);
 
 	double getSalario();
 
-	void setSalario(double Salario);
+	void setSalario(double salario);
 
 	Farmacia* getFarmaciaTrabalho();
 
-	void setFarmaciaTrabalho(Farmacia* FarmaciaTrabalho);
+	void setFarmaciaTrabalho(Farmacia* farmaciaTrabalho);
 
 	string getCargo();
 
-	void setCargo(string Cargo);
+	void setCargo(string cargo);
 
 	bool getCartaConducao();
 
-	void setCartaConducao(bool CartaConducao);
+	void setCartaConducao(bool cartaConducao);
 
-	Funcionario(string Nome, string Morada, double NoContribuinte);
+	Funcionario(string nome, string morada, double noContribuinte);
+
+	string virtual_getNome();
+
+	string virtual_getMorada();
+
+	double virtual_getNoContribuinte();
+
+	string virtual_getNome();
+
+	string virtual_getMorada();
+
+	double virtual_getNoContribuinte();
+
+	string virtual_getNome();
+
+	string virtual_getMorada();
+
+	double virtual_getNoContribuinte();
 };
 
 #endif

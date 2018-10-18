@@ -4,30 +4,37 @@
 class Receita {
 
 private:
-	double Numero;
+	double numero;
 
-	string Medico;
-	vector<Produto*> Produtos;
-	double PrecoMax;
+	string medico;
+	vector<Produto*> produtos;
+	double precoMax;
+	Cliente* cliente;
 
 public:
 	double getNumero();
 
-	void setNumero(double Numero);
+	void setNumero(double numero);
 
 	vector<Cliente*> getCliente();
 
-	void setCliente(vector<Cliente*> Cliente);
+	void setCliente(vector<Cliente*> cliente);
 
 	string getMedico();
 
-	void setMedico(string Medico);
+	void setMedico(string medico);
 
 	vector<Produto*> getProdutos();
 
-	void setProdutos(vector<Produto*> Produtos);
+	void setProdutos(vector<Produto*> produtos);
 
 	double getPrecoMax();
+
+	Receita(double numero, string medico, Cliente* cliente, double preco);
+
+	Receita(double numero, string medico, Cliente* cliente, double preco);
+
+	Receita(double numero, string medico, Cliente* cliente, double preco);
 };
 
 #endif

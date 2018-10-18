@@ -4,7 +4,7 @@
 class PassivelReceita : Medicamento {
 
 public:
-	int TaxaDesconto;
+	int taxaDesconto;
 
 	int getTaxaDesconto();
 

@@ -4,23 +4,23 @@
 class Produto {
 
 private:
-	double Codigo;
-	string Nome;
-	int Preco;
-	string Descricao;
+	double codigo;
+	string nome;
+	float preco;
+	string descricao;
 
 public:
 	double getCodigo();
 
 	string getNome();
 
-	int getPreco();
+	float getPreco();
 
-	void changePreco(int Preco);
+	void changePreco(float Preco);
 
 	string getDescricao();
 
-	Produto(double cod, string nome, int preco, string descricao);
+	Produto(double cod, string nome, float preco, string descricao);
 };
 
 #endif

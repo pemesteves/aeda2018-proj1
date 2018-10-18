@@ -1,42 +1,66 @@
 #ifndef FARMACIA_H
 #define FARMACIA_H
 
-#include "Produto.h"
-#include "Venda.h"
-#include
 class Farmacia {
 
 private:
-	string Nome;
-	string Morada;
+	string nome;
+	string morada;
 
-	vector<Produto*> ProdutosVender;
-	vector<Venda*> Vendas;
-	bool EntregaDomicilios;
-	vector<Carrinha*> Carrinhas;
+	vector<Produto*> produtosVender;
+	vector<Venda*> vendas;
+	bool entregaDomicilios;
+	vector<Carrinha*> carrinhas;
+	Funcionario* gerente;
 
 public:
-	Nome getNome();
+	string getNome();
 
-	Morada getMorada();
+	string getMorada();
 
-	Gerente getGerente();
+	Funcionario* getGerente();
 
-	ProdutosVender getProdutosVender();
+	vector<Produto*> getProdutosVender();
 
-	void addProdutosVender(vector<Produto*> ProdutosVender);
+	void addProdutosVender(vector<Produto*> produtosVender);
 
-	Vendas getVendas();
+	vector<Venda*> getVendas();
 
-	void addVenda(vector<Venda*> Venda);
+	void addVenda(Venda* venda);
 
-	EntregaDomicilios getDomicilios();
+	bool getDomicilios();
 
-	Farmacia(string Nome, string Morada, bool EntregaDomicilios);
+	Farmacia(string nome, string morada, bool entregaDomicilios);
 
-	bool existeProduto(string NomeProduto);
+	bool existeProduto(string nomeProduto);
 
 	bool carrinhasDisponiveis();
+
+	void setGerente(Funcionario* gerente);
+
+	Carrinha* getCarrinha(bool disponibilidade);
+
+	void addCarrinha(Carrinha* carrinha);
+
+	unsigned int numCarrinhas();
+
+	unsigned int numProdutos();
+
+	unsigned int numVendas();
+
+	unsigned int numVendasTempo(Data d1, Data d2);
+
+	unsigned int numVendasDia(Data d);
+
+	int precoProduto(string nomeProd);
+
+	void setGerente(Funcionario* gerente);
+
+	void addCarrinha(Carrinha* carrinha);
+
+	void setGerente(Funcionario* gerente);
+
+	void addCarrinha(Carrinha* carrinha);
 };
 
 #endif

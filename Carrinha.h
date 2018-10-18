@@ -4,10 +4,10 @@
 class Carrinha {
 
 private:
-	string Matricula;
-	string Marca;
-	int Capacidade;
-	bool Disponibilidade;
+	string matricula;
+	string marca;
+	int capacidade;
+	bool disponibilidade;
 
 public:
 	string getMatricula();
@@ -18,7 +18,7 @@ public:
 
 	Carrinha(string matricula, string marca, string capacidade);
 
-	Disponibilidade getDisponibilidade();
+	bool getDisponibilidade();
 };
 
 #endif

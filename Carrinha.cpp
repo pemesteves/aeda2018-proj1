@@ -20,7 +20,7 @@ Carrinha::Carrinha(string matricula, string marca, string capacidade) {
 	throw "Not yet implemented";
 }
 
-Disponibilidade Carrinha::getDisponibilidade() {
+bool Carrinha::getDisponibilidade() {
 	// TODO - implement Carrinha::getDisponibilidade
 	throw "Not yet implemented";
 }

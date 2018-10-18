@@ -1,29 +1,81 @@
 #include "Cliente.h"
 
-Cliente::Cliente(string nome, string morada, double contribuinte) {
-	Nome=nome;
-	Morada = morada;
-	NoContribuinte = contribuinte;
+string Cliente::virtual_getNome() {
+	// TODO - implement Cliente::virtual getNome
+	throw "Not yet implemented";
 }
 
-
-string Cliente::getNome() {
-	return Nome;
+string Cliente::virtual_getMorada() {
+	// TODO - implement Cliente::virtual getMorada
+	throw "Not yet implemented";
 }
 
-string Cliente::getMorada() {
-	return Morada;
-}
-
-double Cliente::getNoContribuinte() {
-	return NoContribuinte;
+double Cliente::virtual_getNoContribuinte() {
+	// TODO - implement Cliente::virtual getNoContribuinte
+	throw "Not yet implemented";
 }
 
 vector<Venda*> Cliente::getHistorialCompras() {
-	return HistorialCompras;
+	// TODO - implement Cliente::getHistorialCompras
+	throw "Not yet implemented";
 }
 
-void Cliente::addCompra(Venda* compra) {
-	HistorialCompras.push_back(compra);
+void Cliente::addCompras(Venda* compra) {
+	// TODO - implement Cliente::addlCompras
+	throw "Not yet implemented";
 }
 
+Cliente::Cliente(string nome, string morada, double contribuinte) {
+	// TODO - implement Cliente::Cliente
+	throw "Not yet implemented";
+}
+
+string Cliente::virtual_getNome() {
+	// TODO - implement Cliente::virtual getNome
+	throw "Not yet implemented";
+}
+
+string Cliente::virtual_getMorada() {
+	// TODO - implement Cliente::virtual getMorada
+	throw "Not yet implemented";
+}
+
+double Cliente::virtual_getNoContribuinte() {
+	// TODO - implement Cliente::virtual getNoContribuinte
+	throw "Not yet implemented";
+}
+
+unsigned int Cliente::numCompras() {
+	// TODO - implement Cliente::numCompras
+	throw "Not yet implemented";
+}
+
+string Cliente::virtual_getNome() {
+	// TODO - implement Cliente::virtual getNome
+	throw "Not yet implemented";
+}
+
+string Cliente::virtual_getMorada() {
+	// TODO - implement Cliente::virtual getMorada
+	throw "Not yet implemented";
+}
+
+double Cliente::virtual_getNoContribuinte() {
+	// TODO - implement Cliente::virtual getNoContribuinte
+	throw "Not yet implemented";
+}
+
+string Cliente::virtual_getNome() {
+	// TODO - implement Cliente::virtual getNome
+	throw "Not yet implemented";
+}
+
+string Cliente::virtual_getMorada() {
+	// TODO - implement Cliente::virtual getMorada
+	throw "Not yet implemented";
+}
+
+double Cliente::virtual_getNoContribuinte() {
+	// TODO - implement Cliente::virtual getNoContribuinte
+	throw "Not yet implemented";
+}

@@ -4,18 +4,36 @@
 class Pessoa {
 
 private:
-	string Nome;
-	string Morada;
-	double NoContribuinte;
+	string nome;
+	string morada;
+	double noContribuinte;
 
 public:
-	virtual string getNome();
+	string virtual_getNome();
 
-	virtual string getMorada();
+	string virtual_getMorada();
 
-	virtual double getNoContribuinte();
+	double virtual_getNoContribuinte();
 
 	Pessoa(string nome, string morada, double cont);
+
+	string virtual_getNome();
+
+	string virtual_getMorada();
+
+	double virtual_getNoContribuinte();
+
+	string virtual_getNome();
+
+	string virtual_getMorada();
+
+	double virtual_getNoContribuinte();
+
+	string virtual_getNome();
+
+	string virtual_getMorada();
+
+	double virtual_getNoContribuinte();
 };
 
 #endif

@@ -1,26 +1,29 @@
 #ifndef CADEIAFARMACIAS_H
 #define CADEIAFARMACIAS_H
 
-#include "Farmacia.h"
-#include "Cliente.h"
-#include "Funcionario.h"
-
-#include <vector>;
-
-using namespace std;
-
 class CadeiaFarmacias {
 
 private:
-	vector<Farmacia*> Farmacias;
-	vector<Cliente*> Clientes;
-	vector<Funcionario*> Funcionarios;
+	vector<Farmacia*> farmacias;
+	vector<Cliente*> clientes;
+	vector<Funcionario*> funcionarios;
 
 public:
+	void Cadeia_Farmacias();
+
 	CadeiaFarmacias();
-	void addFarmacia(Farmacia *farmacia);
-	void addCliente(Cliente *cliente);
-	void addFuncionario(Funcionario *funcionario);
+
+	void addFarmacia(Farmacia* farmacia);
+
+	void addCliente(Cliente* cliente);
+
+	void addFuncionario(Funcionario* funcionario);
+
+	unsigned int numFarmacias();
+
+	unsigned int numClientes();
+
+	unsigned int numFuncionarios();
 };
 
 #endif

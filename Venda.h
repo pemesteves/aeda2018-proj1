@@ -4,17 +4,25 @@
 class Venda {
 
 private:
-	map<Produto*, vector<float>> ProdutosVendidos;
-	string Data;
-	string Hora;
-	double TotalVenda;
+	map<Produto*, vector<float>> produtosVendidos;
+	Data data;
+	Hora hora;
+	double totalVenda;
 
 public:
-	TotalVenda getTotalVenda();
+	double getTotalVenda();
 
 	Venda(string hora, string data);
 
 	void addProduto(Produto* prod, float quant, float iva, float comparticipacao);
+
+	unsigned int numProdutos();
+
+	Data getData();
+
+	Hora getHora();
+
+	int precoProduto(string nomeProd);
 };
 
 #endif
