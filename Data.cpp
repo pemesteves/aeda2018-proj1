@@ -1,38 +1,79 @@
 #include "Data.h"
 
 Data::Data() {
-	// TODO - implement Data::Data
-	throw "Not yet implemented";
+	time_t now = time(0);
+	tm ltm;
+	localtime_s(&ltm, &now);
+	ano = ltm.tm_year + 1900;
+	mes = ltm.tm_mon + 1;
+	dia = ltm.tm_mday;
 }
 
-unsigned short Data::getDia() {
-	return this->dia;
+Data::Data(unsigned short d, unsigned short m, unsigned short a) {
+	dia = d;
+	mes = m;
+	ano = a;
 }
 
-unsigned short Data::getMes() {
-	return this->mes;
+unsigned short Data::getDia() const {
+	return dia;
 }
 
-int Data::getAno() {
-	return this->ano;
+unsigned short Data::getMes() const {
+	return mes;
 }
 
-bool Data::operator>(Data data, Data data) {
-	// TODO - implement Data::operator>
-	throw "Not yet implemented";
+int Data::getAno() const {
+	return ano;
 }
 
-bool Data::operator==(Data data, Data data) {
-	// TODO - implement Data::operator==
-	throw "Not yet implemented";
+bool Data::operator >(const Data& data) const {
+	if (ano == data.getAno())
+		if (mes == data.getMes())
+			return (dia > data.getDia());
+		else return (mes > data.getMes());
+	else return (ano > data.getAno());
 }
 
-bool Data::operator>(Data data) {
-	// TODO - implement Data::operator>
-	throw "Not yet implemented";
+bool Data::operator ==(const Data& data) const {
+	return (ano == data.getAno() && mes == data.getMes() && dia == data.getDia());
 }
 
-bool Data::operator==(Data data) {
-	// TODO - implement Data::operator==
-	throw "Not yet implemented";
+Hora::Hora() {
+	time_t now = time(0);
+	tm ltm;
+	localtime_s(&ltm, &now);
+	hora = ltm.tm_hour;
+	minutos = ltm.tm_min;
+	segundos = ltm.tm_sec;
+}
+
+Hora::Hora(unsigned short h, unsigned short m, unsigned short s) {
+	hora = h;
+	minutos = m;
+	segundos = s;
+}
+
+unsigned short Hora::getHora() const {
+	return hora;
+}
+
+unsigned short Hora::getMinutos() const {
+	return minutos;
+}
+
+unsigned short Hora::getSegundos() const {
+	return segundos;
+}
+
+bool Hora::operator >(const Hora& h) const {
+	if (hora == h.getHora())
+		if (minutos == h.getMinutos())
+			return (segundos > h.getSegundos());
+		else return (minutos > h.getMinutos());
+	else return (hora > h.getHora());
+}
+
+bool Hora::operator ==(const Hora& h) const {
+	return (hora == h.getHora() && minutos == h.getMinutos() && segundos == h.getSegundos());
 }

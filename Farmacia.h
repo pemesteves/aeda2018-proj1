@@ -1,66 +1,48 @@
 #ifndef FARMACIA_H
 #define FARMACIA_H
 
+#include "Produto.h"
+#include "Vendas.h"
+#include "Pessoa.h"
+#include "Data.h"
+
+#include <vector>
+#include <string>
+#include <algorithm>
+
 class Farmacia {
-
 private:
-	string nome;
-	string morada;
-
-	vector<Produto*> produtosVender;
-	vector<Venda*> vendas;
-	bool entregaDomicilios;
-	vector<Carrinha*> carrinhas;
+	std::string nome;
+	std::string morada;
 	Funcionario* gerente;
+	std::vector<Produto*> produtosVender;
+	std::vector<Venda*> vendas;
+	//std::vector<Carrinha*> carrinhas;
+	//bool entregaDomicilios;
 
 public:
-	string getNome();
-
-	string getMorada();
-
-	Funcionario* getGerente();
-
-	vector<Produto*> getProdutosVender();
-
-	void addProdutosVender(vector<Produto*> produtosVender);
-
-	vector<Venda*> getVendas();
-
+	Farmacia(std::string nome, std::string morada);
+	std::string getNome() const;
+	std::string getMorada() const;
+	Funcionario* getGerente() const;
+	std::vector<Venda*> getVendas() const;
+	std::vector<Produto*> getProdutosVender() const;
+	unsigned int getNumProdutos() const;
+	unsigned int getNumVendas() const;
+	unsigned int getNumVendasTempo(Data d1, Data d2) const;
+	unsigned int getNumVendasDia(Data d) const;
+	int getPrecoProduto(std::string nomeProd) const;
+	void setGerente(Funcionario* gerente);	
+	void addProdutosVender(std::vector<Produto*> produtosVender);
 	void addVenda(Venda* venda);
+	bool existeProduto(std::string nomeProduto) const;
+	//bool getDomicilios();
+	//bool carrinhasDisponiveis();
+	//Carrinha* getCarrinha(bool disponibilidade);
+	//unsigned int numCarrinhas();
+	//void addCarrinha(Carrinha* carrinha);
+	//Farmacia(std::string nome, std::string morada, bool entregaDomicilios);
 
-	bool getDomicilios();
-
-	Farmacia(string nome, string morada, bool entregaDomicilios);
-
-	bool existeProduto(string nomeProduto);
-
-	bool carrinhasDisponiveis();
-
-	void setGerente(Funcionario* gerente);
-
-	Carrinha* getCarrinha(bool disponibilidade);
-
-	void addCarrinha(Carrinha* carrinha);
-
-	unsigned int numCarrinhas();
-
-	unsigned int numProdutos();
-
-	unsigned int numVendas();
-
-	unsigned int numVendasTempo(Data d1, Data d2);
-
-	unsigned int numVendasDia(Data d);
-
-	int precoProduto(string nomeProd);
-
-	void setGerente(Funcionario* gerente);
-
-	void addCarrinha(Carrinha* carrinha);
-
-	void setGerente(Funcionario* gerente);
-
-	void addCarrinha(Carrinha* carrinha);
 };
 
-#endif
+#endif 

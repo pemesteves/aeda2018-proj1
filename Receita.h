@@ -1,40 +1,31 @@
 #ifndef RECEITA_H
 #define RECEITA_H
 
-class Receita {
+#include "Produto.h"
+#include "Pessoa.h"
 
+#include <vector>
+#include <string>
+
+class Receita {
 private:
 	double numero;
-
-	string medico;
-	vector<Produto*> produtos;
+	std::string medico;
+	std::vector<Produto*> produtos;
 	double precoMax;
 	Cliente* cliente;
 
 public:
-	double getNumero();
-
+	Receita(double numero, std::string medico, Cliente* cliente, double preco);
+	double getNumero() const;
+	std::vector<Cliente*> getCliente() const;
+	std::string getMedico() const;
+	std::vector<Produto*> getProdutos() const;
+	double getPrecoMax() const;
 	void setNumero(double numero);
-
-	vector<Cliente*> getCliente();
-
-	void setCliente(vector<Cliente*> cliente);
-
-	string getMedico();
-
-	void setMedico(string medico);
-
-	vector<Produto*> getProdutos();
-
-	void setProdutos(vector<Produto*> produtos);
-
-	double getPrecoMax();
-
-	Receita(double numero, string medico, Cliente* cliente, double preco);
-
-	Receita(double numero, string medico, Cliente* cliente, double preco);
-
-	Receita(double numero, string medico, Cliente* cliente, double preco);
+	void setCliente(std::vector<Cliente*> cliente);
+	void setMedico(std::string medico);
+	void setProdutos(std::vector<Produto*> produtos);
 };
 
 #endif
