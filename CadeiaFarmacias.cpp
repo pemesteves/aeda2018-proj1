@@ -1,41 +1,39 @@
 #include "CadeiaFarmacias.h"
 
-void CadeiaFarmacias::Cadeia_Farmacias() {
-	// TODO - implement CadeiaFarmacias::Cadeia Farmacias
-	throw "Not yet implemented";
+CadeiaFarmacias::CadeiaFarmacias() {}
+
+unsigned int CadeiaFarmacias::getNumFarmacias() const {
+	return farmacias.size();
 }
 
-CadeiaFarmacias::CadeiaFarmacias() {
-	// TODO - implement CadeiaFarmacias::CadeiaFarmacias
-	throw "Not yet implemented";
+unsigned int CadeiaFarmacias::getNumClientes() const {
+	return clientes.size();
+}
+
+unsigned int CadeiaFarmacias::getNumFuncionarios() const {
+	return funcionarios.size();
+}
+
+std::vector<Farmacia *> CadeiaFarmacias::getFarmacias() const {
+	return farmacias;
+}
+
+std::vector <Cliente*>  CadeiaFarmacias::getClientes() const {
+	return clientes;
+}
+
+std::vector <Funcionario*> CadeiaFarmacias::getFuncionarios() const {
+	return funcionarios;
 }
 
 void CadeiaFarmacias::addFarmacia(Farmacia* farmacia) {
-	// TODO - implement CadeiaFarmacias::addFarmacia
-	throw "Not yet implemented";
+	farmacias.push_back(farmacia);
 }
 
 void CadeiaFarmacias::addCliente(Cliente* cliente) {
-	// TODO - implement CadeiaFarmacias::addCliente
-	throw "Not yet implemented";
+	clientes.push_back(cliente);
 }
 
 void CadeiaFarmacias::addFuncionario(Funcionario* funcionario) {
-	// TODO - implement CadeiaFarmacias::addFuncionario
-	throw "Not yet implemented";
-}
-
-unsigned int CadeiaFarmacias::numFarmacias() {
-	// TODO - implement CadeiaFarmacias::numFarmacias
-	throw "Not yet implemented";
-}
-
-unsigned int CadeiaFarmacias::numClientes() {
-	// TODO - implement CadeiaFarmacias::numClientes
-	throw "Not yet implemented";
-}
-
-unsigned int CadeiaFarmacias::numFuncionarios() {
-	// TODO - implement CadeiaFarmacias::numFuncionarios
-	throw "Not yet implemented";
+	funcionarios.push_back(funcionario);
 }
