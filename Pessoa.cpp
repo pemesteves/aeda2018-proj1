@@ -1,66 +1,81 @@
 #include "Pessoa.h"
+#include <iostream>
+#include <iomanip>
 
-string Pessoa::virtual_getNome() {
-	// TODO - implement Pessoa::virtual getNome
-	throw "Not yet implemented";
-}
+using namespace std;
 
-string Pessoa::virtual_getMorada() {
-	// TODO - implement Pessoa::virtual getMorada
-	throw "Not yet implemented";
-}
-
-double Pessoa::virtual_getNoContribuinte() {
-	// TODO - implement Pessoa::virtual getNoContribuinte
-	throw "Not yet implemented";
-}
-
+//Pessoa
 Pessoa::Pessoa(string nome, string morada, double cont) {
-	// TODO - implement Pessoa::Pessoa
-	throw "Not yet implemented";
+	this->nome = nome;
+	this->morada = morada;
+	this->noContribuinte = cont;
 }
 
-string Pessoa::virtual_getNome() {
-	// TODO - implement Pessoa::virtual getNome
-	throw "Not yet implemented";
+string Pessoa::getNome() const {
+	return nome;
 }
 
-string Pessoa::virtual_getMorada() {
-	// TODO - implement Pessoa::virtual getMorada
-	throw "Not yet implemented";
+string Pessoa::getMorada() const {
+	return morada;
 }
 
-double Pessoa::virtual_getNoContribuinte() {
-	// TODO - implement Pessoa::virtual getNoContribuinte
-	throw "Not yet implemented";
+double Pessoa::getNoContribuinte() const {
+	return noContribuinte;
+}
+/*
+class Funcionario : public Pessoa {
+private:
+	double salario;
+	Farmacia* farmaciaTrabalho;
+	std::string cargo;
+	bool cartaConducao;
+
+public:
+	Funcionario(std::string nome, std::string morada, double cont, double sal = 500, bool carta = false);
+	double getSalario() const;
+	std::string getCargo() const;
+	void changeSalario(double salario);
+	bool getCartaConducao();
+	void showInfo() const;
+};*/
+//Funcionario
+Funcionario::Funcionario(string nome, string morada, double cont, double sal = 500, bool carta = false): Pessoa(nome, morada, cont){
+	salario = sal;
+	cargo = "Funcionario";
+	cartaConducao = false;
+	farmaciaTrabalho = NULL;
 }
 
-string Pessoa::virtual_getNome() {
-	// TODO - implement Pessoa::virtual getNome
-	throw "Not yet implemented";
+double Funcionario::getSalario() const{
+	return salario;
 }
 
-string Pessoa::virtual_getMorada() {
-	// TODO - implement Pessoa::virtual getMorada
-	throw "Not yet implemented";
+string Funcionario::getCargo() const{
+	return cargo;
 }
 
-double Pessoa::virtual_getNoContribuinte() {
-	// TODO - implement Pessoa::virtual getNoContribuinte
-	throw "Not yet implemented";
+bool Funcionario::getCartaConducao() const{
+	return cartaConducao;
 }
 
-string Pessoa::virtual_getNome() {
-	// TODO - implement Pessoa::virtual getNome
-	throw "Not yet implemented";
+void Funcionario::changeSalario(double salario){
+	this->salario = salario;
 }
 
-string Pessoa::virtual_getMorada() {
-	// TODO - implement Pessoa::virtual getMorada
-	throw "Not yet implemented";
+void Funcionario::setFarmacia(Farmacia* f){
+	this->farmaciaTrabalho = f;
 }
 
-double Pessoa::virtual_getNoContribuinte() {
-	// TODO - implement Pessoa::virtual getNoContribuinte
-	throw "Not yet implemented";
+void Funcionario::showInfo() const{
+	cout << "Funcionario" << endl << setw(10);
+	cout << "Nome: " << nome << endl;
+	cout << "Morada: " << morada << endl;
+	cout << "Contribuinte: " << noContribuinte << endl;
+	cout << "Salario: " << salario << endl;
+	if (farmaciaTrabalho != NULL)
+		cout << cargo << "na farmacia " << farmaciaTrabalho->getNome() << endl;
+
 }
+
+
+

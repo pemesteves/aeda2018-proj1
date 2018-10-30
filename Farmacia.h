@@ -2,7 +2,7 @@
 #define FARMACIA_H
 
 #include "Produto.h"
-#include "Vendas.h"
+#include "Venda.h"
 #include "Pessoa.h"
 #include "Data.h"
 
@@ -19,7 +19,6 @@ private:
 	std::vector<Venda*> vendas;
 	//std::vector<Carrinha*> carrinhas;
 	//bool entregaDomicilios;
-
 public:
 	Farmacia(std::string nome, std::string morada);
 	std::string getNome() const;

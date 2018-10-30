@@ -2,9 +2,13 @@
 #include "ide_listener.h"
 #include "xml_listener.h"
 #include "cute_runner.h"
+#include "Pessoa.h"
 
 void thisIsATest() {
-	ASSERTM("start writing tests", false);	
+	Funcionario f = new Funcionario("Pedro", "rua x", 257441883);
+	Farmacia* f1 = new Farmacia("Costa", "Candido dos Reis");
+	f.setFarmacia(f1);
+	f.showInfo();
 }
 
 bool runAllTests(int argc, char const *argv[]) {

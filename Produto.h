@@ -9,7 +9,6 @@ private:
 	std::string nome;
 	float preco;
 	std::string descricao;
-
 public:
 	Produto(double cod, std::string nome, float preco, std::string descricao);
 	double getCodigo() const;
