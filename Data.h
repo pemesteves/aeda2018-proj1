@@ -12,7 +12,7 @@ public:
 	unsigned short getDia() const;
 	unsigned short getMes() const;
 	int getAno() const;
-	bool operator>(const Data &data) const;
+	bool operator< (const Data &data) const;
 	bool operator==(const Data &data) const;
 
 };
@@ -28,7 +28,7 @@ public:
 	unsigned short getHora() const;
 	unsigned short getMinutos() const;
 	unsigned short getSegundos() const;
-	bool operator >(const Hora &h) const;
+	bool operator< (const Hora &h) const;
 	bool operator ==(const Hora &h) const;
 };
 

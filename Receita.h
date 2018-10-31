@@ -23,6 +23,7 @@ public:
 	std::vector<Produto*> getProdutos() const;
 	double getPrecoMax(std::string nomeProd) const;
 	void addProduto(Produto* produto, double quant);
+	void sortProdutos();
 };
 
 #endif

@@ -23,12 +23,14 @@ int Data::getAno() const {
 	return ano;
 }
 
-bool Data::operator >(const Data& data) const {
-	if (ano == data.getAno())
+bool Data::operator< (const Data& data) const {
+	if (ano == data.getAno()){
 		if (mes == data.getMes())
-			return (dia > data.getDia());
-		else return (mes > data.getMes());
-	else return (ano > data.getAno());
+			return (dia < data.getDia());
+		return (mes < data.getMes());
+	}
+
+	return (ano < data.getAno());
 }
 
 bool Data::operator ==(const Data& data) const {
@@ -57,12 +59,13 @@ unsigned short Hora::getSegundos() const {
 	return segundos;
 }
 
-bool Hora::operator >(const Hora& h) const {
-	if (hora == h.getHora())
+bool Hora::operator< (const Hora& h) const {
+	if (hora == h.getHora()){
 		if (minutos == h.getMinutos())
 			return (segundos > h.getSegundos());
-		else return (minutos > h.getMinutos());
-	else return (hora > h.getHora());
+		return (minutos > h.getMinutos());
+	}
+	return (hora > h.getHora());
 }
 
 bool Hora::operator ==(const Hora& h) const {

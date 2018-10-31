@@ -1,6 +1,11 @@
 #include "Receita.h"
 using namespace std;
 
+template<class T>
+bool funcSort(T* a, T* b){
+	return (*a)<(*b);
+}
+
 double Receita::getNumero() const {
 	return numero;
 }
@@ -45,6 +50,10 @@ void Receita::addProduto(Produto* produto, double quant) {
 		pair<Produto*, double> p = make_pair(produto, quant);
 		produtos.insert(p);
 	}
+}
+
+void Receita::sortProdutos(){
+	sort(produtos.begin(), produtos.end(), funcSort<Produto>);
 }
 
 

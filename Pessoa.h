@@ -28,13 +28,14 @@ private:
 	bool cartaConducao;
 
 public:
-	Funcionario(std::string nome, std::string morada, double cont, double sal = 500, bool carta = false);
+	Funcionario(std::string nome, std::string morada, double cont, double sal, bool carta);
 	void setFarmacia(Farmacia* f);
 	double getSalario() const;
 	std::string getCargo() const;
 	void changeSalario(double salario);
 	bool getCartaConducao() const;
 	void showInfo() const;
+	bool operator< (const Funcionario &f1) const;
 };
 
 class Cliente : public Pessoa {
@@ -46,7 +47,7 @@ public:
 	unsigned int getNumCompras() const;
 	void addCompra(Venda* compra);
 	void showInfo() const;
-	bool operator< (const Cliente &c1);
+	bool operator< (const Cliente &c1) const;
 };
 
 class ClienteInexistente{

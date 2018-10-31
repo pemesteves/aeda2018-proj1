@@ -53,3 +53,11 @@ void PassivelReceita::setTaxaDesconto(float taxaDesconto) {
 	this->taxaDesconto = taxaDesconto;
 }
 
+bool Produto::operator< (const Produto &p1) const{
+	if (nome < p1.getNome())
+		return true;
+	return false;
+}
+
+
+

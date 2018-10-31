@@ -23,10 +23,7 @@ public:
 	Hora getHora() const;
 	float getPrecoProduto(std::string nomeProd) const;
 	void addProduto(Produto* prod, float quant, float iva, float comparticipacao);
-
+	bool operator< (const Venda &v1);
 };
-/*
-class Pessoa;
-class Funcionario;
-*/
+
 #endif

@@ -46,4 +46,12 @@ void Venda::addProduto(Produto* prod, float quant, float iva, float comparticipa
 	}
 }
 
+bool Venda::operator< (const Venda &v1){
+	if (data < v1.getData())
+		return true;
+	if (data== v1.getData() && hora < v1.getHora())
+		return true;
+	return false;
+}
+
 

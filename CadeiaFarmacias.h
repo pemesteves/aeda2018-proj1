@@ -23,11 +23,13 @@ public:
 	std::vector <Funcionario*> getFuncionarios() const;
 	void addFarmacia(Farmacia* farmacia);
 	Farmacia* removeFarmacia(const std::string &nomeF);
+	void sortFarmacias();
 	void addCliente(Cliente* cliente);
 	Cliente* removeCliente(const std::string &nomeC);
 	void sortClientes();
 	void addFuncionario(Funcionario* funcionario);
 	Funcionario* removeFuncionario(const std::string &nomeF);
+	void sortFuncionarios();
 };
 
 #endif

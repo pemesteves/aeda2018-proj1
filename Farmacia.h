@@ -38,6 +38,7 @@ public:
 	void addProdutosVender(std::vector<Produto*> produtosVender_new);
 	bool addProdutoVender(Produto* produtoVender);
 	void addVenda(Venda* venda);
+	void sortVendas();
 	bool existeProduto(std::string nomeProduto) const;
 	bool setQuantidade(std::string nomeProd, int quant);
 	//bool getDomicilios();
@@ -46,7 +47,7 @@ public:
 	//unsigned int numCarrinhas();
 	//void addCarrinha(Carrinha* carrinha);
 	//Farmacia(std::string nome, std::string morada, bool entregaDomicilios);
-
+	bool operator< (const Farmacia &f1) const;
 };
 
 class FarmaciaInexistente{

@@ -2,6 +2,11 @@
 
 using namespace std;
 
+template<class T>
+bool funcSort(T* a, T* b){
+	return (*a)<(*b);
+}
+
 CadeiaFarmacias::CadeiaFarmacias() {}
 
 unsigned int CadeiaFarmacias::getNumFarmacias() const {
@@ -43,6 +48,10 @@ Farmacia* CadeiaFarmacias::removeFarmacia(const string &nomeF){
 	throw FarmaciaInexistente(nomeF);
 }
 
+void CadeiaFarmacias::sortFarmacias(){
+	sort(farmacias.begin(), farmacias.end(), funcSort<Farmacia>);
+}
+
 void CadeiaFarmacias::addCliente(Cliente* cliente) {
 	clientes.push_back(cliente);
 }
@@ -58,13 +67,8 @@ Cliente* CadeiaFarmacias::removeCliente(const std::string &nomeC){
 	throw ClienteInexistente(nomeC);
 }
 
-template<class T>
-bool f(T* a, T* b){
-	return (*a)<(*b);
-}
-
 void CadeiaFarmacias::sortClientes(){
-	sort(clientes.begin(), clientes.end(), f<Cliente>);
+	sort(clientes.begin(), clientes.end(), funcSort<Cliente>);
 }
 
 void CadeiaFarmacias::addFuncionario(Funcionario* funcionario) {
@@ -81,4 +85,10 @@ Funcionario* CadeiaFarmacias::removeFuncionario(const std::string &nomeF){
 	}
 	throw FuncionarioInexistente(nomeF);
 }
+
+void CadeiaFarmacias::sortFuncionarios(){
+	sort(funcionarios.begin(), funcionarios.end(), funcSort<Funcionario>);
+}
+
+
 

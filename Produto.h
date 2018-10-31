@@ -16,13 +16,13 @@ public:
 	float getPreco() const;
 	std::string getDescricao() const;
 	void changePreco(float preco);
+	bool operator< (const Produto &p1) const;
 };
 
 
 class Medicamento : public Produto {
 private:
 	bool vendaSemReceita;
-
 public:
 	Medicamento(bool receita, double cod, std::string nome, int preco, std::string desc);
 	bool getVendaSemReceita() const;
@@ -35,7 +35,7 @@ private:
 	float taxaDesconto;
 
 public:
-	PassivelReceita(int desconto, double cod, std::string nome, int preco, std::string desc, bool semRec = false);
+	PassivelReceita(int desconto, double cod, std::string nome, int preco, std::string desc, bool semRec);
 	float getTaxaDesconto() const;
 	void setTaxaDesconto(float taxaDesconto);
 };

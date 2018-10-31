@@ -2,6 +2,11 @@
 
 using namespace std;
 
+template<class T>
+bool funcSort<Venda>(T* a, T* b){
+	return (*a)<(*b);
+}
+
 Farmacia::Farmacia(string nome, string morada) {
 	this->nome = nome;
 	this->morada = morada;
@@ -95,7 +100,7 @@ void Farmacia::setGerente(Funcionario* gerente) {
 }
 
 void Farmacia::addProdutosVender(vector<Produto*> produtosVender_new) {
-	for (int i = 0; i < produtosVender_new.size(); i++) {
+	for (size_t i = 0; i < produtosVender_new.size(); i++) {
 		Produto* p = produtosVender_new.at(i);
 		if (!existeProduto(p->getNome())) 
 			produtosVender.insert(pair<Produto*, int>(p, 0));
@@ -121,7 +126,11 @@ bool Farmacia::addProdutoVender(Produto* produtoVender) {
 		produtosVender.insert(pair<Produto*, int>(produtoVender, 0));
 		return true;
 	}
-	else return false;
+	return false;
+}
+
+void Farmacia::sortVendas(){
+	sort(vendas.begin(), vendas.end(), funcSort<Venda>);
 }
 
 bool Farmacia::setQuantidade(std::string nomeProd, int quant) {
@@ -131,7 +140,17 @@ bool Farmacia::setQuantidade(std::string nomeProd, int quant) {
 			it->second = quant;
 			return true;
 		}
-		return false;
 	}
+	return false;
+}
+
+bool Farmacia::operator< (const Farmacia &f1) const{
+	if (nome < f1.getNome())
+		return true;
+	if (nome == f1.getNome() && produtosVender.size() > f1.getNumProdutos())
+		return true;
+	if (nome == f1.getNome() && produtosVender.size() == f1.getNumProdutos() && vendas.size() < f1.getNumVendas())
+		return true;
+	return false;
 }
 

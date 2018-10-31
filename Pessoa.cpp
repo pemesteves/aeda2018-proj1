@@ -25,10 +25,10 @@ double Pessoa::getNoContribuinte() const {
 
 //Funcionario
 Funcionario::Funcionario(string nome, string morada, double cont, double sal = 500, bool carta = false): Pessoa(nome, morada, cont){
-	salario = sal;
-	cargo = "Funcionario";
-	cartaConducao = false;
-	farmaciaTrabalho = NULL;
+	this->salario = sal;
+	this->cargo = "Funcionario";
+	this->cartaConducao = carta;
+	this->farmaciaTrabalho = NULL;
 }
 
 double Funcionario::getSalario() const{
@@ -61,6 +61,16 @@ void Funcionario::showInfo() const{
 		cout << cargo << "na farmacia " << farmaciaTrabalho->getNome() << endl;
 }
 
+bool Funcionario::operator< (const Funcionario &f1) const{
+	if(nome < f1.getNome())
+		return true;
+	if (nome == f1.getNome() && salario > f1.getSalario())
+		return true;
+	if (nome == f1.getNome() && salario == f1.getSalario() && noContribuinte < f1.getNoContribuinte())
+		return true;
+	return false;
+}
+
 //Cliente
 Cliente::Cliente(string nome, string morada, double contribuinte): Pessoa(nome, morada, contribuinte) {
 }
@@ -84,7 +94,7 @@ void Cliente::showInfo() const {
 	cout << "Contribuinte: " << noContribuinte << endl;
 }
 
-bool Cliente::operator< (const Cliente &c1){
+bool Cliente::operator< (const Cliente &c1) const{
 	if (nome < c1.getNome())
 		return true;
 	if (nome == c1.getNome() && historialCompras.size() > c1.getHistorialCompras().size())
