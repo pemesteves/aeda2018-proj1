@@ -1,47 +1,66 @@
 #include "Produto.h"
 
+using namespace std;
+
 double Produto::getCodigo() const{
-	// TODO - implement Produto::getCodigo
-	throw "Not yet implemented";
+	return codigo;
 }
 
 string Produto::getNome() const{
-	// TODO - implement Produto::getNome
-	throw "Not yet implemented";
+	return nome;
 }
 
 float Produto::getPreco() const{
-	// TODO - implement Produto::getPreco
-	throw "Not yet implemented";
+	return preco;
 }
 
-void Produto::changePreco(float Preco) {
-	// TODO - implement Produto::changePreco
-	throw "Not yet implemented";
+void Produto::changePreco(float preco) {
+	this->preco = preco;
 }
 
 string Produto::getDescricao() const{
-	// TODO - implement Produto::getDescricao
-	throw "Not yet implemented";
+	return descricao;
 }
 
 Produto::Produto(double cod, string nome, float preco, string descricao) {
-	// TODO - implement Produto::Produto
-	throw "Not yet implemented";
+	this->codigo = cod;
+	this->nome = nome;
+	this->preco = preco;
+	this->descricao = descricao;
 }
 
 bool Medicamento::getVendaSemReceita() const {
-	// TODO - implement Medicamento::getVendaSemReceita
-	throw "Not yet implemented";
+	return vendaSemReceita;
 }
 
-void Medicamento::setVendaSemReceita(bool VendaSemReceita) {
-	// TODO - implement Medicamento::setVendaSemReceita
-	throw "Not yet implemented";
+void Medicamento::setVendaSemReceita(bool vendaSemReceita) {
+	this->vendaSemReceita = vendaSemReceita;
 }
 
-Medicamento::Medicamento(bool receita, double cod, string nome, int preco, string desc) {
-	// TODO - implement Medicamento::Medicamento
-	throw "Not yet implemented";
+Medicamento::Medicamento(bool receita, double cod, string nome, int preco, string desc): Produto(cod, nome, preco, desc) {
+	this->vendaSemReceita = receita;
+}
+
+/*class PassivelReceita : public Medicamento {
+private:
+	float taxaDesconto;
+	bool semReceita;
+
+public:
+	PassivelReceita(int desconto, double cod, std::string nome, int preco, std::string desc);
+	float getTaxaDesconto() const;
+	void setTaxaDesconto(float TaxaDesconto);
+};
+ */
+PassivelReceita::PassivelReceita(int desconto = 0, double cod, string nome, int preco, string desc, bool semRec = false): Medicamento(semRec, cod, nome, preco, desc) {
+	this->taxaDesconto = desconto;
+}
+
+float PassivelReceita::getTaxaDesconto() const{
+	return taxaDesconto;
+}
+
+void PassivelReceita::setTaxaDesconto(float taxaDesconto){
+		this->taxaDesconto = taxaDesconto;
 }
 

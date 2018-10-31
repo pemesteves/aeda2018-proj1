@@ -1,19 +1,19 @@
 #include "Data.h"
+#include <ctime>
+
+using namespace std;
 
 Data::Data() {
-	time_t now = time(0);
-	tm ltm;
-	localtime_s(&ltm, &now);
-	ano = ltm.tm_year + 1900;
-	mes = ltm.tm_mon + 1;
-	dia = ltm.tm_mday;
+	time_t now;
+	struct tm * timeinfo;
+	time(&now);
+	timeinfo = localtime(&now);
+
+	dia = timeinfo->tm_mday;
+	mes = timeinfo->tm_mon+1;
+	ano = timeinfo->tm_year+1900;
 }
 
-Data::Data(unsigned short d, unsigned short m, unsigned short a) {
-	dia = d;
-	mes = m;
-	ano = a;
-}
 
 unsigned short Data::getDia() const {
 	return dia;
@@ -40,18 +40,14 @@ bool Data::operator ==(const Data& data) const {
 }
 
 Hora::Hora() {
-	time_t now = time(0);
-	tm ltm;
-	localtime_s(&ltm, &now);
-	hora = ltm.tm_hour;
-	minutos = ltm.tm_min;
-	segundos = ltm.tm_sec;
-}
+	time_t now;
+	struct tm * timeinfo;
+	time(&now);
+	timeinfo = localtime(&now);
 
-Hora::Hora(unsigned short h, unsigned short m, unsigned short s) {
-	hora = h;
-	minutos = m;
-	segundos = s;
+	hora = timeinfo->tm_hour;
+	minutos = timeinfo->tm_min;
+	segundos = timeinfo->tm_sec;
 }
 
 unsigned short Hora::getHora() const {
