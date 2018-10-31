@@ -22,22 +22,7 @@ string Pessoa::getMorada() const {
 double Pessoa::getNoContribuinte() const {
 	return noContribuinte;
 }
-/*
-class Funcionario : public Pessoa {
-private:
-	double salario;
-	Farmacia* farmaciaTrabalho;
-	std::string cargo;
-	bool cartaConducao;
 
-public:
-	Funcionario(std::string nome, std::string morada, double cont, double sal = 500, bool carta = false);
-	double getSalario() const;
-	std::string getCargo() const;
-	void changeSalario(double salario);
-	bool getCartaConducao();
-	void showInfo() const;
-};*/
 //Funcionario
 Funcionario::Funcionario(string nome, string morada, double cont, double sal = 500, bool carta = false): Pessoa(nome, morada, cont){
 	salario = sal;
@@ -74,8 +59,27 @@ void Funcionario::showInfo() const{
 	cout << "Salario: " << salario << endl;
 	if (farmaciaTrabalho != NULL)
 		cout << cargo << "na farmacia " << farmaciaTrabalho->getNome() << endl;
-
 }
 
+//Cliente
+Cliente::Cliente(string nome, string morada, double contribuinte): Pessoa(nome, morada, contribuinte) {
+}
 
+vector<Venda*> Cliente::getHistorialCompras() const {
+	return historialCompras;
+}
 
+unsigned int Cliente::getNumCompras() const {
+	return historialCompras.size();
+}
+
+void Cliente::addCompra(Venda* compra) {
+	historialCompras.push_back(compra);
+}
+
+void Cliente::showInfo() const {
+	cout << "Cliente" << endl << setw(10);
+	cout << "Nome: " << nome << endl;
+	cout << "Morada: " << morada << endl;
+	cout << "Contribuinte: " << noContribuinte << endl;
+}

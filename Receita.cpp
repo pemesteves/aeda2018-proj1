@@ -23,7 +23,7 @@ vector<Produto*> Receita::getProdutos() const {
 }
 
 double Receita::getPrecoMax(string nomeProd) const {
-	map<Produto*, double>::iterator it;
+	map<Produto*, double>::const_iterator it;
 	for (it = produtos.begin(); it != produtos.end(); it++) {
 		if (it->first->getNome() == nomeProd) //Compara o nome de cada produto com o nome recebido como argumento
 			return it->second;

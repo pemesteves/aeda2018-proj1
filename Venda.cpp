@@ -25,7 +25,7 @@ Hora Venda::getHora() const{
 }
 
 float Venda::getPrecoProduto(string nomeProd) const{
-	map<Produto *, vector<float>>::iterator it = produtosVendidos.begin();
+	map<Produto *, vector<float>>::const_iterator it = produtosVendidos.begin();
 	for (; it != produtosVendidos.end(); it++){
 		if ((*it).first->getNome() == nomeProd)
 			return (*it).first->getPreco();
