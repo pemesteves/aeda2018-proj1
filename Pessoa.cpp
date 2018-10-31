@@ -22,7 +22,22 @@ string Pessoa::getMorada() const {
 double Pessoa::getNoContribuinte() const {
 	return noContribuinte;
 }
+/*
+class Funcionario : public Pessoa {
+private:
+	double salario;
+	Farmacia* farmaciaTrabalho;
+	std::string cargo;
+	bool cartaConducao;
 
+public:
+	Funcionario(std::string nome, std::string morada, double cont, double sal = 500, bool carta = false);
+	double getSalario() const;
+	std::string getCargo() const;
+	void changeSalario(double salario);
+	bool getCartaConducao();
+	void showInfo() const;
+};*/
 //Funcionario
 Funcionario::Funcionario(string nome, string morada, double cont, double sal = 500, bool carta = false): Pessoa(nome, morada, cont){
 	salario = sal;
@@ -58,7 +73,7 @@ void Funcionario::showInfo() const{
 	cout << "Contribuinte: " << noContribuinte << endl;
 	cout << "Salario: " << salario << endl;
 	if (farmaciaTrabalho != NULL)
-		cout << cargo << " na farmacia " << farmaciaTrabalho->getNome() << endl;
+		cout << cargo << "na farmacia " << farmaciaTrabalho->getNome() << endl;
 
 }
 

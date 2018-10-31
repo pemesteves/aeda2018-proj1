@@ -11,8 +11,8 @@
 class Receita {
 private:
 	double numero;
-	std::string medico; //TODO criar classe médico para a receita
-	std::map<Produto*,double>  produtos;
+	std::string medico; //TODO criar classe medico para a receita
+	std::map<Produto*, double>  produtos;
 	Cliente* cliente;
 
 public:

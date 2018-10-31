@@ -40,11 +40,11 @@ public:
 	void setTaxaDesconto(float taxaDesconto);
 };
 
-class ProdutoInexistente{
+class ProdutoInexistente {
 	std::string nome;
 public:
-	ProdutoInexistente(std::string nomeProd){nome = nomeProd;}
-	std::string getNome() const{return nome;}
+	ProdutoInexistente(std::string nomeProd) { nome = nomeProd; }
+	std::string getNome() const { return nome; }
 };
 
 

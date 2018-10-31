@@ -1,6 +1,8 @@
 #ifndef DATA_H
 #define DATA_H
 
+#include <ctime>
+
 class Data {
 private:
 	unsigned short dia;
@@ -9,6 +11,7 @@ private:
 
 public:
 	Data();
+	Data(unsigned short d, unsigned short m, unsigned short a);
 	unsigned short getDia() const;
 	unsigned short getMes() const;
 	int getAno() const;
@@ -25,6 +28,7 @@ private:
 
 public:
 	Hora();
+	Hora(unsigned short h, unsigned short m, unsigned short s);
 	unsigned short getHora() const;
 	unsigned short getMinutos() const;
 	unsigned short getSegundos() const;

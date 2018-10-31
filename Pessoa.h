@@ -7,6 +7,8 @@
 #include <string>
 #include <vector>
 
+class Farmacia;
+
 class Pessoa {
 protected:
 	std::string nome;
