@@ -5,6 +5,7 @@ using namespace std;
 Farmacia::Farmacia(string nome, string morada) {
 	this->nome = nome;
 	this->morada = morada;
+	this->gerente = NULL;
 }
 
 string Farmacia::getNome() const {

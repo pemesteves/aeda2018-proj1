@@ -25,5 +25,8 @@ public:
 	void addProduto(Produto* prod, float quant, float iva, float comparticipacao);
 
 };
-
+/*
+class Pessoa;
+class Funcionario;
+*/
 #endif

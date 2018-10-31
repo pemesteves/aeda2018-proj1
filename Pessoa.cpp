@@ -83,3 +83,16 @@ void Cliente::showInfo() const {
 	cout << "Morada: " << morada << endl;
 	cout << "Contribuinte: " << noContribuinte << endl;
 }
+
+bool Cliente::operator< (const Cliente &c1){
+	if (nome < c1.getNome())
+		return true;
+	if (nome == c1.getNome() && historialCompras.size() > c1.getHistorialCompras().size())
+		return true;
+	if (nome == c1.getNome() && historialCompras.size() == c1.getHistorialCompras().size() && noContribuinte < c1.getNoContribuinte())
+		return true;
+	return false;
+}
+
+
+

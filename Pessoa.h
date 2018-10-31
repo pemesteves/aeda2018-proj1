@@ -7,8 +7,6 @@
 #include <string>
 #include <vector>
 
-class Farmacia;
-
 class Pessoa {
 protected:
 	std::string nome;
@@ -48,6 +46,21 @@ public:
 	unsigned int getNumCompras() const;
 	void addCompra(Venda* compra);
 	void showInfo() const;
+	bool operator< (const Cliente &c1);
+};
+
+class ClienteInexistente{
+	std::string nome;
+public:
+	ClienteInexistente(std::string nomeC){nome = nomeC;}
+	std::string getNome() const {return nome;}
+};
+
+class FuncionarioInexistente{
+	std::string nome;
+public:
+	FuncionarioInexistente(std::string nomeF){nome = nomeF;}
+	std::string getNome() const {return nome;}
 };
 
 #endif

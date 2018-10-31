@@ -3,15 +3,13 @@
 
 #include "Produto.h"
 #include "Venda.h"
-#include "Pessoa.h"
 #include "Data.h"
+#include "Pessoa.h"
 
 #include <vector>
 #include <string>
 #include <algorithm>
 #include <map>
-
-class Pessoa;
 
 class Farmacia {
 private:
@@ -49,6 +47,13 @@ public:
 	//void addCarrinha(Carrinha* carrinha);
 	//Farmacia(std::string nome, std::string morada, bool entregaDomicilios);
 
+};
+
+class FarmaciaInexistente{
+	std::string nome;
+public:
+	FarmaciaInexistente(std::string nomeF){nome = nomeF;}
+	std::string getNome() const{return nome;}
 };
 
 #endif 
