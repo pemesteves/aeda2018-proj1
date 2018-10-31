@@ -41,17 +41,6 @@ Medicamento::Medicamento(bool receita, double cod, string nome, int preco, strin
 	this->vendaSemReceita = receita;
 }
 
-/*class PassivelReceita : public Medicamento {
-private:
-	float taxaDesconto;
-	bool semReceita;
-
-public:
-	PassivelReceita(int desconto, double cod, std::string nome, int preco, std::string desc);
-	float getTaxaDesconto() const;
-	void setTaxaDesconto(float TaxaDesconto);
-};
- */
 PassivelReceita::PassivelReceita(int desconto = 0, double cod, string nome, int preco, string desc, bool semRec = false): Medicamento(semRec, cod, nome, preco, desc) {
 	this->taxaDesconto = desconto;
 }

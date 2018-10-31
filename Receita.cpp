@@ -1,61 +1,50 @@
 #include "Receita.h"
+using namespace std;
 
-double Receita::getNumero() {
-	// TODO - implement Receita::getNumero
-	throw "Not yet implemented";
+double Receita::getNumero() const{
+	return numero;
 }
 
-void Receita::setNumero(double numero) {
-	// TODO - implement Receita::setNumero
-	throw "Not yet implemented";
+Cliente* Receita::getCliente() const{
+	return cliente;
 }
 
-vector<Cliente*> Receita::getCliente() {
-	// TODO - implement Receita::getCliente
-	throw "Not yet implemented";
+string Receita::getMedico() const{
+	return medico;
 }
 
-void Receita::setCliente(vector<Cliente*> cliente) {
-	// TODO - implement Receita::setCliente
-	throw "Not yet implemented";
+vector<Produto*> Receita::getProdutos() const{
+	vector<Produto*> p;
+	map<Produto*, double>::iterator it;
+	for(it = produtos.begin(); it != produtos.end(); it++){
+		p.push_back(it->first);
+	}
+	return p;
 }
 
-string Receita::getMedico() {
-	// TODO - implement Receita::getMedico
-	throw "Not yet implemented";
+double Receita::getPrecoMax(string nomeProd) const{
+	map<Produto*, double>::iterator it;
+	for(it = produtos.begin(); it != produtos.end(); it++){
+		if (it->first->getNome() == nomeProd) //Compara o nome de cada produto com o nome recebido como argumento
+			return it->second;
+	}
+	throw ProdutoInexistente(nomeProd);
 }
 
-void Receita::setMedico(string medico) {
-	// TODO - implement Receita::setMedico
-	throw "Not yet implemented";
+Receita::Receita(double numero, string medico, Cliente* cliente) {
+	this->numero = numero;
+	this->medico = medico;
+	this->cliente = cliente;
 }
 
-vector<Produto*> Receita::getProdutos() {
-	// TODO - implement Receita::getProdutos
-	throw "Not yet implemented";
+void Receita::addProduto(Produto* produto, double quant){
+	map<Produto*, double>::iterator it;
+	if ((it = produtos.find(produto)) != produtos.end())
+		it->second += quant;
+	else{
+		pair<Produto*, double> p = make_pair(produto, quant);
+		produtos.insert(p);
+	}
 }
 
-void Receita::setProdutos(vector<Produto*> produtos) {
-	// TODO - implement Receita::setProdutos
-	throw "Not yet implemented";
-}
 
-double Receita::getPrecoMax() {
-	// TODO - implement Receita::getPrecoMax
-	throw "Not yet implemented";
-}
-
-Receita::Receita(double numero, string medico, Cliente* cliente, double preco) {
-	// TODO - implement Receita::Receita
-	throw "Not yet implemented";
-}
-
-Receita::Receita(double numero, string medico, Cliente* cliente, double preco) {
-	// TODO - implement Receita::Receita
-	throw "Not yet implemented";
-}
-
-Receita::Receita(double numero, string medico, Cliente* cliente, double preco) {
-	// TODO - implement Receita::Receita
-	throw "Not yet implemented";
-}

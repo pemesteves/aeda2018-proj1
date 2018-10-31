@@ -6,26 +6,23 @@
 
 #include <vector>
 #include <string>
+#include <map>
 
 class Receita {
 private:
 	double numero;
-	std::string medico;
-	std::vector<Produto*> produtos;
-	double precoMax;
+	std::string medico; //TODO criar classe médico para a receita
+	std::map<Produto*,double>  produtos;
 	Cliente* cliente;
 
 public:
-	Receita(double numero, std::string medico, Cliente* cliente, double preco);
+	Receita(double numero, std::string medico, Cliente* cliente);
 	double getNumero() const;
-	std::vector<Cliente*> getCliente() const;
+	Cliente* getCliente() const;
 	std::string getMedico() const;
 	std::vector<Produto*> getProdutos() const;
-	double getPrecoMax() const;
-	void setNumero(double numero);
-	void setCliente(std::vector<Cliente*> cliente);
-	void setMedico(std::string medico);
-	void setProdutos(std::vector<Produto*> produtos);
+	double getPrecoMax(std::string nomeProd) const;
+	void addProduto(Produto* produto, double quant);
 };
 
 #endif
