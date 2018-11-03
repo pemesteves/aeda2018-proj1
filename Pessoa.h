@@ -30,6 +30,7 @@ private:
 public:
 	Funcionario(std::string nome, std::string morada, double cont, double sal, bool carta);
 	void setFarmacia(Farmacia* f);
+	Farmacia* getFarmacia() const {return farmaciaTrabalho;}
 	double getSalario() const;
 	std::string getCargo() const;
 	void changeSalario(double salario);

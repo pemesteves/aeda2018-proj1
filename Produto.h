@@ -33,7 +33,6 @@ public:
 class PassivelReceita : public Medicamento {
 private:
 	float taxaDesconto;
-
 public:
 	PassivelReceita(int desconto, double cod, std::string nome, int preco, std::string desc, bool semRec);
 	float getTaxaDesconto() const;

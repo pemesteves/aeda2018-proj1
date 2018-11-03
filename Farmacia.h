@@ -16,6 +16,7 @@ private:
 	std::string nome;
 	std::string morada;
 	Funcionario* gerente;
+	Funcionario* diretorTecnico;
 	std::map<Produto*, int> produtosVender;
 	std::vector<Venda*> vendas;
 	//std::vector<Carrinha*> carrinhas;
@@ -25,6 +26,7 @@ public:
 	std::string getNome() const;
 	std::string getMorada() const;
 	Funcionario* getGerente() const;
+	Funcionario* getDiretorTecnico() const;
 	std::vector<Venda*> getVendas() const;
 	std::map<Produto*, int> getProdutosVender() const;
 	unsigned int getNumProdutos() const;
@@ -35,8 +37,10 @@ public:
 	std::vector<Venda*> getVendasDia(Data d) const;
 	float getPrecoProduto(std::string nomeProd) const;
 	void setGerente(Funcionario* gerente);	
+	void setDiretorTecnico(Funcionario* diretor){diretorTecnico = diretor;}
 	void addProdutosVender(std::vector<Produto*> produtosVender_new);
 	bool addProdutoVender(Produto* produtoVender);
+	Produto* removeProduto(std::string nomeP);
 	void addVenda(Venda* venda);
 	void sortVendas();
 	bool existeProduto(std::string nomeProduto) const;
@@ -46,8 +50,8 @@ public:
 	//Carrinha* getCarrinha(bool disponibilidade);
 	//unsigned int numCarrinhas();
 	//void addCarrinha(Carrinha* carrinha);
-	//Farmacia(std::string nome, std::string morada, bool entregaDomicilios);
 	bool operator< (const Farmacia &f1) const;
+	void imprimeFatura(Venda* v) const; //Não sei se isto faz muito sentido aqui
 };
 
 class FarmaciaInexistente{

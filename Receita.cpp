@@ -52,6 +52,17 @@ void Receita::addProduto(Produto* produto, double quant) {
 	}
 }
 
+Produto* Receita::removeProduto(std::string nome){
+	map<Produto*, double>::iterator it = produtos.begin();
+	for(; it != produtos.end(); it++){
+		if ((*it).first->getNome() == nome){
+			produtos.erase(it);
+			return *it;
+		}
+	}
+	throw ProdutoInexistente(nome);
+}
+
 void Receita::sortProdutos(){
 	sort(produtos.begin(), produtos.end(), funcSort<Produto>);
 }

@@ -14,7 +14,6 @@ private:
 	Data data;
 	Hora hora;
 	double totalVenda;
-
 public:
 	Venda();
 	double getTotalVenda() const;
@@ -24,6 +23,7 @@ public:
 	float getPrecoProduto(std::string nomeProd) const;
 	void addProduto(Produto* prod, float quant, float iva, float comparticipacao);
 	bool operator< (const Venda &v1);
+	void imprimeFatura() const;
 };
 
 #endif

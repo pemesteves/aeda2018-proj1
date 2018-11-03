@@ -1,4 +1,6 @@
 #include "Venda.h"
+#include <iomanip>
+#include <iostream>
 
 using namespace std;
 
@@ -52,6 +54,17 @@ bool Venda::operator< (const Venda &v1){
 	if (data== v1.getData() && hora < v1.getHora())
 		return true;
 	return false;
+}
+
+void Venda::imprimeFatura() const{
+	cout << data.getDia() << "-" << data.getMes() << "-" << data.getAno();
+	cout << setw(15) << hora.getHora() << ":" << hora.getMinutos() << ":" << hora.getSegundos();
+	cout << endl << endl << endl;
+	cout << "Nome Produto" << setw(20) << "Quantidade" << setw(5) << "Preço"<< endl;
+	for(map<Produto*, vector<float>>::const_iterator it = produtosVendidos.begin(); it != produtosVendidos.end(); it++){
+		cout << it->first->getNome() << setw(20) << it->second[0] << setw(5) << it->first->getPreco() << endl;
+	}
+	cout << setw(25) << totalVenda;
 }
 
 

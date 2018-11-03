@@ -1,4 +1,5 @@
 #include "Farmacia.h"
+#include <iostream>
 
 using namespace std;
 
@@ -11,6 +12,7 @@ Farmacia::Farmacia(string nome, string morada) {
 	this->nome = nome;
 	this->morada = morada;
 	this->gerente = NULL;
+	this->diretorTecnico = NULL;
 }
 
 string Farmacia::getNome() const {
@@ -23,6 +25,10 @@ string Farmacia::getMorada() const {
 
 Funcionario* Farmacia::getGerente() const {
 	return gerente;
+}
+
+Funcionario* Farmacia::getDiretorTecnico() const{
+	return diretorTecnico;
 }
 
 vector<Venda*> Farmacia::getVendas() const {
@@ -100,12 +106,25 @@ void Farmacia::setGerente(Funcionario* gerente) {
 }
 
 void Farmacia::addProdutosVender(vector<Produto*> produtosVender_new) {
+	Produto* p = NULL;
 	for (size_t i = 0; i < produtosVender_new.size(); i++) {
-		Produto* p = produtosVender_new.at(i);
+		p = produtosVender_new.at(i);
 		if (!existeProduto(p->getNome())) 
 			produtosVender.insert(pair<Produto*, int>(p, 0));
 		//adicionar exceçao ???
 	}
+}
+
+Produto* Farmacia::removeProduto(std::string nomeP){
+	map<Produto*, int>::iterator it =  produtosVender.begin();
+	for(; it != produtosVender.end(); it++){
+		if((*it).first->getNome() == nomeP){
+			produtosVender.erase(it);
+			return *it;
+		}
+	}
+
+	throw ProdutoInexistente(nomeP);
 }
 
 void Farmacia::addVenda(Venda* venda) {
@@ -152,5 +171,15 @@ bool Farmacia::operator< (const Farmacia &f1) const{
 	if (nome == f1.getNome() && produtosVender.size() == f1.getNumProdutos() && vendas.size() < f1.getNumVendas())
 		return true;
 	return false;
+}
+
+void Farmacia::imprimeFatura(Venda* v) const{
+	cout << "Farmacia " << nome << endl;
+	cout << morada << endl;
+	cout << endl << "Gerente: " << gerente->getNome() << endl;
+	cout << "Diretor Tecnico: " << diretorTecnico->getNome() << endl;
+	v->imprimeFatura();
+
+	cout << "Obrigado pela sua visita! Volte sempre." << endl << endl;
 }
 
