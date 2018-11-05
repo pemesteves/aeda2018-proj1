@@ -1,10 +1,10 @@
 #include "Receita.h"
 using namespace std;
 
-template<class T>
+/*template<class T>
 bool funcSort(T* a, T* b){
 	return (*a)<(*b);
-}
+}*/
 
 double Receita::getNumero() const {
 	return numero;
@@ -20,7 +20,7 @@ string Receita::getMedico() const {
 
 vector<Produto*> Receita::getProdutos() const {
 	vector<Produto*> p;
-	map<Produto*, double>::iterator it;
+	map<Produto*, double>::const_iterator it;
 	for (it = produtos.begin(); it != produtos.end(); it++) {
 		p.push_back(it->first);
 	}
@@ -57,14 +57,14 @@ Produto* Receita::removeProduto(std::string nome){
 	for(; it != produtos.end(); it++){
 		if ((*it).first->getNome() == nome){
 			produtos.erase(it);
-			return *it;
+			return (*it).first;
 		}
 	}
 	throw ProdutoInexistente(nome);
 }
 
 void Receita::sortProdutos(){
-	sort(produtos.begin(), produtos.end(), funcSort<Produto>);
+	//TODO Criar função sort para ordenar produtos
 }
 
 

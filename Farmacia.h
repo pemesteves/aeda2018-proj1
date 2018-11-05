@@ -11,6 +11,9 @@
 #include <algorithm>
 #include <map>
 
+class Pessoa;
+class Funcionario;
+
 class Farmacia {
 private:
 	std::string nome;

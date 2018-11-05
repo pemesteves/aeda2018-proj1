@@ -4,7 +4,7 @@
 using namespace std;
 
 template<class T>
-bool funcSort<Venda>(T* a, T* b){
+bool funcSort(T* a, T* b){
 	return (*a)<(*b);
 }
 
@@ -51,7 +51,7 @@ unsigned int Farmacia::getNumVendasTempo(Data d1, Data d2) const {
 	unsigned int vendas_count = 0;
 	for (size_t i = 0; i < vendas.size(); i++) {
 		Data d = vendas.at(i)->getData();
-		if ((d2>d && d>d1) || d1 == d || d2 == d) {
+		if ((d<d2 && d1<d) || d1 == d || d2 == d) {
 			vendas_count++;
 		}
 	}
@@ -63,7 +63,7 @@ vector<Venda*> Farmacia::getVendasTempo(Data d1, Data d2) const {
 	vector<Venda*> vendas_tempo;
 	for (size_t i = 0; i < vendas.size(); i++) {
 		Data d = vendas.at(i)->getData();
-		if ((d2>d && d>d1) || d1 == d || d2 == d) {
+		if ((d<d2 && d1<d) || d1 == d || d2 == d) {
 			vendas_tempo.push_back(vendas.at(i));
 		}
 	}
@@ -120,7 +120,7 @@ Produto* Farmacia::removeProduto(std::string nomeP){
 	for(; it != produtosVender.end(); it++){
 		if((*it).first->getNome() == nomeP){
 			produtosVender.erase(it);
-			return *it;
+			return (*it).first;
 		}
 	}
 

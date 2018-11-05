@@ -5,10 +5,10 @@
 #include "Pessoa.h"
 
 void thisIsATest() {
-	Farmacia* f1 = new Farmacia("Costa", "Candido dos Reis");
+	/*Farmacia* f1 = new Farmacia("Costa", "Candido dos Reis");
 	Funcionario f = new Funcionario("Pedro", "rua x", 257441883);
 	f.setFarmacia(f1);
-	f.showInfo();
+	f.showInfo();*/
 }
 
 bool runAllTests(int argc, char const *argv[]) {
