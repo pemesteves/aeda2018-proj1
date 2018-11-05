@@ -44,7 +44,8 @@ Farmacia* CadeiaFarmacias::removeFarmacia(const string &nomeF){
 			farmacias.erase(it);
 			vector<Funcionario*>::iterator itFunc = funcionarios.begin();
 			for(; itFunc != funcionarios.end(); itFunc++){
-				if (nomeF == (*itFunc)->getFarmacia()->getNome())
+				Farmacia* f = (*itFunc)->getFarmacia();
+				if (nomeF == f->getNome())
 					(*itFunc)->setFarmacia(NULL);
 			}
 			return *it;
