@@ -59,5 +59,15 @@ bool Produto::operator< (const Produto &p1) const{
 	return false;
 }
 
+bool Produto::operator== (const Produto &p1) const{
+	if (nome != p1.getNome())
+		return false;
+	if (codigo != p1.getCodigo())
+		return false;
+	if (preco != p1.getPreco())
+		return false;
+
+	return true;
+}
 
 

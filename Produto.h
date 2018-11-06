@@ -17,6 +17,7 @@ public:
 	std::string getDescricao() const;
 	void changePreco(float preco);
 	bool operator< (const Produto &p1) const;
+	bool operator== (const Produto &p1) const;
 };
 
 

@@ -20,7 +20,7 @@ private:
 	std::string morada;
 	Funcionario* gerente;
 	Funcionario* diretorTecnico;
-	std::map<Produto*, int> produtosVender;
+	std::map<Produto, int> produtosVender;
 	std::vector<Venda*> vendas;
 	//std::vector<Carrinha*> carrinhas;
 	//bool entregaDomicilios;
@@ -31,7 +31,7 @@ public:
 	Funcionario* getGerente() const;
 	Funcionario* getDiretorTecnico() const;
 	std::vector<Venda*> getVendas() const;
-	std::map<Produto*, int> getProdutosVender() const;
+	std::map<Produto, int> getProdutosVender() const;
 	unsigned int getNumProdutos() const;
 	unsigned int getNumVendas() const;
 	unsigned int getNumVendasTempo(Data d1, Data d2) const;
@@ -43,7 +43,7 @@ public:
 	void setDiretorTecnico(Funcionario* diretor){diretorTecnico = diretor;}
 	void addProdutosVender(std::vector<Produto*> produtosVender_new);
 	bool addProdutoVender(Produto* produtoVender);
-	Produto* removeProduto(std::string nomeP);
+	Produto removeProduto(std::string nomeP);
 	void addVenda(Venda* venda);
 	void sortVendas();
 	bool existeProduto(std::string nomeProduto) const;

@@ -12,18 +12,17 @@ class Receita {
 private:
 	double numero;
 	std::string medico; //TODO criar classe medico para a receita
-	std::map<Produto*, double>  produtos;
+	std::map<Produto, double>  produtos;
 	Cliente* cliente;
 public:
 	Receita(double numero, std::string medico, Cliente* cliente);
 	double getNumero() const;
 	Cliente* getCliente() const;
 	std::string getMedico() const;
-	std::vector<Produto*> getProdutos() const;
+	std::vector<Produto> getProdutos() const;
 	double getPrecoMax(std::string nomeProd) const;
 	void addProduto(Produto* produto, double quant);
-	Produto* removeProduto(std::string nome);
-	void sortProdutos();
+	Produto removeProduto(std::string nome);
 };
 
 #endif

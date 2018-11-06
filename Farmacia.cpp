@@ -35,7 +35,7 @@ vector<Venda*> Farmacia::getVendas() const {
 	return vendas;
 }
 
-map<Produto*, int> Farmacia::getProdutosVender() const {
+map<Produto, int> Farmacia::getProdutosVender() const {
 	return produtosVender;
 }
 
@@ -93,10 +93,10 @@ vector <Venda*> Farmacia::getVendasDia(Data d) const {
 
 
  float Farmacia::getPrecoProduto(string nomeProd) const {
-	 map<Produto*, int>::const_iterator it;
+	 map<Produto, int>::const_iterator it;
 	 for (it = produtosVender.begin(); it != produtosVender.end(); it++) {
-		 if (it->first->getNome() == nomeProd)
-			 return it->first->getPreco();
+		 if (it->first.getNome() == nomeProd)
+			 return it->first.getPreco();
 	 }
 	return -1;
 }
@@ -110,15 +110,15 @@ void Farmacia::addProdutosVender(vector<Produto*> produtosVender_new) {
 	for (size_t i = 0; i < produtosVender_new.size(); i++) {
 		p = produtosVender_new.at(i);
 		if (!existeProduto(p->getNome())) 
-			produtosVender.insert(pair<Produto*, int>(p, 0));
+			produtosVender.insert(pair<Produto, int>(*p, 0));
 		//adicionar exceçao ???
 	}
 }
 
-Produto* Farmacia::removeProduto(std::string nomeP){
-	map<Produto*, int>::iterator it =  produtosVender.begin();
+Produto Farmacia::removeProduto(std::string nomeP){
+	map<Produto, int>::iterator it =  produtosVender.begin();
 	for(; it != produtosVender.end(); it++){
-		if((*it).first->getNome() == nomeP){
+		if((*it).first.getNome() == nomeP){
 			produtosVender.erase(it);
 			return (*it).first;
 		}
@@ -132,9 +132,9 @@ void Farmacia::addVenda(Venda* venda) {
 }
 
 bool Farmacia::existeProduto(string nomeProduto) const {
-	map<Produto*, int>::const_iterator it = produtosVender.begin();
+	map<Produto, int>::const_iterator it = produtosVender.begin();
 	for (; it != produtosVender.end(); it++) {
-		if (it->first->getNome() == nomeProduto)
+		if (it->first.getNome() == nomeProduto)
 			return true;
 	}
 	return false;
@@ -142,7 +142,7 @@ bool Farmacia::existeProduto(string nomeProduto) const {
 
 bool Farmacia::addProdutoVender(Produto* produtoVender) {
 	if (!existeProduto(produtoVender->getNome())) {
-		produtosVender.insert(pair<Produto*, int>(produtoVender, 0));
+		produtosVender.insert(pair<Produto, int>(*produtoVender, 0));
 		return true;
 	}
 	return false;
@@ -153,9 +153,9 @@ void Farmacia::sortVendas(){
 }
 
 bool Farmacia::setQuantidade(std::string nomeProd, int quant) {
-	map<Produto*, int>::iterator it;
+	map<Produto, int>::iterator it;
 	for (it = produtosVender.begin(); it != produtosVender.end(); it++) {
-		if (nomeProd == it->first->getNome()) {
+		if (nomeProd == it->first.getNome()) {
 			it->second = quant;
 			return true;
 		}
