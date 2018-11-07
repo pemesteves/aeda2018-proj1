@@ -27,18 +27,16 @@ private:
 	double salario;
 	Farmacia* farmaciaTrabalho;
 	std::string cargo;
-	bool cartaConducao;
-
 public:
-	Funcionario(std::string nome, std::string morada, double cont, double sal, bool carta);
+	Funcionario(std::string nome, std::string morada, double cont, double sal = 500);
 	void setFarmacia(Farmacia* f);
 	Farmacia* getFarmacia() const {return farmaciaTrabalho;}
 	double getSalario() const;
 	std::string getCargo() const;
 	void changeSalario(double salario);
-	bool getCartaConducao() const;
 	void showInfo() const;
 	bool operator< (const Funcionario &f1) const;
+	bool menorQue(const Funcionario &f1, enum tipoSort tipo, bool crescente) const;
 };
 
 class Cliente : public Pessoa {
@@ -51,6 +49,7 @@ public:
 	void addCompra(Venda* compra);
 	void showInfo() const;
 	bool operator< (const Cliente &c1) const;
+	bool menorQue(const Cliente &c1, enum tipoSort tipo, bool crescente) const;
 };
 
 class ClienteInexistente{

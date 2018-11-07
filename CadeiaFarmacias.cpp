@@ -49,8 +49,9 @@ Farmacia* CadeiaFarmacias::removeFarmacia(const string &nomeF){
 	throw FarmaciaInexistente(nomeF);
 }
 
-void CadeiaFarmacias::sortFarmacias(){
-	sort(farmacias.begin(), farmacias.end(), funcSort<Farmacia>);
+void CadeiaFarmacias::sortFarmacias(enum tipoSort tipo, bool crescente){
+	//sort(farmacias.begin(), farmacias.end(), funcSort<Farmacia>);
+	quickSort(farmacias, 0, farmacias.size()-1, tipo, crescente);
 }
 
 void CadeiaFarmacias::addCliente(Cliente* cliente) {
@@ -68,8 +69,9 @@ Cliente* CadeiaFarmacias::removeCliente(const std::string &nomeC){
 	throw ClienteInexistente(nomeC);
 }
 
-void CadeiaFarmacias::sortClientes(){
-	sort(clientes.begin(), clientes.end(), funcSort<Cliente>);
+void CadeiaFarmacias::sortClientes(enum tipoSort tipo, bool crescente){
+	//sort(clientes.begin(), clientes.end(), funcSort<Cliente>);
+	quickSort(clientes, 0, clientes.size()-1, tipo, crescente);
 }
 
 void CadeiaFarmacias::addFuncionario(Funcionario* funcionario) {
@@ -87,8 +89,9 @@ Funcionario* CadeiaFarmacias::removeFuncionario(const std::string &nomeF){
 	throw FuncionarioInexistente(nomeF);
 }
 
-void CadeiaFarmacias::sortFuncionarios(){
-	sort(funcionarios.begin(), funcionarios.end(), funcSort<Funcionario>);
+void CadeiaFarmacias::sortFuncionarios(enum tipoSort tipo, bool crescente){
+	//sort(funcionarios.begin(), funcionarios.end(), funcSort<Funcionario>);
+	quickSort(funcionarios, 0, funcionarios.size()-1, tipo, crescente);
 }
 
 

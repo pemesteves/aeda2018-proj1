@@ -11,7 +11,6 @@ private:
 	std::vector <Funcionario*> funcionarios;
 
 public:
-
 	CadeiaFarmacias();
 	unsigned int getNumFarmacias() const;
 	unsigned int getNumClientes() const;
@@ -21,13 +20,13 @@ public:
 	std::vector <Funcionario*> getFuncionarios() const;
 	void addFarmacia(Farmacia* farmacia);
 	Farmacia* removeFarmacia(const std::string &nomeF);
-	void sortFarmacias();
+	void sortFarmacias(enum tipoSort tipo, bool crescente);
 	void addCliente(Cliente* cliente);
 	Cliente* removeCliente(const std::string &nomeC);
-	void sortClientes();
+	void sortClientes(enum tipoSort tipo, bool crescente);
 	void addFuncionario(Funcionario* funcionario);
 	Funcionario* removeFuncionario(const std::string &nomeF);
-	void sortFuncionarios();
+	void sortFuncionarios(enum tipoSort tipo, bool crescente);
 };
 
 #endif

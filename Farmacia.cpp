@@ -87,12 +87,12 @@ vector <Venda*> Farmacia::getVendasDia(Data d) const {
 }
 
 
- float Farmacia::getPrecoProduto(string nomeProd) const {
-	 map<Produto, int>::const_iterator it;
-	 for (it = produtosVender.begin(); it != produtosVender.end(); it++) {
-		 if (it->first.getNome() == nomeProd)
-			 return it->first.getPreco();
-	 }
+float Farmacia::getPrecoProduto(string nomeProd) const {
+	map<Produto, int>::const_iterator it;
+	for (it = produtosVender.begin(); it != produtosVender.end(); it++) {
+		if (it->first.getNome() == nomeProd)
+			return it->first.getPreco();
+	}
 	return -1;
 }
 
@@ -143,8 +143,9 @@ bool Farmacia::addProdutoVender(Produto* produtoVender) {
 	return false;
 }
 
-void Farmacia::sortVendas(){
-	sort(vendas.begin(), vendas.end(), funcSort<Venda>);
+void Farmacia::sortVendas(enum tipoSort tipo, bool crescente){
+	//sort(vendas.begin(), vendas.end(), funcSort<Venda>);
+	quickSort(vendas, 0, vendas.size()-1, tipo, crescente);
 }
 
 bool Farmacia::setQuantidade(std::string nomeProd, int quant) {
@@ -176,5 +177,31 @@ void Farmacia::imprimeFatura(Venda* v) const{
 	v->imprimeFatura();
 
 	cout << "Obrigado pela sua visita! Volte sempre." << endl << endl;
+}
+
+bool Farmacia::menorQue(const Farmacia &f1, enum tipoSort tipo, bool crescente) const{
+	switch(tipo){
+	case NOME:
+		if (crescente)
+			return nome < f1.getNome();
+		else
+			return nome > f1.getNome();
+		break;
+	case NUM_PROD:
+		if (crescente)
+			return produtosVender.size() < f1.getNumProdutos();
+		else
+			return produtosVender.size() > f1.getNumProdutos();
+		break;
+	case NUM_VENDA:
+		if (crescente)
+			return vendas.size() < f1.getNumVendas();
+		else
+			return vendas.size() > f1.getNumVendas();
+		break;
+	default:
+		return (*this)<f1;
+		break;
+	}
 }
 

@@ -48,7 +48,7 @@ void Venda::addProduto(Produto* prod, float quant, float iva, float comparticipa
 	}
 }
 
-bool Venda::operator< (const Venda &v1){
+bool Venda::operator< (const Venda &v1) const{
 	if (data < v1.getData())
 		return true;
 	if (data== v1.getData() && hora < v1.getHora())
@@ -67,4 +67,35 @@ void Venda::imprimeFatura() const{
 	cout << setw(25) << totalVenda;
 }
 
+bool Venda::menorQue(const Venda &v1, enum tipoSort tipo, bool crescente) const{
+	switch(tipo){
+	case NUM_PROD:
+		if (crescente)
+			return getNumProdutos() < v1.getNumProdutos();
+		else
+			return getNumProdutos() > v1.getNumProdutos();
+		break;
+	case DATA:
+		if (crescente)
+			return data < v1.getData();
+		else
+			return !(data < v1.getData());
+		break;
+	case HORA:
+		if (crescente)
+			return hora < v1.getHora();
+		else
+			return !(hora < v1.getHora());
+		break;
+	case NUM_VENDA:
+		if (crescente)
+			return totalVenda < v1.getTotalVenda();
+		else
+			return totalVenda > v1.getTotalVenda();
+		break;
+	default:
+		return (*this) < v1;
+		break;
+	}
+}
 
