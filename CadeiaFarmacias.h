@@ -2,8 +2,6 @@
 #define CADEIAFARMACIAS_H
 
 #include "Farmacia.h"
-#include "Pessoa.h"
-
 #include <vector>
 
 class CadeiaFarmacias {

@@ -1,9 +1,6 @@
 #ifndef FARMACIA_H
 #define FARMACIA_H
 
-#include "Produto.h"
-#include "Venda.h"
-#include "Data.h"
 #include "Pessoa.h"
 
 #include <vector>
@@ -63,5 +60,10 @@ public:
 	FarmaciaInexistente(std::string nomeF){nome = nomeF;}
 	std::string getNome() const{return nome;}
 };
+
+template<class T>
+bool funcSort(T* a, T* b){
+	return (*a)<(*b);
+}
 
 #endif 

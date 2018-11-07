@@ -3,11 +3,6 @@
 
 using namespace std;
 
-template<class T>
-bool funcSort(T* a, T* b){
-	return (*a)<(*b);
-}
-
 Farmacia::Farmacia(string nome, string morada) {
 	this->nome = nome;
 	this->morada = morada;
