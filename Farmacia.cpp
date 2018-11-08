@@ -8,6 +8,7 @@ Farmacia::Farmacia(string nome, string morada) {
 	this->morada = morada;
 	this->gerente = NULL;
 	this->diretorTecnico = NULL;
+	this->produtosVender.clear();
 }
 
 string Farmacia::getNome() const {
