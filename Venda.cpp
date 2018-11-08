@@ -27,23 +27,22 @@ Hora Venda::getHora() const{
 }
 
 float Venda::getPrecoProduto(string nomeProd) const{
-	map<Produto *, vector<float>>::const_iterator it = produtosVendidos.begin();
+	map<Produto, vector<float>>::const_iterator it = produtosVendidos.begin();
 	for (; it != produtosVendidos.end(); it++){
-		if ((*it).first->getNome() == nomeProd)
-			return (*it).first->getPreco();
+		if ((*it).first.getNome() == nomeProd)
+			return (*it).first.getPreco();
 	}
 	return -1; //Se não houver um produto com o nome = nomeProd, retorna -1
 }
 
 void Venda::addProduto(Produto* prod, float quant, float iva, float comparticipacao){
-	map<Produto *, vector<float>>::iterator it;
-	if ((it = produtosVendidos.find(prod)) != produtosVendidos.end()){
+	map<Produto, vector<float>>::iterator it;
+	if ((it = produtosVendidos.find(*prod)) != produtosVendidos.end()){
 		(*it).second[0] += quant;
 	}
 	else{
 		vector<float> v = {quant, iva, comparticipacao};
-		pair<Produto*, vector<float>> p;
-		p = make_pair(prod, v);
+		pair<Produto, vector<float>> p = make_pair(*prod, v);
 		produtosVendidos.insert(p);
 	}
 }
@@ -61,8 +60,8 @@ void Venda::imprimeFatura() const{
 	cout << setw(15) << hora.getHora() << ":" << hora.getMinutos() << ":" << hora.getSegundos();
 	cout << endl << endl << endl;
 	cout << "Nome Produto" << setw(20) << "Quantidade" << setw(5) << "Preço"<< endl;
-	for(map<Produto*, vector<float>>::const_iterator it = produtosVendidos.begin(); it != produtosVendidos.end(); it++){
-		cout << it->first->getNome() << setw(20) << it->second[0] << setw(5) << it->first->getPreco() << endl;
+	for(map<Produto, vector<float>>::const_iterator it = produtosVendidos.begin(); it != produtosVendidos.end(); it++){
+		cout << it->first.getNome() << setw(20) << it->second[0] << setw(5) << it->first.getPreco() << endl;
 	}
 	cout << setw(25) << totalVenda;
 }
