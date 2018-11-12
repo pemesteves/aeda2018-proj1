@@ -68,6 +68,7 @@ bool Funcionario::operator< (const Funcionario &f1) const{
 
 //Cliente
 Cliente::Cliente(string nome, string morada, double contribuinte): Pessoa(nome, morada, contribuinte) {
+	historialCompras.clear();
 }
 
 vector<Venda*> Cliente::getHistorialCompras() const {

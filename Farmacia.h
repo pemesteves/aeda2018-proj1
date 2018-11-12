@@ -154,7 +154,7 @@ public:
 	 * Método que permite alterar a quantidade de um determinado produto
 	 * @param nomeProd Nome do produto cuja quantidade será alterada
 	 * @param quant Quantidade a alterar
-	 * @return Retorna true se a operação foi realizada com sucesso. Caso contrário, retorn false
+	 * @return Retorna true se a operação foi realizada com sucesso. Caso contrário, retorna false
 	 */
 	bool setQuantidade(std::string nomeProd, int quant);
 	/**
@@ -168,7 +168,7 @@ public:
 	 * @param f1 Farmácia que irá ser comparada
 	 * @param tipo Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de comparação das duas farmácias
 	 * @param crescente Booleano que permite ao utilizador escolher se quer utilizar o seu critério de modo crescente(true) ou decrescente(false)
-	 * @return Retorn true se a farmácia for menor que f1. Caso contrário, retorn false
+	 * @return Retorna true se a farmácia for menor que f1. Caso contrário, retorna false
 	 */
 	bool menorQue(const Farmacia &f1, enum tipoSort tipo, bool crescente) const;
 	/**
