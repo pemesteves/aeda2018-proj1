@@ -16,6 +16,7 @@ protected:
 	double noContribuinte;
 public:
 	Pessoa(std::string nome, std::string morada, double cont);
+	virtual ~Pessoa() {}
 	std::string getNome() const;
 	std::string getMorada() const;
 	double getNoContribuinte() const;
@@ -29,6 +30,7 @@ private:
 	std::string cargo;
 public:
 	Funcionario(std::string nome, std::string morada, double cont, double sal = 500);
+	~Funcionario() {}
 	void setFarmacia(Farmacia* f);
 	Farmacia* getFarmacia() const {return farmaciaTrabalho;}
 	double getSalario() const;
@@ -44,6 +46,7 @@ private:
 	std::vector<Venda*> historialCompras;
 public:
 	Cliente(std::string nome, std::string morada, double contribuinte);
+	~Cliente() {}
 	std::vector<Venda*> getHistorialCompras() const;
 	unsigned int getNumCompras() const;
 	void addCompra(Venda* compra);
