@@ -41,7 +41,7 @@ Medicamento::Medicamento(bool receita, double cod, string nome, int preco, strin
 	this->vendaSemReceita = receita;
 }
 
-PassivelReceita::PassivelReceita(double cod, string nome, int preco, string desc, int desconto = 0, bool semRec = false) : Medicamento(semRec, cod, nome, preco, desc) {
+PassivelReceita::PassivelReceita(double cod, string nome, int preco, string desc, float desconto = 0, bool semRec = false) : Medicamento(semRec, cod, nome, preco, desc) {
 	this->taxaDesconto = desconto;
 }
 

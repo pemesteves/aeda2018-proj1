@@ -73,25 +73,66 @@ class Medicamento : public Produto {
 private:
 	bool vendaSemReceita; //Booleano que indica se o medicamento pode ser vendido sem receita
 public:
+	/**
+	 * Construtor da classe Medicamento
+	 * @param receita Indica se o medicamento pode ser vendido sem receita
+	 * @param cod, nome, preco, desc Atributos da classe Produto
+	 */
 	Medicamento(bool receita, double cod, std::string nome, int preco, std::string desc);
+	/**
+	 * Método que verifica se o medicamento pode ser ou não vendido sem receita
+	 * @return Retorna true se puder ser vendido sem receita
+	 */
 	bool getVendaSemReceita() const;
+	/**
+	 * Método que permite alterar o atributo da classe
+	 * @param vendaSemReceita Valor a colocar no atributo
+	 */
 	void setVendaSemReceita(bool vendaSemReceita);
 
 };
 
+/**
+ * Classe PassivelReceita derivada publicamente de Medicamento
+ */
 class PassivelReceita : public Medicamento {
 private:
-	float taxaDesconto;
+	float taxaDesconto; //Taxa de desconto do medicamento caso sujeito a receita
 public:
-	PassivelReceita(double cod, std::string nome, int preco, std::string desc, int desconto, bool semRec);
+	/**
+	 * Construtor da classe PassivelReceita
+	 * @param desconto Taxa de desconto
+	 * @param semRec Atributo da classe Medicamento
+	 * @param cod, nome, preco, desc Atributos da classe Produto
+	 */
+	PassivelReceita(double cod, std::string nome, int preco, std::string desc, float desconto, bool semRec);
+	/**
+	 * Método que permite obter a taxa de desconto
+	 * @return Taxa de Desconto do Medicamento caso sujeito a receita médica
+	 */
 	float getTaxaDesconto() const;
+	/**
+	 * Método que permite alterar a taxa de desconto
+	 * @param taxaDesconto Taxa de desconto a ser alterada
+	 */
 	void setTaxaDesconto(float taxaDesconto);
 };
 
+/**
+ * Classe ProdutoInexistente - utilizada em exceções
+ */
 class ProdutoInexistente {
-	std::string nome;
+	std::string nome; //Nome do Produto inexistente
 public:
+	/**
+	 * Construtor da classe Produto Inexistente
+	 * @param nomeProd Nome do Produto Inexistente
+	 */
 	ProdutoInexistente(std::string nomeProd) { nome = nomeProd; }
+	/**
+	 * Método para obter o nome do produto que foi procurado e não existe
+	 * @return Nome do Produto Inexistente
+	 */
 	std::string getNome() const { return nome; }
 };
 
