@@ -17,6 +17,13 @@ public:
 	 */
 	Data();
 	/**
+	 * Construtor da Classe Data
+	 * @param dia Dia da data
+	 * @param mes Mês da data
+	 * @param ano Ano da data
+	 */
+	Data(unsigned short dia, unsigned short mes, int ano);
+	/**
 	 * Método que permite obter o dia
 	 * @return Dia do mês
 	 */
@@ -62,7 +69,14 @@ public:
 	 */
 	Hora();
 	/**
-	 * Método que permite obter a hora do dia
+	 * Construtor da Classe Hora
+	 * @param h Horas da hora
+	 * @param m Minutos da hora
+	 * @param s Segundos da hora
+	 */
+	Hora(unsigned short h, unsigned short m, unsigned short s);
+	/**
+	 * Método que permite obter as horas (número da hora)
 	 * @return Hora do dia
 	 */
 	unsigned short getHora() const;

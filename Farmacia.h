@@ -9,6 +9,7 @@
 #define FARMACIA_H
 
 #include "Pessoa.h"
+#include "Venda.h"
 
 #include <vector>
 #include <string>
@@ -17,6 +18,7 @@
 
 class Pessoa;
 class Funcionario;
+class Venda;
 
 /**
  * Classe Farmacia
@@ -150,6 +152,13 @@ public:
 	 * @return Se existir, retorna-se true. Caso contrário, retorna-se false
 	 */
 	bool existeProduto(std::string nomeProduto) const;
+	/**
+	 * Método que permite saber se existe um determinado número de unidades de um produto para venda
+	 * @param nomeProduto Nome do produto a procurar
+	 * @param quant Número de unidades do produto
+	 * @return Se existir, retorna-se true. Caso contrário, retorna-se false
+	 */
+	bool existeProdutoQuant(std::string nomeProduto, int quant) const;
 	/**
 	 * Método que permite alterar a quantidade de um determinado produto
 	 * @param nomeProd Nome do produto cuja quantidade será alterada

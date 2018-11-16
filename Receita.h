@@ -8,6 +8,9 @@
 #include <string>
 #include <map>
 
+class Pessoa;
+class Cliente;
+
 /**
  * Classe Receita
  */
@@ -18,6 +21,7 @@ private:
 	std::string medico; //Nome do médico que prescreveu a Receita
 	std::map<Produto, double>  produtos; //Map com os Produtos contidos na receita e respetiva quantidade
 	Cliente* cliente; //Apontador para o Cliente ao qual a receita foi prescrita
+
 public:
 	/**
 	 * Construtor da classe Receita
@@ -51,7 +55,7 @@ public:
 	 * @param nomeProd Nome do produto a procurar
 	 * @return Retorna o preço máximo do produto. Caso não exista, lança uma exceção do tipo ProdutoInexistente
 	 */
-	double getPrecoMax(std::string nomeProd) const;
+	float getPrecoMax(std::string nomeProd) const;
 	/**
 	 * Método para adicionar um Produto ao map de Produtos
 	 * @param produto Apontador para objeto da classe Produto

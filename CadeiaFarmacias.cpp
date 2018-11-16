@@ -3,6 +3,15 @@
 using namespace std;
 
 CadeiaFarmacias::CadeiaFarmacias() {
+	nome = "";
+	farmacias.resize(0);
+	clientes.resize(0);
+	funcionarios.resize(0);
+}
+
+
+CadeiaFarmacias::CadeiaFarmacias(std::string nome) {
+	this->nome=nome;
 	farmacias.resize(0);
 	clientes.resize(0);
 	funcionarios.resize(0);
@@ -98,5 +107,8 @@ void CadeiaFarmacias::sortFuncionarios(enum tipoSort tipo, bool crescente){
 	quickSort(funcionarios, 0, funcionarios.size()-1, tipo, crescente);
 }
 
+void CadeiaFarmacias::exportCadeiaFarmacias(){
+
+}
 
 

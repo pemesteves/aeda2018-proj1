@@ -10,10 +10,13 @@
 
 #include "Data.h"
 #include "Produto.h"
+#include "Receita.h"
 
 #include <vector>
 #include <string>
 #include <map>
+
+class Receita;
 
 /**
  * Declaração de uma enumeração: tipoSort
@@ -25,6 +28,13 @@
 enum tipoSort {NOME, CONTRIBUINTE, NUM_PROD, NUM_VENDA, SALARIO, DATA, HORA, DEFAULT};
 
 /**
+ * Declaração de uma enumeração: dadosProd
+ * É utilizada para facilitar o acesso a dados de um produto numa venda
+ * Valores: QUANTIDADE = unidades do produto vendidas; IVA = percentagem de IVA do produto; COMPARTICIPACAO = percentagem de comparticipacao do produto
+ */
+enum dadosProd {QUANTIDADE, IVA, COMPARTICIPACAO};
+
+/**
  * Classe Venda
  */
 class Venda {
@@ -33,19 +43,43 @@ private:
 	Data data; //Data na qual foi realizada a venda
 	Hora hora; //Hora à qual foi realizada a venda
 	double totalVenda; //Valor total da venda
+	bool temReceita; //Indica se a venda tem uma receita associada (true quando tem)
+	Receita* receitaVenda; //Caso a venda tenha uma receita associada, receitaVenda guarda um apontador para essa receita
+
 public:
 	/**
 	 * Construtor da classe Venda
 	 */
 	Venda();
 	/**
-	 * Método que permite obter o total da venda
+	 * Construtor da classe Venda
+	 * @param receitaVenda Apontador para a receita associada à venda
+	 */
+	Venda(Receita* receitaVenda);
+	/**
+	 * Construtor da classe Venda
+	 * @param dia, mes, ano, horas, min, segundos Dados correspondentes à data e hora da venda
+	 */
+	Venda(unsigned short dia, unsigned short mes, int ano, unsigned short horas, unsigned short min, unsigned short segundos);
+	/**
+	 * Método que permite obter o valor total da venda
 	 * @return totalVenda (atributo da classe)
 	 */
 	double getTotalVenda() const;
 	/**
+	 * Método que permite obter o map com os produtos vendidos
+	 * @return produtosVendidos (atributo da classe)
+	 */
+	std::map<Produto, std::vector<float>> getProdutosVendidos() const;
+	/**
+	 * Método que permite atribuir uma receita à venda
+	 * Só é possível atribuir uma receita à venda se esta não tiver ainda nenhuma receita associada
+	 * @return True se foi possível atribuir a receita e false se não tiver sido possível
+	 */
+	bool setReceita(Receita* receitaVenda);
+	/**
 	 * Método que permite obter o número de produtos vendidos
-	 * @return Tamanho de porudtosVenidos (atributo da classe)
+	 * @return Tamanho de proudtosVenidos (atributo da classe)
 	 */
 	unsigned int getNumProdutos() const;
 	/**
