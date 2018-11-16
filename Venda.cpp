@@ -8,6 +8,34 @@ Venda::Venda(){
 	Data d; data = d;
 	Hora h; hora = h;
 	totalVenda = 0;
+	temReceita = false;
+	receitaVenda = NULL;
+}
+
+Venda::Venda(Receita* receitaVenda){
+	Data d; data = d;
+	Hora h; hora = h;
+	totalVenda = 0;
+	temReceita = true;
+	this->receitaVenda = receitaVenda;
+}
+
+Venda::Venda(unsigned short dia, unsigned short mes, int ano, unsigned short horas, unsigned short minutos, unsigned short segundos){
+	Data d(dia,mes,ano);
+	data = d;
+	Hora h(horas,minutos,segundos);
+	hora=h;
+	totalVenda = 0;
+	temReceita = false;
+	receitaVenda = NULL;
+}
+
+bool Venda::setReceita(Receita* receitaVenda){
+	if (temReceita)
+		return false;
+	temReceita = true;
+	this->receitaVenda = receitaVenda;
+	return true;
 }
 
 double Venda::getTotalVenda() const{
@@ -36,14 +64,23 @@ float Venda::getPrecoProduto(string nomeProd) const{
 }
 
 void Venda::addProduto(Produto* prod, float quant, float iva, float comparticipacao){
+	double precoAdd = 0; //valor a adicionar ao valor total da venda
+	float precoProd; //valor por unidade de produto
 	map<Produto, vector<float>>::iterator it;
 	if ((it = produtosVendidos.find(*prod)) != produtosVendidos.end()){
-		(*it).second[0] += quant;
+		(*it).second.at(QUANTIDADE) += quant;
+		precoProd = (*it).first.getPreco();
+		precoProd = precoProd + precoProd*(*it).second.at(IVA) - precoProd*(*it).second.at(COMPARTICIPACAO);
+		precoAdd = precoProd * quant;
+		totalVenda += precoAdd;
 	}
 	else{
 		vector<float> v = {quant, iva, comparticipacao};
 		pair<Produto, vector<float>> p = make_pair(*prod, v);
 		produtosVendidos.insert(p);
+		precoProd = precoProd + precoProd*(*it).second.at(IVA) - precoProd*(*it).second.at(COMPARTICIPACAO);
+		precoAdd = precoProd * quant;
+		totalVenda += precoAdd;
 	}
 }
 

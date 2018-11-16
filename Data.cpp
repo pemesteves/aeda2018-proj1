@@ -11,6 +11,12 @@ Data::Data() {
 	dia = timeinfo->tm_mday;
 }
 
+Data::Data(unsigned short dia, unsigned short mes, int ano){
+	this->dia=dia;
+	this->mes=mes;
+	this->ano=ano;
+}
+
 unsigned short Data::getDia() const {
 	return dia;
 }
@@ -45,6 +51,12 @@ Hora::Hora() {
 	hora = timeinfo->tm_hour;
 	minutos = timeinfo->tm_min;
 	segundos = timeinfo->tm_sec;
+}
+
+Hora::Hora(unsigned short h, unsigned short m, unsigned short s){
+	hora = h;
+	minutos = m;
+	segundos = s;
 }
 
 unsigned short Hora::getHora() const {

@@ -87,7 +87,6 @@ vector <Venda*> Farmacia::getVendasDia(Data d) const {
 	return vendas_dia;
 }
 
-
 float Farmacia::getPrecoProduto(string nomeProd) const {
 	map<Produto, int>::const_iterator it;
 	for (it = produtosVender.begin(); it != produtosVender.end(); it++) {
@@ -124,6 +123,12 @@ Produto Farmacia::removeProduto(std::string nomeP){
 }
 
 void Farmacia::addVenda(Venda* venda) {
+	std::map<Produto, std::vector<float>> prodVenda = venda->getProdutosVendidos();
+	map<Produto, vector<float>>::const_iterator it = prodVenda.begin();
+	string nomeProd;
+	for (; it != prodVenda.end(); it++){
+
+	}
 	vendas.push_back(venda);
 }
 
@@ -134,6 +139,18 @@ bool Farmacia::existeProduto(string nomeProduto) const {
 			return true;
 	}
 	return false;
+}
+
+bool Farmacia::existeProdutoQuant(string nomeProduto, int quant) const{
+	map<Produto, int>::const_iterator it = produtosVender.begin();
+		for (; it != produtosVender.end(); it++) {
+			if (it->first.getNome() == nomeProduto){
+				if (it->second>=quant)
+					return true;
+				else return false;
+			}
+		}
+		return false;
 }
 
 bool Farmacia::addProdutoVender(Produto* produtoVender) {

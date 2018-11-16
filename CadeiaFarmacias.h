@@ -16,6 +16,7 @@
  */
 class CadeiaFarmacias {
 private:
+	std::string nome; //Nome da cadeia de farmácias
 	std::vector<Farmacia *> farmacias; //Vetor de apontadores para objetos do tipo Farmacia
 	std::vector <Cliente*> clientes; //Vetor de apontadores para objetos do tipo Cliente
 	std::vector <Funcionario*> funcionarios; //Vetor de apontadores para objetos do tipo Funcionario
@@ -25,6 +26,12 @@ public:
 	 * 	Inicializa um objeto da classe colocando todos os vetores vazios
 	 */
 	CadeiaFarmacias();
+	/**
+	 *  Construtor da classe
+	 * 	Inicializa um objeto da classe colocando todos os vetores vazios e atribuindo um nome
+	 * 	@param Nome da cadeia de farmácias
+	 */
+	CadeiaFarmacias(std::string nome);
 	/**
 	 * Método que retorna o número de farmácias
 	 * @return Tamanho do vetor de farmácias(unsigned int)
@@ -106,6 +113,10 @@ public:
 	 * @param crescente Booleano que permite ao utilizador escolher se quer realizar a ordenação por ordem crescente ou decrescente
 	 */
 	void sortFuncionarios(enum tipoSort tipo, bool crescente);
+
+	void exportCadeiaFarmacias();
+
+
 };
 
 #endif
