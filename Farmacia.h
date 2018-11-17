@@ -109,6 +109,12 @@ public:
 	 */
 	float getPrecoProduto(std::string nomeProd) const;
 	/**
+	 * Método que permite obter o número de unidades disponíveis de um determinado produto
+	 * @param nomeProd Nome do produto do qual se quer saber a quantidade
+	 * @return Quantidade do produto passado como argumento. Se não existir, retorna-se -1
+	 */
+	int getQuantProduto(std::string nomeProd) const;
+	/**
 	 * Método que permite alterar o gerente da farmácia
 	 * @param gerente Apontador para Funcionario que será colocado no atributo gerente
 	 */
@@ -134,12 +140,14 @@ public:
 	 * @param nomeP Nome do produto a remover
 	 * @return Retorna um apontador para o objeto removido ou, se este não existir, lança uma exceção do tipo ProdutoInexistente
 	 */
-	Produto removeProduto(std::string nomeP);
+	Produto* removeProduto(std::string nomeP);
 	/**
 	 * Método que permite realizar uma venda
+	 * A venda é possível apenas se os produtos da mesma existirem na farmácia nas quantidades necessárias
 	 * @param venda Apontador para objeto da classe Venda
+	 * @return Retorna true caso
 	 */
-	void addVenda(Venda* venda);
+	bool addVenda(Venda* venda);
 	/**
 	 * Método que permite ordenar as vendas
 	 * @param tipo Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de ordenação do vetor

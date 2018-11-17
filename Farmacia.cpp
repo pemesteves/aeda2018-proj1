@@ -96,6 +96,15 @@ float Farmacia::getPrecoProduto(string nomeProd) const {
 	return -1;
 }
 
+int Farmacia::getQuantProduto(std::string nomeProd) const{
+	map<Produto, int>::const_iterator it;
+	for (it = produtosVender.begin(); it != produtosVender.end(); it++) {
+		if (it->first.getNome() == nomeProd)
+			return it->second;
+	}
+	return -1;
+}
+
 void Farmacia::setGerente(Funcionario* gerente) {
 	this->gerente = gerente;
 }
@@ -110,26 +119,37 @@ void Farmacia::addProdutosVender(vector<Produto*> produtosVender_new) {
 	}
 }
 
-Produto Farmacia::removeProduto(std::string nomeP){
+Produto* Farmacia::removeProduto(std::string nomeP){
 	map<Produto, int>::iterator it =  produtosVender.begin();
 	for(; it != produtosVender.end(); it++){
 		if((*it).first.getNome() == nomeP){
 			produtosVender.erase(it);
-			return (*it).first;
+			return &(it->first);
 		}
 	}
 
 	throw ProdutoInexistente(nomeP);
 }
 
-void Farmacia::addVenda(Venda* venda) {
+bool Farmacia::addVenda(Venda* venda) {
 	std::map<Produto, std::vector<float>> prodVenda = venda->getProdutosVendidos();
 	map<Produto, vector<float>>::const_iterator it = prodVenda.begin();
 	string nomeProd;
+	int quant;
 	for (; it != prodVenda.end(); it++){
-
+		nomeProd = it->first.getNome();
+		quant = it->second.at(QUANTIDADE);
+		if (!existeProdutoQuant(nomeProd, quant)){
+			return false;
+		}
 	}
 	vendas.push_back(venda);
+	for (; it != prodVenda.end(); it++){
+		nomeProd = it->first.getNome();
+		quant = getQuantProduto(nomeProd) - it->second.at(QUANTIDADE);
+		setQuantidade(nomeProd, quant);
+	}
+	return true;
 }
 
 bool Farmacia::existeProduto(string nomeProduto) const {
