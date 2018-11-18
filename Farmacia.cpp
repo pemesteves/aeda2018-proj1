@@ -124,7 +124,8 @@ Produto* Farmacia::removeProduto(std::string nomeP){
 	for(; it != produtosVender.end(); it++){
 		if((*it).first.getNome() == nomeP){
 			produtosVender.erase(it);
-			return &(it->first);
+			Produto* p = &(it->first);
+			return p;
 		}
 	}
 

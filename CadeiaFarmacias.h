@@ -10,6 +10,7 @@
 
 #include "Farmacia.h"
 #include <vector>
+#include <ostream>
 
 /**
  * Classe CadeiaFarmacias
@@ -29,9 +30,14 @@ public:
 	/**
 	 *  Construtor da classe
 	 * 	Inicializa um objeto da classe colocando todos os vetores vazios e atribuindo um nome
-	 * 	@param Nome da cadeia de farmácias
+	 * 	@param nome Nome da cadeia de farmácias
 	 */
 	CadeiaFarmacias(std::string nome);
+	/**
+	 * Método para alterar o nome de uma cadeia de farmácias
+	 * @param nome Novo nome da cadeia
+	 */
+	void setNome(std::string nome);
 	/**
 	 * Método que retorna o número de farmácias
 	 * @return Tamanho do vetor de farmácias(unsigned int)
@@ -114,9 +120,8 @@ public:
 	 */
 	void sortFuncionarios(enum tipoSort tipo, bool crescente);
 
-	void exportCadeiaFarmacias();
-
-
+	//void exportCadeiaFarmacias();
+	friend std::ostream& operator<<(std::ostream &output, const CadeiaFarmacias &cF);
 };
 
 #endif

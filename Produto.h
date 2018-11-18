@@ -71,25 +71,62 @@ public:
  */
 class Medicamento : public Produto {
 public:
+	/**
+	 * Construtor da classe Medicamento
+	 * @param cod, nome, preco, desc Atributos da classe Produto
+	 */
 	Medicamento(double cod, std::string nome, float preco, std::string desc);
 };
 
 class PassivelReceita : public Medicamento {
 private:
 	bool vendaSemReceita; //Booleano que indica se o medicamento pode ser vendido sem receita
-	float taxaDesconto;
+	float taxaDesconto; //Taxa de Desconto de um Medicamento passível de receita
 public:
+	/**
+	 * Construtor da classe PassivelReceita
+	 * @param cod, nome, preco, desc Atributos da classe Produto
+	 * @param desconto Taxa de Desconto
+	 * @param semRec Booleano que indica se o produto pode ser vendido sem receita
+	 */
 	PassivelReceita(double cod, std::string nome, float preco, std::string desc, float desconto, bool semRec);
+	/**
+	 * Método para obter a taxa de desconto com receita
+	 * @return Taxa de Desconto
+	 */
 	float getTaxaDesconto() const;
+	/**
+	 * Método para alterar a taxa de desconto de um produto com receita
+	 * @param taxaDesconto Taxa de desconto a alterar
+	 */
 	void setTaxaDesconto(float taxaDesconto);
+	/**
+	 * Método utilizado para saber se o medicamento pode ser vendido sem receita
+	 * @return True se puder ser vendido sem receita. Caso contrário, retorna false
+	 */
 	bool getVendaSemReceita() const;
+	/**
+	 * Método para alterar a venda sem receita
+	 * @param vendaSemReceita Deve ser true se o medicamento passar a poder ser vendido sem receita
+	 */
 	void setVendaSemReceita(bool vendaSemReceita);
 };
 
+/**
+ * Classe ProdutoInexistente
+ */
 class ProdutoInexistente {
-	std::string nome;
+	std::string nome; //Nome do produto inexistente
 public:
+	/**
+	 * Construtor da classe ProdutoInexistente
+	 * @param nomeProd Nome do Produto
+	 */
 	ProdutoInexistente(std::string nomeProd) { nome = nomeProd; }
+	/**
+	 * Método para obter o nome do produto inexistente
+	 * @return Nome do Produto
+	 */
 	std::string getNome() const { return nome; }
 };
 

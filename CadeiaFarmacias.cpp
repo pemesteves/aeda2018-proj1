@@ -3,18 +3,22 @@
 using namespace std;
 
 CadeiaFarmacias::CadeiaFarmacias() {
-	nome = "";
-	farmacias.resize(0);
-	clientes.resize(0);
-	funcionarios.resize(0);
+	this->nome = ""; //Inicialização de um nome vazio
+	farmacias.resize(0); //Vetor de farmácias vazio
+	clientes.resize(0); //Vetor de clientes vazio
+	funcionarios.resize(0); //Vetor de funcionários vazio
 }
 
 
 CadeiaFarmacias::CadeiaFarmacias(std::string nome) {
-	this->nome=nome;
-	farmacias.resize(0);
-	clientes.resize(0);
-	funcionarios.resize(0);
+	this->nome=nome; //Inicialização de uma cadeia com nome
+	farmacias.resize(0); //Vetor de farmácias vazio
+	clientes.resize(0); //Vetor de clientes vazio
+	funcionarios.resize(0); //Vetor de funcionários vazio
+}
+
+void CadeiaFarmacias::setNome(string nome){
+	this->nome = nome;
 }
 
 unsigned int CadeiaFarmacias::getNumFarmacias() const {
@@ -68,7 +72,7 @@ void CadeiaFarmacias::sortFarmacias(enum tipoSort tipo, bool crescente){
 }
 
 void CadeiaFarmacias::addCliente(Cliente* cliente) {
-	clientes.push_back(cliente);
+	clientes.push_back(cliente); //Adicionar um apontador para cliente ao vetor
 }
 
 Cliente* CadeiaFarmacias::removeCliente(const std::string &nomeC){
@@ -107,7 +111,11 @@ void CadeiaFarmacias::sortFuncionarios(enum tipoSort tipo, bool crescente){
 	quickSort(funcionarios, 0, funcionarios.size()-1, tipo, crescente);
 }
 
-void CadeiaFarmacias::exportCadeiaFarmacias(){
+/*void CadeiaFarmacias::exportCadeiaFarmacias(){
+
+}*/
+
+std::ostream& operator<<(std::ostream &output, const CadeiaFarmacias &cF){
 
 }
 
