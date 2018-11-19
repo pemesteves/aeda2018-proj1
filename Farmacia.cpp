@@ -114,17 +114,17 @@ void Farmacia::addProdutosVender(vector<Produto*> produtosVender_new) {
 	for (size_t i = 0; i < produtosVender_new.size(); i++) {
 		p = produtosVender_new.at(i);
 		if (!existeProduto(p->getNome())) 
-			produtosVender.insert(pair<Produto, int>(*p, 0));
+			produtosVender[*p] = 0;
 		//adicionar exceçao ???
 	}
 }
 
-Produto* Farmacia::removeProduto(std::string nomeP){
+const Produto* Farmacia::removeProduto(std::string nomeP){
 	map<Produto, int>::iterator it =  produtosVender.begin();
 	for(; it != produtosVender.end(); it++){
 		if((*it).first.getNome() == nomeP){
 			produtosVender.erase(it);
-			Produto* p = &(it->first);
+			const Produto* p = &(it->first);
 			return p;
 		}
 	}
@@ -176,7 +176,7 @@ bool Farmacia::existeProdutoQuant(string nomeProduto, int quant) const{
 
 bool Farmacia::addProdutoVender(Produto* produtoVender) {
 	if (!existeProduto(produtoVender->getNome())) {
-		produtosVender.insert(pair<Produto, int>(*produtoVender, 0));
+		produtosVender[*produtoVender]= 0;
 		return true;
 	}
 	return false;

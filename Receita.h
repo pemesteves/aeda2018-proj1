@@ -68,6 +68,13 @@ public:
 	 * @return Retorna o Produto removido. Caso não exista, lança uma exceção do tipo ProdutoInexistente
 	 */
 	Produto removeProduto(std::string nome);
+
+	/**
+	 * Método que permite saber se um produto existe na receita
+	 * @param prod Apontador para o produto que se pretende saber se existe
+	 * @return True se produto existir, caso contrário retorna false
+	 */
+	bool existeProdReceita(Produto* prod) const;
 };
 
 #endif

@@ -42,9 +42,18 @@ void Receita::addProduto(Produto* produto, double quant) {
 	if ((it = produtos.find(*produto)) != produtos.end())
 		(*it).second += quant;
 	else {
-		pair<Produto, double> p = make_pair(*produto, quant);
-		produtos.insert(p);
+		//pair<Produto, double> p = make_pair(*produto, quant);
+		produtos[*produto]=quant;
 	}
+}
+
+bool Receita::existeProdReceita(Produto* prod) const{
+	map<Produto, double>::const_iterator it;
+	it = produtos.find(*prod);
+	if (it!=produtos.end())
+		return true;
+	else
+		return false;
 }
 
 Produto Receita::removeProduto(std::string nome){

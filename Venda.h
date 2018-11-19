@@ -8,31 +8,16 @@
 #ifndef VENDA_H
 #define VENDA_H
 
+#include "util.h"
+
 #include "Data.h"
 #include "Produto.h"
 #include "Receita.h"
+#include "Pessoa.h"
 
 #include <vector>
 #include <string>
 #include <map>
-
-class Receita;
-
-/**
- * Declaração de uma enumeração: tipoSort
- * É utilizada para todas as operações de sort
- * Valores: NOME = ordenação por nome; CONTIBUINTE = ordenação por contribuinte; NUM_PROD = ordenação por número de produtos;
- * 			NUM_VENDA = ordenação por número de vendas/compras; SALARIO = ordenação por salário; DATA = ordenação por data;
- * 			HORA = ordenação por hora; DEFAULT = ordenação por um critério pré-definido
- */
-enum tipoSort {NOME, CONTRIBUINTE, NUM_PROD, NUM_VENDA, SALARIO, DATA, HORA, DEFAULT};
-
-/**
- * Declaração de uma enumeração: dadosProd
- * É utilizada para facilitar o acesso a dados de um produto numa venda
- * Valores: QUANTIDADE = unidades do produto vendidas; IVA = percentagem de IVA do produto; COMPARTICIPACAO = percentagem de comparticipacao do produto
- */
-enum dadosProd {QUANTIDADE, IVA, COMPARTICIPACAO};
 
 /**
  * Classe Venda
@@ -45,6 +30,7 @@ private:
 	double totalVenda; //Valor total da venda
 	bool temReceita; //Indica se a venda tem uma receita associada (true quando tem)
 	Receita* receitaVenda; //Caso a venda tenha uma receita associada, receitaVenda guarda um apontador para essa receita
+	Cliente* clienteVenda; //Cliente ao qual está associada a venda
 
 public:
 	/**
@@ -54,8 +40,9 @@ public:
 	/**
 	 * Construtor da classe Venda
 	 * @param receitaVenda Apontador para a receita associada à venda
+	 * @param clienteVenda Apontador para o cliente associado à venda
 	 */
-	Venda(Receita* receitaVenda);
+	Venda(Receita* receitaVenda, Cliente* clienteVenda);
 	/**
 	 * Construtor da classe Venda
 	 * @param dia, mes, ano, horas, min, segundos Dados correspondentes à data e hora da venda
@@ -74,12 +61,20 @@ public:
 	/**
 	 * Método que permite atribuir uma receita à venda
 	 * Só é possível atribuir uma receita à venda se esta não tiver ainda nenhuma receita associada
+	 * @param receitaVenda Apontador para a receita a associar
 	 * @return True se foi possível atribuir a receita e false se não tiver sido possível
 	 */
 	bool setReceita(Receita* receitaVenda);
 	/**
+	 * Método que permite atribuir um cliente à venda
+	 * Só é possível atribuir um cliente à venda se esta não tiver ainda nenhum cliente associado
+	 * @param clienteVenda Apontador para o cliente a associar
+	 * @return True se foi possível atribuir o cliente e false se não tiver sido possível
+	 */
+	void setCliente(Cliente* clienteVenda);
+	/**
 	 * Método que permite obter o número de produtos vendidos
-	 * @return Tamanho de proudtosVenidos (atributo da classe)
+	 * @return Tamanho de produtosVendidos (atributo da classe)
 	 */
 	unsigned int getNumProdutos() const;
 	/**

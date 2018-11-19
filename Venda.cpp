@@ -10,14 +10,16 @@ Venda::Venda(){
 	totalVenda = 0;
 	temReceita = false;
 	receitaVenda = NULL;
+	clienteVenda = NULL;
 }
 
-Venda::Venda(Receita* receitaVenda){
+Venda::Venda(Receita* receitaVenda, Cliente* clienteVenda){
 	Data d; data = d;
 	Hora h; hora = h;
 	totalVenda = 0;
 	temReceita = true;
 	this->receitaVenda = receitaVenda;
+	this->clienteVenda = clienteVenda;
 }
 
 Venda::Venda(unsigned short dia, unsigned short mes, int ano, unsigned short horas, unsigned short minutos, unsigned short segundos){
@@ -28,6 +30,7 @@ Venda::Venda(unsigned short dia, unsigned short mes, int ano, unsigned short hor
 	totalVenda = 0;
 	temReceita = false;
 	receitaVenda = NULL;
+	clienteVenda = NULL;
 }
 
 bool Venda::setReceita(Receita* receitaVenda){
@@ -36,6 +39,10 @@ bool Venda::setReceita(Receita* receitaVenda){
 	temReceita = true;
 	this->receitaVenda = receitaVenda;
 	return true;
+}
+
+void Venda::setCliente(Cliente* clienteVenda){
+	this->clienteVenda = clienteVenda;
 }
 
 double Venda::getTotalVenda() const{
@@ -65,20 +72,23 @@ float Venda::getPrecoProduto(string nomeProd) const{
 
 void Venda::addProduto(Produto* prod, float quant, float iva, float comparticipacao){
 	double precoAdd = 0; //valor a adicionar ao valor total da venda
-	float precoProd; //valor por unidade de produto
+	float precoProd=0; //valor por unidade de produto
 	map<Produto, vector<float>>::iterator it;
 	if ((it = produtosVendidos.find(*prod)) != produtosVendidos.end()){
 		(*it).second.at(QUANTIDADE) += quant;
-		precoProd = (*it).first.getPreco();
-		precoProd = precoProd + precoProd*(*it).second.at(IVA) - precoProd*(*it).second.at(COMPARTICIPACAO);
+		Produto p = (*it).first;
+		vector<float> v = (*it).second;
+		precoProd = p.getPreco();
+		precoProd += precoProd*v.at(IVA) - precoProd*v.at(COMPARTICIPACAO);
 		precoAdd = precoProd * quant;
 		totalVenda += precoAdd;
 	}
 	else{
 		vector<float> v = {quant, iva, comparticipacao};
-		pair<Produto, vector<float>> p = make_pair(*prod, v);
-		produtosVendidos.insert(p);
-		precoProd = precoProd + precoProd*(*it).second.at(IVA) - precoProd*(*it).second.at(COMPARTICIPACAO);
+		//pair<Produto, vector<float>> p = make_pair(*prod, v);
+		produtosVendidos[*prod]=v;
+		//vector<float> v = (*it).second;
+		precoProd = precoProd + precoProd*iva - precoProd*v.at(COMPARTICIPACAO);
 		precoAdd = precoProd * quant;
 		totalVenda += precoAdd;
 	}

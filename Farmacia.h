@@ -8,6 +8,7 @@
 #ifndef FARMACIA_H
 #define FARMACIA_H
 
+#include "util.h"
 #include "Pessoa.h"
 #include "Venda.h"
 
@@ -16,9 +17,8 @@
 #include <algorithm>
 #include <map>
 
-class Pessoa;
-class Funcionario;
-class Venda;
+
+
 
 /**
  * Classe Farmacia
@@ -140,7 +140,7 @@ public:
 	 * @param nomeP Nome do produto a remover
 	 * @return Retorna um apontador para o objeto removido ou, se este não existir, lança uma exceção do tipo ProdutoInexistente
 	 */
-	Produto* removeProduto(std::string nomeP);
+	const Produto* removeProduto(std::string nomeP);
 	/**
 	 * Método que permite realizar uma venda
 	 * A venda é possível apenas se os produtos da mesma existirem na farmácia nas quantidades necessárias
