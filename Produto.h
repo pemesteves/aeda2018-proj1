@@ -13,11 +13,13 @@
  * Classe Produto
  */
 class Produto {
-private:
+protected:
 	double codigo; //Código do Produto
 	std::string nome; //Nome do Produto
 	float preco; //Preço do Produto
 	std::string descricao; //Descrição do Produto
+	bool passivelReceita; //true se produto for do tipo PassivelReceita
+	float taxaDesconto; //Taxa de Desconto de um Medicamento passível de receita
 public:
 	/**
 	 * Construtor da classe Produto
@@ -59,11 +61,21 @@ public:
 	 */
 	bool operator< (const Produto &p1) const;
 	/**
+	 * Método para saber se o produto é do tipo PassivelReceita
+	 * @return true se for PassivelReceita, se não retorna false
+	 */
+	bool getPassivelReceita() const;
+	/**
 	 * Operador de igualdade: Compara dois produtos com regras pré-definidas
 	 * @param p1 Produto que irá ser comparado
 	 * @return Retorna true se o produto for igual a p1. Caso contrário, retorna false
 	 */
 	bool operator== (const Produto &p1) const;
+	/**
+	 * Método para obter a taxa de desconto com receita
+	 * @return Taxa de Desconto
+	 */
+	virtual float getTaxaDesconto() const {return 0;};
 };
 
 /**
@@ -81,7 +93,6 @@ public:
 class PassivelReceita : public Medicamento {
 private:
 	bool vendaSemReceita; //Booleano que indica se o medicamento pode ser vendido sem receita
-	float taxaDesconto; //Taxa de Desconto de um Medicamento passível de receita
 public:
 	/**
 	 * Construtor da classe PassivelReceita

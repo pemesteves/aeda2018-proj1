@@ -14,6 +14,10 @@ float Produto::getPreco() const {
 	return preco;
 }
 
+bool Produto::getPassivelReceita() const{
+	return passivelReceita;
+}
+
 void Produto::changePreco(float preco) {
 	this->preco = preco;
 }
@@ -27,6 +31,8 @@ Produto::Produto(double cod, string nome, float preco, string descricao) {
 	this->nome = nome;
 	this->preco = preco;
 	this->descricao = descricao;
+	taxaDesconto = 0;
+	passivelReceita = false;
 }
 
 Medicamento::Medicamento(double cod, string nome, float preco, string desc) : Produto(cod, nome, preco, desc) {
@@ -35,6 +41,7 @@ Medicamento::Medicamento(double cod, string nome, float preco, string desc) : Pr
 PassivelReceita::PassivelReceita(double cod, string nome, float preco, string desc, float desconto = 0, bool semRec = false) : Medicamento(cod, nome, preco, desc) {
 	this->taxaDesconto = desconto;
 	this->vendaSemReceita = semRec;
+	passivelReceita = true;
 }
 
 bool PassivelReceita::getVendaSemReceita() const {

@@ -42,7 +42,7 @@ void Receita::addProduto(Produto* produto, double quant) {
 	if ((it = produtos.find(*produto)) != produtos.end())
 		(*it).second += quant;
 	else {
-		//pair<Produto, double> p = make_pair(*produto, quant);
+		if (produto->getPassivelReceita())
 		produtos[*produto]=quant;
 	}
 }

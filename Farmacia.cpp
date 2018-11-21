@@ -115,7 +115,6 @@ void Farmacia::addProdutosVender(vector<Produto*> produtosVender_new) {
 		p = produtosVender_new.at(i);
 		if (!existeProduto(p->getNome())) 
 			produtosVender[*p] = 0;
-		//adicionar exceçao ???
 	}
 }
 
@@ -133,7 +132,8 @@ const Produto* Farmacia::removeProduto(std::string nomeP){
 }
 
 bool Farmacia::addVenda(Venda* venda) {
-	std::map<Produto, std::vector<float>> prodVenda = venda->getProdutosVendidos();
+	std::map<Produto, std::vector<float>> prodVenda;
+	prodVenda = venda->getProdutosVendidos();
 	map<Produto, vector<float>>::const_iterator it = prodVenda.begin();
 	string nomeProd;
 	int quant;
@@ -150,6 +150,7 @@ bool Farmacia::addVenda(Venda* venda) {
 		quant = getQuantProduto(nomeProd) - it->second.at(QUANTIDADE);
 		setQuantidade(nomeProd, quant);
 	}
+	venda->getCliente()->addCompra(venda);
 	return true;
 }
 
@@ -183,7 +184,6 @@ bool Farmacia::addProdutoVender(Produto* produtoVender) {
 }
 
 void Farmacia::sortVendas(enum tipoSort tipo, bool crescente){
-	//sort(vendas.begin(), vendas.end(), funcSort<Venda>);
 	quickSort(vendas, 0, vendas.size()-1, tipo, crescente);
 }
 

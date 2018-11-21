@@ -24,7 +24,7 @@
  */
 class Venda {
 private:
-	std::map<Produto, std::vector<float>> produtosVendidos; //Map cujas keys são objetos do tipo Produto e o valor é um vetor com quantidade, iva e comparticipação
+	std::map<Produto, std::vector<float>> produtosVendidos; //Map cujas keys são objetos do tipo Produto e o valor é um vetor com quantidade, iva, comparticipação e preço pago pelo produto
 	Data data; //Data na qual foi realizada a venda
 	Hora hora; //Hora à qual foi realizada a venda
 	double totalVenda; //Valor total da venda
@@ -78,6 +78,16 @@ public:
 	 */
 	unsigned int getNumProdutos() const;
 	/**
+	 * Método que permite obter o cliente da venda
+	 * @return Cliente associado à venda, se ainda não houver nenhum cliente associado retorna NULL
+	 */
+	Cliente* getCliente();
+	/**
+	 * Método que permite obter a receita da venda
+	 * @return Receita associada à venda, se não houver nenhuma receita associada retorna NULL
+	 */
+	Receita* getReceita();
+	/**
 	 * Método que permite obter a data da venda
 	 * @return Objeto do tipo Data
 	 */
@@ -96,9 +106,9 @@ public:
 	/**
 	 * Método que permite adicionar um produto à venda
 	 * @param prod Apontador para objeto da classe Produto
-	 * @param quant, iva, comparticipacao Valores do tipo float que serão colocados do vetor do map produtosVendidos
+	 * @param quant e iva Valores do tipo float que serão colocados do vetor do map produtosVendidos
 	 */
-	void addProduto(Produto* prod, float quant, float iva, float comparticipacao);
+	void addProduto(Produto* prod, float quant, float iva);
 	/**
 	 * Operador menor: compara dois objetos do tipo Venda com regras pré-definidas
 	 * @param v1 Objeto do tipo Venda
