@@ -1,3 +1,10 @@
+/**
+ * Header File que contem as classes Data e Hora
+ *
+ * @author Marcia, Pedro e Rita
+ * @date Novembro, 2018
+ */
+
 #ifndef DATA_H
 #define DATA_H
 

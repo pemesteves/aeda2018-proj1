@@ -1,3 +1,10 @@
+/**
+ * Header File que contem as classes Produto, Medicamento, PassivelReceita e ProdutoInexistente
+ *
+ * @author Marcia, Pedro e Rita
+ * @date Novembro, 2018
+ */
+
 #ifndef PESSOA_H
 #define PESSOA_H
 

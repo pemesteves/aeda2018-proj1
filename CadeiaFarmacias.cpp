@@ -111,12 +111,20 @@ void CadeiaFarmacias::sortFuncionarios(enum tipoSort tipo, bool crescente){
 	quickSort(funcionarios, 0, funcionarios.size()-1, tipo, crescente);
 }
 
-/*void CadeiaFarmacias::exportCadeiaFarmacias(){
-
-}*/
-
 std::ostream& operator<<(std::ostream &output, const CadeiaFarmacias &cF){
-
+	output << cF.farmacias.size() << endl;
+	for(size_t i = 0; i < cF.farmacias.size(); i++){
+		//output << cF.farmacias[i] << endl;
+	}
+	output << cF.clientes.size() << endl;
+	for(size_t i = 0; i < cF.clientes.size(); i++){
+		//output << cF.clientes[i] << endl;
+	}
+	output << cF.funcionarios.size() << endl;
+	for(size_t i = 0; i < cF.funcionarios.size(); i++){
+		//output << cF.funcionarios[i] << endl;
+	}
+	return output;
 }
 
 

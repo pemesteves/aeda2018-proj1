@@ -31,32 +31,32 @@ Produto::Produto(double cod, string nome, float preco, string descricao) {
 	this->nome = nome;
 	this->preco = preco;
 	this->descricao = descricao;
-	taxaDesconto = 0;
-	passivelReceita = false;
+	this->taxaDesconto = 0;
+	this->vendaSemReceita = false;
 }
 
-Medicamento::Medicamento(double cod, string nome, float preco, string desc) : Produto(cod, nome, preco, desc) {
+Produto::Produto(double cod, std::string nome, float preco, std::string desc, float desconto, bool semRec){
+	this->codigo = cod;
+		this->nome = nome;
+		this->preco = preco;
+		this->descricao = descricao;
+		this->taxaDesconto = desconto;
+		this->vendaSemReceita = semRec;
 }
 
-PassivelReceita::PassivelReceita(double cod, string nome, float preco, string desc, float desconto = 0, bool semRec = false) : Medicamento(cod, nome, preco, desc) {
-	this->taxaDesconto = desconto;
-	this->vendaSemReceita = semRec;
-	passivelReceita = true;
-}
-
-bool PassivelReceita::getVendaSemReceita() const {
+bool Produto::getVendaSemReceita() const {
 	return vendaSemReceita;
 }
 
-void PassivelReceita::setVendaSemReceita(bool vendaSemReceita) {
+void Produto::setVendaSemReceita(bool vendaSemReceita) {
 	this->vendaSemReceita = vendaSemReceita;
 }
 
-float PassivelReceita::getTaxaDesconto() const {
+float Produto::getTaxaDesconto() const {
 	return taxaDesconto;
 }
 
-void PassivelReceita::setTaxaDesconto(float taxaDesconto) {
+void Produto::setTaxaDesconto(float taxaDesconto) {
 	this->taxaDesconto = taxaDesconto;
 }
 

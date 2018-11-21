@@ -1,7 +1,7 @@
 /**
- * Header File que contém a classe Farmacia, a classe FarmaciaInexistente e um algoritmo para ordenar os vetores de todo o projeto.
+ * Header File que contem a classe Farmacia, a classe FarmaciaInexistente e um algoritmo para ordenar os vetores de todo o projeto.
  *
- * @author Márcia, Pedro e Rita
+ * @author Marcia, Pedro e Rita
  * @date Novembro, 2018
  */
 
@@ -16,9 +16,6 @@
 #include <string>
 #include <algorithm>
 #include <map>
-
-
-
 
 /**
  * Classe Farmacia
@@ -192,7 +189,14 @@ public:
 	 * Método que permite imprimir no ecrã uma fatura
 	 * @param v Apontador para objeto do tipo Venda que contém a venda da qual será impressa a fatura
 	 */
-	void imprimeFatura(Venda* v) const; //Não sei se isto faz muito sentido aqui
+	void imprimeFatura(Venda* v) const;
+	/**
+	 * Metodo para exportar a farmacia
+	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
+	 * @param f Farmacia que se quer exportar
+	 * @return Retorna referencia para a variavel para onde se quer exportar
+	 */
+	friend std::ostream& operator<<(std::ostream &output, const Farmacia &f);
 };
 
 /**

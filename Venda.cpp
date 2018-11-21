@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "Venda.h"
 #include <iomanip>
 #include <iostream>
@@ -45,24 +46,20 @@ void Venda::setCliente(Cliente* clienteVenda){
 	this->clienteVenda = clienteVenda;
 }
 
-Cliente* Venda::getCliente(){
-	return clienteVenda;
-}
-
-Receita* Venda::getReceita(){
-	return receitaVenda;
-}
-
 double Venda::getTotalVenda() const{
 	return totalVenda;
 }
 
-std::map<Produto, std::vector<float>> Venda::getProdutosVendidos() const{
-	return produtosVendidos;
-}
-
 unsigned int Venda::getNumProdutos() const{
 	return produtosVendidos.size();
+}
+
+Cliente* Venda::getCliente() {
+	return clienteVenda;
+}
+
+Receita* Venda::getReceita() {
+	return receitaVenda;
 }
 
 Data Venda::getData() const{
@@ -82,36 +79,27 @@ float Venda::getPrecoProduto(string nomeProd) const{
 	return -1; //Se não houver um produto com o nome = nomeProd, retorna -1
 }
 
-void Venda::addProduto(Produto* prod, float quant, float iva){
-
+void Venda::addProduto(Produto* prod, float quant, float iva, float comparticipacao){
 	double precoAdd = 0; //valor a adicionar ao valor total da venda
 	float precoProd=0; //valor por unidade de produto
-	float comparticipacao = 0; //valor da comparticipacao do produto
-
 	map<Produto, vector<float>>::iterator it;
 	if ((it = produtosVendidos.find(*prod)) != produtosVendidos.end()){
 		(*it).second.at(QUANTIDADE) += quant;
 		Produto p = (*it).first;
 		vector<float> v = (*it).second;
-		precoProd += precoProd*v.at(PRECO_PAGO);
+		precoProd = p.getPreco();
+		precoProd += precoProd*v.at(IVA) - precoProd*v.at(COMPARTICIPACAO);
 		precoAdd = precoProd * quant;
 		totalVenda += precoAdd;
 	}
 	else{
-		vector<float> v = {quant, iva};
-		if (temReceita){
-			if (prod->getPassivelReceita()){
-				if(receitaVenda->existeProdReceita(prod))
-					comparticipacao = prod->getTaxaDesconto();
-			}
-		}
-		v.push_back(comparticipacao);
-		precoProd = precoProd + precoProd*iva - precoProd*v.at(COMPARTICIPACAO);
-		v.push_back(precoProd);
+		vector<float> v = {quant, iva, comparticipacao};
+		//pair<Produto, vector<float>> p = make_pair(*prod, v);
 		produtosVendidos[*prod]=v;
+		//vector<float> v = (*it).second;
+		precoProd += precoProd*iva - precoProd*v.at(COMPARTICIPACAO);
 		precoAdd = precoProd * quant;
 		totalVenda += precoAdd;
-		comparticipacao = 0;
 	}
 }
 
@@ -129,7 +117,7 @@ void Venda::imprimeFatura() const{
 	cout << endl << endl << endl;
 	cout << "Nome Produto" << setw(20) << "Quantidade" << setw(5) << "Preço"<< endl;
 	for(map<Produto, vector<float>>::const_iterator it = produtosVendidos.begin(); it != produtosVendidos.end(); it++){
-		cout << it->first.getNome() << setw(20) << it->second[0] << setw(5) << it->second.at(PRECO_PAGO) << endl;
+		cout << it->first.getNome() << setw(20) << it->second[0] << setw(5) << it->first.getPreco() << endl;
 	}
 	cout << setw(25) << totalVenda;
 }
@@ -164,5 +152,9 @@ bool Venda::menorQue(const Venda &v1, enum tipoSort tipo, bool crescente) const{
 		return (*this) < v1;
 		break;
 	}
+}
+
+map<Produto, vector<float>> Venda::getProdutosVendidos() const{
+	return produtosVendidos;
 }
 

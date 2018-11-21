@@ -1,7 +1,8 @@
+<<<<<<< HEAD
 /**
- * Header File que contém a classe Venda
+ * Header File que contem a classe Venda
  *
- * @author Márcia, Pedro e Rita
+ * @author Marcia, Pedro e Rita
  * @date Novembro, 2018
  */
 
@@ -24,7 +25,7 @@
  */
 class Venda {
 private:
-	std::map<Produto, std::vector<float>> produtosVendidos; //Map cujas keys são objetos do tipo Produto e o valor é um vetor com quantidade, iva, comparticipação e preço pago pelo produto
+	std::map<Produto, std::vector<float>> produtosVendidos; //Map cujas keys são objetos do tipo Produto e o valor é um vetor com quantidade, iva e comparticipação
 	Data data; //Data na qual foi realizada a venda
 	Hora hora; //Hora à qual foi realizada a venda
 	double totalVenda; //Valor total da venda
@@ -106,9 +107,9 @@ public:
 	/**
 	 * Método que permite adicionar um produto à venda
 	 * @param prod Apontador para objeto da classe Produto
-	 * @param quant e iva Valores do tipo float que serão colocados do vetor do map produtosVendidos
+	 * @param quant, iva, comparticipacao Valores do tipo float que serão colocados do vetor do map produtosVendidos
 	 */
-	void addProduto(Produto* prod, float quant, float iva);
+	void addProduto(Produto* prod, float quant, float iva, float comparticipacao);
 	/**
 	 * Operador menor: compara dois objetos do tipo Venda com regras pré-definidas
 	 * @param v1 Objeto do tipo Venda

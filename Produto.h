@@ -1,7 +1,7 @@
 /**
- * Header File que contém as classes Produto, Medicamento, PassivelReceita e ProdutoInexistente
+ * Header File que contem as classes Produto, Medicamento, PassivelReceita e ProdutoInexistente
  *
- * @author Márcia, Pedro e Rita
+ * @author Marcia, Pedro e Rita
  * @date Novembro, 2018
  */
 #ifndef PRODUTO_H
@@ -18,17 +18,47 @@ protected:
 	std::string nome; //Nome do Produto
 	float preco; //Preço do Produto
 	std::string descricao; //Descrição do Produto
-	bool passivelReceita; //true se produto for do tipo PassivelReceita
+	bool vendaSemReceita; //Booleano que indica se o medicamento pode ser vendido sem receita
 	float taxaDesconto; //Taxa de Desconto de um Medicamento passível de receita
 public:
 	/**
 	 * Construtor da classe Produto
-	 * @param cod Código do Produto
+	 * @param cod Codigo do Produto
 	 * @param nome Nome do Produto
-	 * @param preco Preço do Produto
-	 * @param descricao Descrição do produto
+	 * @param preco Preco do Produto
+	 * @param descricao Descricao do Produto
 	 */
 	Produto(double cod, std::string nome, float preco, std::string descricao);
+	/**
+	 * Construtor da classe Produto
+	 * @param cod Codigo do Produto
+	 * @param nome Nome do Produto
+	 * @param preco Preco do Produto
+	 * @param desc Descricao do Produto
+	 * @param desconto Taxa de Desconto
+	 * @param semRec Booleano que indica se o produto pode ser vendido sem receita
+	 */
+	Produto(double cod, std::string nome, float preco, std::string desc, float desconto, bool semRec);
+	/**
+	 * Método para obter a taxa de desconto com receita
+	 * @return Taxa de Desconto
+	 */
+	float getTaxaDesconto() const;
+	/**
+	 * Método para alterar a taxa de desconto de um produto com receita
+	 * @param taxaDesconto Taxa de desconto a alterar
+	 */
+	void setTaxaDesconto(float taxaDesconto);
+	/**
+	 * Método utilizado para saber se o medicamento pode ser vendido sem receita
+	 * @return True se puder ser vendido sem receita. Caso contrário, retorna false
+	 */
+	bool getVendaSemReceita() const;
+	/**
+	 * Método para alterar a venda sem receita
+	 * @param vendaSemReceita Deve ser true se o medicamento passar a poder ser vendido sem receita
+	 */
+	void setVendaSemReceita(bool vendaSemReceita);
 	/**
 	 * Método para obter o código do Produto
 	 * @return Código do Produto
@@ -76,51 +106,6 @@ public:
 	 * @return Taxa de Desconto
 	 */
 	virtual float getTaxaDesconto() const {return 0;};
-};
-
-/**
- * Class Medicamento, derivada publicamente de Produto
- */
-class Medicamento : public Produto {
-public:
-	/**
-	 * Construtor da classe Medicamento
-	 * @param cod, nome, preco, desc Atributos da classe Produto
-	 */
-	Medicamento(double cod, std::string nome, float preco, std::string desc);
-};
-
-class PassivelReceita : public Medicamento {
-private:
-	bool vendaSemReceita; //Booleano que indica se o medicamento pode ser vendido sem receita
-public:
-	/**
-	 * Construtor da classe PassivelReceita
-	 * @param cod, nome, preco, desc Atributos da classe Produto
-	 * @param desconto Taxa de Desconto
-	 * @param semRec Booleano que indica se o produto pode ser vendido sem receita
-	 */
-	PassivelReceita(double cod, std::string nome, float preco, std::string desc, float desconto, bool semRec);
-	/**
-	 * Método para obter a taxa de desconto com receita
-	 * @return Taxa de Desconto
-	 */
-	float getTaxaDesconto() const;
-	/**
-	 * Método para alterar a taxa de desconto de um produto com receita
-	 * @param taxaDesconto Taxa de desconto a alterar
-	 */
-	void setTaxaDesconto(float taxaDesconto);
-	/**
-	 * Método utilizado para saber se o medicamento pode ser vendido sem receita
-	 * @return True se puder ser vendido sem receita. Caso contrário, retorna false
-	 */
-	bool getVendaSemReceita() const;
-	/**
-	 * Método para alterar a venda sem receita
-	 * @param vendaSemReceita Deve ser true se o medicamento passar a poder ser vendido sem receita
-	 */
-	void setVendaSemReceita(bool vendaSemReceita);
 };
 
 /**

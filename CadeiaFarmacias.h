@@ -1,7 +1,7 @@
 /**
- * Header File que contém a classe CadeiaFarmacias.
+ * Header File que contem a classe CadeiaFarmacias.
  *
- * @author Márcia, Pedro e Rita
+ * @author Marcia, Pedro e Rita
  * @date Novembro, 2018
  */
 
@@ -119,8 +119,12 @@ public:
 	 * @param crescente Booleano que permite ao utilizador escolher se quer realizar a ordenação por ordem crescente ou decrescente
 	 */
 	void sortFuncionarios(enum tipoSort tipo, bool crescente);
-
-	//void exportCadeiaFarmacias();
+	/**
+	 * Metodo para exportar a cadeia de farmacias
+	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
+	 * @param cF Cadeia de Farmacias que se quer exportar
+	 * @return Retorna referencia para a variavel para onde se quer exportar
+	 */
 	friend std::ostream& operator<<(std::ostream &output, const CadeiaFarmacias &cF);
 };
 
