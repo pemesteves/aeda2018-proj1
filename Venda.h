@@ -25,6 +25,8 @@
  */
 class Venda {
 private:
+	double codigo; //Codigo da venda
+	static double codigo_sequencial; //Variavel usada para que os codigos das vendas sejam sequenciais (primeira venda tem codigo 0)
 	std::map<Produto, std::vector<float>> produtosVendidos; //Map cujas keys são objetos do tipo Produto e o valor é um vetor com quantidade, iva e comparticipação
 	Data data; //Data na qual foi realizada a venda
 	Hora hora; //Hora à qual foi realizada a venda
@@ -46,9 +48,9 @@ public:
 	Venda(Receita* receitaVenda, Cliente* clienteVenda);
 	/**
 	 * Construtor da classe Venda
-	 * @param dia, mes, ano, horas, min, segundos Dados correspondentes à data e hora da venda
+	 * @param dia, mes, ano, horas, min, segundos, codigo Dados correspondentes à data, hora e codigo da venda
 	 */
-	Venda(unsigned short dia, unsigned short mes, int ano, unsigned short horas, unsigned short min, unsigned short segundos);
+	Venda(unsigned short dia, unsigned short mes, int ano, unsigned short horas, unsigned short min, unsigned short segundos, double codigo);
 	/**
 	 * Método que permite obter o valor total da venda
 	 * @return totalVenda (atributo da classe)
@@ -99,6 +101,11 @@ public:
 	 */
 	Hora getHora() const;
 	/**
+	 * Metodo que permite obter o codigo da venda
+	 * @return codigo da venda
+	 */
+	double getCodigo() const;
+	/**
 	 * Método que permite obter o preço de um produto
 	 * @param nomeProd Nome do produto que irá ser procurado
 	 * @return Preço do produto especificado como argumento. Retorna -1 se não existir
@@ -129,6 +136,13 @@ public:
 	 * @return Retorn true se a venda for menor que v1. Caso contrário, retorn false
 	 */
 	bool menorQue(const Venda &v1, enum tipoSort tipo, bool crescente) const;
+	/**
+	 * Overload de operador << para exportar a venda
+	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
+	 * @param v1 Venda que se quer exportar
+	 * @return Retorna referencia para a variavel para onde se quer exportar
+	 */
+	friend std::ostream& operator<<(std::ostream &output, const Venda &v1);
 };
 
 #endif

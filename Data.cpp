@@ -1,5 +1,4 @@
 #include "Data.h"
-#include <ctime>
 
 Data::Data() {
 	time_t now;
@@ -43,6 +42,11 @@ bool Data::operator ==(const Data& data) const {
 	return (ano == data.getAno() && mes == data.getMes() && dia == data.getDia());
 }
 
+std::ostream& operator<<(std::ostream &output, const Data &d1){
+	output << d1.dia << "/" << d1.mes << "/" << d1.ano;
+	return output;
+}
+
 Hora::Hora() {
 	time_t now;
 	struct tm * timeinfo;
@@ -82,4 +86,9 @@ bool Hora::operator< (const Hora& h) const {
 
 bool Hora::operator ==(const Hora& h) const {
 	return (hora == h.getHora() && minutos == h.getMinutos() && segundos == h.getSegundos());
+}
+
+std::ostream& operator<<(std::ostream &output, const Hora &h1){
+	output << h1.hora << ":" << h1.minutos << ":" << h1.segundos;
+	return output;
 }

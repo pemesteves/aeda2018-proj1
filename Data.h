@@ -8,6 +8,8 @@
 #ifndef DATA_H
 #define DATA_H
 
+#include <ctime>
+#include <iostream>
 /**
  * Classe Data
  */
@@ -57,6 +59,13 @@ public:
 	 * @return Retorna true se as datas forem iguais. Caso contrário, retorna false
 	 */
 	bool operator==(const Data &data) const;
+	/**
+	 * Overload de operador << para exportar a data
+	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
+	 * @param d1 Data que se quer exportar
+	 * @return Retorna referencia para a variavel para onde se quer exportar
+	 */
+	friend std::ostream& operator<<(std::ostream &output, const Data &d1);
 
 };
 
@@ -109,6 +118,13 @@ public:
 	 * @return Retorna true se as horas forem iguais. Caso contrário, retorna false
 	 */
 	bool operator ==(const Hora &h) const;
+	/**
+	 * Overload de operador << para exportar a data
+	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
+	 * @param d1 Data que se quer exportar
+	 * @return Retorna referencia para a variavel para onde se quer exportar
+	 */
+	friend std::ostream& operator<<(std::ostream &output, const Hora &h1);
 };
 
 #endif
