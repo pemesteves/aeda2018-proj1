@@ -86,6 +86,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac016851753450d4445163fd1fc99035d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a116e45aaab70c415b08785cb0ae95240"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia_farmacias.html#a116e45aaab70c415b08785cb0ae95240">getNumFuncionarios</a> () const</td></tr>
 <tr class="separator:a116e45aaab70c415b08785cb0ae95240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accb981d305604c3a223f41d6ef4bac62"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia_farmacias.html#accb981d305604c3a223f41d6ef4bac62">getNome</a> () const</td></tr>
+<tr class="separator:accb981d305604c3a223f41d6ef4bac62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7730e98a92a09a855e2f0695f4203a4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_farmacia.html">Farmacia</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia_farmacias.html#aa7730e98a92a09a855e2f0695f4203a4">getFarmacias</a> () const</td></tr>
 <tr class="separator:aa7730e98a92a09a855e2f0695f4203a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28bb71eaac01460ea524dcda28785847"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_cliente.html">Cliente</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia_farmacias.html#a28bb71eaac01460ea524dcda28785847">getClientes</a> () const</td></tr>
@@ -110,11 +112,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad96112926066367fb07840329e722c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7962e6a3a043473c94b0b5eee04a0fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia_farmacias.html#ab7962e6a3a043473c94b0b5eee04a0fb">sortFuncionarios</a> (enum tipoSort tipo, bool crescente)</td></tr>
 <tr class="separator:ab7962e6a3a043473c94b0b5eee04a0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a114ded4355694257757c864f8f34c7bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia_farmacias.html#a114ded4355694257757c864f8f34c7bd">import</a> (std::fstream &amp;f, <a class="el" href="class_cadeia_farmacias.html">CadeiaFarmacias</a> &amp;cF)</td></tr>
+<tr class="separator:a114ded4355694257757c864f8f34c7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a8a8dc1be9fc7f6ac57a4e7c62a6d0634"><td class="memItemLeft" align="right" valign="top"><a id="a8a8dc1be9fc7f6ac57a4e7c62a6d0634"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;output, const <a class="el" href="class_cadeia_farmacias.html">CadeiaFarmacias</a> &amp;cF)</td></tr>
+<tr class="memitem:a8a8dc1be9fc7f6ac57a4e7c62a6d0634"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cadeia_farmacias.html#a8a8dc1be9fc7f6ac57a4e7c62a6d0634">operator&lt;&lt;</a> (std::ostream &amp;output, const <a class="el" href="class_cadeia_farmacias.html">CadeiaFarmacias</a> &amp;cF)</td></tr>
 <tr class="separator:a8a8dc1be9fc7f6ac57a4e7c62a6d0634"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -180,9 +183,9 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite adicionar um apontador para <a class="el" href="class_cliente.html">Cliente</a> ao respetivo vetor </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite adicionar um apontador para <a class="el" href="class_cliente.html">Cliente</a> ao respetivo vetor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cliente</td><td>Apontador para objeto do tipo <a class="el" href="class_cliente.html">Cliente</a> que será adicionado ao vetor clientes </td></tr>
+    <tr><td class="paramname">cliente</td><td>Apontador para objeto do tipo <a class="el" href="class_cliente.html">Cliente</a> que sera adicionado ao vetor clientes </td></tr>
   </table>
   </dd>
 </dl>
@@ -204,9 +207,9 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite adicionar um apontador para Farmácia ao respetivo vetor </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite adicionar um apontador para <a class="el" href="class_farmacia.html">Farmacia</a> ao respetivo vetor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">farmacia</td><td>Apontador para objeto do tipo <a class="el" href="class_farmacia.html">Farmacia</a> que será adicionado ao vetor farmacias </td></tr>
+    <tr><td class="paramname">farmacia</td><td>Apontador para objeto do tipo <a class="el" href="class_farmacia.html">Farmacia</a> que sera adicionado ao vetor farmacias </td></tr>
   </table>
   </dd>
 </dl>
@@ -228,9 +231,9 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite adicionar um apontador para <a class="el" href="class_funcionario.html">Funcionario</a> ao respetivo vetor </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite adicionar um apontador para <a class="el" href="class_funcionario.html">Funcionario</a> ao respetivo vetor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">funcionario</td><td>Apontador para objeto do tipo <a class="el" href="class_funcionario.html">Funcionario</a> que será adicionado ao vetor funcionarios </td></tr>
+    <tr><td class="paramname">funcionario</td><td>Apontador para objeto do tipo <a class="el" href="class_funcionario.html">Funcionario</a> que sera adicionado ao vetor funcionarios </td></tr>
   </table>
   </dd>
 </dl>
@@ -251,7 +254,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que retorna um vetor de clientes </p><dl class="section return"><dt>Returns</dt><dd>Vetor clientes (atributo da classe) </dd></dl>
+<p>Metodo que retorna um vetor de clientes </p><dl class="section return"><dt>Returns</dt><dd>Vetor clientes (atributo da classe) </dd></dl>
 
 </div>
 </div>
@@ -269,7 +272,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que retorna um vetor de farmácias </p><dl class="section return"><dt>Returns</dt><dd>Vetor farmacias (atributo da classe) </dd></dl>
+<p>Metodo que retorna um vetor de farmacias </p><dl class="section return"><dt>Returns</dt><dd>Vetor farmacias (atributo da classe) </dd></dl>
 
 </div>
 </div>
@@ -287,7 +290,25 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que retorna um vetor de funcionários </p><dl class="section return"><dt>Returns</dt><dd>Vetor funcionarios (atributo da classe) </dd></dl>
+<p>Metodo que retorna um vetor de funcionarios </p><dl class="section return"><dt>Returns</dt><dd>Vetor funcionarios (atributo da classe) </dd></dl>
+
+</div>
+</div>
+<a id="accb981d305604c3a223f41d6ef4bac62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accb981d305604c3a223f41d6ef4bac62">&#9670;&nbsp;</a></span>getNome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CadeiaFarmacias::getNome </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo que retorna o nome da cadeia de farmacias </p><dl class="section return"><dt>Returns</dt><dd>Nome da Cadeia (atributo da classe) </dd></dl>
 
 </div>
 </div>
@@ -305,7 +326,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que retorna o número de clientes </p><dl class="section return"><dt>Returns</dt><dd>Tamanho do vetor de clientes(unsigned int) </dd></dl>
+<p>Metodo que retorna o numero de clientes </p><dl class="section return"><dt>Returns</dt><dd>Tamanho do vetor de clientes(unsigned int) </dd></dl>
 
 </div>
 </div>
@@ -323,7 +344,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que retorna o número de farmácias </p><dl class="section return"><dt>Returns</dt><dd>Tamanho do vetor de farmácias(unsigned int) </dd></dl>
+<p>Metodo que retorna o numero de farmacias </p><dl class="section return"><dt>Returns</dt><dd>Tamanho do vetor de farmacias(unsigned int) </dd></dl>
 
 </div>
 </div>
@@ -341,7 +362,42 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que retorna o número de funcionários </p><dl class="section return"><dt>Returns</dt><dd>Tamanho do vetor de funcionários(unsigned int) </dd></dl>
+<p>Metodo que retorna o numero de funcionarios </p><dl class="section return"><dt>Returns</dt><dd>Tamanho do vetor de funcionarios(unsigned int) </dd></dl>
+
+</div>
+</div>
+<a id="a114ded4355694257757c864f8f34c7bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a114ded4355694257757c864f8f34c7bd">&#9670;&nbsp;</a></span>import()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CadeiaFarmacias::import </td>
+          <td>(</td>
+          <td class="paramtype">std::fstream &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_cadeia_farmacias.html">CadeiaFarmacias</a> &amp;&#160;</td>
+          <td class="paramname"><em>cF</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo para importar a cadeia de farmacias </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Ficheiro de onde se vai importar </td></tr>
+    <tr><td class="paramname">cF</td><td>Cadeia de Farmacias que se quer exportar </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -360,13 +416,13 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite eliminar o <a class="el" href="class_cliente.html">Cliente</a> nomeC do respetivo vetor </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite eliminar o <a class="el" href="class_cliente.html">Cliente</a> nomeC do respetivo vetor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nomeC</td><td>Nome do cliente que será removido do vetor </td></tr>
+    <tr><td class="paramname">nomeC</td><td>Nome do cliente que sera removido do vetor </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna um apontador para o objeto removido ou, se este não existir, lança uma exceção do tipo <a class="el" href="class_cliente_inexistente.html">ClienteInexistente</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna um apontador para o objeto removido ou, se este nao existir, lança uma excecao do tipo <a class="el" href="class_cliente_inexistente.html">ClienteInexistente</a> </dd></dl>
 
 </div>
 </div>
@@ -385,13 +441,13 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite eliminar a <a class="el" href="class_farmacia.html">Farmacia</a> nomeF do respetivo vetor. Também remove o apontador <a class="el" href="class_farmacia.html">Farmacia</a> de todos os funcionarios caso seja o mesmo </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite eliminar a <a class="el" href="class_farmacia.html">Farmacia</a> nomeF do respetivo vetor. Tambem remove o apontador <a class="el" href="class_farmacia.html">Farmacia</a> de todos os funcionarios caso seja o mesmo </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nomeF</td><td>Nome da farmácia que será removida do vetor </td></tr>
+    <tr><td class="paramname">nomeF</td><td>Nome da farmacia que sera removida do vetor </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna um apontador para o objeto removido ou, se este não existir, lança uma exceção do tipo <a class="el" href="class_farmacia_inexistente.html">FarmaciaInexistente</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna um apontador para o objeto removido ou, se este nao existir, lança uma excecao do tipo <a class="el" href="class_farmacia_inexistente.html">FarmaciaInexistente</a> </dd></dl>
 
 </div>
 </div>
@@ -410,13 +466,13 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite eliminar o <a class="el" href="class_funcionario.html">Funcionario</a> nomeF do respetivo vetor </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite eliminar o <a class="el" href="class_funcionario.html">Funcionario</a> nomeF do respetivo vetor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nomeF</td><td>Nome do funcionario que será removido do vetor </td></tr>
+    <tr><td class="paramname">nomeF</td><td>Nome do funcionario que sera removido do vetor </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna um apontador para o objeto removido ou, se este não existir, lança uma exceção do tipo <a class="el" href="class_funcionario_inexistente.html">FuncionarioInexistente</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna um apontador para o objeto removido ou, se este nao existir, lança uma excecao do tipo <a class="el" href="class_funcionario_inexistente.html">FuncionarioInexistente</a> </dd></dl>
 
 </div>
 </div>
@@ -435,7 +491,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método para alterar o nome de uma cadeia de farmácias </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo para alterar o nome de uma cadeia de farmacias </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nome</td><td>Novo nome da cadeia </td></tr>
   </table>
@@ -469,10 +525,10 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite ordenar os clientes </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite ordenar os clientes </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tipo</td><td>Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de ordenação do vetor </td></tr>
-    <tr><td class="paramname">crescente</td><td>Booleano que permite ao utilizador escolher se quer realizar a ordenação por ordem crescente ou decrescente </td></tr>
+    <tr><td class="paramname">tipo</td><td>Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de ordenacao do vetor </td></tr>
+    <tr><td class="paramname">crescente</td><td>Booleano que permite ao utilizador escolher se quer realizar a ordenacao por ordem crescente ou decrescente </td></tr>
   </table>
   </dd>
 </dl>
@@ -504,10 +560,10 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite ordenar as farmácias </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite ordenar as farmacias </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tipo</td><td>Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de ordenação do vetor </td></tr>
-    <tr><td class="paramname">crescente</td><td>Booleano que permite ao utilizador escolher se quer realizar a ordenação por ordem crescente ou decrescente </td></tr>
+    <tr><td class="paramname">tipo</td><td>Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de ordenacao do vetor </td></tr>
+    <tr><td class="paramname">crescente</td><td>Booleano que permite ao utilizador escolher se quer realizar a ordenacao por ordem crescente ou decrescente </td></tr>
   </table>
   </dd>
 </dl>
@@ -539,19 +595,64 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite ordenar os funcionários </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite ordenar os funcionarios </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tipo</td><td>Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de ordenação do vetor </td></tr>
-    <tr><td class="paramname">crescente</td><td>Booleano que permite ao utilizador escolher se quer realizar a ordenação por ordem crescente ou decrescente </td></tr>
+    <tr><td class="paramname">tipo</td><td>Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de ordenacao do vetor </td></tr>
+    <tr><td class="paramname">crescente</td><td>Booleano que permite ao utilizador escolher se quer realizar a ordenacao por ordem crescente ou decrescente </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a8a8dc1be9fc7f6ac57a4e7c62a6d0634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a8dc1be9fc7f6ac57a4e7c62a6d0634">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_cadeia_farmacias.html">CadeiaFarmacias</a> &amp;&#160;</td>
+          <td class="paramname"><em>cF</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Overload do operador exportar a cadeia de farmacias </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Variavel para onde se quer exportar(ecra, ficheiro, ...) </td></tr>
+    <tr><td class="paramname">cF</td><td>Cadeia de Farmacias que se quer exportar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna referencia para a variavel para onde se quer exportar </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/<a class="el" href="_cadeia_farmacias_8h_source.html">CadeiaFarmacias.h</a></li>
-<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/CadeiaFarmacias.cpp</li>
+<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/<a class="el" href="_cadeia_farmacias_8h_source.html">CadeiaFarmacias.h</a></li>
+<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/CadeiaFarmacias.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

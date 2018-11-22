@@ -63,6 +63,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_farmacia-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Farmacia Class Reference</div>  </div>
@@ -129,9 +130,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8d776c7e0c570cb91cf8299bc79ee931"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcb90c8720b3f3fa046baec45ef6bd61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#afcb90c8720b3f3fa046baec45ef6bd61">imprimeFatura</a> (<a class="el" href="class_venda.html">Venda</a> *v) const</td></tr>
 <tr class="separator:afcb90c8720b3f3fa046baec45ef6bd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a9ab7dbaf237ba82409c4ccad28023621"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a9ab7dbaf237ba82409c4ccad28023621">operator&lt;&lt;</a> (std::ostream &amp;output, const <a class="el" href="class_farmacia.html">Farmacia</a> &amp;f)</td></tr>
+<tr class="separator:a9ab7dbaf237ba82409c4ccad28023621"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header File que contem a classe <a class="el" href="class_farmacia.html">Farmacia</a>, a classe <a class="el" href="class_farmacia_inexistente.html">FarmaciaInexistente</a> e um algoritmo para ordenar os vetores de todo o projeto.</p>
+<div class="textblock"><p>Header File que contem a classe <a class="el" href="class_farmacia.html">Farmacia</a> e a classe <a class="el" href="class_farmacia_inexistente.html">FarmaciaInexistente</a></p>
 <dl class="section author"><dt>Author</dt><dd>Marcia, Pedro e Rita </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>Novembro, 2018 Classe <a class="el" href="class_farmacia.html">Farmacia</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -162,8 +168,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Construtor da Classe <a class="el" href="class_farmacia.html">Farmacia</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nome</td><td>Nome da farmácia </td></tr>
-    <tr><td class="paramname">morada</td><td>Morada da farmácia </td></tr>
+    <tr><td class="paramname">nome</td><td>Nome da farmacia </td></tr>
+    <tr><td class="paramname">morada</td><td>Morada da farmacia </td></tr>
   </table>
   </dd>
 </dl>
@@ -186,7 +192,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite adicionar vários produtos ao map produtosVender </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite adicionar varios produtos ao map produtosVender </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">produtosVender_new</td><td>Vetor de apontadores para objetos da classe <a class="el" href="class_produto.html">Produto</a> </td></tr>
   </table>
@@ -210,13 +216,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite adicionar um produto ao map produtosVender </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite adicionar um produto ao map produtosVender </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">produtoVender</td><td>Apontador para objeto da classe Porduto </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Booleano que indica se a operação foi efetuada com sucesso se for 0 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Booleano que indica se a operacao foi efetuada com sucesso se for 0 </dd></dl>
 
 </div>
 </div>
@@ -235,7 +241,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite realizar uma venda A venda é possível apenas se os produtos da mesma existirem na farmácia nas quantidades necessárias </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite realizar uma venda A venda e possível apenas se os produtos da mesma existirem na farmacia nas quantidades necessarias </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">venda</td><td>Apontador para objeto da classe <a class="el" href="class_venda.html">Venda</a> </td></tr>
   </table>
@@ -260,13 +266,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite saber se um determinado produto existe para venda </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite saber se um determinado produto existe para venda </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nomeProduto</td><td>Nome do produto a procurar </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Se existir, retorna-se true. Caso contrário, retorna-se false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Se existir, retorna-se true. Caso contrario, retorna-se false </dd></dl>
 
 </div>
 </div>
@@ -295,14 +301,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite saber se existe um determinado número de unidades de um produto para venda </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite saber se existe um determinado número de unidades de um produto para venda </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nomeProduto</td><td>Nome do produto a procurar </td></tr>
-    <tr><td class="paramname">quant</td><td>Número de unidades do produto </td></tr>
+    <tr><td class="paramname">quant</td><td>Numero de unidades do produto </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Se existir, retorna-se true. Caso contrário, retorna-se false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Se existir, retorna-se true. Caso contrario, retorna-se false </dd></dl>
 
 </div>
 </div>
@@ -320,7 +326,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o diretor técnico da farmácia </p><dl class="section return"><dt>Returns</dt><dd>Apontador para um objeto da classe <a class="el" href="class_funcionario.html">Funcionario(atributo da classe)</a> </dd></dl>
+<p>Metodo que permite obter o diretor tecnico da farmacia </p><dl class="section return"><dt>Returns</dt><dd>Apontador para um objeto da classe <a class="el" href="class_funcionario.html">Funcionario(atributo da classe)</a> </dd></dl>
 
 </div>
 </div>
@@ -338,7 +344,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o gerente da farmácia </p><dl class="section return"><dt>Returns</dt><dd>Apontador para um objeto da classe <a class="el" href="class_funcionario.html">Funcionario(atributo da classe)</a> </dd></dl>
+<p>Metodo que permite obter o gerente da farmacia </p><dl class="section return"><dt>Returns</dt><dd>Apontador para um objeto da classe <a class="el" href="class_funcionario.html">Funcionario(atributo da classe)</a> </dd></dl>
 
 </div>
 </div>
@@ -356,7 +362,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter a morada da farmácia </p><dl class="section return"><dt>Returns</dt><dd>Morada da farmácia(atributo da classe) </dd></dl>
+<p>Metodo que permite obter a morada da farmacia </p><dl class="section return"><dt>Returns</dt><dd>Morada da farmacia(atributo da classe) </dd></dl>
 
 </div>
 </div>
@@ -374,7 +380,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o nome da farmácia </p><dl class="section return"><dt>Returns</dt><dd>Nome da farmácia(atributo da classe) </dd></dl>
+<p>Metodo que permite obter o nome da farmacia </p><dl class="section return"><dt>Returns</dt><dd>Nome da farmacia(atributo da classe) </dd></dl>
 
 </div>
 </div>
@@ -392,7 +398,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o número de produtos disponíveis para venda </p><dl class="section return"><dt>Returns</dt><dd>Tamanho do map produtosVender </dd></dl>
+<p>Metodo que permite obter o numero de produtos disponiveis para venda </p><dl class="section return"><dt>Returns</dt><dd>Tamanho do map produtosVender </dd></dl>
 
 </div>
 </div>
@@ -410,7 +416,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o número de vendas realizadas na farmácia </p><dl class="section return"><dt>Returns</dt><dd>Tamanho do vetor vendas </dd></dl>
+<p>Metodo que permite obter o numero de vendas realizadas na farmacia </p><dl class="section return"><dt>Returns</dt><dd>Tamanho do vetor vendas </dd></dl>
 
 </div>
 </div>
@@ -429,13 +435,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o número de vendas realizadas num dia </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite obter o numero de vendas realizadas num dia </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">d</td><td>Dia no qual se realizaram as vendas </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Número de vendas realizadas no dia especificado </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Numero de vendas realizadas no dia especificado </dd></dl>
 
 </div>
 </div>
@@ -464,13 +470,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o número de vendas realizadas entre dois dias </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite obter o numero de vendas realizadas entre dois dias </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">d1,d2</td><td>Intervalo no qual se contam o número de vendas </td></tr>
+    <tr><td class="paramname">d1,d2</td><td>Intervalo no qual se contam o numero de vendas </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Número de vendas realizadas no intervalo especificado </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Numero de vendas realizadas no intervalo especificado </dd></dl>
 
 </div>
 </div>
@@ -489,13 +495,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o preço de um determinado produto </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite obter o preco de um determinado produto </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nomeProd</td><td>Nome do produto do qual se quer saber o preço </td></tr>
+    <tr><td class="paramname">nomeProd</td><td>Nome do produto do qual se quer saber o preco </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Preço do produto passado como argumento. Se não existir, retorna-se -1 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Preco do produto passado como argumento. Se nao existir, retorna-se -1 </dd></dl>
 
 </div>
 </div>
@@ -513,7 +519,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter os produtos disponíveis para venda mais a sua quantidade </p><dl class="section return"><dt>Returns</dt><dd>Atributo da classe -&gt; produtosVender </dd></dl>
+<p>Metodo que permite obter os produtos disponiveis para venda mais a sua quantidade </p><dl class="section return"><dt>Returns</dt><dd>Atributo da classe -&gt; produtosVender </dd></dl>
 
 </div>
 </div>
@@ -532,13 +538,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o número de unidades disponíveis de um determinado produto </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite obter o numero de unidades disponiveis de um determinado produto </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nomeProd</td><td>Nome do produto do qual se quer saber a quantidade </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Quantidade do produto passado como argumento. Se não existir, retorna-se -1 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Quantidade do produto passado como argumento. Se nao existir, retorna-se -1 </dd></dl>
 
 </div>
 </div>
@@ -556,7 +562,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter todas as vendas realizadas na farmácia </p><dl class="section return"><dt>Returns</dt><dd>Vetor de apontador para objetos da classe <a class="el" href="class_venda.html">Venda(atributo da classse)</a> </dd></dl>
+<p>Metodo que permite obter todas as vendas realizadas na farmacia </p><dl class="section return"><dt>Returns</dt><dd>Vetor de apontador para objetos da classe <a class="el" href="class_venda.html">Venda(atributo da classse)</a> </dd></dl>
 
 </div>
 </div>
@@ -575,7 +581,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter as vendas realizadas num dia </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite obter as vendas realizadas num dia </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">d</td><td>Dia no qual se realizaram as vendas </td></tr>
   </table>
@@ -610,7 +616,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter as vendas realizadas entre dois dias </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite obter as vendas realizadas entre dois dias </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">d1,d2</td><td>Intervalo no qual se contabilizam as vendas </td></tr>
   </table>
@@ -635,9 +641,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite imprimir no ecrã uma fatura </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite imprimir no ecra uma fatura </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Apontador para objeto do tipo <a class="el" href="class_venda.html">Venda</a> que contém a venda da qual será impressa a fatura </td></tr>
+    <tr><td class="paramname">v</td><td>Apontador para objeto do tipo <a class="el" href="class_venda.html">Venda</a> que contem a venda da qual sera impressa a fatura </td></tr>
   </table>
   </dd>
 </dl>
@@ -675,15 +681,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método semelhante ao operador menor, no qual o utilizador escolhe a forma de comparação </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo semelhante ao operador menor, no qual o utilizador escolhe a forma de comparacao </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">f1</td><td>Farmácia que irá ser comparada </td></tr>
-    <tr><td class="paramname">tipo</td><td>Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de comparação das duas farmácias </td></tr>
-    <tr><td class="paramname">crescente</td><td>Booleano que permite ao utilizador escolher se quer utilizar o seu critério de modo crescente(true) ou decrescente(false) </td></tr>
+    <tr><td class="paramname">f1</td><td><a class="el" href="class_farmacia.html">Farmacia</a> que ira ser comparada </td></tr>
+    <tr><td class="paramname">tipo</td><td>Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de comparacao das duas farmacias </td></tr>
+    <tr><td class="paramname">crescente</td><td>Booleano que permite ao utilizador escolher se quer utilizar o seu criterio de modo crescente(true) ou decrescente(false) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna true se a farmácia for menor que f1. Caso contrário, retorna false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna true se a farmacia for menor que f1. Caso contrario, retorna false </dd></dl>
 
 </div>
 </div>
@@ -702,13 +708,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Operador menor: Compara duas farmácias com regras pré-definidas </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Operador menor: Compara duas farmacias com regras pre-definidas </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">f1</td><td>Farmácia que irá ser comparada </td></tr>
+    <tr><td class="paramname">f1</td><td><a class="el" href="class_farmacia.html">Farmacia</a> que ira ser comparada </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna true se a farmácia for menor a f1. Caso contrário, retorna false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna true se a farmacia for menor a f1. Caso contrario, retorna false </dd></dl>
 
 </div>
 </div>
@@ -727,13 +733,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite remover um produto do map produtosVender </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite remover um produto do map produtosVender </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nomeP</td><td>Nome do produto a remover </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna um apontador para o objeto removido ou, se este não existir, lança uma exceção do tipo <a class="el" href="class_produto_inexistente.html">ProdutoInexistente</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna um apontador para o objeto removido ou, se este nao existir, lanca uma excecao do tipo <a class="el" href="class_produto_inexistente.html">ProdutoInexistente</a> </dd></dl>
 
 </div>
 </div>
@@ -760,9 +766,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Método que permite alterar o diretor técnico da farmácia </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite alterar o diretor tecnico da farmacia </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">diretor</td><td>Apontador para <a class="el" href="class_funcionario.html">Funcionario</a> que será colocado no atributo diretorTecnico </td></tr>
+    <tr><td class="paramname">diretor</td><td>Apontador para <a class="el" href="class_funcionario.html">Funcionario</a> que sera colocado no atributo diretorTecnico </td></tr>
   </table>
   </dd>
 </dl>
@@ -784,9 +790,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite alterar o gerente da farmácia </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite alterar o gerente da farmacia </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">gerente</td><td>Apontador para <a class="el" href="class_funcionario.html">Funcionario</a> que será colocado no atributo gerente </td></tr>
+    <tr><td class="paramname">gerente</td><td>Apontador para <a class="el" href="class_funcionario.html">Funcionario</a> que sera colocado no atributo gerente </td></tr>
   </table>
   </dd>
 </dl>
@@ -818,14 +824,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite alterar a quantidade de um determinado produto </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite alterar a quantidade de um determinado produto </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nomeProd</td><td>Nome do produto cuja quantidade será alterada </td></tr>
+    <tr><td class="paramname">nomeProd</td><td>Nome do produto cuja quantidade sera alterada </td></tr>
     <tr><td class="paramname">quant</td><td>Quantidade a alterar </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna true se a operação foi realizada com sucesso. Caso contrário, retorna false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna true se a operacao foi realizada com sucesso. Caso contrario, retorna false </dd></dl>
 
 </div>
 </div>
@@ -854,19 +860,64 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite ordenar as vendas </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite ordenar as vendas </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tipo</td><td>Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de ordenação do vetor </td></tr>
-    <tr><td class="paramname">crescente</td><td>Booleano que permite ao utilizador escolher se quer realizar a ordenação por ordem crescente ou decrescente </td></tr>
+    <tr><td class="paramname">tipo</td><td>Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de ordenacao do vetor </td></tr>
+    <tr><td class="paramname">crescente</td><td>Booleano que permite ao utilizador escolher se quer realizar a ordenacao por ordem crescente ou decrescente </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a9ab7dbaf237ba82409c4ccad28023621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ab7dbaf237ba82409c4ccad28023621">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_farmacia.html">Farmacia</a> &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Overload do operador para exportar a farmacia </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Variavel para onde se quer exportar(ecra, ficheiro, ...) </td></tr>
+    <tr><td class="paramname">f</td><td><a class="el" href="class_farmacia.html">Farmacia</a> que se quer exportar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna referencia para a variavel para onde se quer exportar </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/<a class="el" href="_farmacia_8h_source.html">Farmacia.h</a></li>
-<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/Farmacia.cpp</li>
+<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/<a class="el" href="_farmacia_8h_source.html">Farmacia.h</a></li>
+<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/Farmacia.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

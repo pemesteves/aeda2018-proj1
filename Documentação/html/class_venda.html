@@ -63,6 +63,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_venda-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Venda Class Reference</div>  </div>
@@ -77,8 +78,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a80246070290a58d69d7b332134a16c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8aee290e732acbb136e08befbba71ae7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a8aee290e732acbb136e08befbba71ae7">Venda</a> (<a class="el" href="class_receita.html">Receita</a> *receitaVenda, <a class="el" href="class_cliente.html">Cliente</a> *clienteVenda)</td></tr>
 <tr class="separator:a8aee290e732acbb136e08befbba71ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c702e4506d171b0e4f2d6095d48b27e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a4c702e4506d171b0e4f2d6095d48b27e">Venda</a> (unsigned short dia, unsigned short mes, int ano, unsigned short horas, unsigned short min, unsigned short segundos)</td></tr>
-<tr class="separator:a4c702e4506d171b0e4f2d6095d48b27e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ef78afc704cff87feef73422bb786a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a49ef78afc704cff87feef73422bb786a">Venda</a> (unsigned short dia, unsigned short mes, int ano, unsigned short horas, unsigned short min, unsigned short segundos, double codigo)</td></tr>
+<tr class="separator:a49ef78afc704cff87feef73422bb786a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42bf46de9789513af8f9e67ff4914d5b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a42bf46de9789513af8f9e67ff4914d5b">getTotalVenda</a> () const</td></tr>
 <tr class="separator:a42bf46de9789513af8f9e67ff4914d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a916c29a48cbfcae9f4bab742abf7fd01"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="class_produto.html">Produto</a>, std::vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a916c29a48cbfcae9f4bab742abf7fd01">getProdutosVendidos</a> () const</td></tr>
@@ -89,20 +90,31 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a306a97527b2e65a30159a150a2522ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c9b3ca73f37cb843510fbadbb6f4925"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a3c9b3ca73f37cb843510fbadbb6f4925">getNumProdutos</a> () const</td></tr>
 <tr class="separator:a3c9b3ca73f37cb843510fbadbb6f4925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab071a831183d6f1d57772bd9537ca380"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cliente.html">Cliente</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#ab071a831183d6f1d57772bd9537ca380">getCliente</a> ()</td></tr>
+<tr class="separator:ab071a831183d6f1d57772bd9537ca380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33abdd8e609ee902d310e5184c9a39b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_receita.html">Receita</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a33abdd8e609ee902d310e5184c9a39b8">getReceita</a> ()</td></tr>
+<tr class="separator:a33abdd8e609ee902d310e5184c9a39b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a082403cd6bc694a2c9f2f6c013307188"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a082403cd6bc694a2c9f2f6c013307188">getData</a> () const</td></tr>
 <tr class="separator:a082403cd6bc694a2c9f2f6c013307188"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abeed8743170b7fff4376f345c4c75372"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hora.html">Hora</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#abeed8743170b7fff4376f345c4c75372">getHora</a> () const</td></tr>
 <tr class="separator:abeed8743170b7fff4376f345c4c75372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb2fbb3666dd38927e08d520ffca4ff8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#acb2fbb3666dd38927e08d520ffca4ff8">getCodigo</a> () const</td></tr>
+<tr class="separator:acb2fbb3666dd38927e08d520ffca4ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85f7bc925270913dcc775d747003d97a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a85f7bc925270913dcc775d747003d97a">getPrecoProduto</a> (std::string nomeProd) const</td></tr>
 <tr class="separator:a85f7bc925270913dcc775d747003d97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c45f11440cb6c5a0d9fca1c8f5283c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a9c45f11440cb6c5a0d9fca1c8f5283c8">addProduto</a> (<a class="el" href="class_produto.html">Produto</a> *prod, float quant, float iva, float comparticipacao)</td></tr>
-<tr class="separator:a9c45f11440cb6c5a0d9fca1c8f5283c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a622a9e76843d3d9cff4e43f9310e6beb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a622a9e76843d3d9cff4e43f9310e6beb">addProduto</a> (<a class="el" href="class_produto.html">Produto</a> *prod, float quant, float iva)</td></tr>
+<tr class="separator:a622a9e76843d3d9cff4e43f9310e6beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a441ce41822f33bea9b5d67dc9b8788f7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a441ce41822f33bea9b5d67dc9b8788f7">operator&lt;</a> (const <a class="el" href="class_venda.html">Venda</a> &amp;v1) const</td></tr>
 <tr class="separator:a441ce41822f33bea9b5d67dc9b8788f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f45a9efc91a3937b31b6d0dbba1866e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a7f45a9efc91a3937b31b6d0dbba1866e">imprimeFatura</a> () const</td></tr>
 <tr class="separator:a7f45a9efc91a3937b31b6d0dbba1866e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab40631259dc46aa31f2bc986f3e790ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#ab40631259dc46aa31f2bc986f3e790ff">menorQue</a> (const <a class="el" href="class_venda.html">Venda</a> &amp;v1, enum tipoSort tipo, bool crescente) const</td></tr>
 <tr class="separator:ab40631259dc46aa31f2bc986f3e790ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a83f280b7531b5b088bfb8a9ae611b050"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_venda.html#a83f280b7531b5b088bfb8a9ae611b050">operator&lt;&lt;</a> (std::ostream &amp;output, const <a class="el" href="class_venda.html">Venda</a> &amp;v1)</td></tr>
+<tr class="separator:a83f280b7531b5b088bfb8a9ae611b050"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header File que contem a classe <a class="el" href="class_venda.html">Venda</a></p>
@@ -154,16 +166,16 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Construtor da classe <a class="el" href="class_venda.html">Venda</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">receitaVenda</td><td>Apontador para a receita associada à venda </td></tr>
-    <tr><td class="paramname">clienteVenda</td><td>Apontador para o cliente associado à venda </td></tr>
+    <tr><td class="paramname">receitaVenda</td><td>Apontador para a receita associada a venda </td></tr>
+    <tr><td class="paramname">clienteVenda</td><td>Apontador para o cliente associado a venda </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a4c702e4506d171b0e4f2d6095d48b27e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c702e4506d171b0e4f2d6095d48b27e">&#9670;&nbsp;</a></span>Venda() <span class="overload">[3/3]</span></h2>
+<a id="a49ef78afc704cff87feef73422bb786a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ef78afc704cff87feef73422bb786a">&#9670;&nbsp;</a></span>Venda() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +214,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned short&#160;</td>
-          <td class="paramname"><em>segundos</em>&#160;</td>
+          <td class="paramname"><em>segundos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>codigo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -213,7 +231,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Construtor da classe <a class="el" href="class_venda.html">Venda</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dia,mes,ano,horas,min,segundos</td><td>Dados correspondentes à data e hora da venda </td></tr>
+    <tr><td class="paramname">dia,mes,ano,horas,min,segundos,codigo</td><td>Dados correspondentes a data, hora e codigo da venda </td></tr>
   </table>
   </dd>
 </dl>
@@ -221,14 +239,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9c45f11440cb6c5a0d9fca1c8f5283c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c45f11440cb6c5a0d9fca1c8f5283c8">&#9670;&nbsp;</a></span>addProduto()</h2>
+<a id="a622a9e76843d3d9cff4e43f9310e6beb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a622a9e76843d3d9cff4e43f9310e6beb">&#9670;&nbsp;</a></span>addProduto()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Venda::addProduto </td>
+          <td class="memname">bool Venda::addProduto </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_produto.html">Produto</a> *&#160;</td>
           <td class="paramname"><em>prod</em>, </td>
@@ -243,13 +261,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>iva</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>comparticipacao</em>&#160;</td>
+          <td class="paramname"><em>iva</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -258,13 +270,50 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite adicionar um produto à venda </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite adicionar um produto a venda </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">prod</td><td>Apontador para objeto da classe <a class="el" href="class_produto.html">Produto</a> </td></tr>
-    <tr><td class="paramname">quant,iva,comparticipacao</td><td>Valores do tipo float que serão colocados do vetor do map produtosVendidos </td></tr>
+    <tr><td class="paramname">quant,iva</td><td>Valores do tipo float que serao colocados do vetor do map produtosVendidos </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>True se foi possivel adicionar o produto, false se nao foi (se necessitar de ser vendido com receita e nao estiver contido na receita associada a venda) </dd></dl>
+
+</div>
+</div>
+<a id="ab071a831183d6f1d57772bd9537ca380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab071a831183d6f1d57772bd9537ca380">&#9670;&nbsp;</a></span>getCliente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cliente.html">Cliente</a> * Venda::getCliente </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo que permite obter o cliente da venda </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_cliente.html">Cliente</a> associado a venda, se ainda nao houver nenhum cliente associado retorna NULL </dd></dl>
+
+</div>
+</div>
+<a id="acb2fbb3666dd38927e08d520ffca4ff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb2fbb3666dd38927e08d520ffca4ff8">&#9670;&nbsp;</a></span>getCodigo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Venda::getCodigo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo que permite obter o codigo da venda </p><dl class="section return"><dt>Returns</dt><dd>codigo da venda </dd></dl>
 
 </div>
 </div>
@@ -282,7 +331,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter a data da venda </p><dl class="section return"><dt>Returns</dt><dd>Objeto do tipo <a class="el" href="class_data.html">Data</a> </dd></dl>
+<p>Metodo que permite obter a data da venda </p><dl class="section return"><dt>Returns</dt><dd>Objeto do tipo <a class="el" href="class_data.html">Data</a> </dd></dl>
 
 </div>
 </div>
@@ -300,7 +349,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter a hora da venda </p><dl class="section return"><dt>Returns</dt><dd>Objeto do tipo <a class="el" href="class_hora.html">Hora</a> </dd></dl>
+<p>Metodo que permite obter a hora da venda </p><dl class="section return"><dt>Returns</dt><dd>Objeto do tipo <a class="el" href="class_hora.html">Hora</a> </dd></dl>
 
 </div>
 </div>
@@ -318,7 +367,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o número de produtos vendidos </p><dl class="section return"><dt>Returns</dt><dd>Tamanho de produtosVendidos (atributo da classe) </dd></dl>
+<p>Metodo que permite obter o número de produtos vendidos </p><dl class="section return"><dt>Returns</dt><dd>Tamanho de produtosVendidos (atributo da classe) </dd></dl>
 
 </div>
 </div>
@@ -337,13 +386,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o preço de um produto </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite obter o preco de um produto </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nomeProd</td><td>Nome do produto que irá ser procurado </td></tr>
+    <tr><td class="paramname">nomeProd</td><td>Nome do produto que ira ser procurado </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Preço do produto especificado como argumento. Retorna -1 se não existir </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Preco do produto especificado como argumento. Retorna -1 se nao existir </dd></dl>
 
 </div>
 </div>
@@ -361,7 +410,25 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o map com os produtos vendidos </p><dl class="section return"><dt>Returns</dt><dd>produtosVendidos (atributo da classe) </dd></dl>
+<p>Metodo que permite obter o map com os produtos vendidos </p><dl class="section return"><dt>Returns</dt><dd>produtosVendidos (atributo da classe) </dd></dl>
+
+</div>
+</div>
+<a id="a33abdd8e609ee902d310e5184c9a39b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33abdd8e609ee902d310e5184c9a39b8">&#9670;&nbsp;</a></span>getReceita()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_receita.html">Receita</a> * Venda::getReceita </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo que permite obter a receita da venda </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_receita.html">Receita</a> associada a venda, se nao houver nenhuma receita associada retorna NULL </dd></dl>
 
 </div>
 </div>
@@ -379,7 +446,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o valor total da venda </p><dl class="section return"><dt>Returns</dt><dd>totalVenda (atributo da classe) </dd></dl>
+<p>Metodo que permite obter o valor total da venda </p><dl class="section return"><dt>Returns</dt><dd>totalVenda (atributo da classe) </dd></dl>
 
 </div>
 </div>
@@ -397,7 +464,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite imprimir no ecrã uma fatura </p>
+<p>Metodo que permite imprimir no ecra uma fatura </p>
 
 </div>
 </div>
@@ -432,15 +499,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método semelhante ao operador menor, no qual o utilizador escolhe a forma de comparação </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo semelhante ao operador menor, no qual o utilizador escolhe a forma de comparacao </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">v1</td><td><a class="el" href="class_venda.html">Venda</a> que irá ser comparada </td></tr>
-    <tr><td class="paramname">tipo</td><td>Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de comparação das duas vendas </td></tr>
-    <tr><td class="paramname">crescente</td><td>Booleano que permite ao utilizador escolher se quer utilizar o seu critério de modo crescente(true) ou decrescente(false) </td></tr>
+    <tr><td class="paramname">v1</td><td><a class="el" href="class_venda.html">Venda</a> que ira ser comparada </td></tr>
+    <tr><td class="paramname">tipo</td><td>Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de comparacao das duas vendas </td></tr>
+    <tr><td class="paramname">crescente</td><td>Booleano que permite ao utilizador escolher se quer utilizar o seu criterio de modo crescente(true) ou decrescente(false) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorn true se a venda for menor que v1. Caso contrário, retorn false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorn true se a venda for menor que v1. Caso contrario, retorn false </dd></dl>
 
 </div>
 </div>
@@ -459,13 +526,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Operador menor: compara dois objetos do tipo <a class="el" href="class_venda.html">Venda</a> com regras pré-definidas </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Operador menor: compara dois objetos do tipo <a class="el" href="class_venda.html">Venda</a> com regras pre-definidas </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v1</td><td>Objeto do tipo <a class="el" href="class_venda.html">Venda</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna true se a venda for menor que v1. Caso contrário, retorna false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna true se a venda for menor que v1. Caso contrario, retorna false </dd></dl>
 
 </div>
 </div>
@@ -484,13 +551,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite atribuir um cliente à venda Só é possível atribuir um cliente à venda se esta não tiver ainda nenhum cliente associado </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite atribuir um cliente a venda Só e possível atribuir um cliente a venda se esta nao tiver ainda nenhum cliente associado </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">clienteVenda</td><td>Apontador para o cliente a associar </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True se foi possível atribuir o cliente e false se não tiver sido possível </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True se foi possível atribuir o cliente e false se nao tiver sido possível </dd></dl>
 
 </div>
 </div>
@@ -509,19 +576,64 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite atribuir uma receita à venda Só é possível atribuir uma receita à venda se esta não tiver ainda nenhuma receita associada </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite atribuir uma receita a venda Só e possível atribuir uma receita a venda se esta nao tiver ainda nenhuma receita associada </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">receitaVenda</td><td>Apontador para a receita a associar </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True se foi possível atribuir a receita e false se não tiver sido possível </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True se foi possível atribuir a receita e false se nao tiver sido possível </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a83f280b7531b5b088bfb8a9ae611b050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83f280b7531b5b088bfb8a9ae611b050">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_venda.html">Venda</a> &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Overload de operador &lt;&lt; para exportar a venda </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Variavel para onde se quer exportar(ecra, ficheiro, ...) </td></tr>
+    <tr><td class="paramname">v1</td><td><a class="el" href="class_venda.html">Venda</a> que se quer exportar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna referencia para a variavel para onde se quer exportar </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/<a class="el" href="_venda_8h_source.html">Venda.h</a></li>
-<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/Venda.cpp</li>
+<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/<a class="el" href="_venda_8h_source.html">Venda.h</a></li>
+<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/Venda.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

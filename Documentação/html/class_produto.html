@@ -63,6 +63,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_produto-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Produto Class Reference</div>  </div>
@@ -70,21 +72,19 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_produto_8h_source.html">Produto.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for Produto:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_produto.png" usemap="#Produto_map" alt=""/>
-  <map id="Produto_map" name="Produto_map">
-<area href="class_medicamento.html" alt="Medicamento" shape="rect" coords="0,56,101,80"/>
-<area href="class_passivel_receita.html" alt="PassivelReceita" shape="rect" coords="0,112,101,136"/>
-</map>
- </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a433c57a99a9cc52f4b2b6fd245eaf600"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#a433c57a99a9cc52f4b2b6fd245eaf600">Produto</a> (double cod, std::string nome, float preco, std::string descricao)</td></tr>
 <tr class="separator:a433c57a99a9cc52f4b2b6fd245eaf600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72abf513eb445822e26f1b4dcd005b09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#a72abf513eb445822e26f1b4dcd005b09">Produto</a> (double cod, std::string nome, float preco, std::string desc, bool passivelReceita, float desconto, bool semRec)</td></tr>
+<tr class="separator:a72abf513eb445822e26f1b4dcd005b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36ab4954092551d06da45cf04d5540d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#a36ab4954092551d06da45cf04d5540d6">setTaxaDesconto</a> (float taxaDesconto)</td></tr>
+<tr class="separator:a36ab4954092551d06da45cf04d5540d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab63e103f9d6c3bedac27144a9955fb80"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#ab63e103f9d6c3bedac27144a9955fb80">getVendaSemReceita</a> () const</td></tr>
+<tr class="separator:ab63e103f9d6c3bedac27144a9955fb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f54ca06716bcbb3016b1ee84087366"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#a18f54ca06716bcbb3016b1ee84087366">setVendaSemReceita</a> (bool vendaSemReceita)</td></tr>
+<tr class="separator:a18f54ca06716bcbb3016b1ee84087366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c22bc9889f0845d6bf69c4de915b57d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#a7c22bc9889f0845d6bf69c4de915b57d">getCodigo</a> () const</td></tr>
 <tr class="separator:a7c22bc9889f0845d6bf69c4de915b57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59a5e4b3c31c7f90b54d89ae4b4686ec"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#a59a5e4b3c31c7f90b54d89ae4b4686ec">getNome</a> () const</td></tr>
@@ -97,16 +97,49 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac6c899fa29702f6847a5b488b01b3854"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac740c2dbd242285d51ece61f6ae49c49"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#ac740c2dbd242285d51ece61f6ae49c49">operator&lt;</a> (const <a class="el" href="class_produto.html">Produto</a> &amp;p1) const</td></tr>
 <tr class="separator:ac740c2dbd242285d51ece61f6ae49c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1782d4b9e775e214dd5432c94d0aedcf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#a1782d4b9e775e214dd5432c94d0aedcf">getPassivelReceita</a> () const</td></tr>
+<tr class="separator:a1782d4b9e775e214dd5432c94d0aedcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a2c687a5b6714b6414343c3a39f0c5c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#a1a2c687a5b6714b6414343c3a39f0c5c">operator==</a> (const <a class="el" href="class_produto.html">Produto</a> &amp;p1) const</td></tr>
 <tr class="separator:a1a2c687a5b6714b6414343c3a39f0c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406dc14186f7acd1a04b0f60673b3d6e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#a406dc14186f7acd1a04b0f60673b3d6e">getTaxaDesconto</a> () const</td></tr>
+<tr class="separator:a406dc14186f7acd1a04b0f60673b3d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a4ea296ebfd6d566e74b1d161930c83f4"><td class="memItemLeft" align="right" valign="top"><a id="a4ea296ebfd6d566e74b1d161930c83f4"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>codigo</b></td></tr>
+<tr class="separator:a4ea296ebfd6d566e74b1d161930c83f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa929e3f52f5a677310e30a89d2d7814"><td class="memItemLeft" align="right" valign="top"><a id="aaa929e3f52f5a677310e30a89d2d7814"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>nome</b></td></tr>
+<tr class="separator:aaa929e3f52f5a677310e30a89d2d7814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e1023fcf261a8fba7620ee61654163a"><td class="memItemLeft" align="right" valign="top"><a id="a9e1023fcf261a8fba7620ee61654163a"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>preco</b></td></tr>
+<tr class="separator:a9e1023fcf261a8fba7620ee61654163a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04a024e24feb7f79774e280356f6bc7"><td class="memItemLeft" align="right" valign="top"><a id="ab04a024e24feb7f79774e280356f6bc7"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>descricao</b></td></tr>
+<tr class="separator:ab04a024e24feb7f79774e280356f6bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c39c9a936bf0693caeea702832192e7"><td class="memItemLeft" align="right" valign="top"><a id="a6c39c9a936bf0693caeea702832192e7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>passivelReceita</b></td></tr>
+<tr class="separator:a6c39c9a936bf0693caeea702832192e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23b9feaa180ed2f156e836b00ec4bc7f"><td class="memItemLeft" align="right" valign="top"><a id="a23b9feaa180ed2f156e836b00ec4bc7f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>vendaSemReceita</b></td></tr>
+<tr class="separator:a23b9feaa180ed2f156e836b00ec4bc7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada69fb1e7e51069dbc8232ab7e836480"><td class="memItemLeft" align="right" valign="top"><a id="ada69fb1e7e51069dbc8232ab7e836480"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>taxaDesconto</b></td></tr>
+<tr class="separator:ada69fb1e7e51069dbc8232ab7e836480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a34ced47710c8aa9d91fc43662b63e99d"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#a34ced47710c8aa9d91fc43662b63e99d">operator&lt;&lt;</a> (std::ostream &amp;output, const <a class="el" href="class_produto.html">Produto</a> &amp;p)</td></tr>
+<tr class="separator:a34ced47710c8aa9d91fc43662b63e99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header File que contem as classes <a class="el" href="class_produto.html">Produto</a>, <a class="el" href="class_medicamento.html">Medicamento</a>, <a class="el" href="class_passivel_receita.html">PassivelReceita</a> e <a class="el" href="class_produto_inexistente.html">ProdutoInexistente</a></p>
+<div class="textblock"><p>Header File que contem as classes <a class="el" href="class_produto.html">Produto</a>, Medicamento, PassivelReceita e <a class="el" href="class_produto_inexistente.html">ProdutoInexistente</a></p>
 <dl class="section author"><dt>Author</dt><dd>Marcia, Pedro e Rita </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>Novembro, 2018 Classe <a class="el" href="class_produto.html">Produto</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a433c57a99a9cc52f4b2b6fd245eaf600"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a433c57a99a9cc52f4b2b6fd245eaf600">&#9670;&nbsp;</a></span>Produto()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a433c57a99a9cc52f4b2b6fd245eaf600">&#9670;&nbsp;</a></span>Produto() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,10 +177,80 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Construtor da classe <a class="el" href="class_produto.html">Produto</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cod</td><td>Código do <a class="el" href="class_produto.html">Produto</a> </td></tr>
+    <tr><td class="paramname">cod</td><td>Codigo do <a class="el" href="class_produto.html">Produto</a> </td></tr>
     <tr><td class="paramname">nome</td><td>Nome do <a class="el" href="class_produto.html">Produto</a> </td></tr>
-    <tr><td class="paramname">preco</td><td>Preço do <a class="el" href="class_produto.html">Produto</a> </td></tr>
-    <tr><td class="paramname">descricao</td><td>Descrição do produto </td></tr>
+    <tr><td class="paramname">preco</td><td>Preco do <a class="el" href="class_produto.html">Produto</a> </td></tr>
+    <tr><td class="paramname">descricao</td><td>Descricao do <a class="el" href="class_produto.html">Produto</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a72abf513eb445822e26f1b4dcd005b09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72abf513eb445822e26f1b4dcd005b09">&#9670;&nbsp;</a></span>Produto() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Produto::Produto </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>cod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>nome</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>preco</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>passivelReceita</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>desconto</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>semRec</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Construtor da classe <a class="el" href="class_produto.html">Produto</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cod</td><td>Codigo do <a class="el" href="class_produto.html">Produto</a> </td></tr>
+    <tr><td class="paramname">nome</td><td>Nome do <a class="el" href="class_produto.html">Produto</a> </td></tr>
+    <tr><td class="paramname">preco</td><td>Preco do <a class="el" href="class_produto.html">Produto</a> </td></tr>
+    <tr><td class="paramname">desc</td><td>Descricao do <a class="el" href="class_produto.html">Produto</a> </td></tr>
+    <tr><td class="paramname">passivelReceita</td><td>Booleano que indica se o produto e passivel de receita </td></tr>
+    <tr><td class="paramname">desconto</td><td>Taxa de Desconto </td></tr>
+    <tr><td class="paramname">semRec</td><td>Booleano que indica se o produto pode ser vendido sem receita </td></tr>
   </table>
   </dd>
 </dl>
@@ -170,9 +273,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite alterar o preço de um <a class="el" href="class_produto.html">Produto</a> </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite alterar o preco de um <a class="el" href="class_produto.html">Produto</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">preco</td><td>Preço a alterar </td></tr>
+    <tr><td class="paramname">preco</td><td>Preco a alterar </td></tr>
   </table>
   </dd>
 </dl>
@@ -193,7 +296,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método para obter o código do <a class="el" href="class_produto.html">Produto</a> </p><dl class="section return"><dt>Returns</dt><dd>Código do <a class="el" href="class_produto.html">Produto</a> </dd></dl>
+<p>Metodo para obter o código do <a class="el" href="class_produto.html">Produto</a> </p><dl class="section return"><dt>Returns</dt><dd>Código do <a class="el" href="class_produto.html">Produto</a> </dd></dl>
 
 </div>
 </div>
@@ -211,7 +314,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método para obter a descrição do <a class="el" href="class_produto.html">Produto</a> </p><dl class="section return"><dt>Returns</dt><dd>Descrição do <a class="el" href="class_produto.html">Produto</a> </dd></dl>
+<p>Metodo para obter a descricao do <a class="el" href="class_produto.html">Produto</a> </p><dl class="section return"><dt>Returns</dt><dd>Descricao do <a class="el" href="class_produto.html">Produto</a> </dd></dl>
 
 </div>
 </div>
@@ -229,7 +332,25 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método para obter o nome do <a class="el" href="class_produto.html">Produto</a> </p><dl class="section return"><dt>Returns</dt><dd>Nome do <a class="el" href="class_produto.html">Produto</a> </dd></dl>
+<p>Metodo para obter o nome do <a class="el" href="class_produto.html">Produto</a> </p><dl class="section return"><dt>Returns</dt><dd>Nome do <a class="el" href="class_produto.html">Produto</a> </dd></dl>
+
+</div>
+</div>
+<a id="a1782d4b9e775e214dd5432c94d0aedcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1782d4b9e775e214dd5432c94d0aedcf">&#9670;&nbsp;</a></span>getPassivelReceita()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Produto::getPassivelReceita </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo para saber se o produto e do tipo PassivelReceita </p><dl class="section return"><dt>Returns</dt><dd>true se for PassivelReceita, se nao retorna false </dd></dl>
 
 </div>
 </div>
@@ -247,7 +368,43 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método para obter o preço do <a class="el" href="class_produto.html">Produto</a> </p><dl class="section return"><dt>Returns</dt><dd>Preço do <a class="el" href="class_produto.html">Produto</a> </dd></dl>
+<p>Metodo para obter o preco do <a class="el" href="class_produto.html">Produto</a> </p><dl class="section return"><dt>Returns</dt><dd>Preco do <a class="el" href="class_produto.html">Produto</a> </dd></dl>
+
+</div>
+</div>
+<a id="a406dc14186f7acd1a04b0f60673b3d6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a406dc14186f7acd1a04b0f60673b3d6e">&#9670;&nbsp;</a></span>getTaxaDesconto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Produto::getTaxaDesconto </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo para obter a taxa de desconto com receita </p><dl class="section return"><dt>Returns</dt><dd>Taxa de Desconto </dd></dl>
+
+</div>
+</div>
+<a id="ab63e103f9d6c3bedac27144a9955fb80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab63e103f9d6c3bedac27144a9955fb80">&#9670;&nbsp;</a></span>getVendaSemReceita()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Produto::getVendaSemReceita </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo utilizado para saber se o medicamento pode ser vendido sem receita </p><dl class="section return"><dt>Returns</dt><dd>True se puder ser vendido sem receita. Caso contrario, retorna false </dd></dl>
 
 </div>
 </div>
@@ -266,13 +423,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Operador menor: Compara dois produtos com regras pré-definidas </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Operador menor: Compara dois produtos com regras pre-definidas </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p1</td><td><a class="el" href="class_produto.html">Produto</a> que irá ser comparado </td></tr>
+    <tr><td class="paramname">p1</td><td><a class="el" href="class_produto.html">Produto</a> que ira ser comparado </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna true se o produto for menor que p1. Caso contrário, retorna false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna true se o produto for menor que p1. Caso contrario, retorna false </dd></dl>
 
 </div>
 </div>
@@ -291,19 +448,112 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Operador de igualdade: Compara dois produtos com regras pré-definidas </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Operador de igualdade: Compara dois produtos com regras pre-definidas </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p1</td><td><a class="el" href="class_produto.html">Produto</a> que irá ser comparado </td></tr>
+    <tr><td class="paramname">p1</td><td><a class="el" href="class_produto.html">Produto</a> que ira ser comparado </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna true se o produto for igual a p1. Caso contrário, retorna false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna true se o produto for igual a p1. Caso contrario, retorna false </dd></dl>
+
+</div>
+</div>
+<a id="a36ab4954092551d06da45cf04d5540d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36ab4954092551d06da45cf04d5540d6">&#9670;&nbsp;</a></span>setTaxaDesconto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Produto::setTaxaDesconto </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>taxaDesconto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo para alterar a taxa de desconto de um produto com receita </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">taxaDesconto</td><td>Taxa de desconto a alterar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a18f54ca06716bcbb3016b1ee84087366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f54ca06716bcbb3016b1ee84087366">&#9670;&nbsp;</a></span>setVendaSemReceita()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Produto::setVendaSemReceita </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>vendaSemReceita</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo para alterar a venda sem receita </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vendaSemReceita</td><td>Deve ser true se o medicamento passar a poder ser vendido sem receita </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a34ced47710c8aa9d91fc43662b63e99d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ced47710c8aa9d91fc43662b63e99d">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_produto.html">Produto</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Overload do operador para exportar o <a class="el" href="class_produto.html">Produto</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Variavel para onde se quer exportar(ecra, ficheiro, ...) </td></tr>
+    <tr><td class="paramname">p</td><td><a class="el" href="class_produto.html">Produto</a> que se quer exportar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna referencia para a variavel para onde se quer exportar </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/<a class="el" href="_produto_8h_source.html">Produto.h</a></li>
-<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/Produto.cpp</li>
+<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/<a class="el" href="_produto_8h_source.html">Produto.h</a></li>
+<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/Produto.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

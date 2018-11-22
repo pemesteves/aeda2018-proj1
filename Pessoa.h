@@ -36,22 +36,22 @@ public:
 	 */
 	virtual ~Pessoa() {}
 	/**
-	 * Método que permite obter o nome da pessoa
+	 * Metodo que permite obter o nome da pessoa
 	 * @return Nome da Pessoa
 	 */
 	std::string getNome() const;
 	/**
-	 * Método que permite obter a morada da Pessoa
+	 * Metodo que permite obter a morada da Pessoa
 	 * @return Morada da Pessoa
 	 */
 	std::string getMorada() const;
 	/**
-	 * Método que permite obter o número de contribuinte da pessoa
+	 * Metodo que permite obter o número de contribuinte da pessoa
 	 * @return Número de contribuinte
 	 */
 	double getNoContribuinte() const;
 	/**
-	 * Método puramente virtual que, nas classes derivadas, imprime no ecrã os atributos da classe
+	 * Metodo puramente virtual que, nas classes derivadas, imprime no ecra os atributos da classe
 	 */
 	virtual void showInfo() const = 0;
 	/**
@@ -77,7 +77,7 @@ public:
 	 * @param nome Nome do Funcionario/Pessoa
 	 * @param morada Morada do Funcionario/Pessoa
 	 * @param cont Número de Contribuinte do Funcionario/Pessoa
-	 * @param sal Salário do Funcionario: caso não seja atribuído, será 500
+	 * @param sal Salario do Funcionario: caso nao seja atribuído, sera 500
 	 */
 	Funcionario(std::string nome, std::string morada, double cont, double sal = 500);
 	/**
@@ -85,46 +85,46 @@ public:
 	 */
 	~Funcionario() {}
 	/**
-	 * Método para alterar a Farmacia onde o Funcionario trabalha
+	 * Metodo para alterar a Farmacia onde o Funcionario trabalha
 	 * @param f Apontador para Farmacia onde o Funcionario trabalha
 	 */
 	void setFarmacia(Farmacia* f);
 	/**
-	 * Método que permite obter a Farmacia onde o Funcionario trabalha
+	 * Metodo que permite obter a Farmacia onde o Funcionario trabalha
 	 * @return Apontador para Farmacia
 	 */
 	Farmacia* getFarmacia() const {return farmaciaTrabalho;}
 	/**
-	 * Método que permite obter o salário do Funcionario
-	 * @return Salário do Funcionario
+	 * Metodo que permite obter o salario do Funcionario
+	 * @return Salario do Funcionario
 	 */
 	double getSalario() const;
 	/**
-	 * Método que permite obter o cargo do Funcionario
+	 * Metodo que permite obter o cargo do Funcionario
 	 * @return Cargo do Funcionario na Farmacia onde trabalha
 	 */
 	std::string getCargo() const;
 	/**
-	 * Método que permite alterar o salário do Funcionario
-	 * @param salario Salário do Funcionario a alterar
+	 * Metodo que permite alterar o salario do Funcionario
+	 * @param salario Salario do Funcionario a alterar
 	 */
 	void changeSalario(double salario);
 	/**
-	 * Método que imprime no ecrã os atributos de um Funcionario
+	 * Metodo que imprime no ecra os atributos de um Funcionario
 	 */
 	void showInfo() const;
 	/**
-	 * Operador menor: Compara dois funcionários com regras pré-definidas
-	 * @param f1 Funcionário que irá ser comparado
-	 * @return Retorna true se o funcionário for menor que f1. Caso contrário, retorna false
+	 * Operador menor: Compara dois funcionarios com regras pre-definidas
+	 * @param f1 Funcionario que ira ser comparado
+	 * @return Retorna true se o funcionario for menor que f1. Caso contrario, retorna false
 	 */
 	bool operator< (const Funcionario &f1) const;
 	/**
-	 * Método semelhante ao operador menor, no qual o utilizador escolhe a forma de comparação
-	 * @param f1 Funcionário que irá ser comparado
-	 * @param tipo Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de comparação dos dois funcionários
-	 * @param crescente Booleano que permite ao utilizador escolher se quer utilizar o seu critério de modo crescente(true) ou decrescente(false)
-	 * @return Retorna true se o funcionário for menor que f1. Caso contrário, retorna false
+	 * Metodo semelhante ao operador menor, no qual o utilizador escolhe a forma de comparacao
+	 * @param f1 Funcionario que ira ser comparado
+	 * @param tipo Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de comparacao dos dois funcionarios
+	 * @param crescente Booleano que permite ao utilizador escolher se quer utilizar o seu criterio de modo crescente(true) ou decrescente(false)
+	 * @return Retorna true se o funcionario for menor que f1. Caso contrario, retorna false
 	 */
 	bool menorQue(const Funcionario &f1, enum tipoSort tipo, bool crescente) const;
 	/**
@@ -155,36 +155,36 @@ public:
 	 */
 	~Cliente() {}
 	/**
-	 * Método para obter o historial de compras do Cliente
+	 * Metodo para obter o historial de compras do Cliente
 	 * @return Vetor de apontadores para objetos da classe Venda
 	 */
 	std::vector<Venda*> getHistorialCompras() const;
 	/**
-	 * Método para obter o número de compras realizadas pelo Cliente
+	 * Metodo para obter o número de compras realizadas pelo Cliente
 	 * @return Tamanho do vetor historialCompras
 	 */
 	unsigned int getNumCompras() const;
 	/**
-	 * Método para adicionar uma compra ao historial
+	 * Metodo para adicionar uma compra ao historial
 	 * @param compra Apontador para objeto da classe Venda
 	 */
 	void addCompra(Venda* compra);
 	/**
-	 * Método que imprime no ecrã os atributos de um Funcionario
+	 * Metodo que imprime no ecra os atributos de um Funcionario
 	 */
 	void showInfo() const;
 	/**
-	 * Operador menor: Compara dois clientes com regras pré-definidas
-	 * @param c1 Cliente que irá ser comparado
-	 * @return Retorna true se o cliente for menor que c1. Caso contrário, retorna false
+	 * Operador menor: Compara dois clientes com regras pre-definidas
+	 * @param c1 Cliente que ira ser comparado
+	 * @return Retorna true se o cliente for menor que c1. Caso contrario, retorna false
 	 */
 	bool operator< (const Cliente &c1) const;
 	/**
-	 * Método semelhante ao operador menor, no qual o utilizador escolhe a forma de comparação
-	 * @param c1 Cliente que irá ser comparado
-	 * @param tipo Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de comparação dos dois clientes
-	 * @param crescente Booleano que permite ao utilizador escolher se quer utilizar o seu critério de modo crescente(true) ou decrescente(false)
-	 * @return Retorna true se o cliente for menor que c1. Caso contrário, retorna false
+	 * Metodo semelhante ao operador menor, no qual o utilizador escolhe a forma de comparacao
+	 * @param c1 Cliente que ira ser comparado
+	 * @param tipo Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de comparacao dos dois clientes
+	 * @param crescente Booleano que permite ao utilizador escolher se quer utilizar o seu criterio de modo crescente(true) ou decrescente(false)
+	 * @return Retorna true se o cliente for menor que c1. Caso contrario, retorna false
 	 */
 	bool menorQue(const Cliente &c1, enum tipoSort tipo, bool crescente) const;
 	/**
@@ -203,12 +203,12 @@ class ClienteInexistente{
 	std::string nome; //Nome do Cliente
 public:
 	/**
-	 * Construtor da classe -> classe utilizada em exceções
-	 * @param nomeC Nome utilizado para a procura do cliente que não existe
+	 * Construtor da classe -> classe utilizada em excecões
+	 * @param nomeC Nome utilizado para a procura do cliente que nao existe
 	 */
 	ClienteInexistente(std::string nomeC){nome = nomeC;}
 	/**
-	 * Método que permite obter o nome utilizado na procura do cliente
+	 * Metodo que permite obter o nome utilizado na procura do cliente
 	 * @return Retorna o nome do cliente inexistente
 	 */
 	std::string getNome() const {return nome;}
@@ -221,13 +221,13 @@ class FuncionarioInexistente{
 	std::string nome; //Nome do Funcionario
 public:
 	/**
-	 * Construtor da classe -> classe utilizada em exceções
-	 * @param nomeF Nome utilizado para a procura do funcionário que não existe
+	 * Construtor da classe -> classe utilizada em excecões
+	 * @param nomeF Nome utilizado para a procura do funcionario que nao existe
 	 */
 	FuncionarioInexistente(std::string nomeF){nome = nomeF;}
 	/**
-	 * Método que permite obter o nome utilizado na procura do funcionário
-	 * @return Retorna o nome do funcionário inexistente
+	 * Metodo que permite obter o nome utilizado na procura do funcionario
+	 * @return Retorna o nome do funcionario inexistente
 	 */
 	std::string getNome() const {return nome;}
 };

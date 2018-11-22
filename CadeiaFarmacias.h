@@ -11,13 +11,14 @@
 #include "Farmacia.h"
 #include <vector>
 #include <iostream>
+#include <fstream>
 
 /**
  * Classe CadeiaFarmacias
  */
 class CadeiaFarmacias {
 private:
-	std::string nome; //Nome da cadeia de farmácias
+	std::string nome; //Nome da cadeia de farmacias
 	std::vector<Farmacia *> farmacias; //Vetor de apontadores para objetos do tipo Farmacia
 	std::vector <Cliente*> clientes; //Vetor de apontadores para objetos do tipo Cliente
 	std::vector <Funcionario*> funcionarios; //Vetor de apontadores para objetos do tipo Funcionario
@@ -34,89 +35,94 @@ public:
 	 */
 	CadeiaFarmacias(std::string nome);
 	/**
-	 * Método para alterar o nome de uma cadeia de farmácias
+	 * Metodo para alterar o nome de uma cadeia de farmacias
 	 * @param nome Novo nome da cadeia
 	 */
 	void setNome(std::string nome);
 	/**
-	 * Método que retorna o número de farmácias
-	 * @return Tamanho do vetor de farmácias(unsigned int)
+	 * Metodo que retorna o numero de farmacias
+	 * @return Tamanho do vetor de farmacias(unsigned int)
 	 */
 	unsigned int getNumFarmacias() const;
 	/**
-	 * Método que retorna o número de clientes
+	 * Metodo que retorna o numero de clientes
 	 * @return Tamanho do vetor de clientes(unsigned int)
 	 */
 	unsigned int getNumClientes() const;
 	/**
-	 * Método que retorna o número de funcionários
-	 * @return Tamanho do vetor de funcionários(unsigned int)
+	 * Metodo que retorna o numero de funcionarios
+	 * @return Tamanho do vetor de funcionarios(unsigned int)
 	 */
 	unsigned int getNumFuncionarios() const;
 	/**
-	 * Método que retorna um vetor de farmácias
+	 * Metodo que retorna o nome da cadeia de farmacias
+	 * @return Nome da Cadeia (atributo da classe)
+	 */
+	std::string getNome() const;
+	/**
+	 * Metodo que retorna um vetor de farmacias
 	 * @return Vetor farmacias (atributo da classe)
 	 */
 	std::vector<Farmacia *> getFarmacias() const;
 	/**
-	 * Método que retorna um vetor de clientes
+	 * Metodo que retorna um vetor de clientes
 	 * @return Vetor clientes (atributo da classe)
 	 */
 	std::vector <Cliente*> getClientes() const;
 	/**
-	 * Método que retorna um vetor de funcionários
+	 * Metodo que retorna um vetor de funcionarios
 	 * @return Vetor funcionarios (atributo da classe)
 	 */
 	std::vector <Funcionario*> getFuncionarios() const;
 	/**
-	 * Método que permite adicionar um apontador para Farmácia ao respetivo vetor
-	 * @param farmacia Apontador para objeto do tipo Farmacia que será adicionado ao vetor farmacias
+	 * Metodo que permite adicionar um apontador para Farmacia ao respetivo vetor
+	 * @param farmacia Apontador para objeto do tipo Farmacia que sera adicionado ao vetor farmacias
 	 */
 	void addFarmacia(Farmacia* farmacia);
 	/**
-	 * Método que permite eliminar a Farmacia nomeF do respetivo vetor. Também remove o apontador Farmacia de todos os funcionarios caso seja o mesmo
-	 * @param nomeF Nome da farmácia que será removida do vetor
-	 * @return Retorna um apontador para o objeto removido ou, se este não existir, lança uma exceção do tipo FarmaciaInexistente
+	 * Metodo que permite eliminar a Farmacia nomeF do respetivo vetor. Tambem remove o apontador Farmacia de todos os funcionarios caso seja o mesmo
+	 * @param nomeF Nome da farmacia que sera removida do vetor
+	 * @return Retorna um apontador para o objeto removido ou, se este nao existir, lança uma excecao do tipo FarmaciaInexistente
 	 */
 	Farmacia* removeFarmacia(const std::string &nomeF);
 	/**
-	 * Método que permite ordenar as farmácias
-	 * @param tipo Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de ordenação do vetor
-	 * @param crescente Booleano que permite ao utilizador escolher se quer realizar a ordenação por ordem crescente ou decrescente
+	 * Metodo que permite ordenar as farmacias
+	 * @param tipo Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de ordenacao do vetor
+	 * @param crescente Booleano que permite ao utilizador escolher se quer realizar a ordenacao por ordem crescente ou decrescente
 	 */
 	void sortFarmacias(enum tipoSort tipo, bool crescente);
 	/**
-	 * Método que permite adicionar um apontador para Cliente ao respetivo vetor
-	 * @param cliente Apontador para objeto do tipo Cliente que será adicionado ao vetor clientes
+	 * Metodo que permite adicionar um apontador para Cliente ao respetivo vetor
+	 * @param cliente Apontador para objeto do tipo Cliente que sera adicionado ao vetor clientes
 	 */
 	void addCliente(Cliente* cliente);
 	/**
-	 * Método que permite eliminar o Cliente nomeC do respetivo vetor
-	 * @param nomeC Nome do cliente que será removido do vetor
-	 * @return Retorna um apontador para o objeto removido ou, se este não existir, lança uma exceção do tipo ClienteInexistente
+	 * Metodo que permite eliminar o Cliente nomeC do respetivo vetor
+	 * @param nomeC Nome do cliente que sera removido do vetor
+	 * @return Retorna um apontador para o objeto removido ou, se este nao existir, lança uma excecao do tipo ClienteInexistente
 	 */
 	Cliente* removeCliente(const std::string &nomeC);
 	/**
-	 * Método que permite ordenar os clientes
-	 * @param tipo Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de ordenação do vetor
-	 * @param crescente Booleano que permite ao utilizador escolher se quer realizar a ordenação por ordem crescente ou decrescente
+	 * Metodo que permite ordenar os clientes
+	 * @param tipo Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de ordenacao do vetor
+	 * @param crescente Booleano que permite ao utilizador escolher se quer realizar a ordenacao por ordem crescente ou decrescente
 	 */
 	void sortClientes(enum tipoSort tipo, bool crescente);
 	/**
-	 * Método que permite adicionar um apontador para Funcionario ao respetivo vetor
-	 * @param funcionario Apontador para objeto do tipo Funcionario que será adicionado ao vetor funcionarios
+	 * Metodo que permite adicionar um apontador para Funcionario ao respetivo vetor
+	 * @param funcionario Apontador para objeto do tipo Funcionario que sera adicionado ao vetor funcionarios
 	 */
 	void addFuncionario(Funcionario* funcionario);
 	/**
-	 * Método que permite eliminar o Funcionario nomeF do respetivo vetor
-	 * @param nomeF Nome do funcionario que será removido do vetor
-	 * @return Retorna um apontador para o objeto removido ou, se este não existir, lança uma exceção do tipo FuncionarioInexistente
+	 * Metodo que permite eliminar o Funcionario nomeF do respetivo vetor
+	 * @param nomeF Nome do funcionario que sera removido do vetor
+	 * @return Retorna um apontador para o objeto removido ou, se este nao existir, lança uma excecao do tipo FuncionarioInexistente
 	 */
 	Funcionario* removeFuncionario(const std::string &nomeF);
 	/**
-	 * Método que permite ordenar os funcionários
-	 * @param tipo Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de ordenação do vetor
-	 * @param crescente Booleano que permite ao utilizador escolher se quer realizar a ordenação por ordem crescente ou decrescente
+	 * Metodo que permite ordenar os funcionarios
+	 * @param tipo Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de ordenacao do vetor
+	 * @param crescente Booleano que permite ao utilizador escolher se quer realizar a ordenacao por ordem crescente ou decrescente
 	 */
 	void sortFuncionarios(enum tipoSort tipo, bool crescente);
 	/**
@@ -126,6 +132,12 @@ public:
 	 * @return Retorna referencia para a variavel para onde se quer exportar
 	 */
 	friend std::ostream& operator<<(std::ostream &output, const CadeiaFarmacias &cF);
+	/**
+	 * Metodo para importar a cadeia de farmacias
+	 * @param f Ficheiro de onde se vai importar
+	 * @param cF Cadeia de Farmacias que se quer exportar
+	 */
+	void import(std::fstream &f, CadeiaFarmacias &cF);
 };
 
 #endif

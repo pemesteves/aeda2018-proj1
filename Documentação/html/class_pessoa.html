@@ -64,6 +64,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_pessoa-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Pessoa Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -108,6 +109,11 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>morada</b></td
 <tr class="memitem:a0f93176257bd778233faef2f1bd696df"><td class="memItemLeft" align="right" valign="top"><a id="a0f93176257bd778233faef2f1bd696df"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>noContribuinte</b></td></tr>
 <tr class="separator:a0f93176257bd778233faef2f1bd696df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac6cc01c055f941bc2566d88e0b682808"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pessoa.html#ac6cc01c055f941bc2566d88e0b682808">operator&lt;&lt;</a> (std::ostream &amp;output, const <a class="el" href="class_pessoa.html">Pessoa</a> &amp;p)</td></tr>
+<tr class="separator:ac6cc01c055f941bc2566d88e0b682808"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe <a class="el" href="class_pessoa.html">Pessoa</a> </p>
@@ -195,7 +201,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>noContribuinte</b><
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter a morada da <a class="el" href="class_pessoa.html">Pessoa</a> </p><dl class="section return"><dt>Returns</dt><dd>Morada da <a class="el" href="class_pessoa.html">Pessoa</a> </dd></dl>
+<p>Metodo que permite obter a morada da <a class="el" href="class_pessoa.html">Pessoa</a> </p><dl class="section return"><dt>Returns</dt><dd>Morada da <a class="el" href="class_pessoa.html">Pessoa</a> </dd></dl>
 
 </div>
 </div>
@@ -213,7 +219,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>noContribuinte</b><
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o número de contribuinte da pessoa </p><dl class="section return"><dt>Returns</dt><dd>Número de contribuinte </dd></dl>
+<p>Metodo que permite obter o número de contribuinte da pessoa </p><dl class="section return"><dt>Returns</dt><dd>Número de contribuinte </dd></dl>
 
 </div>
 </div>
@@ -231,7 +237,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>noContribuinte</b><
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o nome da pessoa </p><dl class="section return"><dt>Returns</dt><dd>Nome da <a class="el" href="class_pessoa.html">Pessoa</a> </dd></dl>
+<p>Metodo que permite obter o nome da pessoa </p><dl class="section return"><dt>Returns</dt><dd>Nome da <a class="el" href="class_pessoa.html">Pessoa</a> </dd></dl>
 
 </div>
 </div>
@@ -257,15 +263,60 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>noContribuinte</b><
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Método puramente virtual que, nas classes derivadas, imprime no ecrã os atributos da classe </p>
+<p>Metodo puramente virtual que, nas classes derivadas, imprime no ecra os atributos da classe </p>
 
 <p>Implemented in <a class="el" href="class_cliente.html#a308ef55d331d2a18303df5b14a8e3b66">Cliente</a>, and <a class="el" href="class_funcionario.html#a754f2cb4226d557af5f70891a3c8584d">Funcionario</a>.</p>
 
 </div>
 </div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ac6cc01c055f941bc2566d88e0b682808"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6cc01c055f941bc2566d88e0b682808">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_pessoa.html">Pessoa</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Overload do operador para exportar a <a class="el" href="class_pessoa.html">Pessoa</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Variavel para onde se quer exportar(ecra, ficheiro, ...) </td></tr>
+    <tr><td class="paramname">p</td><td><a class="el" href="class_pessoa.html">Pessoa</a> que se quer exportar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna referencia para a variavel para onde se quer exportar </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/<a class="el" href="_pessoa_8h_source.html">Pessoa.h</a></li>
-<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/Pessoa.cpp</li>
+<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/<a class="el" href="_pessoa_8h_source.html">Pessoa.h</a></li>
+<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/Pessoa.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

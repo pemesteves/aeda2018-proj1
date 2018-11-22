@@ -27,13 +27,13 @@ class Venda {
 private:
 	double codigo; //Codigo da venda
 	static double codigo_sequencial; //Variavel usada para que os codigos das vendas sejam sequenciais (primeira venda tem codigo 0)
-	std::map<Produto, std::vector<float>> produtosVendidos; //Map cujas keys são objetos do tipo Produto e o valor é um vetor com quantidade, iva e comparticipação
+	std::map<Produto, std::vector<float>> produtosVendidos; //Map cujas keys sao objetos do tipo Produto e o valor e um vetor com quantidade, iva e comparticipacao
 	Data data; //Data na qual foi realizada a venda
-	Hora hora; //Hora à qual foi realizada a venda
+	Hora hora; //Hora a qual foi realizada a venda
 	double totalVenda; //Valor total da venda
 	bool temReceita; //Indica se a venda tem uma receita associada (true quando tem)
 	Receita* receitaVenda; //Caso a venda tenha uma receita associada, receitaVenda guarda um apontador para essa receita
-	Cliente* clienteVenda; //Cliente ao qual está associada a venda
+	Cliente* clienteVenda; //Cliente ao qual esta associada a venda
 
 public:
 	/**
@@ -42,61 +42,61 @@ public:
 	Venda();
 	/**
 	 * Construtor da classe Venda
-	 * @param receitaVenda Apontador para a receita associada à venda
-	 * @param clienteVenda Apontador para o cliente associado à venda
+	 * @param receitaVenda Apontador para a receita associada a venda
+	 * @param clienteVenda Apontador para o cliente associado a venda
 	 */
 	Venda(Receita* receitaVenda, Cliente* clienteVenda);
 	/**
 	 * Construtor da classe Venda
-	 * @param dia, mes, ano, horas, min, segundos, codigo Dados correspondentes à data, hora e codigo da venda
+	 * @param dia, mes, ano, horas, min, segundos, codigo Dados correspondentes a data, hora e codigo da venda
 	 */
 	Venda(unsigned short dia, unsigned short mes, int ano, unsigned short horas, unsigned short min, unsigned short segundos, double codigo);
 	/**
-	 * Método que permite obter o valor total da venda
+	 * Metodo que permite obter o valor total da venda
 	 * @return totalVenda (atributo da classe)
 	 */
 	double getTotalVenda() const;
 	/**
-	 * Método que permite obter o map com os produtos vendidos
+	 * Metodo que permite obter o map com os produtos vendidos
 	 * @return produtosVendidos (atributo da classe)
 	 */
 	std::map<Produto, std::vector<float>> getProdutosVendidos() const;
 	/**
-	 * Método que permite atribuir uma receita à venda
-	 * Só é possível atribuir uma receita à venda se esta não tiver ainda nenhuma receita associada
+	 * Metodo que permite atribuir uma receita a venda
+	 * Só e possível atribuir uma receita a venda se esta nao tiver ainda nenhuma receita associada
 	 * @param receitaVenda Apontador para a receita a associar
-	 * @return True se foi possível atribuir a receita e false se não tiver sido possível
+	 * @return True se foi possível atribuir a receita e false se nao tiver sido possível
 	 */
 	bool setReceita(Receita* receitaVenda);
 	/**
-	 * Método que permite atribuir um cliente à venda
-	 * Só é possível atribuir um cliente à venda se esta não tiver ainda nenhum cliente associado
+	 * Metodo que permite atribuir um cliente a venda
+	 * Só e possível atribuir um cliente a venda se esta nao tiver ainda nenhum cliente associado
 	 * @param clienteVenda Apontador para o cliente a associar
-	 * @return True se foi possível atribuir o cliente e false se não tiver sido possível
+	 * @return True se foi possível atribuir o cliente e false se nao tiver sido possível
 	 */
 	void setCliente(Cliente* clienteVenda);
 	/**
-	 * Método que permite obter o número de produtos vendidos
+	 * Metodo que permite obter o número de produtos vendidos
 	 * @return Tamanho de produtosVendidos (atributo da classe)
 	 */
 	unsigned int getNumProdutos() const;
 	/**
-	 * Método que permite obter o cliente da venda
-	 * @return Cliente associado à venda, se ainda não houver nenhum cliente associado retorna NULL
+	 * Metodo que permite obter o cliente da venda
+	 * @return Cliente associado a venda, se ainda nao houver nenhum cliente associado retorna NULL
 	 */
 	Cliente* getCliente();
 	/**
-	 * Método que permite obter a receita da venda
-	 * @return Receita associada à venda, se não houver nenhuma receita associada retorna NULL
+	 * Metodo que permite obter a receita da venda
+	 * @return Receita associada a venda, se nao houver nenhuma receita associada retorna NULL
 	 */
 	Receita* getReceita();
 	/**
-	 * Método que permite obter a data da venda
+	 * Metodo que permite obter a data da venda
 	 * @return Objeto do tipo Data
 	 */
 	Data getData() const;
 	/**
-	 * Método que permite obter a hora da venda
+	 * Metodo que permite obter a hora da venda
 	 * @return Objeto do tipo Hora
 	 */
 	Hora getHora() const;
@@ -106,34 +106,34 @@ public:
 	 */
 	double getCodigo() const;
 	/**
-	 * Método que permite obter o preço de um produto
-	 * @param nomeProd Nome do produto que irá ser procurado
-	 * @return Preço do produto especificado como argumento. Retorna -1 se não existir
+	 * Metodo que permite obter o preco de um produto
+	 * @param nomeProd Nome do produto que ira ser procurado
+	 * @return Preco do produto especificado como argumento. Retorna -1 se nao existir
 	 */
 	float getPrecoProduto(std::string nomeProd) const;
 	/**
-	 * Método que permite adicionar um produto à venda
+	 * Metodo que permite adicionar um produto a venda
 	 * @param prod Apontador para objeto da classe Produto
-	 * @param quant, iva Valores do tipo float que serão colocados do vetor do map produtosVendidos
+	 * @param quant, iva Valores do tipo float que serao colocados do vetor do map produtosVendidos
 	 * @return True se foi possivel adicionar o produto, false se nao foi (se necessitar de ser vendido com receita e nao estiver contido na receita associada a venda)
 	 */
 	bool addProduto(Produto* prod, float quant, float iva);
 	/**
-	 * Operador menor: compara dois objetos do tipo Venda com regras pré-definidas
+	 * Operador menor: compara dois objetos do tipo Venda com regras pre-definidas
 	 * @param v1 Objeto do tipo Venda
-	 * @return Retorna true se a venda for menor que v1. Caso contrário, retorna false
+	 * @return Retorna true se a venda for menor que v1. Caso contrario, retorna false
 	 */
 	bool operator< (const Venda &v1) const;
 	/**
-	 * Método que permite imprimir no ecrã uma fatura
+	 * Metodo que permite imprimir no ecra uma fatura
 	 */
 	void imprimeFatura() const;
 	/**
-	 * Método semelhante ao operador menor, no qual o utilizador escolhe a forma de comparação
-	 * @param v1 Venda que irá ser comparada
-	 * @param tipo Enumeração do tipo tipoSort que permite ao utilizador escolher o modo de comparação das duas vendas
-	 * @param crescente Booleano que permite ao utilizador escolher se quer utilizar o seu critério de modo crescente(true) ou decrescente(false)
-	 * @return Retorn true se a venda for menor que v1. Caso contrário, retorn false
+	 * Metodo semelhante ao operador menor, no qual o utilizador escolhe a forma de comparacao
+	 * @param v1 Venda que ira ser comparada
+	 * @param tipo Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de comparacao das duas vendas
+	 * @param crescente Booleano que permite ao utilizador escolher se quer utilizar o seu criterio de modo crescente(true) ou decrescente(false)
+	 * @return Retorn true se a venda for menor que v1. Caso contrario, retorn false
 	 */
 	bool menorQue(const Venda &v1, enum tipoSort tipo, bool crescente) const;
 	/**

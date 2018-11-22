@@ -21,6 +21,10 @@ void CadeiaFarmacias::setNome(string nome){
 	this->nome = nome;
 }
 
+string CadeiaFarmacias::getNome() const{
+	return nome;
+}
+
 unsigned int CadeiaFarmacias::getNumFarmacias() const {
 	return farmacias.size();
 }
@@ -114,17 +118,58 @@ void CadeiaFarmacias::sortFuncionarios(enum tipoSort tipo, bool crescente){
 std::ostream& operator<<(std::ostream &output, const CadeiaFarmacias &cF){
 	output << cF.farmacias.size() << endl;
 	for(size_t i = 0; i < cF.farmacias.size(); i++){
-		//output << cF.farmacias[i] << endl;
+		output << cF.farmacias[i] << endl;
 	}
 	output << cF.clientes.size() << endl;
 	for(size_t i = 0; i < cF.clientes.size(); i++){
-		//output << cF.clientes[i] << endl;
+		output << cF.clientes[i] << endl;
 	}
 	output << cF.funcionarios.size() << endl;
 	for(size_t i = 0; i < cF.funcionarios.size(); i++){
-		//output << cF.funcionarios[i] << endl;
+		output << cF.funcionarios[i] << endl;
 	}
 	return output;
+}
+
+void import(fstream &f, CadeiaFarmacias &cF){
+	string line;
+	getline(f, line);
+	size_t numVars = stoi(line);
+	vector<double> gerentes;
+	vector<double> diretoresTecnicos;
+	string nome, morada;
+	double contribuinte;
+	while(numVars > 0){
+		getline(f, nome);
+		getline(f, morada);
+		Farmacia farm(nome, morada);
+		getline(f, nome);
+		contribuinte = stoi(nome);
+		gerentes.push_back(contribuinte);
+		getline(f, nome);
+		contribuinte = stoi(nome);
+		diretoresTecnicos.push_back(contribuinte);
+		getline(f, line);
+		size_t numProd = stoi(line);
+		//TODO terminar
+		while(numProd > 0){
+
+		}
+
+	}
+	numVars = 0;
+	getline(f, line);
+	numVars = stoi(line);
+	while(numVars > 0){
+
+	}
+	numVars = 0;
+	getline(f, line);
+	numVars = stoi(line);
+	while(numVars > 0){
+
+	}
+
 }
 
 

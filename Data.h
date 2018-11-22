@@ -22,7 +22,7 @@ private:
 public:
 	/**
 	 * Construtor da Classe Data
-	 * Data será a mesma do sistema
+	 * Data sera a mesma do sistema
 	 */
 	Data();
 	/**
@@ -33,30 +33,30 @@ public:
 	 */
 	Data(unsigned short dia, unsigned short mes, int ano);
 	/**
-	 * Método que permite obter o dia
+	 * Metodo que permite obter o dia
 	 * @return Dia do mês
 	 */
 	unsigned short getDia() const;
 	/**
-	 * Método que permite obter o mes
+	 * Metodo que permite obter o mes
 	 * @return Mês do ano (em número)
 	 */
 	unsigned short getMes() const;
 	/**
-	 * Método que permite obter o ano
+	 * Metodo que permite obter o ano
 	 * @return Ano
 	 */
 	int getAno() const;
 	/**
-	 * Operador menor que verifica se uma data é menor que outra
+	 * Operador menor que verifica se uma data e menor que outra
 	 * @param data Data a ser comparada
-	 * @return Retorna true se for menor que a data do parâmetro. Caso contrário, retorna false
+	 * @return Retorna true se for menor que a data do parametro. Caso contrario, retorna false
 	 */
 	bool operator< (const Data &data) const;
 	/**
-	 * Método que verifica se duas datas são iguais
+	 * Metodo que verifica se duas datas sao iguais
 	 * @param data Data a ser comparada
-	 * @return Retorna true se as datas forem iguais. Caso contrário, retorna false
+	 * @return Retorna true se as datas forem iguais. Caso contrario, retorna false
 	 */
 	bool operator==(const Data &data) const;
 	/**
@@ -81,7 +81,7 @@ private:
 public:
 	/**
 	 * Construtor da Classe Hora
-	 * Hora será a mesma do sistema
+	 * Hora sera a mesma do sistema
 	 */
 	Hora();
 	/**
@@ -92,30 +92,30 @@ public:
 	 */
 	Hora(unsigned short h, unsigned short m, unsigned short s);
 	/**
-	 * Método que permite obter as horas (número da hora)
+	 * Metodo que permite obter as horas (número da hora)
 	 * @return Hora do dia
 	 */
 	unsigned short getHora() const;
 	/**
-	 * Método que permite obter os minutos
+	 * Metodo que permite obter os minutos
 	 * @return Minutos
 	 */
 	unsigned short getMinutos() const;
 	/**
-	 * Método que permite obter os segundos
+	 * Metodo que permite obter os segundos
 	 * @return Segundos
 	 */
 	unsigned short getSegundos() const;
 	/**
-	 * Operador menor que verifica se uma hora é menor que outra
+	 * Operador menor que verifica se uma hora e menor que outra
 	 * @param h Hora a ser comparada
-	 * @return Retorna true se for menor que a hora do parâmetro. Caso contrário, retorna false
+	 * @return Retorna true se for menor que a hora do parametro. Caso contrario, retorna false
 	 */
 	bool operator< (const Hora &h) const;
 	/**
-	 * Método que verifica se duas datas são iguais
+	 * Metodo que verifica se duas datas sao iguais
 	 * @param h Hora a ser comparada
-	 * @return Retorna true se as horas forem iguais. Caso contrário, retorna false
+	 * @return Retorna true se as horas forem iguais. Caso contrario, retorna false
 	 */
 	bool operator ==(const Hora &h) const;
 	/**

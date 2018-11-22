@@ -63,6 +63,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_data-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Data Class Reference</div>  </div>
@@ -87,6 +88,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adcf75bd6dc059e14fe4ecc296de24947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33ad74027c86cc86682c1711fdee8262"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a33ad74027c86cc86682c1711fdee8262">operator==</a> (const <a class="el" href="class_data.html">Data</a> &amp;data) const</td></tr>
 <tr class="separator:a33ad74027c86cc86682c1711fdee8262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aa3f5af80b452a1a26cb6aabe0876fbae"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#aa3f5af80b452a1a26cb6aabe0876fbae">operator&lt;&lt;</a> (std::ostream &amp;output, const <a class="el" href="class_data.html">Data</a> &amp;d1)</td></tr>
+<tr class="separator:aa3f5af80b452a1a26cb6aabe0876fbae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header File que contem as classes <a class="el" href="class_data.html">Data</a> e <a class="el" href="class_hora.html">Hora</a></p>
@@ -107,7 +113,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Construtor da Classe <a class="el" href="class_data.html">Data</a> <a class="el" href="class_data.html">Data</a> será a mesma do sistema </p>
+<p>Construtor da Classe <a class="el" href="class_data.html">Data</a> <a class="el" href="class_data.html">Data</a> sera a mesma do sistema </p>
 
 </div>
 </div>
@@ -168,7 +174,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o ano </p><dl class="section return"><dt>Returns</dt><dd>Ano </dd></dl>
+<p>Metodo que permite obter o ano </p><dl class="section return"><dt>Returns</dt><dd>Ano </dd></dl>
 
 </div>
 </div>
@@ -186,7 +192,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o dia </p><dl class="section return"><dt>Returns</dt><dd>Dia do mês </dd></dl>
+<p>Metodo que permite obter o dia </p><dl class="section return"><dt>Returns</dt><dd>Dia do mês </dd></dl>
 
 </div>
 </div>
@@ -204,7 +210,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que permite obter o mes </p><dl class="section return"><dt>Returns</dt><dd>Mês do ano (em número) </dd></dl>
+<p>Metodo que permite obter o mes </p><dl class="section return"><dt>Returns</dt><dd>Mês do ano (em número) </dd></dl>
 
 </div>
 </div>
@@ -223,13 +229,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Operador menor que verifica se uma data é menor que outra </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Operador menor que verifica se uma data e menor que outra </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td><a class="el" href="class_data.html">Data</a> a ser comparada </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna true se for menor que a data do parâmetro. Caso contrário, retorna false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna true se for menor que a data do parametro. Caso contrario, retorna false </dd></dl>
 
 </div>
 </div>
@@ -248,19 +254,64 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Método que verifica se duas datas são iguais </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que verifica se duas datas sao iguais </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td><a class="el" href="class_data.html">Data</a> a ser comparada </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna true se as datas forem iguais. Caso contrário, retorna false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna true se as datas forem iguais. Caso contrario, retorna false </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="aa3f5af80b452a1a26cb6aabe0876fbae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3f5af80b452a1a26cb6aabe0876fbae">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_data.html">Data</a> &amp;&#160;</td>
+          <td class="paramname"><em>d1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Overload de operador &lt;&lt; para exportar a data </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Variavel para onde se quer exportar(ecra, ficheiro, ...) </td></tr>
+    <tr><td class="paramname">d1</td><td><a class="el" href="class_data.html">Data</a> que se quer exportar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna referencia para a variavel para onde se quer exportar </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/<a class="el" href="_data_8h_source.html">Data.h</a></li>
-<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/Data.cpp</li>
+<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/<a class="el" href="_data_8h_source.html">Data.h</a></li>
+<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/Data.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

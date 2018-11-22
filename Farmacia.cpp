@@ -247,16 +247,19 @@ bool Farmacia::menorQue(const Farmacia &f1, enum tipoSort tipo, bool crescente) 
 std::ostream& operator<<(std::ostream &output, const Farmacia &f){
 	output << f.nome << endl;
 	output << f.morada << endl;
-	output << *f.gerente << endl;
-	output << *f.diretorTecnico << endl;
+	output << f.gerente->getNoContribuinte()<< endl;
+	output << f.diretorTecnico->getNoContribuinte() << endl;
 
 	output << f.produtosVender.size() << endl;
-	for(map<Produto, int>::const_iterator it = f.produtosVender.begin(); it != f.produtosVender.end(); it++){
+	map<Produto, int>::const_iterator it;
+	for(it = f.produtosVender.begin(); it != f.produtosVender.end(); it++){
 		output << (*it).second << endl;
 		output << (*it).first << endl;
 	}
+
+	output << f.vendas.size() << endl;
 	for(size_t i = 0; i < f.vendas.size(); i++){
-		output << *f.vendas[i] << endl;
+		output << (*f.vendas[i]) << endl;
 	}
 	return output;
 }
