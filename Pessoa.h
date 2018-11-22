@@ -54,6 +54,13 @@ public:
 	 * Método puramente virtual que, nas classes derivadas, imprime no ecrã os atributos da classe
 	 */
 	virtual void showInfo() const = 0;
+	/**
+	 * Overload do operador para exportar a Pessoa
+	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
+	 * @param p Pessoa que se quer exportar
+	 * @return Retorna referencia para a variavel para onde se quer exportar
+	 */
+	friend std::ostream& operator<<(std::ostream &output, const Pessoa &p);
 };
 
 /**
@@ -120,6 +127,13 @@ public:
 	 * @return Retorna true se o funcionário for menor que f1. Caso contrário, retorna false
 	 */
 	bool menorQue(const Funcionario &f1, enum tipoSort tipo, bool crescente) const;
+	/**
+	 * Overload do operador para exportar o Funcionario
+	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
+	 * @param f Funcionario que se quer exportar
+	 * @return Retorna referencia para a variavel para onde se quer exportar
+	 */
+	friend std::ostream& operator<<(std::ostream &output, const Funcionario &f);
 };
 
 /**
@@ -173,6 +187,13 @@ public:
 	 * @return Retorna true se o cliente for menor que c1. Caso contrário, retorna false
 	 */
 	bool menorQue(const Cliente &c1, enum tipoSort tipo, bool crescente) const;
+	/**
+	 * Overload do operador para exportar o Cliente
+	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
+	 * @param c Cliente que se quer exportar
+	 * @return Retorna referencia para a variavel para onde se quer exportar
+	 */
+	friend std::ostream& operator<<(std::ostream &output, const Cliente &c);
 };
 
 /**

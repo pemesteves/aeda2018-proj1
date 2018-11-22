@@ -1,3 +1,10 @@
+/**
+ * Header File que contem enumeracoes e metodos sort importantes para o projeto
+ *
+ * @author Marcia, Pedro e Rita
+ * @date Novembro, 2018
+ */
+
 #ifndef UTIL_H
 #define UTIL_H
 

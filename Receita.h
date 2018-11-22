@@ -14,6 +14,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <iostream>
 
 class Pessoa;
 class Cliente;
@@ -24,7 +25,6 @@ class Cliente;
 class Receita {
 private:
 	double numero; //Número da Receita
-	 //TODO criar classe medico para a receita
 	std::string medico; //Nome do médico que prescreveu a Receita
 	std::map<Produto, double>  produtos; //Map com os Produtos contidos na receita e respetiva quantidade
 	Cliente* cliente; //Apontador para o Cliente ao qual a receita foi prescrita
@@ -81,6 +81,13 @@ public:
 	 * @return True se produto existir, caso contrário retorna false
 	 */
 	bool existeProdReceita(Produto* prod) const;
+	/**
+	 * Overload do operador para exportar a receita
+	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
+	 * @param Receita que se quer exportar
+	 * @return Retorna referencia para a variavel para onde se quer exportar
+	 */
+	friend std::ostream& operator<<(std::ostream &output, const Receita &r);
 };
 
 #endif

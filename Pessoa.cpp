@@ -23,6 +23,13 @@ double Pessoa::getNoContribuinte() const {
 	return noContribuinte;
 }
 
+std::ostream& operator<<(std::ostream &output, const Pessoa &p){
+	output << p.nome << endl;
+	output << p.noContribuinte << endl;
+	output << p.morada << endl;
+	return output;
+}
+
 //Funcionario
 Funcionario::Funcionario(string nome, string morada, double cont, double sal): Pessoa(nome, morada, cont){
 	this->salario = sal;
@@ -64,6 +71,13 @@ bool Funcionario::operator< (const Funcionario &f1) const{
 	if (nome == f1.getNome() && salario == f1.getSalario() && noContribuinte < f1.getNoContribuinte())
 		return true;
 	return false;
+}
+
+std::ostream& operator<<(std::ostream &output, const Funcionario &f){
+	output << static_cast<Pessoa&>(f);
+	output << f.cargo  << " - " << f.salario << endl;
+	output << f.farmaciaTrabalho->getNome();
+	return output;
 }
 
 //Cliente
@@ -151,3 +165,13 @@ bool Cliente::menorQue(const Cliente &c1, enum tipoSort tipo, bool crescente) co
 		break;
 	}
 }
+
+std::ostream& operator<<(std::ostream &output, const Cliente &c){
+	output << static_cast<Pessoa&>(c);
+	for (size_t i = 0; i < c.historialCompras.size(); i++){
+		output << c.historialCompras[i]->getCodigo() << endl;
+	}
+	return output;
+}
+
+

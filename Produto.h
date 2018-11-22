@@ -8,6 +8,7 @@
 #define PRODUTO_H
 
 #include <string>
+#include <iostream>
 
 /**
  * Classe Produto
@@ -104,6 +105,13 @@ public:
 	 * @return Taxa de Desconto
 	 */
 	float getTaxaDesconto() const;
+	/**
+	 * Overload do operador para exportar o Produto
+	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
+	 * @param p Produto que se quer exportar
+	 * @return Retorna referencia para a variavel para onde se quer exportar
+	 */
+	friend std::ostream& operator<<(std::ostream &output, const Produto &p);
 };
 
 /**

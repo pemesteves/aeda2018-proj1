@@ -86,4 +86,15 @@ bool Produto::operator== (const Produto &p1) const{
 	return true;
 }
 
+std::ostream& operator<<(std::ostream &output, const Produto &p){
+	output << p.codigo << endl;
+	output << p.nome << endl;
+	output << p.preco << endl;
+	output << p.descricao << endl;
+	output << p.passivelReceita << endl;
+	output << p.vendaSemReceita << endl;
+	output << p.taxaDesconto << endl;
+	return output;
+}
+
 

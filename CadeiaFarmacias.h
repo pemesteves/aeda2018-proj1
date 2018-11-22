@@ -10,7 +10,7 @@
 
 #include "Farmacia.h"
 #include <vector>
-#include <ostream>
+#include <iostream>
 
 /**
  * Classe CadeiaFarmacias
@@ -120,7 +120,7 @@ public:
 	 */
 	void sortFuncionarios(enum tipoSort tipo, bool crescente);
 	/**
-	 * Metodo para exportar a cadeia de farmacias
+	 * Overload do operador exportar a cadeia de farmacias
 	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
 	 * @param cF Cadeia de Farmacias que se quer exportar
 	 * @return Retorna referencia para a variavel para onde se quer exportar

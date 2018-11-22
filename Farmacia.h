@@ -17,6 +17,7 @@
 #include <string>
 #include <algorithm>
 #include <map>
+#include <iostream>
 
 /**
  * Classe Farmacia
@@ -192,7 +193,7 @@ public:
 	 */
 	void imprimeFatura(Venda* v) const;
 	/**
-	 * Metodo para exportar a farmacia
+	 * Overload do operador para exportar a farmacia
 	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
 	 * @param f Farmacia que se quer exportar
 	 * @return Retorna referencia para a variavel para onde se quer exportar
