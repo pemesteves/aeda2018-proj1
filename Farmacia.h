@@ -68,6 +68,12 @@ public:
 	 */
 	std::map<Produto, int> getProdutosVender() const;
 	/**
+	 * Metodo para obter o Produto com um certo codigo
+	 * @param codigo Codigo do Produto a procurar
+	 * @return Produto que contem o codigo  especificado no argumento
+	 */
+	Produto getProduto(double codigo);
+	/**
 	 * Metodo que permite obter o numero de produtos disponiveis para venda
 	 * @return Tamanho do map produtosVender
 	 */

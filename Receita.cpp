@@ -70,7 +70,8 @@ Produto Receita::removeProduto(std::string nome){
 std::ostream& operator<<(std::ostream &output, const Receita &r){
 	output << r.numero << endl;
 	output << r.medico << endl;
-	for(map<Produto, double>::const_iterator it = r.produtos.begin(); it != r.produtos.end(); it++){
+	map<Produto, double>::const_iterator it;
+	for(it = r.produtos.begin(); it != r.produtos.end(); it++){
 		output << (*it).first.getCodigo() << " " << (*it).second << endl;
 	}
 	output << r.cliente->getNoContribuinte();

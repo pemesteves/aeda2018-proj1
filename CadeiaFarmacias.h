@@ -137,7 +137,7 @@ public:
 	 * @param f Ficheiro de onde se vai importar
 	 * @param cF Cadeia de Farmacias que se quer exportar
 	 */
-	void import(std::fstream &f, CadeiaFarmacias &cF);
+	friend void import(std::fstream &f, CadeiaFarmacias &cF);
 };
 
 #endif

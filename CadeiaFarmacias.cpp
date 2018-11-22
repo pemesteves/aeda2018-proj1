@@ -137,6 +137,9 @@ void import(fstream &f, CadeiaFarmacias &cF){
 	size_t numVars = stoi(line);
 	vector<double> gerentes;
 	vector<double> diretoresTecnicos;
+	vector<double> numeroReceita;
+	vector<double> clientes;
+
 	string nome, morada;
 	double contribuinte;
 	while(numVars > 0){
@@ -151,12 +154,86 @@ void import(fstream &f, CadeiaFarmacias &cF){
 		diretoresTecnicos.push_back(contribuinte);
 		getline(f, line);
 		size_t numProd = stoi(line);
-		//TODO terminar
-		while(numProd > 0){
 
+		double codigo;
+		float desconto, preco;
+		bool pasReceita, vendaSemReceita;
+		int quantidade;
+		while(numProd > 0){
+			getline(f, line);
+			quantidade = stoi(line);
+			getline(f, line);
+			codigo = stod(line);
+			getline(f, nome);
+			getline(f, line);
+			preco = stof(line);
+			getline(f, morada); //morada terá a descrição
+			getline(f, line);
+			pasReceita = (bool)stoi(line);
+			getline(f, line);
+			vendaSemReceita = (bool)stoi(line);
+			getline(f, line);
+			desconto = stof(line);
+			Produto p(codigo, nome,preco, morada, pasReceita, desconto, vendaSemReceita);
+			farm.addProdutoVender(&p);
+			farm.setQuantidade(nome, quantidade);
+			numProd--;
 		}
 
+		getline(f, line);
+		numProd = stoi(line); //numProd terá o número de vendas
+		int dia, mes, ano, hora, minutos, segundos;
+		while(numProd > 0){
+			getline(f, line); //line terá: codigo data hora
+			codigo = stoi(line.substr(0, line.find(" ")));
+			line = line.substr(0, line.find(" ")+1); //line terá: hora data
+			dia = stoi(line.substr(0, line.find("/")));
+			line = line.substr(0, line.find("/")+1); //line terá: mes/ano hora:minutos:segundos
+			mes = stoi(line.substr(0, line.find("/")));
+			line = line.substr(0, line.find("/")+1); //line terá: ano hora:minutos:segundos
+			ano = stoi(line.substr(0, line.find(" ")));
+			line = line.substr(0, line.find(" ")+1); //line terá: hora:minutos:segundos
+			hora = stoi(line.substr(0, line.find(":")));
+			line = line.substr(0, line.find(":")+1); //line terá: minutos:segundos
+			minutos = stoi(line.substr(0, line.find(":")));
+			line = line.substr(0, line.find(":")+1); //line terá: segundos
+			segundos = stoi(line);
+			getline(f, line);
+			if(line == "NULL")
+				numeroReceita.push_back(0);
+			else{
+				numeroReceita.push_back(stod(line));
+			}
+
+			getline(f, line);
+			clientes.push_back(stod(line));
+			Venda v(dia, mes, ano, hora, minutos, segundos, codigo);
+
+			size_t num;
+			getline(f, line);
+			num = stoi(line); //total da venda
+
+
+
+			while(num > 0){
+				getline(f, line);
+				codigo = stod(line);
+				getline(f, line);
+				preco = stof(line.substr(0, line.find(" "))); //preco é a quantidade do produto
+				line = line.substr(0, line.find(" ") + 1);
+				desconto = stof(line.substr(0, line.find(" "))); //desconto é o iva
+				Produto p = farm.getProduto(codigo);
+				v.addProduto(&p, preco, desconto);
+				num--;
+			}
+
+			numProd--;
+		}
+
+		cF.farmacias.push_back(&farm);
+		numVars--;
 	}
+
 	numVars = 0;
 	getline(f, line);
 	numVars = stoi(line);

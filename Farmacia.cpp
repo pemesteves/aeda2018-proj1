@@ -264,4 +264,15 @@ std::ostream& operator<<(std::ostream &output, const Farmacia &f){
 	return output;
 }
 
+Produto Farmacia::getProduto(double codigo){
+	map<Produto, int>::iterator it = produtosVender.begin();
+	for(; it != produtosVender.end(); it++){
+		if((*it).first.getCodigo() == codigo)
+			return (*it).first;
+	}
+	Produto p(0, "", 0, "", 0, 0, 0);
+	return p;
+}
+
+
 

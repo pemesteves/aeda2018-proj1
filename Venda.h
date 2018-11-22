@@ -70,7 +70,7 @@ public:
 	bool setReceita(Receita* receitaVenda);
 	/**
 	 * Metodo que permite atribuir um cliente a venda
-	 * Só e possível atribuir um cliente a venda se esta nao tiver ainda nenhum cliente associado
+	 * So e possivel atribuir um cliente a venda se esta nao tiver ainda nenhum cliente associado
 	 * @param clienteVenda Apontador para o cliente a associar
 	 * @return True se foi possível atribuir o cliente e false se nao tiver sido possível
 	 */
