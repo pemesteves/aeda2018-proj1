@@ -139,7 +139,7 @@ bool Farmacia::addVenda(Venda* venda) {
 	int quant;
 	for (; it != prodVenda.end(); it++){
 		nomeProd = it->first.getNome();
-		quant = it->second.at(QUANTIDADE);
+		quant = static_cast<int>(it->second.at(QUANTIDADE));
 		if (!existeProdutoQuant(nomeProd, quant)){
 			return false;
 		}
@@ -147,7 +147,7 @@ bool Farmacia::addVenda(Venda* venda) {
 	vendas.push_back(venda);
 	for (; it != prodVenda.end(); it++){
 		nomeProd = it->first.getNome();
-		quant = getQuantProduto(nomeProd) - it->second.at(QUANTIDADE);
+		quant = getQuantProduto(nomeProd) - static_cast<int>(it->second.at(QUANTIDADE));
 		setQuantidade(nomeProd, quant);
 	}
 	venda->getCliente()->addCompra(venda);

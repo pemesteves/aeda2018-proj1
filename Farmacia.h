@@ -11,6 +11,7 @@
 #include "util.h"
 #include "Pessoa.h"
 #include "Venda.h"
+#include "Data.h"
 
 #include <vector>
 #include <string>

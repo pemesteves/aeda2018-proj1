@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /**
  * Header File que contem a classe Venda
  *
@@ -107,9 +107,10 @@ public:
 	/**
 	 * Método que permite adicionar um produto à venda
 	 * @param prod Apontador para objeto da classe Produto
-	 * @param quant, iva, comparticipacao Valores do tipo float que serão colocados do vetor do map produtosVendidos
+	 * @param quant, iva Valores do tipo float que serão colocados do vetor do map produtosVendidos
+	 * @return True se foi possivel adicionar o produto, false se nao foi (se necessitar de ser vendido com receita e nao estiver contido na receita associada a venda)
 	 */
-	void addProduto(Produto* prod, float quant, float iva, float comparticipacao);
+	bool addProduto(Produto* prod, float quant, float iva);
 	/**
 	 * Operador menor: compara dois objetos do tipo Venda com regras pré-definidas
 	 * @param v1 Objeto do tipo Venda

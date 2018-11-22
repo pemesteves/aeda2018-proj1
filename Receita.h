@@ -62,7 +62,7 @@ public:
 	 * @param nomeProd Nome do produto a procurar
 	 * @return Retorna o preço máximo do produto. Caso não exista, lança uma exceção do tipo ProdutoInexistente
 	 */
-	float getPrecoMax(std::string nomeProd) const;
+	double getPrecoMax(std::string nomeProd) const;
 	/**
 	 * Método para adicionar um Produto ao map de Produtos
 	 * @param produto Apontador para objeto da classe Produto

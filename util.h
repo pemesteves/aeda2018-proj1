@@ -15,7 +15,7 @@ enum tipoSort {NOME, CONTRIBUINTE, NUM_PROD, NUM_VENDA, SALARIO, DATA, HORA, DEF
 /**
  * Declaração de uma enumeração: dadosProd
  * É utilizada para facilitar o acesso a dados de um produto numa venda
- * Valores: QUANTIDADE = unidades do produto vendidas; IVA = percentagem de IVA do produto; COMPARTICIPACAO = percentagem de comparticipacao do produto
+ * Valores: QUANTIDADE = unidades do produto vendidas; IVA = percentagem de IVA do produto; COMPARTICIPACAO = percentagem de comparticipacao do produto; PRECO_PAGO = preco pago pelo produto, tendo em conta o IVA e a comparticipacao
  */
 enum dadosProd {QUANTIDADE, IVA, COMPARTICIPACAO, PRECO_PAGO};
 

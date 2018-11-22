@@ -57,7 +57,7 @@ Farmacia* CadeiaFarmacias::removeFarmacia(const string &nomeF){
 			vector<Funcionario*>::iterator itFunc = funcionarios.begin();
 			for(; itFunc != funcionarios.end(); itFunc++){ //Percorrer o vetor funcionarios
 				Farmacia* f = (*itFunc)->getFarmacia();
-				if (nomeF == f->getNome()) //Se a Farmacia a eliminar é igual à Farmacia onde trabalha o Funcionario, esta é apagada
+				if (nomeF == f->getNome()) //Se a Farmacia a eliminar é igual à Farmacia onde trabalha o Funcionario, este é apagada
 					(*itFunc)->setFarmacia(NULL);
 			}
 			return *it;

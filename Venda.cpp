@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #include "Venda.h"
 #include <iomanip>
 #include <iostream>
@@ -79,25 +79,34 @@ float Venda::getPrecoProduto(string nomeProd) const{
 	return -1; //Se não houver um produto com o nome = nomeProd, retorna -1
 }
 
-void Venda::addProduto(Produto* prod, float quant, float iva, float comparticipacao){
+bool Venda::addProduto(Produto* prod, float quant, float iva){
 	double precoAdd = 0; //valor a adicionar ao valor total da venda
 	float precoProd=0; //valor por unidade de produto
+	float comparticipacao = 0; //valor da comparticipacao do produto
+
 	map<Produto, vector<float>>::iterator it;
 	if ((it = produtosVendidos.find(*prod)) != produtosVendidos.end()){
 		(*it).second.at(QUANTIDADE) += quant;
 		Produto p = (*it).first;
 		vector<float> v = (*it).second;
-		precoProd = p.getPreco();
-		precoProd += precoProd*v.at(IVA) - precoProd*v.at(COMPARTICIPACAO);
 		precoAdd = precoProd * quant;
 		totalVenda += precoAdd;
 	}
 	else{
-		vector<float> v = {quant, iva, comparticipacao};
-		//pair<Produto, vector<float>> p = make_pair(*prod, v);
-		produtosVendidos[*prod]=v;
-		//vector<float> v = (*it).second;
-		precoProd += precoProd*iva - precoProd*v.at(COMPARTICIPACAO);
+		vector<float> v = { quant, iva };
+		if (temReceita) {
+			if (prod->getPassivelReceita()) {
+				if (receitaVenda->existeProdReceita(prod))
+					comparticipacao = prod->getTaxaDesconto();
+				else if (!prod->getVendaSemReceita())
+					return false;
+			}
+		}
+		v.push_back(comparticipacao);
+		precoProd = prod->getPreco();
+		precoProd += precoProd * iva - precoProd * v.at(COMPARTICIPACAO);
+		v.push_back(precoProd);
+		produtosVendidos[*prod] = v;
 		precoAdd = precoProd * quant;
 		totalVenda += precoAdd;
 	}

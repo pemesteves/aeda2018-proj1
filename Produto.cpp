@@ -33,15 +33,24 @@ Produto::Produto(double cod, string nome, float preco, string descricao) {
 	this->descricao = descricao;
 	this->taxaDesconto = 0;
 	this->vendaSemReceita = false;
+	passivelReceita = false;
 }
 
-Produto::Produto(double cod, std::string nome, float preco, std::string desc, float desconto, bool semRec){
+Produto::Produto(double cod, std::string nome, float preco, std::string desc, bool passivelReceita = false, float desconto = 0, bool semRec = false){
 	this->codigo = cod;
 		this->nome = nome;
 		this->preco = preco;
-		this->descricao = descricao;
-		this->taxaDesconto = desconto;
-		this->vendaSemReceita = semRec;
+		this->descricao = desc;
+		this->passivelReceita = passivelReceita;
+		if (this->passivelReceita) {
+			this->taxaDesconto = desconto;
+			this->vendaSemReceita = semRec;
+		}
+		else {
+			this->taxaDesconto = 0;
+			this->vendaSemReceita = false;
+		}
+		
 }
 
 bool Produto::getVendaSemReceita() const {

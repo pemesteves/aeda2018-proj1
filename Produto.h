@@ -18,8 +18,10 @@ protected:
 	std::string nome; //Nome do Produto
 	float preco; //Preço do Produto
 	std::string descricao; //Descrição do Produto
-	bool vendaSemReceita; //Booleano que indica se o medicamento pode ser vendido sem receita
-	float taxaDesconto; //Taxa de Desconto de um Medicamento passível de receita
+	bool passivelReceita; //Booleano que indica se o medicamento é passivel de receita
+	bool vendaSemReceita; //Booleano que indica se o medicamento passivel de receita pode ser vendido sem receita
+	float taxaDesconto; //Taxa de Desconto de um medicamento passível de receita
+
 public:
 	/**
 	 * Construtor da classe Produto
@@ -35,15 +37,11 @@ public:
 	 * @param nome Nome do Produto
 	 * @param preco Preco do Produto
 	 * @param desc Descricao do Produto
+	 * @param passivelReceita Booleano que indica se o produto e passivel de receita
 	 * @param desconto Taxa de Desconto
 	 * @param semRec Booleano que indica se o produto pode ser vendido sem receita
 	 */
-	Produto(double cod, std::string nome, float preco, std::string desc, float desconto, bool semRec);
-	/**
-	 * Método para obter a taxa de desconto com receita
-	 * @return Taxa de Desconto
-	 */
-	float getTaxaDesconto() const;
+	Produto(double cod, std::string nome, float preco, std::string desc, bool passivelReceita, float desconto, bool semRec);
 	/**
 	 * Método para alterar a taxa de desconto de um produto com receita
 	 * @param taxaDesconto Taxa de desconto a alterar
@@ -105,7 +103,7 @@ public:
 	 * Método para obter a taxa de desconto com receita
 	 * @return Taxa de Desconto
 	 */
-	virtual float getTaxaDesconto() const {return 0;};
+	float getTaxaDesconto() const;
 };
 
 /**
