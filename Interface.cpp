@@ -9,17 +9,6 @@
 
 #include <iostream>
 
-void menu(){
-	std::cout << "		FARMÁCIA DO PEDRITO" << std::endl << std::endl;
-
-	std::cout << "O que pretende fazer?" << std::endl;
-	std::cout << "1. Gerir cadeia de farmácias" << std::endl;
-	std::cout << "2. Gerir uma farmácia." << std::endl;
-	std::cout << "3. Gerir clientes."
-	std::cout << "3. Inserir receita." << std::endl;
-	std::cout << "5. Gerir vendas."
-}
-
 void menuCadeia(){
 	std::cout << "CADEIA DE FARMÁCIAS" << std::endl;
 	std::cout << "1. Criar cadeia de farmácias." << std::endl;
@@ -38,6 +27,35 @@ void menuCadeia(){
 	std::cout << "11. Ordenar funcionários." << std::endl << std::endl;
 
 }
+
+void menuS(int opcao){
+	switch(opcao){
+	case 1: menuCadeia();
+	case 2: menuFarmacia();
+	case 3: menuClientes();
+	case 4: menuReceita();
+	case 5: menuVendas();
+	}
+}
+void menu(){
+
+	int opcao;
+	std::cout << "		FARMÁCIA DO PEDRITO" << std::endl << std::endl;
+
+	std::cout << "O que pretende fazer?" << std::endl;
+	std::cout << "1. Gerir cadeia de farmácias" << std::endl;
+	std::cout << "2. Gerir uma farmácia." << std::endl;
+	std::cout << "3. Gerir clientes." << std::endl;
+	std::cout << "3. Inserir receita." << std::endl;
+	std::cout << "5. Gerir vendas." << std:: endl << std::endl;
+
+	std::cin >> opcao; std::cout << std::endl;
+	menuS(opcao);
+
+}
+
+
+
 
 void menuFarmacia(){
 	std::cout << "FARMÁCIA" << std::endl;
@@ -59,6 +77,7 @@ void menuFarmacia(){
 }
 
 int main(){
-	menuCadeia();
+	menu();
+
 	return 0;
 }
