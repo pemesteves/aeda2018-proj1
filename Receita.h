@@ -24,7 +24,7 @@ class Cliente;
  */
 class Receita {
 private:
-	double numero; //Número da Receita
+	double numero; //Numero da Receita
 	std::string medico; //Nome do medico que prescreveu a Receita
 	std::map<Produto, double>  produtos; //Map com os Produtos contidos na receita e respetiva quantidade
 	Cliente* cliente; //Apontador para o Cliente ao qual a receita foi prescrita
@@ -32,26 +32,41 @@ private:
 public:
 	/**
 	 * Construtor da classe Receita
-	 * @param numero Número da Receita
+	 * @param numero Numero da Receita
 	 * @param medico Nome do medico que receitou
 	 * @param cliente Apontador para objeto da classe Cliente ao qual a Receita foi prescrita
 	 */
 	Receita(double numero, std::string medico, Cliente* cliente);
 	/**
-	 * Metodo para obter o número da Receita
-	 * @return Número da Receita
+	 * Metodo para obter o numero da Receita
+	 * @return Numero da Receita
 	 */
 	double getNumero() const;
+	/*
+	 * Metodo para alterar o numero da receita
+	 * @param n Novo numero da receita
+	 */
+	void setNumero(double n);
 	/**
 	 * Metodo para obter o Cliente ao qual a Receita foi prescrita
 	 * @return Apontador para objeto da classe Cliente
 	 */
 	Cliente* getCliente() const;
+	/*
+	 * Metodo para alterar o cliente da receita
+	 * @param c Apontador para novo cliente da receita
+	 */
+	void setCliente(Cliente* c);
 	/**
 	 * Metodo para obter o nome do medico
 	 * @return Nome do Medico
 	 */
 	std::string getMedico() const;
+	/*
+	 * Metodo para alterar o medico da receita
+	 * @param m Nome do novo medico da receita
+	 */
+	void setMedico(std::string m);
 	/**
 	 * Metodo para obter os produtos da receita
 	 * @return Vetor de objetos da classe Produto

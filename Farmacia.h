@@ -70,7 +70,7 @@ public:
 	/**
 	 * Metodo para obter o Produto com um certo codigo
 	 * @param codigo Codigo do Produto a procurar
-	 * @return Produto que contem o codigo  especificado no argumento
+	 * @return Produto que contem o codigo especificado no argumento
 	 */
 	Produto getProduto(double codigo);
 	/**
@@ -128,7 +128,7 @@ public:
 	 * Metodo que permite alterar o diretor tecnico da farmacia
 	 * @param diretor Apontador para Funcionario que sera colocado no atributo diretorTecnico
 	 */
-	void setDiretorTecnico(Funcionario* diretor){diretorTecnico = diretor;}
+	void setDiretorTecnico(Funcionario* diretor);
 	/**
 	 * Metodo que permite adicionar varios produtos ao map produtosVender
 	 * @param produtosVender_new Vetor de apontadores para objetos da classe Produto
@@ -137,7 +137,7 @@ public:
 	/**
 	 * Metodo que permite adicionar um produto ao map produtosVender
 	 * @param produtoVender Apontador para objeto da classe Porduto
-	 * @return Booleano que indica se a operacao foi efetuada com sucesso se for 0
+	 * @return Booleano que indica se a operacao foi efetuada com sucesso
 	 */
 	bool addProdutoVender(Produto* produtoVender);
 	/**

@@ -1,6 +1,7 @@
 #include "Pessoa.h"
 #include <iostream>
 #include <iomanip>
+#include <cctype>
 
 using namespace std;
 
@@ -21,6 +22,18 @@ string Pessoa::getMorada() const {
 
 double Pessoa::getNoContribuinte() const {
 	return noContribuinte;
+}
+
+void Pessoa::setNome(string nome){
+	this->nome = nome;
+}
+
+void Pessoa::setMorada(string morada){
+	this->morada = morada;
+}
+
+void Pessoa::setNoContribuinte(double no){
+	noContribuinte = no;
 }
 
 std::ostream& operator<<(std::ostream &output, const Pessoa &p){
@@ -50,7 +63,41 @@ void Funcionario::changeSalario(double salario){
 }
 
 void Funcionario::setFarmacia(Farmacia* f){
+	string cargo1 = toupperstring(cargo);
+	if (cargo1 == "GERENTE"){
+		farmaciaTrabalho->setGerente(NULL);
+		f->setGerente(this);
+	}
+	else if (cargo1 == "DIRETOR TECNICO" || cargo1 == "DIRETOR TÉCNICO"){
+		farmaciaTrabalho->setDiretorTecnico(NULL);
+		f->setDiretorTecnico(this);
+	}
 	this->farmaciaTrabalho = f;
+}
+
+void Funcionario::setCargo(string cargo){
+	string cargo1 = toupperstring(cargo);
+	if (cargo1 == "GERENTE"){
+		if(farmaciaTrabalho->getGerente()->getNoContribuinte()==this->noContribuinte){
+			this->cargo = cargo1;
+			return;
+		}
+		else{
+			farmaciaTrabalho->setGerente(this);
+			return;
+		}
+	}
+	else if (cargo1 == "DIRETOR TECNICO" || cargo1 == "DIRETOR TÉCNICO"){
+		if(farmaciaTrabalho->getDiretorTecnico()->getNoContribuinte()==this->noContribuinte){
+			this->cargo = cargo1;
+			return;
+		}
+		else{
+			farmaciaTrabalho->setDiretorTecnico(this);
+			return;
+		}
+	}
+	this->cargo = cargo1;
 }
 
 void Funcionario::showInfo() const{

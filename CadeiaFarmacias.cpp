@@ -3,18 +3,18 @@
 using namespace std;
 
 CadeiaFarmacias::CadeiaFarmacias() {
-	this->nome = ""; //Inicialização de um nome vazio
-	farmacias.resize(0); //Vetor de farmácias vazio
+	this->nome = ""; //Inicializacao de um nome vazio
+	farmacias.resize(0); //Vetor de farmacias vazio
 	clientes.resize(0); //Vetor de clientes vazio
-	funcionarios.resize(0); //Vetor de funcionários vazio
+	funcionarios.resize(0); //Vetor de funcionarios vazio
 }
 
 
 CadeiaFarmacias::CadeiaFarmacias(std::string nome) {
-	this->nome=nome; //Inicialização de uma cadeia com nome
-	farmacias.resize(0); //Vetor de farmácias vazio
+	this->nome=nome; //Inicializacao de uma cadeia com nome
+	farmacias.resize(0); //Vetor de farmacias vazio
 	clientes.resize(0); //Vetor de clientes vazio
-	funcionarios.resize(0); //Vetor de funcionários vazio
+	funcionarios.resize(0); //Vetor de funcionarios vazio
 }
 
 void CadeiaFarmacias::setNome(string nome){
@@ -61,17 +61,16 @@ Farmacia* CadeiaFarmacias::removeFarmacia(const string &nomeF){
 			vector<Funcionario*>::iterator itFunc = funcionarios.begin();
 			for(; itFunc != funcionarios.end(); itFunc++){ //Percorrer o vetor funcionarios
 				Farmacia* f = (*itFunc)->getFarmacia();
-				if (nomeF == f->getNome()) //Se a Farmacia a eliminar é igual à Farmacia onde trabalha o Funcionario, este é apagada
+				if (nomeF == f->getNome()) //Se a Farmacia a eliminar e igual a Farmacia onde trabalha o Funcionario, esta e apagada
 					(*itFunc)->setFarmacia(NULL);
 			}
 			return *it;
 		}
 	}
-	throw FarmaciaInexistente(nomeF); //Lançamento de uma exceção caso a Farmacia não exista
+	throw FarmaciaInexistente(nomeF); //Lancamento de uma excecao caso a Farmacia nao exista
 }
 
 void CadeiaFarmacias::sortFarmacias(enum tipoSort tipo, bool crescente){
-	//sort(farmacias.begin(), farmacias.end(), funcSort<Farmacia>);
 	quickSort(farmacias, 0, farmacias.size()-1, tipo, crescente);
 }
 
@@ -87,11 +86,10 @@ Cliente* CadeiaFarmacias::removeCliente(const std::string &nomeC){
 			return *it;
 		}
 	}
-	throw ClienteInexistente(nomeC); //Lançamento de uma exceção caso o cliente não exista
+	throw ClienteInexistente(nomeC); //Lançamento de uma excecao caso o cliente nao exista
 }
 
 void CadeiaFarmacias::sortClientes(enum tipoSort tipo, bool crescente){
-	//sort(clientes.begin(), clientes.end(), funcSort<Cliente>);
 	quickSort(clientes, 0, clientes.size()-1, tipo, crescente);
 }
 
@@ -107,11 +105,10 @@ Funcionario* CadeiaFarmacias::removeFuncionario(const std::string &nomeF){
 			return *it;
 		}
 	}
-	throw FuncionarioInexistente(nomeF); //Lançamento de uma exceção caso o funcionario não exista
+	throw FuncionarioInexistente(nomeF); //Lancamento de uma excecao caso o funcionario nao exista
 }
 
 void CadeiaFarmacias::sortFuncionarios(enum tipoSort tipo, bool crescente){
-	//sort(funcionarios.begin(), funcionarios.end(), funcSort<Funcionario>);
 	quickSort(funcionarios, 0, funcionarios.size()-1, tipo, crescente);
 }
 
@@ -167,7 +164,7 @@ void import(fstream &f, CadeiaFarmacias &cF){
 			getline(f, nome);
 			getline(f, line);
 			preco = stof(line);
-			getline(f, morada); //morada terá a descrição
+			getline(f, morada); //morada tera a descricao
 			getline(f, line);
 			pasReceita = (bool)stoi(line);
 			getline(f, line);
@@ -181,22 +178,22 @@ void import(fstream &f, CadeiaFarmacias &cF){
 		}
 
 		getline(f, line);
-		numProd = stoi(line); //numProd terá o número de vendas
+		numProd = stoi(line); //numProd tera o numero de vendas
 		int dia, mes, ano, hora, minutos, segundos;
 		while(numProd > 0){
-			getline(f, line); //line terá: codigo data hora
+			getline(f, line); //line tera: codigo data hora
 			codigo = stoi(line.substr(0, line.find(" ")));
-			line = line.substr(0, line.find(" ")+1); //line terá: hora data
+			line = line.substr(0, line.find(" ")+1); //line tera: hora data
 			dia = stoi(line.substr(0, line.find("/")));
-			line = line.substr(0, line.find("/")+1); //line terá: mes/ano hora:minutos:segundos
+			line = line.substr(0, line.find("/")+1); //line tera: mes/ano hora:minutos:segundos
 			mes = stoi(line.substr(0, line.find("/")));
-			line = line.substr(0, line.find("/")+1); //line terá: ano hora:minutos:segundos
+			line = line.substr(0, line.find("/")+1); //line tera: ano hora:minutos:segundos
 			ano = stoi(line.substr(0, line.find(" ")));
-			line = line.substr(0, line.find(" ")+1); //line terá: hora:minutos:segundos
+			line = line.substr(0, line.find(" ")+1); //line tera: hora:minutos:segundos
 			hora = stoi(line.substr(0, line.find(":")));
-			line = line.substr(0, line.find(":")+1); //line terá: minutos:segundos
+			line = line.substr(0, line.find(":")+1); //line tera: minutos:segundos
 			minutos = stoi(line.substr(0, line.find(":")));
-			line = line.substr(0, line.find(":")+1); //line terá: segundos
+			line = line.substr(0, line.find(":")+1); //line tera: segundos
 			segundos = stoi(line);
 			getline(f, line);
 			if(line == "NULL")
@@ -219,9 +216,9 @@ void import(fstream &f, CadeiaFarmacias &cF){
 				getline(f, line);
 				codigo = stod(line);
 				getline(f, line);
-				preco = stof(line.substr(0, line.find(" "))); //preco é a quantidade do produto
+				preco = stof(line.substr(0, line.find(" "))); //preco guarda a quantidade do produto
 				line = line.substr(0, line.find(" ") + 1);
-				desconto = stof(line.substr(0, line.find(" "))); //desconto é o iva
+				desconto = stof(line.substr(0, line.find(" "))); //desconto guarda o valor do iva
 				Produto p = farm.getProduto(codigo);
 				v.addProduto(&p, preco, desconto);
 				num--;

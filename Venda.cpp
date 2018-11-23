@@ -90,7 +90,7 @@ float Venda::getPrecoProduto(string nomeProd) const{
 		if ((*it).first.getNome() == nomeProd)
 			return (*it).first.getPreco();
 	}
-	return -1; //Se não houver um produto com o nome = nomeProd, retorna -1
+	return -1; //Se nao houver um produto com o nome = nomeProd, retorna -1
 }
 
 bool Venda::addProduto(Produto* prod, float quant, float iva){

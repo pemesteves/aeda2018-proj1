@@ -5,12 +5,24 @@ double Receita::getNumero() const {
 	return numero;
 }
 
+void Receita::setNumero(double n) {
+	this->numero = n;
+}
+
 Cliente* Receita::getCliente() const {
 	return cliente;
 }
 
+void Receita::setCliente(Cliente* c) {
+	this->cliente=c;
+}
+
 string Receita::getMedico() const {
 	return medico;
+}
+
+void Receita::setMedico(string m){
+	this->medico = m;
 }
 
 vector<Produto> Receita::getProdutos() const {

@@ -82,7 +82,7 @@ public:
 	/**
 	 * Metodo que permite eliminar a Farmacia nomeF do respetivo vetor. Tambem remove o apontador Farmacia de todos os funcionarios caso seja o mesmo
 	 * @param nomeF Nome da farmacia que sera removida do vetor
-	 * @return Retorna um apontador para o objeto removido ou, se este nao existir, lança uma excecao do tipo FarmaciaInexistente
+	 * @return Retorna um apontador para o objeto removido ou, se este nao existir, lanca uma excecao do tipo FarmaciaInexistente
 	 */
 	Farmacia* removeFarmacia(const std::string &nomeF);
 	/**
@@ -99,7 +99,7 @@ public:
 	/**
 	 * Metodo que permite eliminar o Cliente nomeC do respetivo vetor
 	 * @param nomeC Nome do cliente que sera removido do vetor
-	 * @return Retorna um apontador para o objeto removido ou, se este nao existir, lança uma excecao do tipo ClienteInexistente
+	 * @return Retorna um apontador para o objeto removido ou, se este nao existir, lanca uma excecao do tipo ClienteInexistente
 	 */
 	Cliente* removeCliente(const std::string &nomeC);
 	/**
@@ -116,7 +116,7 @@ public:
 	/**
 	 * Metodo que permite eliminar o Funcionario nomeF do respetivo vetor
 	 * @param nomeF Nome do funcionario que sera removido do vetor
-	 * @return Retorna um apontador para o objeto removido ou, se este nao existir, lança uma excecao do tipo FuncionarioInexistente
+	 * @return Retorna um apontador para o objeto removido ou, se este nao existir, lanca uma excecao do tipo FuncionarioInexistente
 	 */
 	Funcionario* removeFuncionario(const std::string &nomeF);
 	/**

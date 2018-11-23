@@ -15,7 +15,7 @@
  */
 class Produto {
 protected:
-	double codigo; //Código do Produto
+	double codigo; //Codigo do Produto
 	std::string nome; //Nome do Produto
 	float preco; //Preco do Produto
 	std::string descricao; //Descricao do Produto
@@ -59,7 +59,7 @@ public:
 	 */
 	void setVendaSemReceita(bool vendaSemReceita);
 	/**
-	 * Metodo para obter o código do Produto
+	 * Metodo para obter o codigo do Produto
 	 * @return Código do Produto
 	 */
 	double getCodigo() const;

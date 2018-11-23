@@ -65,18 +65,18 @@ public:
 	 * Metodo que permite atribuir uma receita a venda
 	 * Só e possível atribuir uma receita a venda se esta nao tiver ainda nenhuma receita associada
 	 * @param receitaVenda Apontador para a receita a associar
-	 * @return True se foi possível atribuir a receita e false se nao tiver sido possível
+	 * @return True se foi possivel atribuir a receita e false se nao tiver sido possivel
 	 */
 	bool setReceita(Receita* receitaVenda);
 	/**
 	 * Metodo que permite atribuir um cliente a venda
 	 * So e possivel atribuir um cliente a venda se esta nao tiver ainda nenhum cliente associado
 	 * @param clienteVenda Apontador para o cliente a associar
-	 * @return True se foi possível atribuir o cliente e false se nao tiver sido possível
+	 * @return True se foi possivel atribuir o cliente e false se nao tiver sido possivel
 	 */
 	void setCliente(Cliente* clienteVenda);
 	/**
-	 * Metodo que permite obter o número de produtos vendidos
+	 * Metodo que permite obter o numero de produtos vendidos
 	 * @return Tamanho de produtosVendidos (atributo da classe)
 	 */
 	unsigned int getNumProdutos() const;

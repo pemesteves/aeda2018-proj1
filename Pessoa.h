@@ -22,13 +22,13 @@ class Pessoa {
 protected:
 	std::string nome; //Nome da Pessoa
 	std::string morada; //Morada da Pessoa
-	double noContribuinte; //Número de Contribuinte da Pessoa
+	double noContribuinte; //Numero de Contribuinte da Pessoa
 public:
 	/**
 	 * Construtor da classe Pessoa
 	 * @param nome Nome da Pessoa
 	 * @param morada Morada da Pessoa
-	 * @param cont Número de contribuinte da Pessoa
+	 * @param cont Numero de contribuinte da Pessoa
 	 */
 	Pessoa(std::string nome, std::string morada, double cont);
 	/**
@@ -46,10 +46,25 @@ public:
 	 */
 	std::string getMorada() const;
 	/**
-	 * Metodo que permite obter o número de contribuinte da pessoa
+	 * Metodo que permite obter o numero de contribuinte da pessoa
 	 * @return Número de contribuinte
 	 */
 	double getNoContribuinte() const;
+	/**
+	 * Metodo que permite alterar o nome da pessoa
+	 * @param nome Novo nome da Pessoa
+	 */
+	void setNome(std::string nome);
+	/**
+	 * Metodo que permite alterar a morada da pessoa
+	 * @param morada Nova morada da Pessoa
+	 */
+	void setMorada(std::string morada);
+	/**
+	 * Metodo que permite alterar o numero de contribuinte da pessoa
+	 * @param no Novo numero de contribuinte da Pessoa
+	 */
+	void setNoContribuinte(double no);
 	/**
 	 * Metodo puramente virtual que, nas classes derivadas, imprime no ecra os atributos da classe
 	 */
@@ -76,12 +91,12 @@ public:
 	 * Construtor da classe Funcionario
 	 * @param nome Nome do Funcionario/Pessoa
 	 * @param morada Morada do Funcionario/Pessoa
-	 * @param cont Número de Contribuinte do Funcionario/Pessoa
-	 * @param sal Salario do Funcionario: caso nao seja atribuído, sera 500
+	 * @param cont Numero de Contribuinte do Funcionario/Pessoa
+	 * @param sal Salario do Funcionario: caso nao seja atribuido, sera 500
 	 */
 	Funcionario(std::string nome, std::string morada, double cont, double sal = 500);
 	/**
-	 * Destrutor da classe Pessoa
+	 * Destrutor da classe Funcionario
 	 */
 	~Funcionario() {}
 	/**
@@ -109,6 +124,11 @@ public:
 	 * @param salario Salario do Funcionario a alterar
 	 */
 	void changeSalario(double salario);
+	/**
+	 * Metodo que permite alterar o cargo do Funcionario
+	 * @param cargo Novo cargo do Funcionario
+	 */
+	void setCargo(std::string cargo);
 	/**
 	 * Metodo que imprime no ecra os atributos de um Funcionario
 	 */
@@ -147,7 +167,7 @@ public:
 	 * Construtor da classe Cliente
 	 * @param nome Nome do Cliente/Pessoa
 	 * @param morada Morada do Cliente/Pessoa
-	 * @param contribuinte Número de Contribuinte do Cliente/Pessoa
+	 * @param contribuinte Numero de Contribuinte do Cliente/Pessoa
 	 */
 	Cliente(std::string nome, std::string morada, double contribuinte);
 	/**
@@ -160,7 +180,7 @@ public:
 	 */
 	std::vector<Venda*> getHistorialCompras() const;
 	/**
-	 * Metodo para obter o número de compras realizadas pelo Cliente
+	 * Metodo para obter o numero de compras realizadas pelo Cliente
 	 * @return Tamanho do vetor historialCompras
 	 */
 	unsigned int getNumCompras() const;

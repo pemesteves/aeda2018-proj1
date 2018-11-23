@@ -15,8 +15,8 @@
  */
 class Data {
 private:
-	unsigned short dia; //Dia do mês
-	unsigned short mes; //Mês do ano
+	unsigned short dia; //Dia do mes
+	unsigned short mes; //Mes do ano
 	int ano; //Ano
 
 public:
@@ -28,18 +28,18 @@ public:
 	/**
 	 * Construtor da Classe Data
 	 * @param dia Dia da data
-	 * @param mes Mês da data
+	 * @param mes Mes da data
 	 * @param ano Ano da data
 	 */
 	Data(unsigned short dia, unsigned short mes, int ano);
 	/**
 	 * Metodo que permite obter o dia
-	 * @return Dia do mês
+	 * @return Dia do mes
 	 */
 	unsigned short getDia() const;
 	/**
 	 * Metodo que permite obter o mes
-	 * @return Mês do ano (em número)
+	 * @return Mes do ano (em numero)
 	 */
 	unsigned short getMes() const;
 	/**
@@ -92,7 +92,7 @@ public:
 	 */
 	Hora(unsigned short h, unsigned short m, unsigned short s);
 	/**
-	 * Metodo que permite obter as horas (número da hora)
+	 * Metodo que permite obter as horas (numero da hora)
 	 * @return Hora do dia
 	 */
 	unsigned short getHora() const;

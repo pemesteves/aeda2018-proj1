@@ -106,7 +106,13 @@ int Farmacia::getQuantProduto(std::string nomeProd) const{
 }
 
 void Farmacia::setGerente(Funcionario* gerente) {
-	this->gerente = gerente;
+	this->gerente=gerente;
+	gerente->setCargo("GERENTE");
+}
+
+void Farmacia::setDiretorTecnico(Funcionario* diretor){
+	this->diretorTecnico=diretor;
+	diretor->setCargo("DIRETOR TECNICO");
 }
 
 void Farmacia::addProdutosVender(vector<Produto*> produtosVender_new) {
