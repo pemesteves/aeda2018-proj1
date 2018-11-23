@@ -105,7 +105,6 @@ int Farmacia::getQuantProduto(std::string nomeProd) const{
 	return -1;
 }
 
-//TODO
 void Farmacia::setGerente(Funcionario* gerente) {
 	this->gerente=gerente;
 	gerente->setCargo("GERENTE");
@@ -225,6 +224,13 @@ void Farmacia::imprimeFatura(Venda* v) const{
 	cout << "Obrigado pela sua visita! Volte sempre." << endl << endl;
 }
 
+void Farmacia::imprimeDados() const {
+	cout << "Nome da farmacia: " << nome << endl;
+	cout << "Morada: " << morada << endl;
+	cout << "Gerente: " << gerente->getNome() << "  " << gerente->getNoContribuinte() << endl;
+	cout << "Diretor Tecnico: " << diretorTecnico->getNome() << "  " << diretorTecnico->getNoContribuinte() << endl;
+}
+
 bool Farmacia::menorQue(const Farmacia &f1, enum tipoSort tipo, bool crescente) const{
 	switch(tipo){
 	case NOME:
@@ -254,18 +260,18 @@ bool Farmacia::menorQue(const Farmacia &f1, enum tipoSort tipo, bool crescente) 
 std::ostream& operator<<(std::ostream &output, const Farmacia &f){
 	output << f.nome << endl;
 	output << f.morada << endl;
-	if(f.gerente != NULL)
-	output << f.gerente->getNoContribuinte()<< endl;
+	if(f.gerente!=NULL)
+		output << f.gerente->getNoContribuinte()<< endl;
 	if(f.diretorTecnico != NULL)
-	output << f.diretorTecnico->getNoContribuinte() << endl;
+		output << f.diretorTecnico->getNoContribuinte() << endl;
 
 	output << f.produtosVender.size() << endl;
 	map<Produto, int>::const_iterator it;
 	for(it = f.produtosVender.begin(); it != f.produtosVender.end(); it++){
 		output << it->second;
-		cout << endl;
-		output << it->first;
-		cout << endl;
+		output << endl;
+		output << it->first << endl;
+		output << endl;
 	}
 
 	output << f.vendas.size() << endl;

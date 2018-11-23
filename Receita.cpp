@@ -68,7 +68,7 @@ bool Receita::existeProdReceita(Produto* prod) const{
 		return false;
 }
 
-Produto Receita::removeProduto(std::string nome){
+Produto Receita::removeProduto(string nome){
 	map<Produto, double>::iterator it = produtos.begin();
 	for(; it != produtos.end(); it++){
 		if ((*it).first.getNome() == nome){
@@ -79,12 +79,35 @@ Produto Receita::removeProduto(std::string nome){
 	throw ProdutoInexistente(nome);
 }
 
-std::ostream& operator<<(std::ostream &output, const Receita &r){
+void Receita::imprimeReceita() const{
+	cout << "Receita" << endl << endl;
+	cout << "Numero da receita: " << numero << endl;
+	cout << "Utente: ";
+	cout << cliente->getNome() << "  " << cliente->getNoContribuinte() << endl;
+	cout << "Prescrita por Dr./Dra. " << medico << endl;
+	cout << "Produtos:" << endl;
+	map<Produto, double>::const_iterator it = produtos.begin();
+		for(; it != produtos.end(); it++){
+			cout << it->first.getCodigo();
+			cout << "  ";
+			cout << it->first.getNome();
+			cout << "    ";
+			cout << it->second << " unidades";
+			cout <<endl;
+		}
+
+
+}
+
+ostream& operator<<(ostream &output, const Receita &r){
 	output << r.numero << endl;
 	output << r.medico << endl;
 	map<Produto, double>::const_iterator it;
 	for(it = r.produtos.begin(); it != r.produtos.end(); it++){
-		output << (*it).first.getCodigo() << " " << (*it).second << endl;
+		output << it->first.getCodigo();
+		output << " ";
+		output << it->second;
+		output << endl;
 	}
 	output << r.cliente->getNoContribuinte();
 	return output;

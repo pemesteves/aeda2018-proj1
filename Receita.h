@@ -96,6 +96,10 @@ public:
 	 * @return True se produto existir, caso contrario retorna false
 	 */
 	bool existeProdReceita(Produto* prod) const;
+	/*
+	 * Metodo que imprime receita no ecra
+	 */
+	void imprimeReceita() const;
 	/**
 	 * Overload do operador para exportar a receita
 	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)

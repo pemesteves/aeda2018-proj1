@@ -139,9 +139,9 @@ void Venda::imprimeFatura() const{
 	cout << data.getDia() << "-" << data.getMes() << "-" << data.getAno();
 	cout << setw(15) << hora.getHora() << ":" << hora.getMinutos() << ":" << hora.getSegundos();
 	cout << endl << endl << endl;
-	cout << "Nome Produto" << setw(20) << "Quantidade" << setw(5) << "Preço"<< endl;
+	cout << "Nome Produto" << setw(20) << "Quantidade" << setw(5) << "Preco"<< endl;
 	for(map<Produto, vector<float>>::const_iterator it = produtosVendidos.begin(); it != produtosVendidos.end(); it++){
-		cout << it->first.getNome() << setw(20) << it->second[0] << setw(5) << it->first.getPreco() << endl;
+		cout << it->first.getNome() << setw(20) << it->second.at(QUANTIDADE) << setw(5) << it->second.at(PRECO_PAGO) << endl;
 	}
 	cout << setw(25) << totalVenda;
 }

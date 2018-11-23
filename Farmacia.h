@@ -198,8 +198,12 @@ public:
 	 * @param v Apontador para objeto do tipo Venda que contem a venda da qual sera impressa a fatura
 	 */
 	void imprimeFatura(Venda* v) const;
+	/*
+	 * Metodo que imprime no ecra os dados da farmacia (nome, morada, gerente, diretor tecnico)
+	 */
+	void imprimeDados() const;
 	/**
-	 * Overload do operador para exportar a farmacia
+	 * Overload do operador << para exportar a farmacia
 	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)
 	 * @param f Farmacia que se quer exportar
 	 * @return Retorna referencia para a variavel para onde se quer exportar

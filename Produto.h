@@ -1,5 +1,5 @@
 /**
- * Header File que contem as classes Produto, Medicamento, PassivelReceita e ProdutoInexistente
+ * Header File que contem as classes Produto e ProdutoInexistente
  *
  * @author Marcia, Pedro e Rita
  * @date Novembro, 2018
@@ -105,6 +105,10 @@ public:
 	 * @return Taxa de Desconto
 	 */
 	float getTaxaDesconto() const;
+	/*
+	 * Metodo que imprime no ecra os dados do produto
+	 */
+	void showInfo() const;
 	/**
 	 * Overload do operador para exportar o Produto
 	 * @param output Variavel para onde se quer exportar(ecra, ficheiro, ...)

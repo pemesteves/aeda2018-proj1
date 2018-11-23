@@ -133,7 +133,7 @@ public:
 	 * @param v1 Venda que ira ser comparada
 	 * @param tipo Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de comparacao das duas vendas
 	 * @param crescente Booleano que permite ao utilizador escolher se quer utilizar o seu criterio de modo crescente(true) ou decrescente(false)
-	 * @return Retorn true se a venda for menor que v1. Caso contrario, retorn false
+	 * @return Retorn true se a venda for menor que v1. Caso contrario, retorna false
 	 */
 	bool menorQue(const Venda &v1, enum tipoSort tipo, bool crescente) const;
 	/**

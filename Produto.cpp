@@ -86,6 +86,26 @@ bool Produto::operator== (const Produto &p1) const{
 	return true;
 }
 
+void Produto::showInfo() const{
+	cout << "Produto" << endl << endl;
+	cout << "Codigo: " << codigo << endl;
+	cout << "Nome: " << nome << endl;
+	cout << "Preco: " << preco << endl;
+	cout << "Descricao: " << descricao << endl;
+	if (passivelReceita){
+		cout << "Produto passivel de receita medica." << endl;
+		cout << "Comparticipacao: " << taxaDesconto << endl;
+		if (!vendaSemReceita){
+			cout << "Nao e possivel a venda deste produto sem receita medica." << endl;
+		}
+		else{
+			cout << "E possivel a venda deste produto sem receita medica." << endl;
+		}
+	}
+	else
+		cout << "Produto nao passivel de receita medica." << endl;
+}
+
 std::ostream& operator<<(std::ostream &output, const Produto &p){
 	output << p.codigo << endl;
 	output << p.nome << endl;
