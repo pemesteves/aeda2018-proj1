@@ -2,13 +2,19 @@
 
 using namespace std;
 
+template <> enum tipoSort sorting<Farmacia>::tipo = DEFAULT;
+template <> bool sorting<Farmacia>::crescente = false;
+template <> enum tipoSort sorting<Funcionario>::tipo = DEFAULT;
+template <> bool sorting<Funcionario>::crescente = false;
+template <> enum tipoSort sorting<Cliente>::tipo = DEFAULT;
+template <> bool sorting<Cliente>::crescente = false;
+
 CadeiaFarmacias::CadeiaFarmacias() {
 	this->nome = ""; //Inicializacao de um nome vazio
 	farmacias.resize(0); //Vetor de farmacias vazio
 	clientes.resize(0); //Vetor de clientes vazio
 	funcionarios.resize(0); //Vetor de funcionarios vazio
 }
-
 
 CadeiaFarmacias::CadeiaFarmacias(std::string nome) {
 	this->nome=nome; //Inicializacao de uma cadeia com nome
@@ -71,7 +77,10 @@ Farmacia* CadeiaFarmacias::removeFarmacia(const string &nomeF){
 }
 
 void CadeiaFarmacias::sortFarmacias(enum tipoSort tipo, bool crescente){
-	quickSort(farmacias, 0, farmacias.size()-1, tipo, crescente);
+	sorting<Farmacia> s;
+	sorting<Farmacia>::tipo = tipo;
+	sorting<Farmacia>::crescente = crescente;
+	s.sort_p(farmacias);
 }
 
 void CadeiaFarmacias::addCliente(Cliente* cliente) {
@@ -90,7 +99,10 @@ Cliente* CadeiaFarmacias::removeCliente(const std::string &nomeC){
 }
 
 void CadeiaFarmacias::sortClientes(enum tipoSort tipo, bool crescente){
-	quickSort(clientes, 0, clientes.size()-1, tipo, crescente);
+	sorting<Cliente> s;
+	sorting<Cliente>::tipo = tipo;
+	sorting<Cliente>::crescente = crescente;
+	s.sort_p(clientes);
 }
 
 void CadeiaFarmacias::addFuncionario(Funcionario* funcionario) {
@@ -109,7 +121,10 @@ Funcionario* CadeiaFarmacias::removeFuncionario(const std::string &nomeF){
 }
 
 void CadeiaFarmacias::sortFuncionarios(enum tipoSort tipo, bool crescente){
-	quickSort(funcionarios, 0, funcionarios.size()-1, tipo, crescente);
+	sorting<Funcionario> s;
+	sorting<Funcionario>::tipo = tipo;
+	sorting<Funcionario>::crescente = crescente;
+	s.sort_p(funcionarios);
 }
 
 std::ostream& operator<<(std::ostream &output, const CadeiaFarmacias &cF){

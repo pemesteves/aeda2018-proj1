@@ -19,7 +19,7 @@
 class CadeiaFarmacias {
 private:
 	std::string nome; //Nome da cadeia de farmacias
-	std::vector<Farmacia *> farmacias; //Vetor de apontadores para objetos do tipo Farmacia
+	std::vector<Farmacia*> farmacias; //Vetor de apontadores para objetos do tipo Farmacia
 	std::vector <Cliente*> clientes; //Vetor de apontadores para objetos do tipo Cliente
 	std::vector <Funcionario*> funcionarios; //Vetor de apontadores para objetos do tipo Funcionario
 public:
@@ -31,7 +31,7 @@ public:
 	/**
 	 *  Construtor da classe
 	 * 	Inicializa um objeto da classe colocando todos os vetores vazios e atribuindo um nome
-	 * 	@param nome Nome da cadeia de farmácias
+	 * 	@param nome Nome da cadeia de farmacias
 	 */
 	CadeiaFarmacias(std::string nome);
 	/**

@@ -48,7 +48,7 @@ inline std::string toupperstring(std::string str){
  * @param crescente Booleano que permite ao utilizador escolher se quer utilizar o seu criterio de modo crescente(true) ou decrescente(false)
  * @return Retorna o valor medio do vetor (?)
  */
-template <class Comparable>
+/*template <class Comparable>
 const Comparable &median3(std::vector<Comparable*> &v, int left,
 		int right, enum tipoSort tipo, bool crescente)
 {
@@ -61,7 +61,7 @@ const Comparable &median3(std::vector<Comparable*> &v, int left,
 		std::swap(v[center], v[right]);//coloca pivot na posicao right-1
 	std::swap(v[center], v[right-1]);
 	return *v[right-1];
-}
+}*/
 
 /**
  * Algoritmo de Ordenacao
@@ -70,7 +70,7 @@ const Comparable &median3(std::vector<Comparable*> &v, int left,
  * @param tipo Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de comparacao dos dois objetos
  * @param crescente Booleano que permite ao utilizador escolher se quer utilizar o seu criterio de modo crescente(true) ou decrescente(false)
  */
-template <class Comparable>
+/*template <class Comparable>
 void quickSort(std::vector<Comparable* > &v, int left, int right, enum tipoSort tipo, bool crescente)
 {
 
@@ -87,7 +87,25 @@ void quickSort(std::vector<Comparable* > &v, int left, int right, enum tipoSort 
 	std::swap(v[i], v[right-1]);//repoe pivot
 	quickSort(v, left, i-1, tipo, crescente);
 	quickSort(v, i+1, right, tipo, crescente);
-}
+}*/
+
+template <typename T>
+class sorting{
+public:
+	static enum tipoSort tipo;
+	static bool crescente;
+	static bool compare_p(const T* a, const T* b){
+		return a->menorQue(*b, tipo, crescente);
+	}
+	/*sorting(tipoSort t, bool c){
+		tipo = t;
+		crescente = c;
+	}*/
+	void sort_p(std::vector<T*> &v){
+		sort(v.begin(), v.end(), compare_p);
+	}
+};
+
 
 class Receita;
 class Pessoa;

@@ -3,6 +3,9 @@
 
 using namespace std;
 
+template <> enum tipoSort sorting<Venda>::tipo = DEFAULT;
+template <> bool sorting<Venda>::crescente = false;
+
 Farmacia::Farmacia(string nome, string morada) {
 	this->nome = nome;
 	this->morada = morada;
@@ -190,7 +193,10 @@ bool Farmacia::addProdutoVender(Produto* produtoVender) {
 }
 
 void Farmacia::sortVendas(enum tipoSort tipo, bool crescente){
-	quickSort(vendas, 0, vendas.size()-1, tipo, crescente);
+	sorting<Venda> s;
+	sorting<Venda>::tipo = tipo;
+	sorting<Venda>::crescente = crescente;
+	s.sort_p(vendas);
 }
 
 bool Farmacia::setQuantidade(std::string nomeProd, int quant) {
