@@ -136,6 +136,11 @@ public:
 	 */
 	void setDiretorTecnico(Funcionario* diretor);
 	/**
+	 * Metodo que altera o vetor de vendas pelo vetor passado por parametro
+	 * @param v Vetor a alterar
+	 */
+	void setVendas(std::vector<Venda*> v);
+	/**
 	 * Metodo que permite adicionar varios produtos ao map produtosVender
 	 * @param produtosVender_new Vetor de apontadores para objetos da classe Produto
 	 */

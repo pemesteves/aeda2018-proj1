@@ -103,6 +103,7 @@ ostream& operator<<(ostream &output, const Receita &r){
 	output << r.numero << endl;
 	output << r.medico << endl;
 	map<Produto, double>::const_iterator it;
+	output << r.cliente->getNoContribuinte() << endl;
 	output << r.produtos.size() << endl;
 	for(it = r.produtos.begin(); it != r.produtos.end(); it++){
 		output << it->first.getCodigo();
@@ -110,7 +111,6 @@ ostream& operator<<(ostream &output, const Receita &r){
 		output << it->second;
 		output << endl;
 	}
-	output << r.cliente->getNoContribuinte();
 	return output;
 }
 

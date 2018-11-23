@@ -312,5 +312,9 @@ Venda* Farmacia::getVenda(double codigo) const{
 	return NULL;
 }
 
+void Farmacia::setVendas(vector<Venda*> v){
+	this->vendas = v;
+}
+
 
 

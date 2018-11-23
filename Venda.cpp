@@ -184,20 +184,20 @@ map<Produto, vector<float>> Venda::getProdutosVendidos() const{
 
 std::ostream& operator<<(std::ostream &output, const Venda &v1){
 	output << v1.codigo << " " << v1.data << " " << v1.hora << endl;
+	output << v1.clienteVenda->getNoContribuinte() << endl;
 	if (!v1.temReceita){
 		output << "NULL" << endl;
 	}
 	else{
 		output << &v1.receitaVenda << endl;
 	}
-	output << v1.clienteVenda->getNoContribuinte() << endl;
 	output << v1.totalVenda << endl;
 	output << v1.produtosVendidos.size() << endl;
 	map<Produto, std::vector<float>>::const_iterator it = v1.produtosVendidos.begin();
 	for (; it != v1.produtosVendidos.end(); it++){
-			output << it->first.getCodigo() << " " ;
-			output << it->second.at(QUANTIDADE) << " " << it->second.at(IVA) << " " << it->second.at(COMPARTICIPACAO) << " " << it->second.at(PRECO_PAGO) << endl;
-		}
+		output << it->first.getCodigo() << " " ;
+		output << it->second.at(QUANTIDADE) << " " << it->second.at(IVA) << " " << it->second.at(COMPARTICIPACAO) << " " << it->second.at(PRECO_PAGO) << endl;
+	}
 
 	return output;
 }
