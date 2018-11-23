@@ -63,6 +63,12 @@ public:
 	 */
 	std::vector<Venda*> getVendas() const;
 	/**
+	 * Metodo que permite obter uma dada Venda
+	 * @param codigo Codigo da Venda a procurar
+	 * @return Apontador para objeto da classe Venda com o codigo especificado
+	 */
+	Venda* getVenda(double codigo) const;
+	/**
 	 * Metodo que permite obter os produtos disponiveis para venda mais a sua quantidade
 	 * @return Atributo da classe -> produtosVender
 	 */

@@ -249,14 +249,58 @@ void import(fstream &f, CadeiaFarmacias &cF){
 	numVars = 0;
 	getline(f, line);
 	numVars = stoi(line);
-	while(numVars > 0){
+	while(numVars > 0){ //Importar Clientes
+		getline(f, nome);
+		getline(f, line);
+		contribuinte = stod(line);
+		getline(f, morada);
+		Cliente c(nome, morada, contribuinte);
+		size_t numCompras = 0;
+		getline(f, line);
+		numCompras = stoi(line);
+		while(numCompras > 0){
+			getline(f, line);
+			contribuinte = stod(line); //contribuinte terá o código da Venda
+			Venda *v = NULL;
+			for(vector<Farmacia *>::iterator it = cF.farmacias.begin(); it != cF.farmacias.end(); it++){
+				if((v = (*it)->getVenda(contribuinte)) != NULL)
+					break;
+			}
+			c.addCompra(v);
+			numCompras--;
+		}
 
+		cF.addCliente(&c);
+		numVars--;
 	}
+
 	numVars = 0;
 	getline(f, line);
 	numVars = stoi(line);
-	while(numVars > 0){
-
+	string cargo;
+	while(numVars > 0){ //Importar Funcionários
+		getline(f, nome);
+		getline(f, line);
+		contribuinte = stod(line);
+		getline(f, morada);
+		Funcionario func(nome, morada, contribuinte);
+		getline(f, line);
+		nome = line.substr(0, line.find("-")); //nome conterá o cargo do Funcionário
+		func.setCargo(nome);
+		line = line.substr(line.find("-") + 1);
+		contribuinte = stod(line); //contribuinte conterá o salário do Funcionário
+		func.changeSalario(contribuinte);
+		getline(f, nome); //nome conterá o nome da Farmácia onde trabalha o Funcionário
+		Farmacia *farm = NULL;
+		for(vector<Farmacia*>::iterator it = cF.farmacias.begin(); it != cF.farmacias.end(); it++){
+			if ((*it)->getNome() == nome){
+				farm = (*it);
+				break;
+			}
+		}
+		func.setFarmacia(farm);
+		cF.addFuncionario(&func);
+		numVars--;
 	}
 
 }

@@ -266,10 +266,16 @@ bool Farmacia::menorQue(const Farmacia &f1, enum tipoSort tipo, bool crescente) 
 std::ostream& operator<<(std::ostream &output, const Farmacia &f){
 	output << f.nome << endl;
 	output << f.morada << endl;
-	if(f.gerente!=NULL)
+	if(f.gerente!=NULL){
 		output << f.gerente->getNoContribuinte()<< endl;
+	}
+	else
+		output << "NULL" << endl;
+
 	if(f.diretorTecnico != NULL)
 		output << f.diretorTecnico->getNoContribuinte() << endl;
+	else
+		output << "NULL" << endl;
 
 	output << f.produtosVender.size() << endl;
 	map<Produto, int>::const_iterator it;
@@ -295,6 +301,15 @@ Produto Farmacia::getProduto(double codigo){
 	}
 	Produto p(0, "", 0, "", 0, 0, 0);
 	return p;
+}
+
+Venda* Farmacia::getVenda(double codigo) const{
+	for(vector<Venda*>::const_iterator it = vendas.begin(); it != vendas.end(); it++){
+		if((*it)->getCodigo() == codigo)
+			return (*it);
+	}
+
+	return NULL;
 }
 
 

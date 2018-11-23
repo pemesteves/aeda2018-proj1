@@ -122,7 +122,7 @@ bool Funcionario::operator< (const Funcionario &f1) const{
 
 std::ostream& operator<<(std::ostream &output, const Funcionario &f){
 	output << static_cast<const Pessoa&>(f);
-	output << f.cargo  << " - " << f.salario << endl;
+	output << f.cargo  << "-" << f.salario << endl;
 	output << f.farmaciaTrabalho->getNome();
 	return output;
 }
@@ -215,6 +215,7 @@ bool Cliente::menorQue(const Cliente &c1, enum tipoSort tipo, bool crescente) co
 
 std::ostream& operator<<(std::ostream &output, const Cliente &c){
 	output << static_cast<const Pessoa&>(c);
+	output << c.historialCompras.size() << endl;
 	for (size_t i = 0; i < c.historialCompras.size(); i++){
 		output << c.historialCompras[i]->getCodigo() << endl;
 	}

@@ -188,7 +188,7 @@ std::ostream& operator<<(std::ostream &output, const Venda &v1){
 		output << "NULL" << endl;
 	}
 	else{
-		output << v1.receitaVenda->getNumero() << endl;
+		output << &v1.receitaVenda << endl;
 	}
 	output << v1.clienteVenda->getNoContribuinte() << endl;
 	output << v1.totalVenda << endl;
@@ -199,7 +199,6 @@ std::ostream& operator<<(std::ostream &output, const Venda &v1){
 			output << it->second.at(QUANTIDADE) << " " << it->second.at(IVA) << " " << it->second.at(COMPARTICIPACAO) << " " << it->second.at(PRECO_PAGO) << endl;
 		}
 
-	output << endl;
 	return output;
 }
 
