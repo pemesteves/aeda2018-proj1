@@ -78,10 +78,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a838ecd7ffbd51540bca487a6a7138ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea9e31fc32bdf5e895a520727c5e8175"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_receita.html#aea9e31fc32bdf5e895a520727c5e8175">getNumero</a> () const</td></tr>
 <tr class="separator:aea9e31fc32bdf5e895a520727c5e8175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22a06e9d88f851424b49e758236beb93"><td class="memItemLeft" align="right" valign="top"><a id="a22a06e9d88f851424b49e758236beb93"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setNumero</b> (double n)</td></tr>
+<tr class="separator:a22a06e9d88f851424b49e758236beb93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46cf381209c3a24cc0f45de397a012c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cliente.html">Cliente</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_receita.html#a46cf381209c3a24cc0f45de397a012c6">getCliente</a> () const</td></tr>
 <tr class="separator:a46cf381209c3a24cc0f45de397a012c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab51680f23f590f91e008a7b2a469a918"><td class="memItemLeft" align="right" valign="top"><a id="ab51680f23f590f91e008a7b2a469a918"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setCliente</b> (<a class="el" href="class_cliente.html">Cliente</a> *c)</td></tr>
+<tr class="separator:ab51680f23f590f91e008a7b2a469a918"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55247eed3d339e990cca747369d1c4de"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_receita.html#a55247eed3d339e990cca747369d1c4de">getMedico</a> () const</td></tr>
 <tr class="separator:a55247eed3d339e990cca747369d1c4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f6eff61d730d1631b99758060992295"><td class="memItemLeft" align="right" valign="top"><a id="a0f6eff61d730d1631b99758060992295"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setMedico</b> (std::string m)</td></tr>
+<tr class="separator:a0f6eff61d730d1631b99758060992295"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14d58fab1302f235f8c09f08f6b8da97"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_produto.html">Produto</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_receita.html#a14d58fab1302f235f8c09f08f6b8da97">getProdutos</a> () const</td></tr>
 <tr class="separator:a14d58fab1302f235f8c09f08f6b8da97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9344cb068d458c7c61d4e7775c1b2c2d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_receita.html#a9344cb068d458c7c61d4e7775c1b2c2d">getPrecoMax</a> (std::string nomeProd) const</td></tr>
@@ -92,6 +101,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a176e5863b802cc0504f51c4b0ec33713"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7eef34e5bc74e2cdc976d48fbf095438"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_receita.html#a7eef34e5bc74e2cdc976d48fbf095438">existeProdReceita</a> (<a class="el" href="class_produto.html">Produto</a> *prod) const</td></tr>
 <tr class="separator:a7eef34e5bc74e2cdc976d48fbf095438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa485df906f3d7463dbf74ca1b7839afd"><td class="memItemLeft" align="right" valign="top"><a id="aa485df906f3d7463dbf74ca1b7839afd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>imprimeReceita</b> () const</td></tr>
+<tr class="separator:aa485df906f3d7463dbf74ca1b7839afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -134,7 +146,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Construtor da classe <a class="el" href="class_receita.html">Receita</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">numero</td><td>Número da <a class="el" href="class_receita.html">Receita</a> </td></tr>
+    <tr><td class="paramname">numero</td><td>Numero da <a class="el" href="class_receita.html">Receita</a> </td></tr>
     <tr><td class="paramname">medico</td><td>Nome do medico que receitou </td></tr>
     <tr><td class="paramname">cliente</td><td>Apontador para objeto da classe <a class="el" href="class_cliente.html">Cliente</a> ao qual a <a class="el" href="class_receita.html">Receita</a> foi prescrita </td></tr>
   </table>
@@ -254,7 +266,7 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Metodo para obter o número da <a class="el" href="class_receita.html">Receita</a> </p><dl class="section return"><dt>Returns</dt><dd>Número da <a class="el" href="class_receita.html">Receita</a> </dd></dl>
+<p>Metodo para obter o numero da <a class="el" href="class_receita.html">Receita</a> </p><dl class="section return"><dt>Returns</dt><dd>Numero da <a class="el" href="class_receita.html">Receita</a> </dd></dl>
 
 </div>
 </div>
@@ -372,8 +384,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/<a class="el" href="_receita_8h_source.html">Receita.h</a></li>
-<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/Receita.cpp</li>
+<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/<a class="el" href="_receita_8h_source.html">Receita.h</a></li>
+<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/Receita.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -95,6 +95,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acf8e168eb43f29e372eb2a4cd6f54d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fb73ee3417f4f90bde39c227281a65f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pessoa.html#a7fb73ee3417f4f90bde39c227281a65f">getNoContribuinte</a> () const</td></tr>
 <tr class="separator:a7fb73ee3417f4f90bde39c227281a65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26074576a426b510ff59165b05031f57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pessoa.html#a26074576a426b510ff59165b05031f57">setNome</a> (std::string nome)</td></tr>
+<tr class="separator:a26074576a426b510ff59165b05031f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac892bee13882ca29370a281632be0e48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pessoa.html#ac892bee13882ca29370a281632be0e48">setMorada</a> (std::string morada)</td></tr>
+<tr class="separator:ac892bee13882ca29370a281632be0e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d58cd06e27cfe38f847fb399d4af361"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pessoa.html#a4d58cd06e27cfe38f847fb399d4af361">setNoContribuinte</a> (double no)</td></tr>
+<tr class="separator:a4d58cd06e27cfe38f847fb399d4af361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97314f282759a64f2680ac709d1f8c24"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pessoa.html#a97314f282759a64f2680ac709d1f8c24">showInfo</a> () const =0</td></tr>
 <tr class="separator:a97314f282759a64f2680ac709d1f8c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -153,7 +159,7 @@ Friends</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">nome</td><td>Nome da <a class="el" href="class_pessoa.html">Pessoa</a> </td></tr>
     <tr><td class="paramname">morada</td><td>Morada da <a class="el" href="class_pessoa.html">Pessoa</a> </td></tr>
-    <tr><td class="paramname">cont</td><td>Número de contribuinte da <a class="el" href="class_pessoa.html">Pessoa</a> </td></tr>
+    <tr><td class="paramname">cont</td><td>Numero de contribuinte da <a class="el" href="class_pessoa.html">Pessoa</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -219,7 +225,7 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Metodo que permite obter o número de contribuinte da pessoa </p><dl class="section return"><dt>Returns</dt><dd>Número de contribuinte </dd></dl>
+<p>Metodo que permite obter o numero de contribuinte da pessoa </p><dl class="section return"><dt>Returns</dt><dd>Número de contribuinte </dd></dl>
 
 </div>
 </div>
@@ -238,6 +244,78 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Metodo que permite obter o nome da pessoa </p><dl class="section return"><dt>Returns</dt><dd>Nome da <a class="el" href="class_pessoa.html">Pessoa</a> </dd></dl>
+
+</div>
+</div>
+<a id="ac892bee13882ca29370a281632be0e48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac892bee13882ca29370a281632be0e48">&#9670;&nbsp;</a></span>setMorada()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pessoa::setMorada </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>morada</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo que permite alterar a morada da pessoa </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">morada</td><td>Nova morada da <a class="el" href="class_pessoa.html">Pessoa</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4d58cd06e27cfe38f847fb399d4af361"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d58cd06e27cfe38f847fb399d4af361">&#9670;&nbsp;</a></span>setNoContribuinte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pessoa::setNoContribuinte </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>no</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo que permite alterar o numero de contribuinte da pessoa </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">no</td><td>Novo numero de contribuinte da <a class="el" href="class_pessoa.html">Pessoa</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a26074576a426b510ff59165b05031f57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26074576a426b510ff59165b05031f57">&#9670;&nbsp;</a></span>setNome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pessoa::setNome </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>nome</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo que permite alterar o nome da pessoa </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nome</td><td>Novo nome da <a class="el" href="class_pessoa.html">Pessoa</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -315,8 +393,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/<a class="el" href="_pessoa_8h_source.html">Pessoa.h</a></li>
-<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/Pessoa.cpp</li>
+<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/<a class="el" href="_pessoa_8h_source.html">Pessoa.h</a></li>
+<li>C:/Users/ASUS1/Desktop/2Âº Ano/1Âº Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/Pessoa.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

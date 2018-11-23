@@ -21,7 +21,7 @@ protected:
 	std::string descricao; //Descricao do Produto
 	bool passivelReceita; //Booleano que indica se o medicamento e passivel de receita
 	bool vendaSemReceita; //Booleano que indica se o medicamento passivel de receita pode ser vendido sem receita
-	float taxaDesconto; //Taxa de Desconto de um medicamento passível de receita
+	float taxaDesconto; //Taxa de Desconto de um medicamento passivel de receita
 
 public:
 	/**
@@ -60,7 +60,7 @@ public:
 	void setVendaSemReceita(bool vendaSemReceita);
 	/**
 	 * Metodo para obter o codigo do Produto
-	 * @return Código do Produto
+	 * @return Codigo do Produto
 	 */
 	double getCodigo() const;
 	/**

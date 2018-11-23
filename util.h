@@ -40,55 +40,6 @@ inline std::string toupperstring(std::string str){
 	return s;
 }
 
-/**
- * Metodo usado no algoritmo quickSort
- * @param v Vetor a ordenar
- * @param left, rigth Índices inicial e final do vetor
- * @param tipo Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de comparacao dos dois objetos
- * @param crescente Booleano que permite ao utilizador escolher se quer utilizar o seu criterio de modo crescente(true) ou decrescente(false)
- * @return Retorna o valor medio do vetor (?)
- */
-/*template <class Comparable>
-const Comparable &median3(std::vector<Comparable*> &v, int left,
-		int right, enum tipoSort tipo, bool crescente)
-{
-	int center = (left+right) /2;
-	if (v[center]->menorQue(*v[left], tipo, crescente))
-		std::swap(v[left], v[center]);
-	if (v[right]->menorQue(*v[left], tipo, crescente))
-		std::swap(v[left], v[right]);
-	if (v[right]->menorQue(*v[center], tipo, crescente))
-		std::swap(v[center], v[right]);//coloca pivot na posicao right-1
-	std::swap(v[center], v[right-1]);
-	return *v[right-1];
-}*/
-
-/**
- * Algoritmo de Ordenacao
- * @param v Vetor a ordenar
- * @param left, rigth Índices inicial e final do vetor
- * @param tipo Enumeracao do tipo tipoSort que permite ao utilizador escolher o modo de comparacao dos dois objetos
- * @param crescente Booleano que permite ao utilizador escolher se quer utilizar o seu criterio de modo crescente(true) ou decrescente(false)
- */
-/*template <class Comparable>
-void quickSort(std::vector<Comparable* > &v, int left, int right, enum tipoSort tipo, bool crescente)
-{
-
-	Comparable x = median3(v,left,right, tipo, crescente); // x e o pivot
-	int i = left; int j = right-1; // passo de particao
-	for(; ; ) {
-		while (v[++i]->menorQue(x, tipo, crescente)) ;
-		while (x.menorQue(*v[--j], tipo, crescente)) ;
-		if (i < j)
-			std::swap(v[i], v[j]);
-		else
-			break;
-	}
-	std::swap(v[i], v[right-1]);//repoe pivot
-	quickSort(v, left, i-1, tipo, crescente);
-	quickSort(v, i+1, right, tipo, crescente);
-}*/
-
 template <typename T>
 class sorting{
 public:

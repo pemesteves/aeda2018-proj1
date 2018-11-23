@@ -97,6 +97,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a155c369efd57b716b3b216df81d59294"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee4067fb4639f8d878b658af70b9375e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_funcionario.html#aee4067fb4639f8d878b658af70b9375e">changeSalario</a> (double salario)</td></tr>
 <tr class="separator:aee4067fb4639f8d878b658af70b9375e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3669a1e4e46f7a71c9d1462fd7845ac0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_funcionario.html#a3669a1e4e46f7a71c9d1462fd7845ac0">setCargo</a> (std::string cargo)</td></tr>
+<tr class="separator:a3669a1e4e46f7a71c9d1462fd7845ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a754f2cb4226d557af5f70891a3c8584d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_funcionario.html#a754f2cb4226d557af5f70891a3c8584d">showInfo</a> () const</td></tr>
 <tr class="separator:a754f2cb4226d557af5f70891a3c8584d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a924ab6612eea1f645df66c621e5714d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_funcionario.html#a924ab6612eea1f645df66c621e5714d8">operator&lt;</a> (const <a class="el" href="class_funcionario.html">Funcionario</a> &amp;f1) const</td></tr>
@@ -114,6 +116,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acf8e168eb43f29e372eb2a4cd6f54d90 inherit pub_methods_class_pessoa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fb73ee3417f4f90bde39c227281a65f inherit pub_methods_class_pessoa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pessoa.html#a7fb73ee3417f4f90bde39c227281a65f">getNoContribuinte</a> () const</td></tr>
 <tr class="separator:a7fb73ee3417f4f90bde39c227281a65f inherit pub_methods_class_pessoa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26074576a426b510ff59165b05031f57 inherit pub_methods_class_pessoa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pessoa.html#a26074576a426b510ff59165b05031f57">setNome</a> (std::string nome)</td></tr>
+<tr class="separator:a26074576a426b510ff59165b05031f57 inherit pub_methods_class_pessoa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac892bee13882ca29370a281632be0e48 inherit pub_methods_class_pessoa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pessoa.html#ac892bee13882ca29370a281632be0e48">setMorada</a> (std::string morada)</td></tr>
+<tr class="separator:ac892bee13882ca29370a281632be0e48 inherit pub_methods_class_pessoa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d58cd06e27cfe38f847fb399d4af361 inherit pub_methods_class_pessoa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pessoa.html#a4d58cd06e27cfe38f847fb399d4af361">setNoContribuinte</a> (double no)</td></tr>
+<tr class="separator:a4d58cd06e27cfe38f847fb399d4af361 inherit pub_methods_class_pessoa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -177,8 +185,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>noContribuinte</b><
   <table class="params">
     <tr><td class="paramname">nome</td><td>Nome do Funcionario/Pessoa </td></tr>
     <tr><td class="paramname">morada</td><td>Morada do Funcionario/Pessoa </td></tr>
-    <tr><td class="paramname">cont</td><td>N�mero de Contribuinte do Funcionario/Pessoa </td></tr>
-    <tr><td class="paramname">sal</td><td>Salario do <a class="el" href="class_funcionario.html">Funcionario</a>: caso nao seja atribu�do, sera 500 </td></tr>
+    <tr><td class="paramname">cont</td><td>Numero de Contribuinte do Funcionario/Pessoa </td></tr>
+    <tr><td class="paramname">sal</td><td>Salario do <a class="el" href="class_funcionario.html">Funcionario</a>: caso nao seja atribuido, sera 500 </td></tr>
   </table>
   </dd>
 </dl>
@@ -207,7 +215,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>noContribuinte</b><
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Destrutor da classe <a class="el" href="class_pessoa.html">Pessoa</a> </p>
+<p>Destrutor da classe <a class="el" href="class_funcionario.html">Funcionario</a> </p>
 
 </div>
 </div>
@@ -366,6 +374,30 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>noContribuinte</b><
 
 </div>
 </div>
+<a id="a3669a1e4e46f7a71c9d1462fd7845ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3669a1e4e46f7a71c9d1462fd7845ac0">&#9670;&nbsp;</a></span>setCargo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Funcionario::setCargo </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>cargo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo que permite alterar o cargo do <a class="el" href="class_funcionario.html">Funcionario</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cargo</td><td>Novo cargo do <a class="el" href="class_funcionario.html">Funcionario</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aac6b8e6e9cc202c20977e60679164706"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac6b8e6e9cc202c20977e60679164706">&#9670;&nbsp;</a></span>setFarmacia()</h2>
 
@@ -464,8 +496,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>noContribuinte</b><
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/<a class="el" href="_pessoa_8h_source.html">Pessoa.h</a></li>
-<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/Pessoa.cpp</li>
+<li>C:/Users/ASUS1/Desktop/2º Ano/1º Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/<a class="el" href="_pessoa_8h_source.html">Pessoa.h</a></li>
+<li>C:/Users/ASUS1/Desktop/2º Ano/1º Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/Pessoa.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

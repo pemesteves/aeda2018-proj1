@@ -223,7 +223,7 @@ class ClienteInexistente{
 	std::string nome; //Nome do Cliente
 public:
 	/**
-	 * Construtor da classe -> classe utilizada em excecões
+	 * Construtor da classe -> classe utilizada em excecoes
 	 * @param nomeC Nome utilizado para a procura do cliente que nao existe
 	 */
 	ClienteInexistente(std::string nomeC){nome = nomeC;}
@@ -241,7 +241,7 @@ class FuncionarioInexistente{
 	std::string nome; //Nome do Funcionario
 public:
 	/**
-	 * Construtor da classe -> classe utilizada em excecões
+	 * Construtor da classe -> classe utilizada em excecoes
 	 * @param nomeF Nome utilizado para a procura do funcionario que nao existe
 	 */
 	FuncionarioInexistente(std::string nomeF){nome = nomeF;}

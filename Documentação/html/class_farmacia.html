@@ -86,8 +86,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae8568f1808b22b6ef23c7263d977f82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a564d9c714d812a3fff733ab834f38ade"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_venda.html">Venda</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a564d9c714d812a3fff733ab834f38ade">getVendas</a> () const</td></tr>
 <tr class="separator:a564d9c714d812a3fff733ab834f38ade"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af55738e0e8573f5077fcfdea31153c8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_venda.html">Venda</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#af55738e0e8573f5077fcfdea31153c8c">getVenda</a> (double codigo) const</td></tr>
+<tr class="separator:af55738e0e8573f5077fcfdea31153c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adae2c520c84bf876090a27d92bf0ffb0"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="class_produto.html">Produto</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#adae2c520c84bf876090a27d92bf0ffb0">getProdutosVender</a> () const</td></tr>
 <tr class="separator:adae2c520c84bf876090a27d92bf0ffb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa758583509dc021ed8bb97d58dc3bbf6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_produto.html">Produto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#aa758583509dc021ed8bb97d58dc3bbf6">getProduto</a> (double codigo)</td></tr>
+<tr class="separator:aa758583509dc021ed8bb97d58dc3bbf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a198b501cf217bb20bbe2d530a2c664"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a6a198b501cf217bb20bbe2d530a2c664">getNumProdutos</a> () const</td></tr>
 <tr class="separator:a6a198b501cf217bb20bbe2d530a2c664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d4d37df273258372d35c75d514cebb1"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a8d4d37df273258372d35c75d514cebb1">getNumVendas</a> () const</td></tr>
@@ -108,6 +112,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7f975ca1952e7c391ace0dff5d5a64e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47c9b2ee65876ef18912a4d47366c030"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a47c9b2ee65876ef18912a4d47366c030">setDiretorTecnico</a> (<a class="el" href="class_funcionario.html">Funcionario</a> *diretor)</td></tr>
 <tr class="separator:a47c9b2ee65876ef18912a4d47366c030"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11f035b139d93bc9fc5f229e8a8fad77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a11f035b139d93bc9fc5f229e8a8fad77">setVendas</a> (std::vector&lt; <a class="el" href="class_venda.html">Venda</a> *&gt; v)</td></tr>
+<tr class="separator:a11f035b139d93bc9fc5f229e8a8fad77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea718ec5213834da18eb88f2f47ebec5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#aea718ec5213834da18eb88f2f47ebec5">addProdutosVender</a> (std::vector&lt; <a class="el" href="class_produto.html">Produto</a> *&gt; produtosVender_new)</td></tr>
 <tr class="separator:aea718ec5213834da18eb88f2f47ebec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad58b09f2fa63d14d2f23848e33a65846"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#ad58b09f2fa63d14d2f23848e33a65846">addProdutoVender</a> (<a class="el" href="class_produto.html">Produto</a> *produtoVender)</td></tr>
@@ -130,6 +136,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8d776c7e0c570cb91cf8299bc79ee931"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcb90c8720b3f3fa046baec45ef6bd61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#afcb90c8720b3f3fa046baec45ef6bd61">imprimeFatura</a> (<a class="el" href="class_venda.html">Venda</a> *v) const</td></tr>
 <tr class="separator:afcb90c8720b3f3fa046baec45ef6bd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb438ff55b49d199703bee2e4bebf384"><td class="memItemLeft" align="right" valign="top"><a id="abb438ff55b49d199703bee2e4bebf384"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>imprimeDados</b> () const</td></tr>
+<tr class="separator:abb438ff55b49d199703bee2e4bebf384"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -222,7 +231,7 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Booleano que indica se a operacao foi efetuada com sucesso se for 0 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Booleano que indica se a operacao foi efetuada com sucesso </dd></dl>
 
 </div>
 </div>
@@ -241,7 +250,7 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Metodo que permite realizar uma venda A venda e poss�vel apenas se os produtos da mesma existirem na farmacia nas quantidades necessarias </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite realizar uma venda A venda e possivel apenas se os produtos da mesma existirem na farmacia nas quantidades necessarias </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">venda</td><td>Apontador para objeto da classe <a class="el" href="class_venda.html">Venda</a> </td></tr>
   </table>
@@ -505,6 +514,31 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="aa758583509dc021ed8bb97d58dc3bbf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa758583509dc021ed8bb97d58dc3bbf6">&#9670;&nbsp;</a></span>getProduto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_produto.html">Produto</a> Farmacia::getProduto </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo para obter o <a class="el" href="class_produto.html">Produto</a> com um certo codigo </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Codigo do <a class="el" href="class_produto.html">Produto</a> a procurar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_produto.html">Produto</a> que contem o codigo especificado no argumento </dd></dl>
+
+</div>
+</div>
 <a id="adae2c520c84bf876090a27d92bf0ffb0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adae2c520c84bf876090a27d92bf0ffb0">&#9670;&nbsp;</a></span>getProdutosVender()</h2>
 
@@ -545,6 +579,31 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Quantidade do produto passado como argumento. Se nao existir, retorna-se -1 </dd></dl>
+
+</div>
+</div>
+<a id="af55738e0e8573f5077fcfdea31153c8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af55738e0e8573f5077fcfdea31153c8c">&#9670;&nbsp;</a></span>getVenda()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_venda.html">Venda</a> * Farmacia::getVenda </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>codigo</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo que permite obter uma dada <a class="el" href="class_venda.html">Venda</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Codigo da <a class="el" href="class_venda.html">Venda</a> a procurar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Apontador para objeto da classe <a class="el" href="class_venda.html">Venda</a> com o codigo especificado </dd></dl>
 
 </div>
 </div>
@@ -748,9 +807,6 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Farmacia::setDiretorTecnico </td>
@@ -760,11 +816,6 @@ Friends</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>Metodo que permite alterar o diretor tecnico da farmacia </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -832,6 +883,30 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Retorna true se a operacao foi realizada com sucesso. Caso contrario, retorna false </dd></dl>
+
+</div>
+</div>
+<a id="a11f035b139d93bc9fc5f229e8a8fad77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11f035b139d93bc9fc5f229e8a8fad77">&#9670;&nbsp;</a></span>setVendas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Farmacia::setVendas </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_venda.html">Venda</a> *&gt;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Metodo que altera o vetor de vendas pelo vetor passado por parametro </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Vetor a alterar </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -904,7 +979,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Overload do operador para exportar a farmacia </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Overload do operador &lt;&lt; para exportar a farmacia </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">output</td><td>Variavel para onde se quer exportar(ecra, ficheiro, ...) </td></tr>
     <tr><td class="paramname">f</td><td><a class="el" href="class_farmacia.html">Farmacia</a> que se quer exportar </td></tr>
@@ -916,8 +991,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/<a class="el" href="_farmacia_8h_source.html">Farmacia.h</a></li>
-<li>C:/Users/ASUS1/Desktop/Proj Aeda/Farmacias/Farmacia.cpp</li>
+<li>C:/Users/ASUS1/Desktop/2º Ano/1º Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/<a class="el" href="_farmacia_8h_source.html">Farmacia.h</a></li>
+<li>C:/Users/ASUS1/Desktop/2º Ano/1º Semestre/Algoritmos e Estruturas de Dados/Farmacias/Farmacias/src/Farmacia.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
