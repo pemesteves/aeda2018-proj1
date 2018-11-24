@@ -143,7 +143,7 @@ std::ostream& operator<<(std::ostream &output, const CadeiaFarmacias &cF){
 	return output;
 }
 
-void import(fstream &f, CadeiaFarmacias &cF){
+void import(ifstream &f, CadeiaFarmacias &cF){
 	string line;
 	getline(f, line);
 	size_t numVars = stoi(line);
