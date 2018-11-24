@@ -159,7 +159,7 @@ public:
 	const Produto* removeProduto(std::string nomeP);
 	/**
 	 * Metodo que permite realizar uma venda
-	 * A venda e possivel apenas se os produtos da mesma existirem na farmacia nas quantidades necessarias
+	 * A venda e possível apenas se os produtos da mesma existirem na farmacia nas quantidades necessarias
 	 * @param venda Apontador para objeto da classe Venda
 	 * @return Retorna true caso
 	 */
@@ -229,7 +229,7 @@ class FarmaciaInexistente{
 	std::string nome; //Nome da Farmacia
 public:
 	/**
-	 * Construtor da classe -> classe utilizada em excecoes
+	 * Construtor da classe -> classe utilizada em excecões
 	 * @param nomeF Nome utilizado para a procura da farmacia que nao existe
 	 */
 	FarmaciaInexistente(std::string nomeF){nome = nomeF;}

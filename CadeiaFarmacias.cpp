@@ -2,12 +2,12 @@
 
 using namespace std;
 
-/*template <> enum tipoSort sorting<Farmacia>::tipo = DEFAULT;
+template <> enum tipoSort sorting<Farmacia>::tipo = DEFAULT;
 template <> bool sorting<Farmacia>::crescente = false;
 template <> enum tipoSort sorting<Funcionario>::tipo = DEFAULT;
 template <> bool sorting<Funcionario>::crescente = false;
 template <> enum tipoSort sorting<Cliente>::tipo = DEFAULT;
-template <> bool sorting<Cliente>::crescente = false;*/
+template <> bool sorting<Cliente>::crescente = false;
 
 CadeiaFarmacias::CadeiaFarmacias() {
 	this->nome = ""; //Inicializacao de um nome vazio
@@ -297,7 +297,8 @@ void import(fstream &f, CadeiaFarmacias &cF){
 			contribuinte = stod(line); //contribuinte terá o código da Venda
 			Venda *v = NULL;
 			for(vector<Farmacia *>::iterator it = cF.farmacias.begin(); it != cF.farmacias.end(); it++){
-				if((v = (*it)->getVenda(contribuinte)) != NULL)
+				v = (*it)->getVenda(contribuinte);
+				if(v != NULL)
 					break;
 			}
 			c->addCompra(v);

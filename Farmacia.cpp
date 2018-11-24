@@ -3,8 +3,8 @@
 
 using namespace std;
 
-/*template <> enum tipoSort sorting<Venda>::tipo = DEFAULT;
-template <> bool sorting<Venda>::crescente = false;*/
+template <> enum tipoSort sorting<Venda>::tipo = DEFAULT;
+template <> bool sorting<Venda>::crescente = false;
 
 Farmacia::Farmacia(string nome, string morada) {
 	this->nome = nome;

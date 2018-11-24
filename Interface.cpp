@@ -1,3 +1,7 @@
+//////////////////////////////////
+//VERSAO INCOMPLETA DA INTERFACE//
+//////////////////////////////////
+
 #include "CadeiaFarmacias.h"
 #include "Data.h"
 #include "Farmacia.h"
@@ -10,12 +14,15 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <conio.h>
 
 using namespace std;
 
 static CadeiaFarmacias cadeiaF;
 
 void menu();
+void menuFarmacias();
+void menuVenda();
 
 Farmacia* findFarmacia(string nomeFarmacia, vector<Farmacia*> farmacias ){
 	vector<Farmacia*>::iterator it;
@@ -42,9 +49,9 @@ void menuClientes(){
 	cout << "4. Remover produto." << endl;
 	cout << "5. Mostras dados do cliente." << endl << endl;
 
-	cout << "0. Voltar atrás." << endl;
+	cout << "0. Voltar atras." << endl;
 
-	cout << "Opção: "; cin >> opcao;
+	cout << "Opcao: "; cin >> opcao;
 
 	switch (opcao){
 	case 1:
@@ -133,16 +140,16 @@ void menuFuncionarios(){
 
 	cout << "1. Definir/modificar Gerente." << endl;
 	cout << "2. Definir/modificar Diretor Técnico." << endl;
-	cout << "3. Adicionar funcionário." << endl;
-	cout << "4. Remover funcionário." << endl;
-	cout << "5. Mudar dados de um funcionário." << endl;
-	cout << "6. Ordenar funcionários." << endl;
+	cout << "3. Adicionar funcionario." << endl;
+	cout << "4. Remover funcionario." << endl;
+	cout << "5. Mudar dados de um funcionario." << endl;
+	cout << "6. Ordenar funcionarios." << endl;
 	cout << "7. Mostrar lista de funcionarios." << endl;
 	cout << "8. Mostrar dados de um funcionário." << endl << endl;
 
-	cout << "0. Voltar atrás." << endl;
+	cout << "0. Voltar atras." << endl;
 
-	cout << "Opção: "; cin >> opcao; cout << endl;
+	cout << "Opcao: "; cin >> opcao; cout << endl;
 
 	switch(opcao){
 	case 1:
@@ -156,20 +163,20 @@ void menuFuncionarios(){
 		while(!valido){
 			cin.clear();
 			cin.ignore(100000, '\n');
-			cout << "Farmácia: "; cin >> nomeFarmacia;
+			cout << "Farmacia: "; cin >> nomeFarmacia;
 
 			try{
 				farmacia = findFarmacia(nomeFarmacia, farmacias);
 				valido = true;
 			}catch (FarmaciaInexistente& nomeFarmacia){
-				cerr << "Farmácia inexistente!" << endl;
+				cerr << "Farmacia inexistente!" << endl;
 				valido = false;
 			}
 		}
 
 		cout << "Nome do Gerente: " ; cin >> nomeGerente;
 		cout << "Morada do Gerente: "; cin >> moradaGerente;
-		cout << "Nº de contribuinte: "; cin >> contribuinte;
+		cout << "Numero de contribuinte: "; cin >> contribuinte;
 		cout << "Salario: "; cin >> salario;
 
 		Funcionario gerente(nomeGerente, moradaGerente, contribuinte, salario);
@@ -190,20 +197,20 @@ void menuFuncionarios(){
 		while(!valido){
 			cin.clear();
 			cin.ignore(100000, '\n');
-			cout << "Farmácia: "; cin >> nomeFarmacia;
+			cout << "Farmacia: "; cin >> nomeFarmacia;
 			valido = true;
 
 			try{
 				it = findFarmacia(nomeFarmacia, farmacias);
 			} catch (FarmaciaInexistente& nomeFarmacia){
-				cerr << "Farmácia inexistente!" << endl;
+				cerr << "Farmacia inexistente!" << endl;
 				valido = false;
 			}
 		}
 
 		cout << "Nome do Diretor: " ; getline(cin, nomeDir);
 		cout << "Morada do Diretor: "; getline(cin, moradaDir);
-		cout << "Nº de contribuinte: "; cin >> contribuinte;
+		cout << "Numero de contribuinte: "; cin >> contribuinte;
 		cout << "Salario: "; cin >> salario;
 
 		Funcionario diretor(nomeDir, moradaDir, contribuinte, salario);
@@ -221,7 +228,7 @@ void menuFuncionarios(){
 
 		cout << "Nome do Funcionario: " ; cin >> nome;
 		cout << "Morada do Funcionario: "; cin >> morada;
-		cout << "Nº de contribuinte: "; cin >> contribuinte;
+		cout << "Numero de contribuinte: "; cin >> contribuinte;
 		cout << "Salario: "; cin >> salario;
 
 		Funcionario funcionario(nome, morada, contribuinte, salario);
@@ -240,7 +247,7 @@ void menuFuncionarios(){
 		while(!valido){
 			cin.clear();
 			cin.ignore(100000, '\n');
-			cout << "Nome do funcionário a remover: " ;
+			cout << "Nome do funcionario a remover: " ;
 			cin >> nomeFunc;
 			bool encontrou = false;
 
@@ -254,7 +261,7 @@ void menuFuncionarios(){
 				if (!encontrou) throw FuncionarioInexistente(nomeFunc);
 				valido = true;
 			} catch (FuncionarioInexistente& nomeFunc){
-				cerr << "Funcionário inexistente!" << endl;
+				cerr << "Funcionario inexistente!" << endl;
 				valido = false;
 			}
 		}
@@ -274,7 +281,7 @@ void menuFuncionarios(){
 		while(!valido){
 			cin.clear();
 			cin.ignore(100000, '\n');
-			cout << "Nome do funcionário: " ;
+			cout << "Nome do funcionario: " ;
 			cin >> nomeFunc;
 			bool encontrou = false;
 
@@ -288,7 +295,7 @@ void menuFuncionarios(){
 				if (!encontrou) throw FuncionarioInexistente(nomeFunc);
 				valido = true;
 			} catch (FuncionarioInexistente& nomeFunc){
-				cerr << "Funcionário inexistente!" << endl;
+				cerr << "Funcionario inexistente!" << endl;
 				valido = false;
 			}
 		}
@@ -319,7 +326,7 @@ void menuFuncionarios(){
 					farmacia = findFarmacia(nomeFarmacia,farmacias);
 					valido = true;
 				}catch(FarmaciaInexistente &nomeFarmacia){
-					cerr << "Farmácia inexistente!" << endl;
+					cerr << "Farmacia inexistente!" << endl;
 					valido = false;
 				}
 				if (valido)
@@ -414,9 +421,9 @@ void menuFuncionarios(){
 		vector<Funcionario*>::iterator it;
 
 		if (funcionarios.size() == 0)
-			cout << "Não existem funcionários." << endl;
+			cout << "Nao existem funcionarios." << endl;
 		else {
-			cout << "Existem os seguintas funcionários: ";
+			cout << "Existem os seguintes funcionarios: ";
 
 			for( ; it != funcionarios.end();it++){
 				Funcionario* funcionario = *it;
@@ -438,7 +445,7 @@ void menuFuncionarios(){
 		while(!valido){
 			cin.clear();
 			cin.ignore(100000, '\n');
-			cout << "Nome do funcionário: " ;
+			cout << "Nome do funcionario: " ;
 			cin >> nomeFunc;
 			bool encontrou = false;
 
@@ -452,7 +459,7 @@ void menuFuncionarios(){
 				if (!encontrou) throw FuncionarioInexistente(nomeFunc);
 				valido = true;
 			} catch (FuncionarioInexistente& nomeFunc){
-				cerr << "Funcionário inexistente!" << endl;
+				cerr << "Funcionario inexistente!" << endl;
 				valido = false;
 			}
 		}
@@ -473,35 +480,125 @@ void menuFuncionarios(){
 	menuFuncionarios();
 }
 
+void menuVenda(Farmacia* f){
+	cout << "Venda" << endl;
+	Venda();
+}
+
 void menuFarmacia(){
+	vector<Farmacia*> farmacias=cadeiaF.getFarmacias();
+	Farmacia* it = NULL;
+	string nome;
+	cout << "Qual o nome da farmacia que pretende gerir? " << endl;
+	string nomeFarmacia;
+	bool valido = false;
+
+	while(!valido){
+		cin.clear();
+		cin.ignore(100000, '\n');
+		cout << "Farmacia: "; cin >> nomeFarmacia;
+
+		try{
+			it = findFarmacia(nomeFarmacia, farmacias);
+			valido = true;
+		}catch (FarmaciaInexistente& nomeFarmacia){
+			cerr << "Farmacia inexistente!" << endl;
+			valido = false;
+		}
+	}
 
 	int opcao;
 
-	cout << "FARMÁCIA" << endl;
-
-	cout << "O que pretende fazer?" << endl;
-	cout << "1. Adicionar farmácia." << endl;
-	cout << "2. Remover farmácia." << endl;
-	cout << "3. Ordenar farmácias." << endl << endl;
-	cout << "4. Mostrar farmácias existentes." << endl;
-	cout << "5. Mostrar dados de uma farmácia." << endl << endl;
-
-	cout << "0. Voltar atrás." << endl;
+	cout << endl << endl;
+	cout << "GERIR" << nomeFarmacia << endl << endl;
+	cout << "1. Consultar dados da farmacia." << endl;
+	cout << "2. Consultar vendas." << endl;
+	cout << "3. Consultar stock." << endl;
+	cout << "4. Realizar venda." << endl;
+	cout << "5. Adicionar produto ao stock." << endl;
+	cout << "6. Ordenar as vendas. " << endl << endl;
+	cout << "0. Voltar atras."<< endl << endl;
 
 	cin.clear();
 	cin.ignore(10000, '\n');
-	cout << "Opção: "; cin >> opcao; cout << endl;
+	cout << "Opcao: "; cin >> opcao; cout << endl << endl;
+
+	switch(opcao){
+	case 0:
+	{
+		menuFarmacias();
+		break;
+	}
+	case 1:
+	{
+		it->imprimeDados();
+		cout << endl;
+		menuFarmacia();
+		break;
+	}
+	case 2:
+	{
+		vector<Venda*> vendas = it->getVendas();
+		for (unsigned int i = 0; i<vendas.size(); i++){
+			vendas.at(i)->imprimeFatura();
+			cout << endl;
+		}
+		getch();
+		menuFarmacia();
+		break;
+	}
+	case 3:
+	{
+		map<Produto, int>::const_iterator stock_it;
+		stock_it = it->getProdutosVender().begin();
+		for (; stock_it!=it->getProdutosVender().end(); stock_it++){
+			cout << stock_it->first.getCodigo() << "   ";
+			cout << stock_it->first.getNome() << "   ";
+			cout << stock_it->second << " unidades;";
+			cout << endl;
+		}
+		getch();
+		menuFarmacia();
+		break;
+	}
+	case 4:
+	{
+		menuVenda(it);
+		break;
+	}
+	}
+}
+
+void menuFarmacias(){
+
+	int opcao;
+
+	cout << "FARMACIA" << endl;
+
+	cout << "O que pretende fazer?" << endl;
+	cout << "1. Adicionar farmacia." << endl;
+	cout << "2. Remover farmacia." << endl;
+	cout << "3. Ordenar farmacias." << endl << endl;
+	cout << "4. Mostrar farmacias existentes." << endl;
+	cout << "5. Mostrar dados de uma farmacia." << endl;
+	cout << "6. Editar farmacia." << endl;
+
+	cout << "0. Voltar atras." << endl;
+
+	cin.clear();
+	cin.ignore(10000, '\n');
+	cout << "Opcao: "; cin >> opcao; cout << endl;
 
 	switch (opcao){
 	case 1:
 	{
 		string nomeFarmacia;
 		string moradaFarmacia;
-		cout << "Que nome pretende dar à farmácia? ";
+		cout << "Que nome pretende dar a farmacia? ";
 		cin.clear();
 		cin.ignore(10000, '\n');
 		getline(cin, nomeFarmacia);
-		cout << "Qual é a morada da farmácia? ";
+		cout << "Qual a morada da farmacia? ";
 		getline(cin, moradaFarmacia);
 		Farmacia* farmacia = new Farmacia(nomeFarmacia, moradaFarmacia);
 		cadeiaF.addFarmacia(farmacia);
@@ -510,7 +607,7 @@ void menuFarmacia(){
 	case 2:
 	{
 		string nomeFarmacia;
-		cout << "Qual o nome da farmácia que pretende remover? ";
+		cout << "Qual o nome da farmacia que pretende remover? ";
 		cin.clear();
 		cin.ignore(100000, '\n');
 		getline(cin, nomeFarmacia);
@@ -519,11 +616,11 @@ void menuFarmacia(){
 
 		try {
 			cadeiaF.removeFarmacia(nomeFarmacia);
-		} catch(FarmaciaInexistente& (nomeFarmacia)){
+		} catch(FarmaciaInexistente& nomeFarmacia){
 			if(cadeiaF.getFarmacias().empty())
-				cerr << "A cadeia de farmácias não tem nenhuma farmácia!" <<endl;
+				cerr << "A cadeia de farmacias nao tem nenhuma farmacia!" <<endl;
 			else
-				cerr << "Farmácia inexistente! \n" <<endl;
+				cerr << "Farmacia inexistente! \n" <<endl;
 
 		}
 
@@ -595,9 +692,9 @@ void menuFarmacia(){
 		vector<Farmacia*>::const_iterator it=farmacias.begin();
 
 		if (farmacias.size() == 0)
-			cout << "Não existem farmácias." << endl;
+			cout << "Nao existem farmacias." << endl;
 		else {
-			cout << "As farmácias existentes são: ";
+			cout << "As farmacias existentes sao: ";
 
 			for( ; it != farmacias.end();it++){
 				Farmacia* farmacia= *it;
@@ -620,19 +717,25 @@ void menuFarmacia(){
 		while(!valido){
 			cin.clear();
 			cin.ignore(100000, '\n');
-			cout << "Farmácia: "; cin >> nomeFarmacia;
+			cout << "Farmacia: "; cin >> nomeFarmacia;
 
 			try{
 				it = findFarmacia(nomeFarmacia, farmacias);
 				valido = true;
 			}catch (FarmaciaInexistente& nomeFarmacia){
-				cerr << "Farmácia inexistente!" << endl;
+				cerr << "Farmacia inexistente!" << endl;
 				valido = false;
 			}
 		}
 		it->imprimeDados();
 		break;
 
+	}
+
+	case 6:
+	{
+		menuFarmacia();
+		break;
 	}
 	case 0:
 		menu();
@@ -642,32 +745,32 @@ void menuFarmacia(){
 		break;
 	}
 	cout << string(3, '\n');
-	menuFarmacia();
+	menuFarmacias();
 }
 
 void menu(){
 
 	int opcao;
-	cout << "CADEIA DE FARMÁCIAS (" << cadeiaF.getNome() << ") - AEDA 2018" << endl << endl;
+	cout << "CADEIA DE FARMACIAS (" << cadeiaF.getNome() << ") - AEDA 2018" << endl << endl;
 
 	cout << "O que pretende fazer?" << endl;
-	cout << "1. Alterar o nome da cadeia de farmácias" << endl;
-	cout << "2. Gerir uma farmácia." << endl;
-	cout << "3. Gerir funcionários." << endl;
+	cout << "1. Alterar o nome da cadeia de farmacias" << endl;
+	cout << "2. Gerir farmacias." << endl;
+	cout << "3. Gerir funcionarios." << endl;
 	cout << "4. Gerir clientes." << endl;
 	cout << "6. Gerir vendas." << endl;
-	cout << "7. Mostrar dados da cadeia de farmácias" << endl;
-	//cout << 8. "Gravar e sair. << endl;
+	cout << "7. Mostrar dados da cadeia de farmacias" << endl;
+	cout << "8. Gravar e sair." << endl;
 
 
-	cout << "Opção: "; cin >> opcao; cout << endl;
+	cout << "Opcao: "; cin >> opcao; cout << endl;
 
 
 	switch(opcao){
 	case 1:
 	{
 		string nomeCadeia;
-		cout << "Que nome pretende dar à cadeia de farmácias? ";
+		cout << "Que nome pretende dar a cadeia de farmacias? ";
 		cin.clear();
 		cin.ignore(100000, '\n');
 		getline(cin, nomeCadeia);
@@ -678,7 +781,7 @@ void menu(){
 
 	case 2:
 		cout << string(3, '\n');
-		menuFarmacia();
+		menuFarmacias();
 		break;
 
 	case 3:
@@ -708,19 +811,19 @@ void menuInicial(){
 	string nomeCadeia;
 	fstream ficheiro;
 
-	cout << "CADEIA DE FARMÁCIAS - AEDA 2018" << endl << endl;
+	cout << "CADEIA DE FARMACIAS - AEDA 2018" << endl << endl;
 	cout << "O que pretende fazer?" << endl;
-	cout << "1. Importar ficheiro." << endl;
-	cout << "2. Criar cadeia de farmácias." << endl << endl;
+	cout << "1. Importar ficheiro de cadeia existente." << endl;
+	cout << "2. Criar nova cadeia de farmacias." << endl << endl;
 
-	cout << "Opção: ";
+	cout << "Opcao: ";
 	cin >> opcao;
 	cout << endl;
 
 	switch(opcao){
 	case 1:
 	{
-		cout << "Qual o nome da cadeia de farmácias que quer importar? ";
+		cout << "Qual o nome da cadeia de farmacias que quer importar? ";
 		cin.clear();
 		cin.ignore(10000, '\n');
 		getline(cin, nomeCadeia);
@@ -729,7 +832,7 @@ void menuInicial(){
 		ficheiro.open(nomeCadeia);
 		while (!ficheiro.is_open())
 		{
-			cerr << "Ficheiro " << nomeCadeia << " não encontrado!" << endl;
+			cerr << "Ficheiro " << nomeCadeia << " nao encontrado!" << endl;
 			cin.clear();
 			cin.ignore(10000, '\n');
 			getline(cin, nomeCadeia);
@@ -742,7 +845,7 @@ void menuInicial(){
 		break;
 	}
 	case 2:
-		cout << "Qual o nome da cadeia de farmácias? ";
+		cout << "Qual o nome da cadeia de farmacias? ";
 		cin.clear();
 		cin.ignore(100000, '\n');
 		getline(cin, nomeCadeia);

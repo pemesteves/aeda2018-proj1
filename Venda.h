@@ -63,7 +63,7 @@ public:
 	std::map<Produto, std::vector<float>> getProdutosVendidos() const;
 	/**
 	 * Metodo que permite atribuir uma receita a venda
-	 * So e possivel atribuir uma receita a venda se esta nao tiver ainda nenhuma receita associada
+	 * Só e possível atribuir uma receita a venda se esta nao tiver ainda nenhuma receita associada
 	 * @param receitaVenda Apontador para a receita a associar
 	 * @return True se foi possivel atribuir a receita e false se nao tiver sido possivel
 	 */
