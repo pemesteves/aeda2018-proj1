@@ -110,12 +110,14 @@ int Farmacia::getQuantProduto(std::string nomeProd) const{
 
 void Farmacia::setGerente(Funcionario* gerente) {
 	this->gerente=gerente;
-	gerente->setCargo("GERENTE");
+	if(gerente != NULL)
+		gerente->setCargo("GERENTE");
 }
 
 void Farmacia::setDiretorTecnico(Funcionario* diretor){
 	this->diretorTecnico=diretor;
-	diretor->setCargo("DIRETOR TECNICO");
+	if(diretor != NULL)
+		diretor->setCargo("DIRETOR TECNICO");
 }
 
 void Farmacia::addProdutosVender(vector<Produto*> produtosVender_new) {
@@ -159,7 +161,10 @@ bool Farmacia::addVenda(Venda* venda) {
 		quant = getQuantProduto(nomeProd) - static_cast<int>(it->second.at(QUANTIDADE));
 		setQuantidade(nomeProd, quant);
 	}
-	venda->getCliente()->addCompra(venda);
+	Cliente *c = venda->getCliente();
+	if(c != NULL)
+		c->addCompra(venda);
+
 	return true;
 }
 
@@ -174,14 +179,14 @@ bool Farmacia::existeProduto(string nomeProduto) const {
 
 bool Farmacia::existeProdutoQuant(string nomeProduto, int quant) const{
 	map<Produto, int>::const_iterator it = produtosVender.begin();
-		for (; it != produtosVender.end(); it++) {
-			if (it->first.getNome() == toupperstring(nomeProduto)){
-				if (it->second>=quant)
-					return true;
-				else return false;
-			}
+	for (; it != produtosVender.end(); it++) {
+		if (it->first.getNome() == toupperstring(nomeProduto)){
+			if (it->second>=quant)
+				return true;
+			else return false;
 		}
-		return false;
+	}
+	return false;
 }
 
 bool Farmacia::addProdutoVender(Produto* produtoVender) {
@@ -223,8 +228,10 @@ bool Farmacia::operator< (const Farmacia &f1) const{
 void Farmacia::imprimeFatura(Venda* v) const{
 	cout << "Farmacia " << nome << endl;
 	cout << morada << endl;
-	cout << endl << "Gerente: " << gerente->getNome() << endl;
-	cout << "Diretor Tecnico: " << diretorTecnico->getNome() << endl;
+	if(gerente != NULL)
+		cout << endl << "Gerente: " << gerente->getNome() << endl;
+	if(gerente != NULL)
+		cout << "Diretor Tecnico: " << diretorTecnico->getNome() << endl;
 	v->imprimeFatura();
 
 	cout << "Obrigado pela sua visita! Volte sempre." << endl << endl;

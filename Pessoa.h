@@ -190,7 +190,7 @@ public:
 	 */
 	void addCompra(Venda* compra);
 	/**
-	 * Metodo que imprime no ecra os atributos de um Funcionario
+	 * Metodo que imprime no ecra os atributos de um Cliente
 	 */
 	void showInfo() const;
 	/**

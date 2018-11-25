@@ -6,7 +6,7 @@ var searchData=
   ['setfarmacia',['setFarmacia',['../class_funcionario.html#aac6b8e6e9cc202c20977e60679164706',1,'Funcionario']]],
   ['setgerente',['setGerente',['../class_farmacia.html#a7f975ca1952e7c391ace0dff5d5a64e8',1,'Farmacia']]],
   ['setmorada',['setMorada',['../class_pessoa.html#ac892bee13882ca29370a281632be0e48',1,'Pessoa']]],
-  ['setnocontribuinte',['setNoContribuinte',['../class_pessoa.html#a4d58cd06e27cfe38f847fb399d4af361',1,'Pessoa']]],
+  ['setnocontribuinte',['setNoContribuinte',['../class_pessoa.html#a16f1e4cfa39cefa38c42940c7eea2c36',1,'Pessoa']]],
   ['setnome',['setNome',['../class_cadeia_farmacias.html#a2a342722bdda66b2cb3109a25d968785',1,'CadeiaFarmacias::setNome()'],['../class_pessoa.html#a26074576a426b510ff59165b05031f57',1,'Pessoa::setNome()']]],
   ['setquantidade',['setQuantidade',['../class_farmacia.html#a1274e7e34d3a59e3407447bf1b7949c4',1,'Farmacia']]],
   ['setreceita',['setReceita',['../class_venda.html#a88fba195722de19aa02bfd8f858d0c60',1,'Venda']]],

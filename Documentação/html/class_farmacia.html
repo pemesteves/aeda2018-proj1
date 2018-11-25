@@ -86,12 +86,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae8568f1808b22b6ef23c7263d977f82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a564d9c714d812a3fff733ab834f38ade"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_venda.html">Venda</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a564d9c714d812a3fff733ab834f38ade">getVendas</a> () const</td></tr>
 <tr class="separator:a564d9c714d812a3fff733ab834f38ade"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af55738e0e8573f5077fcfdea31153c8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_venda.html">Venda</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#af55738e0e8573f5077fcfdea31153c8c">getVenda</a> (double codigo) const</td></tr>
-<tr class="separator:af55738e0e8573f5077fcfdea31153c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ed0bb976c623ed70ce57f17f53b6c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_venda.html">Venda</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a49ed0bb976c623ed70ce57f17f53b6c2">getVenda</a> (unsigned long codigo) const</td></tr>
+<tr class="separator:a49ed0bb976c623ed70ce57f17f53b6c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adae2c520c84bf876090a27d92bf0ffb0"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="class_produto.html">Produto</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#adae2c520c84bf876090a27d92bf0ffb0">getProdutosVender</a> () const</td></tr>
 <tr class="separator:adae2c520c84bf876090a27d92bf0ffb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa758583509dc021ed8bb97d58dc3bbf6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_produto.html">Produto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#aa758583509dc021ed8bb97d58dc3bbf6">getProduto</a> (double codigo)</td></tr>
-<tr class="separator:aa758583509dc021ed8bb97d58dc3bbf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20b04474a51b5e051b057c1605db9781"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_produto.html">Produto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a20b04474a51b5e051b057c1605db9781">getProduto</a> (unsigned long codigo)</td></tr>
+<tr class="separator:a20b04474a51b5e051b057c1605db9781"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a198b501cf217bb20bbe2d530a2c664"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a6a198b501cf217bb20bbe2d530a2c664">getNumProdutos</a> () const</td></tr>
 <tr class="separator:a6a198b501cf217bb20bbe2d530a2c664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d4d37df273258372d35c75d514cebb1"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_farmacia.html#a8d4d37df273258372d35c75d514cebb1">getNumVendas</a> () const</td></tr>
@@ -250,7 +250,7 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Metodo que permite realizar uma venda A venda e possivel apenas se os produtos da mesma existirem na farmacia nas quantidades necessarias </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Metodo que permite realizar uma venda A venda e possível apenas se os produtos da mesma existirem na farmacia nas quantidades necessarias </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">venda</td><td>Apontador para objeto da classe <a class="el" href="class_venda.html">Venda</a> </td></tr>
   </table>
@@ -514,8 +514,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="aa758583509dc021ed8bb97d58dc3bbf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa758583509dc021ed8bb97d58dc3bbf6">&#9670;&nbsp;</a></span>getProduto()</h2>
+<a id="a20b04474a51b5e051b057c1605db9781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20b04474a51b5e051b057c1605db9781">&#9670;&nbsp;</a></span>getProduto()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -523,7 +523,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_produto.html">Produto</a> Farmacia::getProduto </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">unsigned long&#160;</td>
           <td class="paramname"><em>codigo</em></td><td>)</td>
           <td></td>
         </tr>
@@ -582,8 +582,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="af55738e0e8573f5077fcfdea31153c8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af55738e0e8573f5077fcfdea31153c8c">&#9670;&nbsp;</a></span>getVenda()</h2>
+<a id="a49ed0bb976c623ed70ce57f17f53b6c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ed0bb976c623ed70ce57f17f53b6c2">&#9670;&nbsp;</a></span>getVenda()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -591,7 +591,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_venda.html">Venda</a> * Farmacia::getVenda </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">unsigned long&#160;</td>
           <td class="paramname"><em>codigo</em></td><td>)</td>
           <td> const</td>
         </tr>

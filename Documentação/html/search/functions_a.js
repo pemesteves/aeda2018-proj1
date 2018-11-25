@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pessoa',['Pessoa',['../class_pessoa.html#a4e7c625765eea601393010fb6e680e60',1,'Pessoa']]],
-  ['produto',['Produto',['../class_produto.html#a433c57a99a9cc52f4b2b6fd245eaf600',1,'Produto::Produto(double cod, std::string nome, float preco, std::string descricao)'],['../class_produto.html#a72abf513eb445822e26f1b4dcd005b09',1,'Produto::Produto(double cod, std::string nome, float preco, std::string desc, bool passivelReceita, float desconto, bool semRec)']]],
+  ['pessoa',['Pessoa',['../class_pessoa.html#a14847c3eec62a925257ae5e234e5d412',1,'Pessoa']]],
+  ['produto',['Produto',['../class_produto.html#a1986a85a15700c47589f5f059e4f14ba',1,'Produto::Produto(unsigned long cod, std::string nome, float preco, std::string descricao)'],['../class_produto.html#a2508e4c0d44a2fc86e1d94ded4a1959a',1,'Produto::Produto(unsigned long cod, std::string nome, float preco, std::string desc, bool passivelReceita, float desconto, bool semRec)']]],
   ['produtoinexistente',['ProdutoInexistente',['../class_produto_inexistente.html#a361f3bffe3291cfe92d4bfe809eb8bb5',1,'ProdutoInexistente']]]
 ];

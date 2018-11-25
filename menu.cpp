@@ -612,7 +612,7 @@ int main(){
 						goto menu_farmacia;
 					}
 					v1->setCliente(v.at(existe_cliente));
-					cout << endl << "Tem receita? ";
+					cout << endl << "Tem receita?(S/N) ";
 					char op;
 					cin >> op;
 					if (toupper(op)=='S'){
@@ -692,12 +692,12 @@ int main(){
 					bool venda_sucesso = (*frm)->addVenda(v1);
 					if (venda_sucesso){
 						cout << endl << "Venda realizada com sucesso. Fatura: " << endl;
-						(*frm)->addVenda(v1);
+						(*frm)->imprimeFatura(v1);
 					}
 					else{
 						cout << endl << "Nao foi possivel realizar a venda. Nao existe stock suficiente." << endl;
 					}
-
+					break;
 				}
 				case 10: {
 					cout << "Como pretende ordenar as vendas? " << endl;
@@ -764,7 +764,7 @@ int main(){
 			}
 
 			do {
-				
+
 				menuFuncionario();
 				cin >> option;
 				switch (option) {
@@ -829,9 +829,8 @@ int main(){
 
 			} while (true);
 
-
-		}
 			break;
+		}
 		case 16: {
 			cout << endl << "Nome do Cliente: ";
 			cin.clear();
