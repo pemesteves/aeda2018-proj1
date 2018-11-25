@@ -2,7 +2,7 @@
 
 using namespace std;
 
-double Produto::getCodigo() const {
+unsigned long Produto::getCodigo() const {
 	return codigo;
 }
 
@@ -26,7 +26,7 @@ string Produto::getDescricao() const {
 	return descricao;
 }
 
-Produto::Produto(double cod, string nome, float preco, string descricao) {
+Produto::Produto(unsigned long cod, string nome, float preco, string descricao) {
 	this->codigo = cod;
 	this->nome = nome;
 	this->preco = preco;
@@ -36,7 +36,7 @@ Produto::Produto(double cod, string nome, float preco, string descricao) {
 	passivelReceita = false;
 }
 
-Produto::Produto(double cod, std::string nome, float preco, std::string desc, bool passivelReceita = false, float desconto = 0, bool semRec = false){
+Produto::Produto(unsigned long cod, std::string nome, float preco, std::string desc, bool passivelReceita = false, float desconto = 0, bool semRec = false){
 	this->codigo = cod;
 		this->nome = nome;
 		this->preco = preco;

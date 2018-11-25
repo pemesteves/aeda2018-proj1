@@ -295,7 +295,7 @@ std::ostream& operator<<(std::ostream &output, const Farmacia &f){
 	return output;
 }
 
-Produto Farmacia::getProduto(double codigo){
+Produto Farmacia::getProduto(unsigned long codigo){
 	map<Produto, int>::iterator it = produtosVender.begin();
 	for(; it != produtosVender.end(); it++){
 		if((*it).first.getCodigo() == codigo)
@@ -305,7 +305,7 @@ Produto Farmacia::getProduto(double codigo){
 	return p;
 }
 
-Venda* Farmacia::getVenda(double codigo) const{
+Venda* Farmacia::getVenda(unsigned long codigo) const{
 	for(vector<Venda*>::const_iterator it = vendas.begin(); it != vendas.end(); it++){
 		if((*it)->getCodigo() == codigo)
 			return (*it);

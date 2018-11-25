@@ -130,15 +130,15 @@ void CadeiaFarmacias::sortFuncionarios(enum tipoSort tipo, bool crescente){
 std::ostream& operator<<(std::ostream &output, const CadeiaFarmacias &cF){
 	output << cF.farmacias.size() << endl;
 	for(size_t i = 0; i < cF.farmacias.size(); i++){
-		output << cF.farmacias[i] << endl;
+		output << (*cF.farmacias[i]) << endl;
 	}
 	output << cF.clientes.size() << endl;
 	for(size_t i = 0; i < cF.clientes.size(); i++){
-		output << cF.clientes[i] << endl;
+		output << (*cF.clientes[i]) << endl;
 	}
 	output << cF.funcionarios.size() << endl;
 	for(size_t i = 0; i < cF.funcionarios.size(); i++){
-		output << cF.funcionarios[i] << endl;
+		output << (*cF.funcionarios[i]) << endl;
 	}
 	return output;
 }
@@ -147,13 +147,13 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 	string line;
 	getline(f, line);
 	size_t numVars = stoi(line);
-	vector<double> gerentes;
-	vector<double> diretoresTecnicos;
-	vector<double> clientesReceitas;
-	vector<double> clientes;
+	vector<unsigned long> gerentes;
+	vector<unsigned long> diretoresTecnicos;
+	vector<unsigned long> clientesReceitas;
+	vector<unsigned long> clientes;
 
 	string nome, morada;
-	double contribuinte;
+	unsigned long contribuinte;
 	while(numVars > 0){
 		getline(f, nome);
 		getline(f, morada);
@@ -164,7 +164,7 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 			farm->setGerente(NULL);
 		}
 		else{
-			contribuinte = stod(nome);
+			contribuinte = stoul(nome);
 			gerentes.push_back(contribuinte);
 		}
 
@@ -174,14 +174,14 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 			farm->setDiretorTecnico(NULL);
 		}
 		else{
-			contribuinte = stod(nome);
+			contribuinte = stoul(nome);
 			diretoresTecnicos.push_back(contribuinte);
 		}
 
 		getline(f, line);
 		size_t numProd = stoi(line);
 
-		double codigo;
+		unsigned long codigo;
 		float desconto, preco;
 		bool pasReceita, vendaSemReceita;
 		int quantidade;
@@ -189,7 +189,7 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 			getline(f, line);
 			quantidade = stoi(line); //quantidade do produto: segundo campo do map
 			getline(f, line);
-			codigo = stod(line);
+			codigo = stoul(line);
 			getline(f, nome);
 			getline(f, line);
 			preco = stof(line);
@@ -211,7 +211,7 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 		int dia, mes, ano, hora, minutos, segundos;
 		while(numProd > 0){
 			getline(f, line); //line tera: codigo data hora
-			codigo = stod(line.substr(0, line.find(" ")));
+			codigo = stoul(line.substr(0, line.find(" ")));
 			line = line.substr(line.find(" ") + 1); //line tera: hora data
 			dia = stoi(line.substr(0, line.find("/")));
 			line = line.substr(line.find("/") + 1); //line tera: mes/ano hora:minutos:segundos
@@ -226,7 +226,7 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 			segundos = stoi(line);
 
 			getline(f, line);
-			clientes.push_back(stod(line));
+			clientes.push_back(stoul(line));
 			Venda *v = new Venda(dia, mes, ano, hora, minutos, segundos, codigo);
 
 			getline(f, line);
@@ -235,19 +235,19 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 				clientesReceitas.push_back(0);
 			}
 			else{
-				double numeroRec = stod(line);
+				unsigned long numeroRec = stoul(line);
 				getline(f, morada); //morada tera o nome do medico
 				getline(f, line);
-				clientesReceitas.push_back(stod(line));
+				clientesReceitas.push_back(stoul(line));
 				Receita *r = new Receita(numeroRec, morada, NULL); //default para Cliente* é NULL-> sera alterado depois
 				getline(f, line);
 				size_t numProdutos = stoi(line);
 				Produto *produto = NULL;
 				while(numProdutos > 0){
 					getline(f, line);
-					codigo = stod(line); //codigo tera o codigo do Produto
+					codigo = stoul(line); //codigo tera o codigo do Produto
 					getline(f, line);
-					numeroRec = stod(line); //numeroRec tera a quantidade do Produto
+					numeroRec = stoul(line); //numeroRec tera a quantidade do Produto
 					*produto = farm->getProduto(codigo);
 					r->addProduto(produto, numeroRec);
 					numProdutos--;
@@ -262,7 +262,7 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 
 			while(num > 0){
 				getline(f, line);
-				codigo = stod(line.substr(0, line.find(" ")));
+				codigo = stoul(line.substr(0, line.find(" ")));
 				line = line.substr(line.find(" ") + 1);
 				preco = stof(line.substr(0, line.find(" "))); //preco guarda a quantidade do produto
 				line = line.substr(line.find(" ") + 1);
@@ -286,7 +286,7 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 	while(numVars > 0){ //Importar Clientes
 		getline(f, nome);
 		getline(f, line);
-		contribuinte = stod(line);
+		contribuinte = stoul(line);
 		getline(f, morada);
 		Cliente *c = new Cliente(nome, morada, contribuinte);
 		size_t numCompras = 0;
@@ -294,7 +294,7 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 		numCompras = stoi(line);
 		while(numCompras > 0){
 			getline(f, line);
-			contribuinte = stod(line); //contribuinte terá o código da Venda
+			contribuinte = stoul(line); //contribuinte terá o código da Venda
 			Venda *v = NULL;
 			for(vector<Farmacia *>::iterator it = cF.farmacias.begin(); it != cF.farmacias.end(); it++){
 				v = (*it)->getVenda(contribuinte);
@@ -316,15 +316,16 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 	while(numVars > 0){ //Importar Funcionários
 		getline(f, nome);
 		getline(f, line);
-		contribuinte = stod(line);
+		contribuinte = stoul(line);
 		getline(f, morada);
 		Funcionario *func = new Funcionario(nome, morada, contribuinte);
 		getline(f, line);
 		nome = line.substr(0, line.find("-")); //nome conterá o cargo do Funcionário
 		func->setCargo(nome);
 		line = line.substr(line.find("-") + 1);
-		contribuinte = stod(line); //contribuinte conterá o salário do Funcionário
-		func->changeSalario(contribuinte);
+		double salario;
+		salario = stod(line); //contribuinte conterá o salário do Funcionário
+		func->changeSalario(salario);
 		getline(f, nome); //nome conterá o nome da Farmácia onde trabalha o Funcionário
 		Farmacia *farm = NULL;
 		for(vector<Farmacia*>::iterator it = cF.farmacias.begin(); it != cF.farmacias.end(); it++){

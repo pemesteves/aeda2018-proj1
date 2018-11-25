@@ -25,8 +25,8 @@
  */
 class Venda {
 private:
-	double codigo; //Codigo da venda
-	static double codigo_sequencial; //Variavel usada para que os codigos das vendas sejam sequenciais (primeira venda tem codigo 0)
+	unsigned long codigo; //Codigo da venda
+	static unsigned long codigo_sequencial; //Variavel usada para que os codigos das vendas sejam sequenciais (primeira venda tem codigo 0)
 	std::map<Produto, std::vector<float>> produtosVendidos; //Map cujas keys sao objetos do tipo Produto e o valor e um vetor com quantidade, iva e comparticipacao
 	Data data; //Data na qual foi realizada a venda
 	Hora hora; //Hora a qual foi realizada a venda
@@ -50,7 +50,7 @@ public:
 	 * Construtor da classe Venda
 	 * @param dia, mes, ano, horas, min, segundos, codigo Dados correspondentes a data, hora e codigo da venda
 	 */
-	Venda(unsigned short dia, unsigned short mes, int ano, unsigned short horas, unsigned short min, unsigned short segundos, double codigo);
+	Venda(unsigned short dia, unsigned short mes, int ano, unsigned short horas, unsigned short min, unsigned short segundos, unsigned long codigo);
 	/**
 	 * Metodo que permite obter o valor total da venda
 	 * @return totalVenda (atributo da classe)
@@ -104,7 +104,7 @@ public:
 	 * Metodo que permite obter o codigo da venda
 	 * @return codigo da venda
 	 */
-	double getCodigo() const;
+	unsigned long getCodigo() const;
 	/**
 	 * Metodo que permite obter o preco de um produto
 	 * @param nomeProd Nome do produto que ira ser procurado

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-double Venda::codigo_sequencial = 0;
+unsigned long Venda::codigo_sequencial = 0;
 
 Venda::Venda(){
 	Data d; data = d;
@@ -30,7 +30,7 @@ Venda::Venda(Receita* receitaVenda, Cliente* clienteVenda){
 	codigo_sequencial++;
 }
 
-Venda::Venda(unsigned short dia, unsigned short mes, int ano, unsigned short horas, unsigned short minutos, unsigned short segundos, double codigo){
+Venda::Venda(unsigned short dia, unsigned short mes, int ano, unsigned short horas, unsigned short minutos, unsigned short segundos, unsigned long codigo){
 	Data d(dia,mes,ano);
 	data = d;
 	Hora h(horas,minutos,segundos);
@@ -80,7 +80,7 @@ Hora Venda::getHora() const{
 	return hora;
 }
 
-double Venda::getCodigo() const{
+unsigned long Venda::getCodigo() const{
 	return codigo;
 }
 

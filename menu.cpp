@@ -100,20 +100,17 @@ int main(){
 		cin.clear();
 		cin.ignore(10000, '\n');
 		getline(cin, nome);
-		ficheiro.open(nome + ".txt");
-
+		string nome_fich = nome + ".txt";
+		ficheiro.open(nome_fich);
 		while (!ficheiro.is_open())
 		{
 			cerr << "Ficheiro " << nome << ".txt nao encontrado!" << endl;
 			cout << "Quer tentar outra vez ou sair? (S = sair)" << endl;
-			char sair;
-			cin >> sair;
-			if(toupper(sair) == 'S'){
-				goto sairDoPrograma;
-			}
 			cin.clear();
 			cin.ignore(10000, '\n');
 			getline(cin, nome);
+			if (toupperstring(nome) == "S")
+				goto sairDoPrograma;
 			ficheiro.open(nome + ".txt");
 		}
 		cadeia.setNome(nome);
@@ -214,7 +211,8 @@ int main(){
 			string morada;
 			cout << "Morada do Cliente: ";
 			getline(cin, morada);
-			double contribuinte;
+			cout << "Contribuinte do Cliente: ";
+			unsigned long contribuinte;
 			cin >> contribuinte;
 			Cliente *c = new Cliente(nome, morada, contribuinte);
 			cadeia.addCliente(c);
@@ -274,9 +272,9 @@ int main(){
 			break;
 		}
 		case 8:{
-			vector<Cliente *>::iterator it = cadeia.getClientes().begin();
-			for(; it != cadeia.getClientes().end(); it++){
-				(*it)->showInfo();
+			vector<Cliente *>clientes1 = cadeia.getClientes();
+			for(unsigned int i = 0; i < clientes1.size(); i++){
+				(clientes1.at(i))->showInfo();
 				cout << endl;
 			}
 			break;
@@ -289,7 +287,8 @@ int main(){
 			string morada;
 			cout << "Morada do Funcionario: ";
 			getline(cin, morada);
-			double contribuinte;
+			cout << "Numero de contribuinte do Funcionario: ";
+			unsigned long contribuinte;
 			cin >> contribuinte;
 			Funcionario *f = new Funcionario(nome, morada, contribuinte);
 			cadeia.addFuncionario(f);
@@ -350,9 +349,9 @@ int main(){
 			break;
 		}
 		case 12:{
-			vector<Funcionario *>::iterator it = cadeia.getFuncionarios().begin();
-			for(; it != cadeia.getFuncionarios().end(); it++){
-				(*it)->showInfo();
+			vector<Funcionario *> v = cadeia.getFuncionarios();
+			for(size_t i = 0; i < cadeia.getFuncionarios().size(); i++){
+				v.at(i)->showInfo();
 				cout << endl;
 			}
 			break;
@@ -398,10 +397,9 @@ int main(){
 					cin.clear();
 					cin.ignore(10000, '\n');
 					getline(cin, num);
-					vector<Funcionario*> func = cadeia.getFuncionarios();
 					vector<Funcionario*>::iterator f;
-					for (f = func.begin(); f != func.end(); f++) {
-						if ((*f)->getNoContribuinte() == stod(num)) {
+					for (f = cadeia.getFuncionarios().begin(); f != cadeia.getFuncionarios().end(); f++) {
+						if ((*f)->getNoContribuinte() == stoul(num)) {
 							if ((*f)->getFarmacia()->getNome() == frm_nome) {
 								(*frm)->setGerente(*f);
 								string func_nome = (*f)->getNome();
@@ -415,7 +413,7 @@ int main(){
 							break;
 						}
 					}
-					if (f == func.end()) {
+					if (f == cadeia.getFuncionarios().end()) {
 						cout << "Funcionario nao encontrado" << endl;
 					}
 					break;
@@ -430,7 +428,7 @@ int main(){
 					vector<Funcionario*> func = cadeia.getFuncionarios();
 					vector<Funcionario*>::iterator f;
 					for (f = func.begin(); f != func.end(); f++) {
-						if ((*f)->getNoContribuinte() == stod(num)) {
+						if ((*f)->getNoContribuinte() == stoul(num)) {
 							if ((*f)->getFarmacia()->getNome() == frm_nome) {
 								(*frm)->setDiretorTecnico(*f);
 								string func_nome = (*f)->getNome();
@@ -466,7 +464,7 @@ int main(){
 					nome = toupperstring(nome);
 					bool existe = (*frm)->existeProduto(nome);
 					if (!existe) {
-						double cod;
+						unsigned long cod;
 						float preco;
 						string desc;
 						char pass;
@@ -597,7 +595,7 @@ int main(){
 				}
 				case 9:{
 					Venda *v1 = new Venda();
-					double no_con;
+					unsigned long no_con;
 					cout << "VENDA" << v1->getCodigo() << endl;
 					cout << "Numero de contribuinte do cliente: ";
 					cin >> no_con;
@@ -620,10 +618,10 @@ int main(){
 					if (toupper(op)=='S'){
 						cout << endl << "ADICIONAR RECEITA";
 						cout << endl << "Numero da receita: ";
-						double numero_r;
+						unsigned long numero_r;
 						cin >> numero_r;
 						cout << "Numero de contribuinte do utente: ";
-						double numero_c;
+						unsigned long numero_c;
 						cin >> numero_c;
 						existe_cliente = -1;
 						for(unsigned int i =0; i<v.size(); i++){
@@ -644,7 +642,7 @@ int main(){
 						Receita *r1 = new Receita(numero_r, nome_medico, v.at(existe_cliente));
 						Produto *p1;
 						string nome_prod = "";
-						double quant;
+						unsigned long quant;
 						cout << "Adicionar medicamentos a receita (para parar escreva SAIR no nome do produto):" << endl;
 						while(true){
 							cout << "Nome do Produto: ";
@@ -884,10 +882,26 @@ int main(){
 				}
 				}
 			} while (true);
+			break;
 		}
-		case 17:
+		case 17:{
+			string op;
+			cout << endl << "Deseja guardar as alteracoes? (S / N)";
+			cin.clear();
+			cin.ignore(10000, '\n');
+			getline(cin, op);
+			if (toupperstring(op)=="S"){
+				string nome_fich = cadeia.getNome();
+				nome_fich += ".txt";
+				ofstream exportfile;
+				exportfile.open(nome_fich);
+				cout << endl << "A guardar alteraçoes..." << endl;
+				exportfile << cadeia;
+				cout << "Cadeia guardada com sucesso" << endl;
+			}
 			goto sairDoPrograma;
 			break;
+		}
 		}
 	}while(true);
 

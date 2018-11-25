@@ -24,9 +24,9 @@ class Cliente;
  */
 class Receita {
 private:
-	double numero; //Numero da Receita
+	unsigned long numero; //Numero da Receita
 	std::string medico; //Nome do medico que prescreveu a Receita
-	std::map<Produto, double>  produtos; //Map com os Produtos contidos na receita e respetiva quantidade
+	std::map<Produto, unsigned long>  produtos; //Map com os Produtos contidos na receita e respetiva quantidade
 	Cliente* cliente; //Apontador para o Cliente ao qual a receita foi prescrita
 
 public:
@@ -36,17 +36,17 @@ public:
 	 * @param medico Nome do medico que receitou
 	 * @param cliente Apontador para objeto da classe Cliente ao qual a Receita foi prescrita
 	 */
-	Receita(double numero, std::string medico, Cliente* cliente);
+	Receita(unsigned long numero, std::string medico, Cliente* cliente);
 	/**
 	 * Metodo para obter o numero da Receita
 	 * @return Numero da Receita
 	 */
-	double getNumero() const;
+	unsigned long getNumero() const;
 	/*
 	 * Metodo para alterar o numero da receita
 	 * @param n Novo numero da receita
 	 */
-	void setNumero(double n);
+	void setNumero(unsigned long n);
 	/**
 	 * Metodo para obter o Cliente ao qual a Receita foi prescrita
 	 * @return Apontador para objeto da classe Cliente
@@ -83,7 +83,7 @@ public:
 	 * @param produto Apontador para objeto da classe Produto
 	 * @param quant Quantidade do Produto
 	 */
-	void addProduto(Produto* produto, double quant);
+	void addProduto(Produto* produto, unsigned long quant);
 	/**
 	 * Metodo para remover um produto do map
 	 * @param nome Nome do produto a remover

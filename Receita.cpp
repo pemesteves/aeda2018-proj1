@@ -1,11 +1,11 @@
 #include "Receita.h"
 using namespace std;
 
-double Receita::getNumero() const {
+unsigned long Receita::getNumero() const {
 	return numero;
 }
 
-void Receita::setNumero(double n) {
+void Receita::setNumero(unsigned long n) {
 	this->numero = n;
 }
 
@@ -27,7 +27,7 @@ void Receita::setMedico(string m){
 
 vector<Produto> Receita::getProdutos() const {
 	vector<Produto> p;
-	map<Produto, double>::const_iterator it;
+	map<Produto, unsigned long>::const_iterator it;
 	for (it = produtos.begin(); it != produtos.end(); it++) {
 		p.push_back(it->first);
 	}
@@ -35,7 +35,7 @@ vector<Produto> Receita::getProdutos() const {
 }
 
 double Receita::getPrecoMax(string nomeProd) const {
-	map<Produto, double>::const_iterator it;
+	map<Produto, unsigned long>::const_iterator it;
 	for (it = produtos.begin(); it != produtos.end(); it++) {
 		if (it->first.getNome() == nomeProd) //Compara o nome de cada produto com o nome recebido como argumento
 			return it->second;
@@ -43,14 +43,14 @@ double Receita::getPrecoMax(string nomeProd) const {
 	throw ProdutoInexistente(nomeProd);
 }
 
-Receita::Receita(double numero, string medico, Cliente* cliente) {
+Receita::Receita(unsigned long numero, string medico, Cliente* cliente) {
 	this->numero = numero;
 	this->medico = medico;
 	this->cliente = cliente;
 }
 
-void Receita::addProduto(Produto* produto, double quant) {
-	map<Produto, double>::iterator it;
+void Receita::addProduto(Produto* produto, unsigned long quant) {
+	map<Produto, unsigned long>::iterator it;
 	if ((it = produtos.find(*produto)) != produtos.end())
 		(*it).second += quant;
 	else {
@@ -60,7 +60,7 @@ void Receita::addProduto(Produto* produto, double quant) {
 }
 
 bool Receita::existeProdReceita(string nome) const{
-	map<Produto, double>::const_iterator it;
+	map<Produto, unsigned long>::const_iterator it;
 	for(; it != produtos.end(); it++){
 		if ((*it).first.getNome() == nome){
 			return true;
@@ -70,7 +70,7 @@ bool Receita::existeProdReceita(string nome) const{
 }
 
 Produto Receita::removeProduto(string nome){
-	map<Produto, double>::iterator it = produtos.begin();
+	map<Produto, unsigned long>::iterator it = produtos.begin();
 	for(; it != produtos.end(); it++){
 		if ((*it).first.getNome() == nome){
 			produtos.erase(it);
@@ -87,7 +87,7 @@ void Receita::imprimeReceita() const{
 	cout << cliente->getNome() << "  " << cliente->getNoContribuinte() << endl;
 	cout << "Prescrita por Dr./Dra. " << medico << endl;
 	cout << "Produtos:" << endl;
-	map<Produto, double>::const_iterator it = produtos.begin();
+	map<Produto, unsigned long>::const_iterator it = produtos.begin();
 		for(; it != produtos.end(); it++){
 			cout << it->first.getCodigo();
 			cout << "  ";
@@ -103,7 +103,7 @@ void Receita::imprimeReceita() const{
 ostream& operator<<(ostream &output, const Receita &r){
 	output << r.numero << endl;
 	output << r.medico << endl;
-	map<Produto, double>::const_iterator it;
+	map<Produto, unsigned long>::const_iterator it;
 	output << r.cliente->getNoContribuinte() << endl;
 	output << r.produtos.size() << endl;
 	for(it = r.produtos.begin(); it != r.produtos.end(); it++){

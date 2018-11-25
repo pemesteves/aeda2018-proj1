@@ -22,7 +22,7 @@ class Pessoa {
 protected:
 	std::string nome; //Nome da Pessoa
 	std::string morada; //Morada da Pessoa
-	double noContribuinte; //Numero de Contribuinte da Pessoa
+	unsigned long noContribuinte; //Numero de Contribuinte da Pessoa
 public:
 	/**
 	 * Construtor da classe Pessoa
@@ -30,7 +30,7 @@ public:
 	 * @param morada Morada da Pessoa
 	 * @param cont Numero de contribuinte da Pessoa
 	 */
-	Pessoa(std::string nome, std::string morada, double cont);
+	Pessoa(std::string nome, std::string morada, unsigned long cont);
 	/**
 	 * Destrutor da classe Pessoa
 	 */
@@ -49,7 +49,7 @@ public:
 	 * Metodo que permite obter o numero de contribuinte da pessoa
 	 * @return Número de contribuinte
 	 */
-	double getNoContribuinte() const;
+	unsigned long getNoContribuinte() const;
 	/**
 	 * Metodo que permite alterar o nome da pessoa
 	 * @param nome Novo nome da Pessoa
@@ -64,7 +64,7 @@ public:
 	 * Metodo que permite alterar o numero de contribuinte da pessoa
 	 * @param no Novo numero de contribuinte da Pessoa
 	 */
-	void setNoContribuinte(double no);
+	void setNoContribuinte(unsigned long no);
 	/**
 	 * Metodo puramente virtual que, nas classes derivadas, imprime no ecra os atributos da classe
 	 */
@@ -94,7 +94,7 @@ public:
 	 * @param cont Numero de Contribuinte do Funcionario/Pessoa
 	 * @param sal Salario do Funcionario: caso nao seja atribuido, sera 500
 	 */
-	Funcionario(std::string nome, std::string morada, double cont, double sal = 500);
+	Funcionario(std::string nome, std::string morada, unsigned long cont, double sal = 500);
 	/**
 	 * Destrutor da classe Funcionario
 	 */
@@ -169,7 +169,7 @@ public:
 	 * @param morada Morada do Cliente/Pessoa
 	 * @param contribuinte Numero de Contribuinte do Cliente/Pessoa
 	 */
-	Cliente(std::string nome, std::string morada, double contribuinte);
+	Cliente(std::string nome, std::string morada, unsigned long contribuinte);
 	/**
 	 * Destrutor da classe Cliente
 	 */

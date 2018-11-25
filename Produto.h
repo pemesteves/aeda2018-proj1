@@ -15,7 +15,7 @@
  */
 class Produto {
 protected:
-	double codigo; //Codigo do Produto
+	unsigned long codigo; //Codigo do Produto
 	std::string nome; //Nome do Produto
 	float preco; //Preco do Produto
 	std::string descricao; //Descricao do Produto
@@ -31,7 +31,7 @@ public:
 	 * @param preco Preco do Produto
 	 * @param descricao Descricao do Produto
 	 */
-	Produto(double cod, std::string nome, float preco, std::string descricao);
+	Produto(unsigned long cod, std::string nome, float preco, std::string descricao);
 	/**
 	 * Construtor da classe Produto
 	 * @param cod Codigo do Produto
@@ -42,7 +42,7 @@ public:
 	 * @param desconto Taxa de Desconto
 	 * @param semRec Booleano que indica se o produto pode ser vendido sem receita
 	 */
-	Produto(double cod, std::string nome, float preco, std::string desc, bool passivelReceita, float desconto, bool semRec);
+	Produto(unsigned long cod, std::string nome, float preco, std::string desc, bool passivelReceita, float desconto, bool semRec);
 	/**
 	 * Metodo para alterar a taxa de desconto de um produto com receita
 	 * @param taxaDesconto Taxa de desconto a alterar
@@ -62,7 +62,7 @@ public:
 	 * Metodo para obter o codigo do Produto
 	 * @return Código do Produto
 	 */
-	double getCodigo() const;
+	unsigned long getCodigo() const;
 	/**
 	 * Metodo para obter o nome do Produto
 	 * @return Nome do Produto

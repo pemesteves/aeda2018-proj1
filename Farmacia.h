@@ -67,7 +67,7 @@ public:
 	 * @param codigo Codigo da Venda a procurar
 	 * @return Apontador para objeto da classe Venda com o codigo especificado
 	 */
-	Venda* getVenda(double codigo) const;
+	Venda* getVenda(unsigned long codigo) const;
 	/**
 	 * Metodo que permite obter os produtos disponiveis para venda mais a sua quantidade
 	 * @return Atributo da classe -> produtosVender
@@ -78,7 +78,7 @@ public:
 	 * @param codigo Codigo do Produto a procurar
 	 * @return Produto que contem o codigo especificado no argumento
 	 */
-	Produto getProduto(double codigo);
+	Produto getProduto(unsigned long codigo);
 	/**
 	 * Metodo que permite obter o numero de produtos disponiveis para venda
 	 * @return Tamanho do map produtosVender

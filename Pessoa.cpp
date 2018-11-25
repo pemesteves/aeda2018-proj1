@@ -6,7 +6,7 @@
 using namespace std;
 
 //Pessoa
-Pessoa::Pessoa(string nome, string morada, double cont) {
+Pessoa::Pessoa(string nome, string morada, unsigned long cont) {
 	this->nome = nome;
 	this->morada = morada;
 	this->noContribuinte = cont;
@@ -20,7 +20,7 @@ string Pessoa::getMorada() const {
 	return morada;
 }
 
-double Pessoa::getNoContribuinte() const {
+unsigned long Pessoa::getNoContribuinte() const {
 	return noContribuinte;
 }
 
@@ -32,7 +32,7 @@ void Pessoa::setMorada(string morada){
 	this->morada = morada;
 }
 
-void Pessoa::setNoContribuinte(double no){
+void Pessoa::setNoContribuinte(unsigned long no){
 	noContribuinte = no;
 }
 
@@ -44,7 +44,7 @@ std::ostream& operator<<(std::ostream &output, const Pessoa &p){
 }
 
 //Funcionario
-Funcionario::Funcionario(string nome, string morada, double cont, double sal): Pessoa(nome, morada, cont){
+Funcionario::Funcionario(string nome, string morada, unsigned long cont, double sal): Pessoa(nome, morada, cont){
 	this->salario = sal;
 	this->cargo = "Funcionario";
 	this->farmaciaTrabalho = NULL;
@@ -101,10 +101,10 @@ void Funcionario::setCargo(string cargo){
 }
 
 void Funcionario::showInfo() const{
-	cout << "Funcionario" << endl << setw(10);
+	cout << "Funcionario" << endl;
 	cout << "Nome: " << nome << endl;
 	cout << "Morada: " << morada << endl;
-	cout << "Contribuinte: " << to_string(noContribuinte).substr(0, to_string(noContribuinte).find('.')) << endl;
+	cout << "Contribuinte: " << noContribuinte << endl;
 	cout << "Salario: " << salario << endl;
 	if (farmaciaTrabalho != NULL)
 		cout << cargo << " na farmacia " << farmaciaTrabalho->getNome() << endl;
@@ -121,14 +121,19 @@ bool Funcionario::operator< (const Funcionario &f1) const{
 }
 
 std::ostream& operator<<(std::ostream &output, const Funcionario &f){
-	output << static_cast<const Pessoa&>(f);
+	output << f.nome << endl;
+	output << f.noContribuinte << endl;
+	output << f.morada << endl;
 	output << f.cargo  << "-" << f.salario << endl;
-	output << f.farmaciaTrabalho->getNome();
+	if (f.farmaciaTrabalho == NULL )
+		output << "NULL";
+	else
+		output << f.farmaciaTrabalho->getNome();
 	return output;
 }
 
 //Cliente
-Cliente::Cliente(string nome, string morada, double contribuinte): Pessoa(nome, morada, contribuinte) {
+Cliente::Cliente(string nome, string morada, unsigned long contribuinte): Pessoa(nome, morada, contribuinte) {
 	historialCompras.clear();
 }
 
@@ -145,7 +150,7 @@ void Cliente::addCompra(Venda* compra) {
 }
 
 void Cliente::showInfo() const {
-	cout << "Cliente" << endl << setw(10);
+	cout << "Cliente" << endl;
 	cout << "Nome: " << nome << endl;
 	cout << "Morada: " << morada << endl;
 	cout << "Contribuinte: " << noContribuinte << endl;
@@ -214,7 +219,9 @@ bool Cliente::menorQue(const Cliente &c1, enum tipoSort tipo, bool crescente) co
 }
 
 std::ostream& operator<<(std::ostream &output, const Cliente &c){
-	output << static_cast<const Pessoa&>(c);
+	output << c.nome << endl;
+	output << c.noContribuinte << endl;
+	output << c.morada << endl;
 	output << c.historialCompras.size() << endl;
 	for (size_t i = 0; i < c.historialCompras.size(); i++){
 		output << c.historialCompras[i]->getCodigo() << endl;
