@@ -110,7 +110,7 @@ bool Venda::addProduto(Produto* prod, float quant, float iva){
 		vector<float> v = { quant, iva };
 		if (temReceita) {
 			if (prod->getPassivelReceita()) {
-				if (receitaVenda->existeProdReceita(prod))
+				if (receitaVenda->existeProdReceita(prod->getNome()))
 					comparticipacao = prod->getTaxaDesconto();
 				else if (!prod->getVendaSemReceita())
 					return false;

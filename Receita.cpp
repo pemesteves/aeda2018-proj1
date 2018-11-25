@@ -59,13 +59,14 @@ void Receita::addProduto(Produto* produto, double quant) {
 	}
 }
 
-bool Receita::existeProdReceita(Produto* prod) const{
+bool Receita::existeProdReceita(string nome) const{
 	map<Produto, double>::const_iterator it;
-	it = produtos.find(*prod);
-	if (it!=produtos.end())
-		return true;
-	else
-		return false;
+	for(; it != produtos.end(); it++){
+		if ((*it).first.getNome() == nome){
+			return true;
+		}
+	}
+	return false;
 }
 
 Produto Receita::removeProduto(string nome){

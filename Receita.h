@@ -95,7 +95,7 @@ public:
 	 * @param prod Apontador para o produto que se pretende saber se existe
 	 * @return True se produto existir, caso contrario retorna false
 	 */
-	bool existeProdReceita(Produto* prod) const;
+	bool existeProdReceita(std::string nome) const;
 	/*
 	 * Metodo que imprime receita no ecra
 	 */

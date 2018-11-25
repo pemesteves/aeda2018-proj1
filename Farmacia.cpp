@@ -166,7 +166,7 @@ bool Farmacia::addVenda(Venda* venda) {
 bool Farmacia::existeProduto(string nomeProduto) const {
 	map<Produto, int>::const_iterator it = produtosVender.begin();
 	for (; it != produtosVender.end(); it++) {
-		if (it->first.getNome() == nomeProduto)
+		if (it->first.getNome() == toupperstring(nomeProduto))
 			return true;
 	}
 	return false;
@@ -175,7 +175,7 @@ bool Farmacia::existeProduto(string nomeProduto) const {
 bool Farmacia::existeProdutoQuant(string nomeProduto, int quant) const{
 	map<Produto, int>::const_iterator it = produtosVender.begin();
 		for (; it != produtosVender.end(); it++) {
-			if (it->first.getNome() == nomeProduto){
+			if (it->first.getNome() == toupperstring(nomeProduto)){
 				if (it->second>=quant)
 					return true;
 				else return false;
@@ -233,8 +233,10 @@ void Farmacia::imprimeFatura(Venda* v) const{
 void Farmacia::imprimeDados() const {
 	cout << "Nome da farmacia: " << nome << endl;
 	cout << "Morada: " << morada << endl;
-	cout << "Gerente: " << gerente->getNome() << "  " << gerente->getNoContribuinte() << endl;
-	cout << "Diretor Tecnico: " << diretorTecnico->getNome() << "  " << diretorTecnico->getNoContribuinte() << endl;
+	if (gerente != NULL)
+		cout << "Gerente: " << gerente->getNome() << "  " << gerente->getNoContribuinte() << endl;
+	if (diretorTecnico != NULL)
+		cout << "Diretor Tecnico: " << diretorTecnico->getNome() << "  " << diretorTecnico->getNoContribuinte() << endl;
 }
 
 bool Farmacia::menorQue(const Farmacia &f1, enum tipoSort tipo, bool crescente) const{

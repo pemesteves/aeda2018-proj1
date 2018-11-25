@@ -1,11 +1,3 @@
-/*
- * menu.cpp
- *
- *  Created on: 24/11/2018
- *      Author: Pedro
- */
-
-
 #include "CadeiaFarmacias.h"
 #include "Data.h"
 #include "Farmacia.h"
@@ -30,6 +22,8 @@ void menuCriarCadeia(){
 }
 
 void menuGerirCadeia(){
+	cout << endl << endl;
+	cout << "GERIR CADEIA DE FARMACIAS" << endl;
 	cout << "1. Adicionar Farmacia." << endl;
 	cout << "2. Ordenar farmacias." << endl;
 	cout << "3. Remover Farmacia." << endl;
@@ -50,11 +44,13 @@ void menuGerirCadeia(){
 }
 
 void menuFarmacia(){
+	cout << endl << endl;
+	cout << "GERIR FARMACIA" << endl;
 	cout << "1. Ver dados da Farmacia." << endl;
 	cout << "2. Mudar gerente." << endl;
 	cout << "3. Mudar diretor tecnico." << endl;
 	cout << "4. Consultar stock." << endl;
-	cout << "5. Adicionar Produto." << endl;
+	cout << "5. Adicionar ou alterar quantidade de Produto." << endl;
 	cout << "6. Remover Produto." << endl;
 	cout << "7. Ver historial de vendas." << endl;
 	cout << "8. Ver vendas entre duas datas." << endl;
@@ -63,8 +59,24 @@ void menuFarmacia(){
 	cout << "11. Voltar atras." << endl;
 }
 
-void menuFuncionarios(){
+void menuFuncionario(){
+	cout << endl << endl;
+	cout << "GERIR FUNCIONARIO" << endl;
+	cout << "1. Ver dados do Funcionario." << endl;
+	cout << "2. Alterar farmacia em que trabalha." << endl;
+	cout << "3. Alterar cargo." << endl;
+	cout << "4. Alterar salario." << endl;
+	cout << "5. Alterar morada." << endl;
+	cout << "6. Voltar atras." << endl;
+}
 
+void menuCliente() {
+	cout << endl << endl;
+	cout << "GERIR CLIENTE" << endl;
+	cout << "1. Ver dados do Cliente." << endl;
+	cout << "2. Ver historial de compras." << endl;
+	cout << "3. Alterar morada." << endl;
+	cout << "4. Voltar atras." << endl;
 }
 
 int main(){
@@ -116,6 +128,8 @@ int main(){
 	}
 
 	do{
+		menu_cadeia:
+
 		menuGerirCadeia();
 		cin >> option;
 		switch(option){
@@ -137,12 +151,13 @@ int main(){
 			cout << "	2-Por numero de produtos;" << endl;
 			cout << "	3-Por numero de vendas;" << endl;
 			cin >> option;
-			if(option >= 1 && option <= 3)
-				cout << "Pretende fazer esta ordenacao por ordem crescente(c) ou decrescente(d)? ";
 			char crescente;
-			do{
-				cin >> crescente;
-			}while(tolower(crescente) != 'c' && tolower(crescente) != 'd');
+			if (option >= 1 && option <= 3) {
+				cout << "Pretende fazer esta ordenacao por ordem crescente(c) ou decrescente(d)? ";
+				do {
+					cin >> crescente;
+				} while (tolower(crescente) != 'c' && tolower(crescente) != 'd');
+			}
 
 			switch(option){
 			case 1:
@@ -185,10 +200,9 @@ int main(){
 			break;
 		}
 		case 4:{
-			vector<Farmacia *>::const_iterator it = cadeia.getFarmacias().begin();
-			for(; it != cadeia.getFarmacias().end(); it++){
-				(*it)->imprimeDados();
-				cout << endl;
+			vector<Farmacia *> v = cadeia.getFarmacias();
+			for(unsigned int i =0; i<v.size(); i++){
+				v.at(i)->imprimeDados();
 			}
 			break;
 		}
@@ -212,12 +226,13 @@ int main(){
 			cout << "	2-Por numero de contribuinte;" << endl;
 			cout << "	3-Por numero de compras;" << endl;
 			cin >> option;
-			if(option >= 1 && option <= 3)
-				cout << "Pretende fazer esta ordenacao por ordem crescente(c) ou decrescente(d)? ";
 			char crescente;
-			do{
-				cin >> crescente;
-			}while(tolower(crescente) != 'c' && tolower(crescente) != 'd');
+			if (option >= 1 && option <= 3) {
+				cout << "Pretende fazer esta ordenacao por ordem crescente(c) ou decrescente(d)? ";
+				do {
+					cin >> crescente;
+				} while (tolower(crescente) != 'c' && tolower(crescente) != 'd');
+			}
 
 			switch(option){
 			case 1:
@@ -286,12 +301,13 @@ int main(){
 			cout << "	2-Por contribuinte;" << endl;
 			cout << "	3-Por salario;" << endl;
 			cin >> option;
-			if(option >= 1 && option <= 3)
-				cout << "Pretende fazer esta ordenacao por ordem crescente(c) ou decrescente(d)? ";
 			char crescente;
-			do{
-				cin >> crescente;
-			}while(tolower(crescente) != 'c' && tolower(crescente) != 'd');
+			if (option >= 1 && option <= 3) {
+				cout << "Pretende fazer esta ordenacao por ordem crescente(c) ou decrescente(d)? ";
+				do {
+					cin >> crescente;
+				} while (tolower(crescente) != 'c' && tolower(crescente) != 'd');
+			}
 
 			switch(option){
 			case 1:
@@ -349,30 +365,526 @@ int main(){
 			break;
 		}
 		case 14:{
-			cout << "Nome da Farmacia: ";
+			cout << endl << "Nome da Farmacia: ";
 			cin.clear();
 			cin.ignore(10000, '\n');
 			getline(cin, nome);
 			vector<Farmacia *> v = cadeia.getFarmacias();
-			vector<Farmacia *>::iterator it;
-			for(it = v.begin(); it != v.end(); it){
-				if((*it)->getNome() == nome)
+			vector<Farmacia *>::iterator frm;
+			for(frm = v.begin(); frm != v.end(); frm++){
+				if((*frm)->getNome() == nome)
 					break;
 			}
 
-			if(it == v.end()){
+			if(frm == v.end()){
 				cout << "Farmacia " << nome << " inexistente" << endl;
 				break;
 			}
+			do {
+				menu_farmacia:
 
-			menuFarmacia();
+				menuFarmacia();
+				cin >> option;
+				switch (option) {
+				case 1: {
+					(*frm)->imprimeDados();
+					cout << endl;
+					break;
+				}
+				case 2: {
+					string num;
+					string frm_nome = (*frm)->getNome();
+					cout << "Numero de contribuinte do novo gerente: ";
+					cin.clear();
+					cin.ignore(10000, '\n');
+					getline(cin, num);
+					vector<Funcionario*> func = cadeia.getFuncionarios();
+					vector<Funcionario*>::iterator f;
+					for (f = func.begin(); f != func.end(); f++) {
+						if ((*f)->getNoContribuinte() == stod(num)) {
+							if ((*f)->getFarmacia()->getNome() == frm_nome) {
+								(*frm)->setGerente(*f);
+								string func_nome = (*f)->getNome();
+								cout << "Novo gerente: " << func_nome;
+								cout << endl;
+							}
+							else{
+								cout << "Funcionario nao trabalha na farmacia " << frm_nome;
+								cout<< endl;
+							}
+							break;
+						}
+					}
+					if (f == func.end()) {
+						cout << "Funcionario nao encontrado" << endl;
+					}
+					break;
+				}
+				case 3: {
+					string num;
+					string frm_nome = (*frm)->getNome();
+					cout << "Numero de contribuinte do novo diretor tecnico: ";
+					cin.clear();
+					cin.ignore(10000, '\n');
+					getline(cin, num);
+					vector<Funcionario*> func = cadeia.getFuncionarios();
+					vector<Funcionario*>::iterator f;
+					for (f = func.begin(); f != func.end(); f++) {
+						if ((*f)->getNoContribuinte() == stod(num)) {
+							if ((*f)->getFarmacia()->getNome() == frm_nome) {
+								(*frm)->setDiretorTecnico(*f);
+								string func_nome = (*f)->getNome();
+								cout << "Novo diretor tecnico: " << func_nome << endl;
+							}
+							else
+								cout << "Funcionario nao trabalha na farmacia " << frm_nome << endl;
+						}
+						if (f == func.end()) {
+							cout << "Funcionario nao encontrado" << endl;
+						}
+					}
+					break;
+				}
+				case 4: {
+					map<Produto, int> p = (*frm)->getProdutosVender();
+					map<Produto, int>::const_iterator prods;
+					for (prods = p.begin(); prods != p.end(); prods++) {
+						cout << prods->first.getCodigo() << "  ";
+						cout << prods->first.getNome() << "   ";
+						cout << prods->second << " unidades";
+						cout << endl;
+					}
+					cout << endl;
+					break;
+				}
+				case 5: {
+					string nome;
+					cout << "Nome do produto: ";
+					cin.clear();
+					cin.ignore(10000, '\n');
+					getline(cin, nome);
+					nome = toupperstring(nome);
+					bool existe = (*frm)->existeProduto(nome);
+					if (!existe) {
+						double cod;
+						float preco;
+						string desc;
+						char pass;
+						Produto* p = NULL;
+						cout << "Codigo do produto: ";
+						cin >> cod;
+						cout << endl << "Preco do produto: ";
+						cin >> preco;
+						cout << endl << "Descricao do produto: ";
+						cin.clear();
+						cin.ignore(10000, '\n');
+						getline(cin, desc);
+						cout << endl << "Produto passivel de receita? (S / N) ";
+						cin >> pass;
+						if (toupper(pass) == 'S') {
+							float comp;
+							char sR;
+							bool semR;
+							cout << endl << "Comparticipacao (em percentagem): ";
+							cin >> comp;
+							comp = comp / 100;
+							cout << endl << "Produto pode ser vendido sem receita? (S / N) ";
+							cin >> sR;
+							semR = (toupper(sR) == 'S');
+							p = new Produto(cod, nome, preco, desc, true, comp, semR);
+							(*frm)->addProdutoVender(p);
+						}
+						else {
+							p = new Produto(cod, nome, preco, desc, false, 0, false);
+							(*frm)->addProdutoVender(p);
+						}
+					}
+					int quant;
+					cout << endl << "Quantidade do produto: ";
+					cin >> quant;
+					(*frm)->setQuantidade(nome, quant);
+					cout << endl << "Quantidade alterada." << endl;
+					break;
+				}
+				case 6: {
+					string nome;
+					cout << "Nome do produto: ";
+					cin.clear();
+					cin.ignore(10000, '\n');
+					getline(cin, nome);
+					nome = toupperstring(nome);
+					try {
+						(*frm)->removeProduto(nome);
+						cout << "Produto " << nome << " eliminado" << endl;
+					}
+					catch (ProdutoInexistente &e) {
+						cerr << "Produto " << nome << " inexistente" << endl;
+					}
+					break;
+				}
+				case 7: {
+					vector<Venda*> v = (*frm)->getVendas();
+					for (unsigned int i = 0; i < v.size(); i++) {
+						cout << "Venda " << v.at(i)->getCodigo() << endl;
+						v.at(i)->imprimeFatura();
+						cout << endl << endl;
+					}
+					break;
+				}
+				case 8: {
+					int ano;
+					unsigned short mes;
+					unsigned short dia;
+					cout << "Data inferior:" << endl;
+					cout << "Dia: " << endl;
+					cin >> dia;
+					while (dia<1 || dia>31){
+						cin.clear();
+						cin.ignore(10000, '\n');
+						cout << "Dia invalido. Insira um valor valido: ";
+						cin >> dia;
+					}
+					cout << "Mes: " << endl;
+					cin >> mes;
+					while (mes<1 || mes>12){
+						cin.clear();
+						cin.ignore(10000, '\n');
+						cout << "Mes invalido. Insira um valor valido: ";
+						cin >> mes;
+					}
+					cout << "Ano: " << endl;
+					cin >> ano;
+					while (ano<1 || ano>12){
+						cin.clear();
+						cin.ignore(10000, '\n');
+						cout << "Ano invalido. Insira um valor valido: ";
+						cin >> ano;
+					}
+					Data d1(dia, mes, ano);
+					cout << "Data superior:" << endl;
+					cout << "Dia: " << endl;
+					cin >> dia;
+					while (dia<1 || dia>31){
+						cin.clear();
+						cin.ignore(10000, '\n');
+						cout << "Dia invalido. Insira um valor valido: ";
+						cin >> dia;
+					}
+					cout << "Mes: " << endl;
+					cin >> mes;
+					while (mes<1 || mes>12){
+						cin.clear();
+						cin.ignore(10000, '\n');
+						cout << "Mes invalido. Insira um valor valido: ";
+						cin >> mes;
+					}
+					cout << "Ano: " << endl;
+					cin >> ano;
+					while (ano<1 || ano>12){
+						cin.clear();
+						cin.ignore(10000, '\n');
+						cout << "Ano invalido. Insira um valor valido: ";
+						cin >> ano;
+					}
+					Data d2(dia, mes, ano);
+					vector<Venda*> v = (*frm)->getVendasTempo(d1,d2);
+					for (unsigned int i = 0; i < v.size(); i++) {
+						cout << "Venda " << v.at(i)->getCodigo() << endl;
+						v.at(i)->imprimeFatura();
+						cout << endl << endl;
+					}
+					break;
+				}
+				case 9:{
+					Venda *v1 = new Venda();
+					double no_con;
+					cout << "VENDA" << v1->getCodigo() << endl;
+					cout << "Numero de contribuinte do cliente: ";
+					cin >> no_con;
+					vector<Cliente *> v = cadeia.getClientes();
+					int existe_cliente = -1;
+					for(unsigned int i =0; i<v.size(); i++){
+						if(v.at(i)->getNoContribuinte() == no_con){
+							existe_cliente = i;
+							break;
+						}
+					}
+					if(existe_cliente==-1){
+						cout << "Cliente nao existe na cadeia" << endl << endl;
+						goto menu_farmacia;
+					}
+					v1->setCliente(v.at(existe_cliente));
+					cout << endl << "Tem receita? ";
+					char op;
+					cin >> op;
+					if (toupper(op)=='S'){
+						cout << endl << "ADICIONAR RECEITA";
+						cout << endl << "Numero da receita: ";
+						double numero_r;
+						cin >> numero_r;
+						cout << "Numero de contribuinte do utente: ";
+						double numero_c;
+						cin >> numero_c;
+						existe_cliente = -1;
+						for(unsigned int i =0; i<v.size(); i++){
+							if(v.at(i)->getNoContribuinte() == no_con){
+								existe_cliente = i;
+								break;
+							}
+						}
+						if(existe_cliente == -1){
+							cout << "Cliente nao existe na cadeia" << endl << endl;
+							goto menu_farmacia;
+						}
+						string nome_medico;
+						cout << "Nome do medico: ";
+						cin.clear();
+						cin.ignore(10000, '\n');
+						getline(cin, nome_medico);
+						Receita *r1 = new Receita(numero_r, nome_medico, v.at(existe_cliente));
+						Produto *p1;
+						string nome_prod = "";
+						double quant;
+						cout << "Adicionar medicamentos a receita (para parar escreva SAIR no nome do produto):" << endl;
+						while(true){
+							cout << "Nome do Produto: ";
+							cin >> nome_prod;
+							nome_prod = toupperstring(nome_prod);
+							if(nome_prod =="SAIR")
+								break;
+							p1 = new Produto(0, nome_prod, 0, " ", true, 0, true);
+							cout << endl << "Quantidade: ";
+							cin >> quant;
+							r1->addProduto(p1, quant);
+						}
+						cout << endl << "Fim da receita"<< endl;
+						v1->setReceita(r1);
+					}
+					cout << "Adicionar produtos a venda (para parar escreva SAIR no nome do produto): "<< endl;
+					while(true){
+						string nome_prod;
+						float quant;
+						float iva;
+						cout << "Nome do Produto: ";
+						cin >> nome_prod;
+						nome_prod = toupperstring(nome_prod);
+						if(nome_prod=="SAIR")
+							break;
+						bool existe_prod = (*frm)->existeProduto(nome_prod);
+						if (!existe_prod){
+							cout << endl << "Produto nao existe na farmacia" << endl;
+							continue;
+						}
+						map<Produto, int>::const_iterator prod;
+						map<Produto, int> stock = (*frm)->getProdutosVender();
+						for (prod = stock.begin(); prod != stock.end(); prod++){
+							if (prod->first.getNome() == nome_prod)
+								break;
+						}
+						Produto p1 = prod->first;
+						cout << endl << "Quantidade: ";
+						cin >> quant;
+						cout << endl << "IVA (em percentagem): ";
+						cin >> iva;
+						iva = iva/100;
+						if(v1->addProduto(&p1, quant, iva)){
+							cout << "Nao foi possivel adicionar o produto. Necessita de receita medica" << endl;
+						}
+					}
+					bool venda_sucesso = (*frm)->addVenda(v1);
+					if (venda_sucesso){
+						cout << endl << "Venda realizada com sucesso. Fatura: " << endl;
+						(*frm)->addVenda(v1);
+					}
+					else{
+						cout << endl << "Nao foi possivel realizar a venda. Nao existe stock suficiente." << endl;
+					}
 
+				}
+				case 10: {
+					cout << "Como pretende ordenar as vendas? " << endl;
+					cout << "	1-Por numero de produtos vendidos;" << endl;
+					cout << "	2-Por data;" << endl;
+					cout << "	3-Por hora;" << endl;
+					cout << "   4-Por valor total." << endl;
+					cin >> option;
+					char crescente;
+					if (option >= 1 && option <= 3) {
+						cout << "Pretende fazer esta ordenacao por ordem crescente(c) ou decrescente(d)? ";
+						do {
+							cin >> crescente;
+						} while (tolower(crescente) != 'c' && tolower(crescente) != 'd');
+					}
+
+					switch(option){
+					case 1:
+						if(crescente == 'c')
+							(*frm)->sortVendas(NUM_PROD,true);
+						else
+							(*frm)->sortVendas(NUM_PROD,false);
+						break;
+					case 2:
+						if(crescente == 'c')
+							(*frm)->sortVendas(DATA,true);
+						else
+							(*frm)->sortVendas(DATA,false);
+						break;
+					case 3:
+						if(crescente == 'c')
+							(*frm)->sortVendas(HORA,true);
+						else
+							(*frm)->sortVendas(HORA,false);
+						break;
+					default:
+						(*frm)->sortVendas(DEFAULT,true);
+						break;
+					}
+					break;
+				}
+				case 11:
+					goto menu_cadeia;
+					break;
+				}
+			} while (true);
 			break;
 		}
-		case 15:
+		case 15: {
+			cout << endl << "Nome do Funcionario: ";
+			cin.clear();
+			cin.ignore(10000, '\n');
+			getline(cin, nome);
+			vector<Funcionario *> v = cadeia.getFuncionarios();
+			vector<Funcionario *>::iterator func;
+			for (func = v.begin(); func != v.end(); func++) {
+				if ((*func)->getNome() == nome)
+					break;
+			}
+
+			if (func == v.end()) {
+				cout << "Funcionario " << nome << " inexistente" << endl;
+				break;
+			}
+
+			do {
+				
+				menuFuncionario();
+				cin >> option;
+				switch (option) {
+				case 1:{
+					(*func)->showInfo();
+					cout << endl;
+					break;
+				}
+				case 2:{
+					string nome_farmacia_nova;
+					cout << "Nome da farmacia onde vai trabalhar: ";
+					cin.clear();
+					cin.ignore(10000, '\n');
+					getline(cin, nome_farmacia_nova);
+					vector<Farmacia*> farmacias = cadeia.getFarmacias();
+					vector<Farmacia*>::iterator frm;
+					for(frm = farmacias.begin(); frm!=farmacias.end(); frm++){
+						if(toupperstring((*frm)->getNome())==toupperstring(nome_farmacia_nova)){
+							(*func)->setFarmacia((*frm));
+							string nome_funcionario = (*func)->getNome();
+							cout << nome_funcionario << " trabalha agora na farmacia " << nome_farmacia_nova << endl;
+							break;
+						}
+					}
+					if (frm == farmacias.end()){
+						cout << "Farmacia nao encontrada" << endl;
+					}
+					break;
+				}
+				case 3:{
+					string novo_cargo;
+					cout << "Novo Cargo: ";
+					cin.clear();
+					cin.ignore(10000, '\n');
+					getline(cin, novo_cargo);
+					(*func)->setCargo(novo_cargo);
+					break;
+				}
+				case 4:{
+					double novo_salario;
+					cout << "Novo salario: ";
+					cin.clear();
+					cin.ignore(10000, '\n');
+					cin >> novo_salario;
+					(*func)->changeSalario(novo_salario);
+					break;
+				}
+				case 5:{
+					string nova_morada;
+					cout << "Nova morada: ";
+					cin.clear();
+					cin.ignore(10000, '\n');
+					getline(cin, nova_morada);
+					(*func)->setMorada(nova_morada);
+					break;
+				}
+				case 6: {
+					goto menu_cadeia;
+					break;
+				}
+				}
+
+			} while (true);
+
+
+		}
 			break;
-		case 16:
-			break;
+		case 16: {
+			cout << endl << "Nome do Cliente: ";
+			cin.clear();
+			cin.ignore(10000, '\n');
+			getline(cin, nome);
+			vector<Cliente *> v = cadeia.getClientes();
+			vector<Cliente *>::iterator cl;
+			for (cl = v.begin(); cl != v.end(); cl++) {
+				if ((*cl)->getNome() == nome)
+					break;
+			}
+
+			if (cl == v.end()) {
+				cout << "Cliente " << nome << " inexistente" << endl;
+				break;
+			}
+			do {
+
+				menuCliente();
+				cin >> option;
+				switch (option) {
+				case 1: {
+					(*cl)->showInfo();
+					cout << endl;
+					break;
+				}
+				case 2: {
+					vector<Venda*> v = (*cl)->getHistorialCompras();
+					for (unsigned int i = 0; i < v.size(); i++) {
+						cout << "Venda " << v.at(i)->getCodigo() << endl;
+						v.at(i)->imprimeFatura();
+						cout << endl << endl;
+					}
+					break;
+				}
+				case 3: {
+					string nova_morada;
+					cout << "Nova morada: ";
+					cin.clear();
+					cin.ignore(10000, '\n');
+					getline(cin, nova_morada);
+					(*cl)->setMorada(nova_morada);
+					break;
+				}
+				case 4: {
+					goto menu_cadeia;
+					break;
+				}
+				}
+			} while (true);
+		}
 		case 17:
 			goto sairDoPrograma;
 			break;
