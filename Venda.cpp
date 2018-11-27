@@ -189,7 +189,7 @@ std::ostream& operator<<(std::ostream &output, const Venda &v1){
 		output << "NULL" << endl;
 	}
 	else{
-		output << &v1.receitaVenda << endl;
+		output << *v1.receitaVenda << endl;
 	}
 	output << v1.totalVenda << endl;
 	output << v1.produtosVendidos.size() << endl;

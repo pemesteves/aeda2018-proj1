@@ -305,11 +305,13 @@ std::ostream& operator<<(std::ostream &output, const Farmacia &f){
 Produto Farmacia::getProduto(unsigned long codigo){
 	map<Produto, int>::iterator it = produtosVender.begin();
 	for(; it != produtosVender.end(); it++){
-		if((*it).first.getCodigo() == codigo)
+		cout << "ola" << endl;
+		if((*it).first.getCodigo() == codigo){
+			cout << "xau" << endl;
 			return (*it).first;
+		}
 	}
-	Produto p(0, "", 0, "", 0, 0, 0);
-	return p;
+	return Produto(0, "", 0, "", 0, 0, 0);
 }
 
 Venda* Farmacia::getVenda(unsigned long codigo) const{
