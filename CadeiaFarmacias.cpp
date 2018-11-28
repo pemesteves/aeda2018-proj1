@@ -101,8 +101,10 @@ Cliente* CadeiaFarmacias::removeCliente(const std::string &nomeC){
 	vector<Cliente*>::iterator it = clientes.begin();
 	for(; it != clientes.end(); it++){ //Percorrer o vetor clientes
 		if ((*it)->getNome() == nomeC){
+			Cliente* c1;
+			c1 = *it;
 			clientes.erase(it);
-			return *it;
+			return c1;
 		}
 	}
 	throw ClienteInexistente(nomeC); //Lançamento de uma excecao caso o cliente nao exista
@@ -213,7 +215,6 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 			}while(line.length() == 0);
 
 			quantidade = stoi(line); //quantidade do produto: segundo campo do map
-
 			do{
 				getline(f, line);
 			}while(line.length() == 0);
@@ -256,7 +257,7 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 		do{
 			getline(f, line);
 		}while(line.length() == 0);
-
+		cout << line << endl;
 		numProd = stoi(line); //numProd tera o numero de vendas
 		int dia, mes, ano, hora, minutos, segundos;
 		while(numProd > 0){

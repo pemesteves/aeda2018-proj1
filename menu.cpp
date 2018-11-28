@@ -112,7 +112,7 @@ int main(){
 		ficheiro.open(nome_fich);
 		while (!ficheiro.is_open())
 		{
-			cerr << "Ficheiro " << nome << ".txt nao encontrado!" << endl;
+			cout << "Ficheiro " << nome << ".txt nao encontrado!" << endl;
 			cout << "Quer tentar outra vez ou sair? (S = sair)" << endl;
 			cin.clear();
 			cin.ignore(10000, '\n');
@@ -219,7 +219,7 @@ int main(){
 				f = cadeia.removeFarmacia(nome);
 				cout << "Farmacia " << f->getNome() << " eliminada" << endl;
 			}catch(FarmaciaInexistente &e){
-				cerr << "Farmacia " << e.getNome() << " inexistente" << endl;
+				cout << "Farmacia " << e.getNome() << " inexistente" << endl;
 			}
 			break;
 		}
@@ -245,7 +245,7 @@ int main(){
 				if(cin.fail()){
 					cin.clear();
 					cin.ignore(10000, '\n');
-					cout << "Opcao Invalida. Tente outra vez: ";
+					cout << "Contribuinte Invalido. Tente outra vez: ";
 				}
 			}while(cin.fail());
 			Cliente *c = new Cliente(nome, morada, contribuinte);
@@ -313,7 +313,7 @@ int main(){
 				c = cadeia.removeCliente(nome);
 				cout << "Cliente " << c->getNome() << " eliminado" << endl;
 			}catch(ClienteInexistente &e){
-				cerr << "Cliente " << e.getNome() << " inexistente" << endl;
+				cout << "Cliente " << e.getNome() << " inexistente" << endl;
 			}
 			break;
 		}
@@ -340,7 +340,7 @@ int main(){
 				if(cin.fail()){
 					cin.clear();
 					cin.ignore(10000, '\n');
-					cout << "Opcao Invalida. Tente outra vez: ";
+					cout << "Contribuinte Invalido. Tente outra vez: ";
 				}
 			}while(cin.fail());
 			Funcionario *f = new Funcionario(nome, morada, contribuinte);
@@ -409,7 +409,7 @@ int main(){
 				f = cadeia.removeFuncionario(nome);
 				cout << "Funcionario " << f->getNome() << " eliminado" << endl;
 			}catch(FuncionarioInexistente &e){
-				cerr << "Funcionario " << e.getNome() << " inexistente" << endl;
+				cout << "Funcionario " << e.getNome() << " inexistente" << endl;
 			}
 			break;
 		}
@@ -547,7 +547,7 @@ int main(){
 							if(cin.fail()){
 								cin.clear();
 								cin.ignore(10000, '\n');
-								cout << "Opcao Invalida. Tente outra vez: ";
+								cout << "Codigo Invalido. Tente outra vez: ";
 							}
 						}while(cin.fail());
 						cout << endl << "Preco do produto: ";
@@ -556,7 +556,7 @@ int main(){
 							if(cin.fail()){
 								cin.clear();
 								cin.ignore(10000, '\n');
-								cout << "Opcao Invalida. Tente outra vez: ";
+								cout << "Preco Invalido. Tente outra vez: ";
 							}
 						}while(cin.fail());
 						cout << endl << "Descricao do produto: ";
@@ -582,7 +582,7 @@ int main(){
 								if(cin.fail()){
 									cin.clear();
 									cin.ignore(10000, '\n');
-									cout << "Opcao Invalida. Tente outra vez: ";
+									cout << "Comparticipacao Invalida. Tente outra vez: ";
 								}
 							}while(cin.fail());
 							comp = comp / 100;
@@ -611,7 +611,7 @@ int main(){
 						if(cin.fail()){
 							cin.clear();
 							cin.ignore(10000, '\n');
-							cout << "Opcao Invalida. Tente outra vez: ";
+							cout << "Quantidade Invalida. Tente outra vez: ";
 						}
 					}while(cin.fail());
 					(*frm)->setQuantidade(nome, quant);
@@ -630,7 +630,7 @@ int main(){
 						cout << "Produto " << nome << " eliminado" << endl;
 					}
 					catch (ProdutoInexistente &e) {
-						cerr << "Produto " << nome << " inexistente" << endl;
+						cout << "Produto " << nome << " inexistente" << endl;
 					}
 					break;
 				}
@@ -654,138 +654,55 @@ int main(){
 						if(cin.fail()){
 							cin.clear();
 							cin.ignore(10000, '\n');
-							cout << "Opcao Invalida. Tente outra vez: ";
+							cout << "Dia Invalido. Tente outra vez: ";
 						}
-					}while(cin.fail());
-					while (dia<1 || dia>31){
-						cin.clear();
-						cin.ignore(10000, '\n');
-						cout << "Dia invalido. Insira um valor valido: ";
-						do{
-							cin >> dia;
-							if(cin.fail()){
-								cin.clear();
-								cin.ignore(10000, '\n'):
-										cout << "Opcao Invalida. Tente outra vez: ";
-							}
-						}while(cin.fail());
-					}
+					}while(cin.fail() || dia<1 || dia>31);
 					cout << "Mes: " << endl;
 					do{
 						cin >> mes;
 						if(cin.fail()){
 							cin.clear();
 							cin.ignore(10000, '\n');
-							cout << "Opcao Invalida. Tente outra vez: ";
+							cout << "Mes Invalido. Tente outra vez: ";
 						}
-					}while(cin.fail());
-					while (mes<1 || mes>12){
-						cin.clear();
-						cin.ignore(10000, '\n');
-						cout << "Mes invalido. Insira um valor valido: ";
-						do{
-							cin >> mes;
-							if(cin.fail()){
-								cin.clear();
-								cin.ignore(10000, '\n');
-								cout << "Opcao Invalida. Tente outra vez: ";
-							}
-						}while(cin.fail());
-					}
+					}while(cin.fail() || mes<1 || mes>12);
 					cout << "Ano: " << endl;
 					do{
 						cin >> ano;
 						if(cin.fail()){
 							cin.clear();
 							cin.ignore(10000, '\n');
-							cout << "Opcao Invalida. Tente outra vez: ";
+							cout << "Ano Invalido. Tente outra vez: ";
 						}
 					}while(cin.fail());
-					while (ano<1 || ano>12){
-						cin.clear();
-						cin.ignore(10000, '\n');
-						cout << "Ano invalido. Insira um valor valido: ";
-						do{
-							cin >> ano;
-							if(cin.fail()){
-								cin.clear();
-								cin.ignore(10000, '\n');
-								cout << "Opcao Invalida. Tente outra vez: ";
-							}
-						}while(cin.fail());
-					}
 					Data d1(dia, mes, ano);
-					cout << "Data superior:" << endl;
 					cout << "Dia: " << endl;
 					do{
 						cin >> dia;
 						if(cin.fail()){
 							cin.clear();
 							cin.ignore(10000, '\n');
-							cout << "Opcao Invalida. Tente outra vez: ";
+							cout << "Dia Invalido. Tente outra vez: ";
 						}
-					}while(cin.fail());
-					while (dia<1 || dia>31){
-						cin.clear();
-						cin.ignore(10000, '\n');
-						cout << "Dia invalido. Insira um valor valido: ";
-						do{
-							cin >> dia;
-							if(cin.fail()){
-								cin.clear();
-								cin.ignore(10000, '\n');
-								cout << "Opcao Invalida. Tente outra vez: ";
-							}
-						}while(cin.fail());
-					}
+					}while(cin.fail() || dia<1 || dia>31);
 					cout << "Mes: " << endl;
 					do{
 						cin >> mes;
 						if(cin.fail()){
 							cin.clear();
 							cin.ignore(10000, '\n');
-							cout << "Opcao Invalida. Tente outra vez: ";
+							cout << "Mes Invalido. Tente outra vez: ";
 						}
-					}while(cin.fail());
-
-
-					while (mes<1 || mes>12){
-						cin.clear();
-						cin.ignore(10000, '\n');
-						cout << "Mes invalido. Insira um valor valido: ";
-						do{
-							cin >> mes;
-							if(cin.fail()){
-								cin.clear();
-								cin.ignore(10000, '\n');
-								cout << "Opcao Invalida. Tente outra vez: ";
-							}
-						}while(cin.fail());
-
-					}
+					}while(cin.fail() || mes<1 || mes>12);
 					cout << "Ano: " << endl;
 					do{
 						cin >> ano;
 						if(cin.fail()){
 							cin.clear();
 							cin.ignore(10000, '\n');
-							cout << "Opcao Invalida. Tente outra vez: ";
+							cout << "Ano Invalido. Tente outra vez: ";
 						}
 					}while(cin.fail());
-					while (ano<1 || ano>12){
-						cin.clear();
-						cin.ignore(10000, '\n');
-						cout << "Ano invalido. Insira um valor valido: ";
-						do{
-							cin >> ano;
-
-							if(cin.fail()){
-								cin.clear();
-								cin.ignore(10000, '\n');
-								cout << "Opcao Invalida. Tente outra vez: ";
-							}
-						}while(cin.fail());
-					}
 					Data d2(dia, mes, ano);
 					vector<Venda*> v = (*frm)->getVendasTempo(d1,d2);
 					for (unsigned int i = 0; i < v.size(); i++) {
@@ -805,7 +722,7 @@ int main(){
 						if(cin.fail()){
 							cin.clear();
 							cin.ignore(10000, '\n');
-							cout << "Opcao Invalida. Tente outra vez: ";
+							cout << "Contribuinte Invalido. Tente outra vez: ";
 						}
 					}while(cin.fail());
 					vector<Cliente *> v = cadeia.getClientes();
@@ -841,7 +758,7 @@ int main(){
 							if(cin.fail()){
 								cin.clear();
 								cin.ignore(10000, '\n');
-								cout << "Opcao Invalida. Tente outra vez: ";
+								cout << "Numero de receita Invalido. Tente outra vez: ";
 							}
 						}while(cin.fail());
 
@@ -852,7 +769,7 @@ int main(){
 							if(cin.fail()){
 								cin.clear();
 								cin.ignore(10000, '\n');
-								cout << "Opcao Invalida. Tente outra vez: ";
+								cout << "Contribuinte Invalido. Tente outra vez: ";
 							}
 						}while(cin.fail());
 						existe_cliente = -1;
@@ -878,14 +795,9 @@ int main(){
 						cout << "Adicionar medicamentos a receita (para parar escreva SAIR no nome do produto):" << endl;
 						while(true){
 							cout << "Nome do Produto: ";
-							do{
-								cin >> nome_prod;
-								if(cin.fail()){
-									cin.clear();
-									cin.ignore(10000, '\n');
-									cout << "Opcao Invalida. Tente outra vez: ";
-								}
-							}while(cin.fail());
+							cin.clear();
+							cin.ignore(10000, '\n');
+							getline(cin, nome_prod);
 							nome_prod = toupperstring(nome_prod);
 							if(nome_prod =="SAIR")
 								break;
@@ -896,7 +808,7 @@ int main(){
 								if(cin.fail()){
 									cin.clear();
 									cin.ignore(10000, '\n');
-									cout << "Opcao Invalida. Tente outra vez: ";
+									cout << "Quantidade Invalida. Tente outra vez: ";
 								}
 							}while(cin.fail());
 							r1->addProduto(p1, quant);
@@ -910,15 +822,11 @@ int main(){
 						float quant;
 						float iva;
 						cout << "Nome do Produto: ";
-						do{
-							cin >> nome_prod;
-							if(cin.fail()){
-								cin.clear();
-								cin.ignore(10000, '\n');
-								cout << "Opcao Invalida. Tente outra vez: ";
-							}
-						}while(cin.fail());
+						cin.clear();
+						cin.ignore(10000, '\n');
+						getline(cin, nome_prod);
 						nome_prod = toupperstring(nome_prod);
+						cout << nome_prod;
 						if(nome_prod=="SAIR")
 							break;
 						bool existe_prod = (*frm)->existeProduto(nome_prod);
@@ -939,7 +847,7 @@ int main(){
 							if(cin.fail()){
 								cin.clear();
 								cin.ignore(10000, '\n');
-								cout << "Opcao Invalida. Tente outra vez: ";
+								cout << "Quantidade Invalida. Tente outra vez: ";
 							}
 						}while(cin.fail());
 						cout << endl << "IVA (em percentagem): ";
@@ -948,7 +856,7 @@ int main(){
 							if(cin.fail()){
 								cin.clear();
 								cin.ignore(10000, '\n');
-								cout << "Opcao Invalida. Tente outra vez: ";
+								cout << "IVA Invalido. Tente outra vez: ";
 							}
 						}while(cin.fail());
 						iva = iva/100;
@@ -1097,7 +1005,7 @@ int main(){
 						if(cin.fail()){
 							cin.clear();
 							cin.ignore(10000, '\n');
-							cout << "Opcao Invalida. Tente outra vez: ";
+							cout << "Salario Invalido. Tente outra vez: ";
 						}
 					}while(cin.fail());
 					(*func)->changeSalario(novo_salario);
