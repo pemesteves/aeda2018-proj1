@@ -1,4 +1,4 @@
-3
+4
 Farmacia 3
 Rua da Farmacia 3
 NULL
@@ -47,12 +47,11 @@ Para pele sensivel
 123
 Vladimir
 123456789
-1
-0 5
+0
 
-8.775
+9.225
 1
-123456789 5 0.23 0.06 1.755
+123456789 5 0.23 0 1.845
 
 
 Farmacia 1
@@ -62,7 +61,24 @@ NULL
 0
 0
 
-3
+Farmacia 4
+Rua 4
+456789123
+456789123
+1
+300
+1234
+CENTRUM
+25
+Vitaminas
+1
+1
+0.01
+
+
+0
+
+4
 Marcia
 123456789
 Rua da Marcia
@@ -79,7 +95,12 @@ Rita
 Rua da Rita
 0
 
-3
+Vladimir
+987654325
+Malopidvalna St
+0
+
+4
 Ana
 125472544
 Rua da Ana
@@ -95,3 +116,8 @@ Diogo
 Rua do Diogo
 FUNCIONARIO-500
 NULL
+Paulo
+456789123
+Rua do Paulo
+DIRETOR TECNICO-5000
+Farmacia 4
