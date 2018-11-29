@@ -342,17 +342,19 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 				getline(f, line);
 			}while(line.length() == 0);
 
+			num = stoi(line); //Numero de Produtos da venda
+
 			while(num > 0){
 				do{
 					getline(f, line);
 				}while(line.length() == 0);
-
 				codigo = stoul(line.substr(0, line.find(" ")));
 				line = line.substr(line.find(" ") + 1);
 				preco = stof(line.substr(0, line.find(" "))); //preco guarda a quantidade do produto
 				line = line.substr(line.find(" ") + 1);
 				desconto = stof(line.substr(0, line.find(" "))); //desconto guarda o valor do iva
-				Produto *p = NULL;
+
+				Produto *p = new Produto(0, "", 0, "", 0, 0, 0);
 				*p = farm->getProduto(codigo);
 				v->addProduto(p, preco, desconto);
 				num--;
@@ -364,6 +366,7 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 		cF.farmacias.push_back(farm);
 		numVars--;
 	}
+
 
 	numVars = 0;
 	do{
