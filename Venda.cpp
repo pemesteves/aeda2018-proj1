@@ -97,34 +97,38 @@ bool Venda::addProduto(Produto* prod, float quant, float iva){
 	double precoAdd = 0; //valor a adicionar ao valor total da venda
 	float precoProd=0; //valor por unidade de produto
 	float comparticipacao = 0; //valor da comparticipacao do produto
-
-	map<Produto, vector<float>>::iterator it;
-	if ((it = produtosVendidos.find(*prod)) != produtosVendidos.end()){
-		(*it).second.at(QUANTIDADE) += quant;
-		Produto p = (*it).first;
-		vector<float> v = (*it).second;
-		precoAdd = precoProd * quant;
-		totalVenda += precoAdd;
-	}
-	else{
-		vector<float> v = { quant, iva };
-		if (temReceita) {
-			if (prod->getPassivelReceita()) {
-				if (receitaVenda->existeProdReceita(prod->getNome())){
-					comparticipacao = prod->getTaxaDesconto();}
-				else if (!prod->getVendaSemReceita())
-					return false;
-			}
+	if(prod != NULL){
+		map<Produto, vector<float>>::iterator it;
+		if ((it = produtosVendidos.find(*prod)) != produtosVendidos.end()){
+			(*it).second.at(QUANTIDADE) += quant;
+			Produto p = (*it).first;
+			vector<float> v = (*it).second;
+			precoAdd = precoProd * quant;
+			totalVenda += precoAdd;
 		}
-		v.push_back(comparticipacao);
-		precoProd = prod->getPreco();
-		precoProd += precoProd * iva - precoProd * v.at(COMPARTICIPACAO);
-		v.push_back(precoProd);
-		produtosVendidos[*prod] = v;
-		precoAdd = precoProd * quant;
-		totalVenda += precoAdd;
+		else{
+			vector<float> v = { quant, iva };
+			if (temReceita) {
+				if (prod->getPassivelReceita()) {
+					if (receitaVenda->existeProdReceita(prod->getNome())){
+						comparticipacao = prod->getTaxaDesconto();
+					}
+					else if (!prod->getVendaSemReceita()){
+						return false;
+					}
+				}
+			}
+			v.push_back(comparticipacao);
+			precoProd = prod->getPreco();
+			precoProd += precoProd * iva - precoProd * v.at(COMPARTICIPACAO);
+			v.push_back(precoProd);
+			produtosVendidos[*prod] = v;
+			precoAdd = precoProd * quant;
+			totalVenda += precoAdd;
+		}
+		return true;
 	}
-	return true;
+	return false;
 }
 
 bool Venda::operator< (const Venda &v1) const{
@@ -139,11 +143,11 @@ void Venda::imprimeFatura() const{
 	cout << data.getDia() << "-" << data.getMes() << "-" << data.getAno();
 	cout << setw(15) << hora.getHora() << ":" << hora.getMinutos() << ":" << hora.getSegundos();
 	cout << endl << endl << endl;
-	cout << "Nome Produto" << setw(20) << "Quantidade" << setw(5) << "Preco"<< endl;
+	cout << "Nome Produto" << setw(15) << "Quantidade" << setw(15) << "Preco"<< endl;
 	for(map<Produto, vector<float>>::const_iterator it = produtosVendidos.begin(); it != produtosVendidos.end(); it++){
-		cout << it->first.getNome() << setw(20) << it->second.at(QUANTIDADE) << setw(5) << it->second.at(PRECO_PAGO) << endl;
+		cout << it->first.getNome() << setw(15) << it->second.at(QUANTIDADE) << setw(15) << it->second.at(PRECO_PAGO) << endl;
 	}
-	cout << setw(25) << totalVenda;
+	cout << setw(30) << totalVenda << endl;
 }
 
 bool Venda::menorQue(const Venda &v1, enum tipoSort tipo, bool crescente) const{

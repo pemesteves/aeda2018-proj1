@@ -55,12 +55,12 @@ void Receita::addProduto(Produto* produto, unsigned long quant) {
 		(*it).second += quant;
 	else {
 		if (produto->getPassivelReceita())
-		produtos[*produto]=quant;
+			produtos[*produto]=quant;
 	}
 }
 
 bool Receita::existeProdReceita(string nome) const{
-	map<Produto, unsigned long>::const_iterator it;
+	map<Produto, unsigned long>::const_iterator it = produtos.begin();
 	for(; it != produtos.end(); it++){
 		if ((*it).first.getNome() == nome){
 			return true;
@@ -88,14 +88,14 @@ void Receita::imprimeReceita() const{
 	cout << "Prescrita por Dr./Dra. " << medico << endl;
 	cout << "Produtos:" << endl;
 	map<Produto, unsigned long>::const_iterator it = produtos.begin();
-		for(; it != produtos.end(); it++){
-			cout << it->first.getCodigo();
-			cout << "  ";
-			cout << it->first.getNome();
-			cout << "    ";
-			cout << it->second << " unidades";
-			cout <<endl;
-		}
+	for(; it != produtos.end(); it++){
+		cout << it->first.getCodigo();
+		cout << "  ";
+		cout << it->first.getNome();
+		cout << "    ";
+		cout << it->second << " unidades";
+		cout <<endl;
+	}
 
 
 }

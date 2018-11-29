@@ -41,7 +41,19 @@ Para pele sensivel
 0
 
 
-0
+1
+0 29/11/2018 12:18:17
+123456789
+123
+Vladimir
+123456789
+1
+0 5
+
+8.775
+1
+123456789 5 0.23 0.06 1.755
+
 
 Farmacia 1
 Rua da Farmacia 1
@@ -54,6 +66,7 @@ NULL
 Marcia
 123456789
 Rua da Marcia
+1
 0
 
 Pedro

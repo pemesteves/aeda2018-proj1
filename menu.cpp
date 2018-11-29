@@ -717,7 +717,7 @@ int main(){
 				case 9:{
 					Venda *v1 = new Venda();
 					unsigned long no_con;
-					cout << "VENDA" << v1->getCodigo() << endl;
+					cout << "VENDA " << v1->getCodigo() << endl;
 					cout << "Numero de contribuinte do cliente: ";
 					do{
 						cin >> no_con;
