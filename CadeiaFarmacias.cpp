@@ -257,7 +257,6 @@ void import(ifstream &f, CadeiaFarmacias &cF){
 		do{
 			getline(f, line);
 		}while(line.length() == 0);
-		cout << line << endl;
 		numProd = stoi(line); //numProd tera o numero de vendas
 		int dia, mes, ano, hora, minutos, segundos;
 		while(numProd > 0){

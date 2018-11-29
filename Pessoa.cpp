@@ -64,12 +64,14 @@ void Funcionario::changeSalario(double salario){
 
 void Funcionario::setFarmacia(Farmacia* f){
 	string cargo1 = toupperstring(cargo);
-	if (cargo1 == "GERENTE"){
-		farmaciaTrabalho->setGerente(NULL);
+ 	if (cargo1 == "GERENTE"){
+ 		if(farmaciaTrabalho!=NULL)
+ 			farmaciaTrabalho->setGerente(NULL);
 		f->setGerente(this);
 	}
 	else if (cargo1 == "DIRETOR TECNICO" || cargo1 == "DIRETOR TÉCNICO"){
-		farmaciaTrabalho->setDiretorTecnico(NULL);
+		if(farmaciaTrabalho!=NULL)
+			farmaciaTrabalho->setDiretorTecnico(NULL);
 		f->setDiretorTecnico(this);
 	}
 	this->farmaciaTrabalho = f;
@@ -78,23 +80,33 @@ void Funcionario::setFarmacia(Farmacia* f){
 void Funcionario::setCargo(string cargo){
 	string cargo1 = toupperstring(cargo);
 	if (cargo1 == "GERENTE"){
-		if(farmaciaTrabalho->getGerente()->getNoContribuinte()==this->noContribuinte){
-			this->cargo = cargo1;
-			return;
-		}
-		else{
-			farmaciaTrabalho->setGerente(this);
-			return;
+		if(farmaciaTrabalho != NULL){
+			if(farmaciaTrabalho->getGerente() != NULL){
+				if (farmaciaTrabalho->getGerente()->getNoContribuinte()==this->noContribuinte){
+					this->cargo = cargo1;
+					return;
+				}
+			}
+			else{
+					farmaciaTrabalho->setGerente(this);
+					return;
+			}
 		}
 	}
 	else if (cargo1 == "DIRETOR TECNICO" || cargo1 == "DIRETOR TÉCNICO"){
-		if(farmaciaTrabalho->getDiretorTecnico()->getNoContribuinte()==this->noContribuinte){
-			this->cargo = cargo1;
-			return;
-		}
-		else{
-			farmaciaTrabalho->setDiretorTecnico(this);
-			return;
+		if(farmaciaTrabalho != NULL){
+			if(farmaciaTrabalho != NULL){
+				if(farmaciaTrabalho->getDiretorTecnico() != NULL){
+					if (farmaciaTrabalho->getDiretorTecnico()->getNoContribuinte()==this->noContribuinte){
+						this->cargo = cargo1;
+							return;
+					}
+				}
+				else{
+					farmaciaTrabalho->setGerente(this);
+					return;
+				}
+			}
 		}
 	}
 	this->cargo = cargo1;

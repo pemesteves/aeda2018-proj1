@@ -472,11 +472,13 @@ int main(){
 					vector<Funcionario*>::iterator f;
 					for (f = cadeia.getFuncionarios().begin(); f != cadeia.getFuncionarios().end(); f++) {
 						if ((*f)->getNoContribuinte() == stoul(num)) {
-							if ((*f)->getFarmacia()->getNome() == frm_nome) {
+							if ((*f)->getFarmacia() != NULL){
+								if((*f)->getFarmacia()->getNome() == frm_nome) {
 								(*frm)->setGerente(*f);
 								string func_nome = (*f)->getNome();
 								cout << "Novo gerente: " << func_nome;
 								cout << endl;
+								}
 							}
 							else{
 								cout << "Funcionario nao trabalha na farmacia " << frm_nome;
@@ -795,8 +797,9 @@ int main(){
 						cout << "Adicionar medicamentos a receita (para parar escreva SAIR no nome do produto):" << endl;
 						while(true){
 							cout << "Nome do Produto: ";
-							cin.clear();
-							cin.ignore(10000, '\n');
+							//cin.clear();
+							//cin.ignore(10000, '\n');
+							cin.sync();
 							getline(cin, nome_prod);
 							nome_prod = toupperstring(nome_prod);
 							if(nome_prod =="SAIR")
@@ -822,11 +825,11 @@ int main(){
 						float quant;
 						float iva;
 						cout << "Nome do Produto: ";
-						cin.clear();
-						cin.ignore(10000, '\n');
+						//cin.clear();
+						//cin.ignore(10000, '\n');
+						cin.sync();
 						getline(cin, nome_prod);
 						nome_prod = toupperstring(nome_prod);
-						cout << nome_prod;
 						if(nome_prod=="SAIR")
 							break;
 						bool existe_prod = (*frm)->existeProduto(nome_prod);
@@ -860,7 +863,7 @@ int main(){
 							}
 						}while(cin.fail());
 						iva = iva/100;
-						if(v1->addProduto(&p1, quant, iva)){
+						if(!(v1->addProduto(&p1, quant, iva))){
 							cout << "Nao foi possivel adicionar o produto. Necessita de receita medica" << endl;
 						}
 					}
