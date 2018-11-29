@@ -1,0 +1,84 @@
+3
+Farmacia 3
+Rua da Farmacia 3
+NULL
+NULL
+0
+0
+
+Farmacia 2
+Rua da Farmacia 2
+NULL
+NULL
+3
+200
+123456789
+BEN-U-RON 500MG
+1.5
+Paracetamol
+1
+1
+0.06
+
+
+150
+987654321
+BRUFEN 600MG
+3
+Ibuprofeno
+1
+0
+0.07
+
+
+50
+123454321
+CREME LAVANTE URIAGE 500ML
+16.9
+Para pele sensivel
+0
+0
+0
+
+
+0
+
+Farmacia 1
+Rua da Farmacia 1
+125472544
+NULL
+0
+0
+
+3
+Marcia
+123456789
+Rua da Marcia
+0
+
+Pedro
+647362565
+Rua do Pedro
+0
+
+Rita
+673625345
+Rua da Rita
+0
+
+3
+Ana
+125472544
+Rua da Ana
+GERENTE-500
+Farmacia 1
+Rui
+146342325
+Rua do Rui
+FUNCIONARIO-500
+NULL
+Diogo
+474707844
+Rua do Diogo
+FUNCIONARIO-500
+NULL
