@@ -281,24 +281,24 @@ int main(){
 			switch(option){
 			case 1:
 				if(crescente == 'c')
-					cadeia.sortFarmacias(NOME,true);
+					cadeia.sortClientes(NOME,true);
 				else
-					cadeia.sortFarmacias(NOME,false);
+					cadeia.sortClientes(NOME,false);
 				break;
 			case 2:
 				if(crescente == 'c')
-					cadeia.sortFarmacias(CONTRIBUINTE,true);
+					cadeia.sortClientes(CONTRIBUINTE,true);
 				else
-					cadeia.sortFarmacias(CONTRIBUINTE,false);
+					cadeia.sortClientes(CONTRIBUINTE,false);
 				break;
 			case 3:
 				if(crescente == 'c')
-					cadeia.sortFarmacias(NUM_VENDA,true);
+					cadeia.sortClientes(NUM_VENDA,true);
 				else
-					cadeia.sortFarmacias(NUM_VENDA,false);
+					cadeia.sortClientes(NUM_VENDA,false);
 				break;
 			default:
-				cadeia.sortFarmacias(DEFAULT, true);
+				cadeia.sortClientes(DEFAULT, true);
 				break;
 			}
 			break;
@@ -376,24 +376,24 @@ int main(){
 			switch(option){
 			case 1:
 				if(crescente == 'c')
-					cadeia.sortFarmacias(NOME,true);
+					cadeia.sortFuncionarios(NOME,true);
 				else
-					cadeia.sortFarmacias(NOME,false);
+					cadeia.sortFuncionarios(NOME,false);
 				break;
 			case 2:
 				if(crescente == 'c')
-					cadeia.sortFarmacias(CONTRIBUINTE,true);
+					cadeia.sortFuncionarios(CONTRIBUINTE,true);
 				else
-					cadeia.sortFarmacias(CONTRIBUINTE,false);
+					cadeia.sortFuncionarios(CONTRIBUINTE,false);
 				break;
 			case 3:
 				if(crescente == 'c')
-					cadeia.sortFarmacias(SALARIO,true);
+					cadeia.sortFuncionarios(SALARIO,true);
 				else
-					cadeia.sortFarmacias(SALARIO,false);
+					cadeia.sortFuncionarios(SALARIO,false);
 				break;
 			default:
-				cadeia.sortFarmacias(DEFAULT, true);
+				cadeia.sortFuncionarios(DEFAULT, true);
 				break;
 			}
 
@@ -503,10 +503,12 @@ int main(){
 					vector<Funcionario*>::iterator f;
 					for (f = func.begin(); f != func.end(); f++) {
 						if ((*f)->getNoContribuinte() == stoul(num)) {
-							if ((*f)->getFarmacia()->getNome() == frm_nome) {
-								(*frm)->setDiretorTecnico(*f);
-								string func_nome = (*f)->getNome();
-								cout << "Novo diretor tecnico: " << func_nome << endl;
+							if ((*f)->getFarmacia() != NULL){
+								if ((*f)->getFarmacia()->getNome() == frm_nome) {
+									(*frm)->setDiretorTecnico(*f);
+									string func_nome = (*f)->getNome();
+									cout << "Novo diretor tecnico: " << func_nome << endl;
+								}
 							}
 							else
 								cout << "Funcionario nao trabalha na farmacia " << frm_nome << endl;
@@ -797,8 +799,6 @@ int main(){
 						cout << "Adicionar medicamentos a receita (para parar escreva SAIR no nome do produto):" << endl;
 						while(true){
 							cout << "Nome do Produto: ";
-							//cin.clear();
-							//cin.ignore(10000, '\n');
 							cin.sync();
 							getline(cin, nome_prod);
 							nome_prod = toupperstring(nome_prod);
@@ -825,8 +825,6 @@ int main(){
 						float quant;
 						float iva;
 						cout << "Nome do Produto: ";
-						//cin.clear();
-						//cin.ignore(10000, '\n');
 						cin.sync();
 						getline(cin, nome_prod);
 						nome_prod = toupperstring(nome_prod);

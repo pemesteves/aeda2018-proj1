@@ -125,8 +125,10 @@ Funcionario* CadeiaFarmacias::removeFuncionario(const std::string &nomeF){
 	vector<Funcionario*>::iterator it = funcionarios.begin();
 	for(; it != funcionarios.end(); it++){//Percorrer o vetor de funcionarios
 		if ((*it)->getNome() == nomeF){
+			Funcionario* f1;
+			f1 = *it;
 			funcionarios.erase(it);
-			return *it;
+			return f1;
 		}
 	}
 	throw FuncionarioInexistente(nomeF); //Lancamento de uma excecao caso o funcionario nao exista

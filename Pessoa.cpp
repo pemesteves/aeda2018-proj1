@@ -94,7 +94,6 @@ void Funcionario::setCargo(string cargo){
 		}
 	}
 	else if (cargo1 == "DIRETOR TECNICO" || cargo1 == "DIRETOR TÉCNICO"){
-		if(farmaciaTrabalho != NULL){
 			if(farmaciaTrabalho != NULL){
 				if(farmaciaTrabalho->getDiretorTecnico() != NULL){
 					if (farmaciaTrabalho->getDiretorTecnico()->getNoContribuinte()==this->noContribuinte){
@@ -103,11 +102,10 @@ void Funcionario::setCargo(string cargo){
 					}
 				}
 				else{
-					farmaciaTrabalho->setGerente(this);
+					farmaciaTrabalho->setDiretorTecnico(this);
 					return;
 				}
 			}
-		}
 	}
 	this->cargo = cargo1;
 }
