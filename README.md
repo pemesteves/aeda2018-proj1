@@ -1,6 +1,6 @@
 # Farmacias
 
-First Project of AEDA (Algorithms and Data Structures - 1st year of Integrated Master Degree in Computer Engineering).
+First Project of AEDA (Algorithms and Data Structures - 2nd year of Integrated Master Degree in Computer Engineering).
 
 ## Course Information
 
